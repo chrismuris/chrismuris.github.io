@@ -11,11 +11,9 @@ navbar:
     - text: "Teaching"
       menu:
       - text: "BUEC 333"
-        href: buec333.html
+        href: http://chrismuris.github.io/buec333
       - text: "ECON 435"
-        href: econ435.html
       - text: "ECON 839"
-        href: econ839.html
     - text: "CV"
       href: CV_ChrisMuris.pdf
     - text: "Contact"
