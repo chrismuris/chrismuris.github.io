@@ -2,35 +2,41 @@
 title: ""
 ---
 
-<br> <br>
+<br>
 
-I am an Assistant Professor of Economics at the Department of Economics at Simon Fraser University. My research interests are in theoretical and applied econometrics, in particular in methods for panel data.
+I am an Assistant Professor of Economics at the Department of Economics at Simon Fraser University. 
+My research interests are in theoretical and applied econometrics, in particular in methods for panel data.
+I teach statistics and econometrics at the undergraduate and graduate level.
 
-## Contact information
+### Working papers
 
-Department of Economics, WMC 3639<br>
-Simon Fraser University<br>
-8888 University Drive Burnaby, BC V5A 1S6<br>
-phone: +1-778-782-9395<br>
-email: cmuris@sfu.ca
+> [Efficient GMM estimation with a general missing data pattern](M2013-missingData.pdf) <br> 
+> <small> [slides](M2012-missingData-slides.pdf) </small>
 
-## Working papers
+> [Estimation of a factor-augmented panel data model through instrumental variables](HLM2015.pdf) <br>
+> <small>    Matthew Harding, Carlos Lamarche </small>
 
-Efficient GMM estimation with a general missing data pattern. [paper], [slides]
+> [The trade-off between income inequality and carbon dioxide emissions](GKMM2015.pdf) <br>
+> <small>    Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
 
-Estimation of a factor-augmented panel data model through instrumental variables (with Matthew Harding and Carlos Lamarche). [paper]
+### Publications
 
-The trade-off between income inequality and carbon dioxide emissions (with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso). [paper]
+> [Estimation in the fixed effects ordered logit model](Muris-FEOL-RESTAT-20160425.pdf) 
+> <small> Review of Economics and Statistics, forthcoming, 2016 </small> 
+> <small> [slides](feol-slides-2016004.pdf), [Stata code](FEOLcode.zip) </small>
 
-## Publications
+> [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002)
+> <small> Toru Kitagawa </small> 
+> <small> Journal of Econometrics, forthcoming, 2016 </small> 
+> <small> [slides](KM2013-slides.pdf), [R code](KM-code.zip) </small>
 
-Estimation in the fixed effects ordered logit model (2016), Review of Economics and Statistics, forthcoming. [Stata code]
+> [Expected utility and catastrophic consumption risk](http://dx.doi.org/10.1016/j.insmatheco.2015.06.007)
+> </small> Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+> <small> Insurance: Mathematics and Economics}, 64, 306-312. </small>
 
-Model averaging in semiparametric estimation of treatment effects (2016, with Toru Kitagawa), Journal of Econometrics, available online. [doi], [R code]
-
-Expected utility and catastrophic consumption risk (2015, with Masako Ikefuji, Roger Laeven and Jan Magnus), Insurance: Mathematics and Economics}, 64, 306-312. [doi]
-
-Do climate variations explain bilateral migration? A gravity model analysis (2015, with Andreas Backhaus and Inmaculada Martinez-Zarzoso), IZA Journal of Migration, 4:3. [@izajom]
+> [Do climate variations explain bilateral migration? A gravity model analysis](http://www.izajom.com/content/4/1/3) 
+> <small> Andreas Backhaus and Inmaculada Martinez-Zarzoso </small> 
+> <small> IZA Journal of Migration, 4:3 </small>
 
 Pareto utility (2013, with Masako Ikefuji, Roger Laeven and Jan Magnus), Theory and Decision, 75, 43-57. [doi]
 
