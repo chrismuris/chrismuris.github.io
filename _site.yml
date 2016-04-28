@@ -21,7 +21,7 @@ navbar:
     - text: "Contact"
       href: contact.html
   right:
-    - text: "Built using:"
+    - text: "Built with"
       menu:
       - text: "RStudio"
         href: https://www.rstudio.com/
@@ -29,6 +29,8 @@ navbar:
         href: http://rmarkdown.rstudio.com/rmarkdown_websites.html
       - text: "paper theme"
         href: http://bootswatch.com/paper/
+      - text: "Github"
+        href: https://github.com/chrismuris/homepage
       
 
 output:
