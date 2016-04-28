@@ -11,42 +11,48 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 ### Working papers
 
 > [Efficient GMM estimation with a general missing data pattern](M2013-missingData.pdf) <br> 
-> <small> [slides](M2012-missingData-slides.pdf) </small>
+> <small>[slides](M2012-missingData-slides.pdf) </small>
 
-> [Estimation of a factor-augmented panel data model through instrumental variables](HLM2015.pdf) <br>
-> <small>    Matthew Harding, Carlos Lamarche </small>
+> [Estimation of a factor-augmented panel data model through instrumental variables](HLM2015.pdf)
+> <small>Matthew Harding, Carlos Lamarche </small>
 
-> [The trade-off between income inequality and carbon dioxide emissions](GKMM2015.pdf) <br>
-> <small>    Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
+> [The trade-off between income inequality and carbon dioxide emissions](GKMM2015.pdf)
+> <small>Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
 
 ### Publications
 
 > [Estimation in the fixed effects ordered logit model](Muris-FEOL-RESTAT-20160425.pdf) 
-> <small> Review of Economics and Statistics, forthcoming, 2016 </small> 
-> <small> [slides](feol-slides-2016004.pdf), [Stata code](FEOLcode.zip) </small>
+> <small>Review of Economics and Statistics, forthcoming, 2016 </small> 
+> <small>[slides](feol-slides-2016004.pdf), [Stata code](FEOLcode.zip)</small>
 
 > [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002)
-> <small> Toru Kitagawa </small> 
-> <small> Journal of Econometrics, forthcoming, 2016 </small> 
-> <small> [slides](KM2013-slides.pdf), [R code](KM-code.zip) </small>
+> <small>Toru Kitagawa </small> 
+> <small>Journal of Econometrics, forthcoming, 2016 </small> 
+> <small>[slides](KM2013-slides.pdf), [R code](KM-code.zip) </small>
 
 > [Expected utility and catastrophic consumption risk](http://dx.doi.org/10.1016/j.insmatheco.2015.06.007)
-> </small> Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small> Insurance: Mathematics and Economics}, 64, 306-312. </small>
+> <small>Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+> <small>Insurance: Mathematics and Economics, 64, 306-312, 2015</small>
 
 > [Do climate variations explain bilateral migration? A gravity model analysis](http://www.izajom.com/content/4/1/3) 
-> <small> Andreas Backhaus and Inmaculada Martinez-Zarzoso </small> 
-> <small> IZA Journal of Migration, 4:3 </small>
+> <small>Andreas Backhaus and Inmaculada Martinez-Zarzoso </small> 
+> <small>IZA Journal of Migration, 4:3, 2015</small>
 
-Pareto utility (2013, with Masako Ikefuji, Roger Laeven and Jan Magnus), Theory and Decision, 75, 43-57. [doi]
+> [Pareto utility](http://dx.doi.org/10.1007/s11238-012-9293-8)
+> <small>Masako Ikefuji, Roger Laeven and Jan Magnus</small>
+> <small>Theory and Decision, 75, 43-57, 2013</small>
 
-Statistical climate-change scenarios (2013, with Jan Magnus, Bertrand Melenberg and Martin Wild), Journal of Environmental Statistics, 5 (4), 1-18. [@jenv]
+> [Statistical climate-change scenarios](http://www.jenvstat.org/v05/i04)
+> <small>Jan Magnus, Bertrand Melenberg and Martin Wild</small>
+> <small>Journal of Environmental Statistics, 5 (4), 1-18, 2013</small>
 
-Global warming and local dimming: the statistical evidence: Rejoinder (2011, with Jan Magnus and Bertrand Melenberg), Journal of the American Statistical Association, 106, 467-468. [doi]
 
-Global warming and local dimming: the statistical evidence (2011, with Jan Magnus and Bertrand Melenberg), Journal of the American Statistical Association, 106, 452-464. [doi] [slides]
+> [Global warming and local dimming: the statistical evidence](http://dx.doi.org/10.1198/jasa.2011.ap09508) 
+> <small>Jan Magnus and Bertrand Melenberg </small>
+> <small>Journal of the American Statistical Association, 106, 467-468, 2011</small>
+> <small>with discussion and [rejoinder](http://dx.doi.org/10.1198/jasa.2011.ap11319)</small>
+> <small>[slides](MMM2010_slides.pdf)</small>
 
-Specification of variance matrices for panel data models (2010, with Jan Magnus), Econometric Theory, 26, 301-310. [doi]
-
-Panel data econometrics and climate change (2011), CentER Dissertation Series No. 280. [pdf]
-
+> [Specification of variance matrices for panel data models](http://dx.doi.org/10.1017/S0266466609090756)
+> <small>Jan Magnus</small>
+> <small>Econometric Theory, 26, 301-310, 2010 </small>
