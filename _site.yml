@@ -18,19 +18,25 @@ navbar:
         href: econ839.html
     - text: "CV"
       href: CV_ChrisMuris.pdf
+    - text: "Contact"
+      href: contact.html
   right:
-    - text: R Markdown Websites
-      href: http://rmarkdown.rstudio.com/rmarkdown_websites.html
-    - text: paper theme
-      href: http://bootswatch.com/paper/
+    - text: "Built using:"
+      menu:
+      - text: "RStudio"
+        href: https://www.rstudio.com/
+      - text: "R Markdown Websites"
+        href: http://rmarkdown.rstudio.com/rmarkdown_websites.html
+      - text: "paper theme"
+        href: http://bootswatch.com/paper/
       
 
 output:
   html_document:
     theme: paper
     highlight: default
-    toc: true
-    toc_float: true
+    toc: false
+    toc_float: false
     css: styles.css
 
     
