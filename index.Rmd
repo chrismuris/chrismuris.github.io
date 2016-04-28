@@ -1,6 +1,5 @@
 ---
-title: "My Website"
+title: "..."
 ---
-Gitentag website.
-Was ist loss?
 
+I am an Assistant Professor of Economics at the Department of Economics at Simon Fraser University. My research interests are in theoretical and applied econometrics, in particular in methods for panel data.
