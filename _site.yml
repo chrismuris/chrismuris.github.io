@@ -1,0 +1,9 @@
+name: "homepage"
+output_dir: "."
+navbar:
+  title: "My homepage"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
