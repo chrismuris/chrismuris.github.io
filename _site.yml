@@ -1,9 +1,9 @@
 name: "homepage"
 output_dir: "."
 navbar:
-  title: "My homepage"
+  title: "Chris Muris"
   left:
-    - text: "Home"
+    - text: "HOME"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "BUEC 333"
+      href: buec333.html

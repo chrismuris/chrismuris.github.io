@@ -1,0 +1,7 @@
+---
+title: "Course website BUEC 333"
+---
+
+This is the course website for BUEC 333, Summer 2016.
+
+TBD.
