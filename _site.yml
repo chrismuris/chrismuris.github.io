@@ -1,9 +1,36 @@
 name: "homepage"
+
 output_dir: "."
+
 navbar:
   title: "Chris Muris"
+  type: inverse
   left:
-    - text: "HOME"
+    - text: "Home"
       href: index.html
-    - text: "BUEC 333"
-      href: buec333.html
+    - text: "Teaching"
+      menu:
+      - text: "BUEC 333"
+        href: buec333.html
+      - text: "ECON 435"
+        href: econ435.html
+      - text: "ECON 839"
+        href: econ839.html
+    - text: "CV"
+      href: CV_ChrisMuris.pdf
+  right:
+    - text: R Markdown Websites
+      href: http://rmarkdown.rstudio.com/rmarkdown_websites.html
+    - text: paper theme
+      href: http://bootswatch.com/paper/
+      
+
+output:
+  html_document:
+    theme: paper
+    highlight: default
+    toc: true
+    toc_float: true
+    css: styles.css
+
+    
