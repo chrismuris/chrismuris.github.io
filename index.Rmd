@@ -16,7 +16,7 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 > [Estimation of a factor-augmented panel data model through instrumental variables](HLM2015.pdf)
 > <small>Matthew Harding, Carlos Lamarche </small>
 
-> [The trade-off between income inequality and carbon dioxide emissions](GKMM2015.pdf)
+> [The trade-off between income inequality and carbon dioxide emissions](emissions-and-inequality.pdf)
 > <small>Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
 
 ### Publications
