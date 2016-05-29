@@ -15,7 +15,7 @@ navbar:
       - text: "ECON 435"
       - text: "ECON 839"
     - text: "CV"
-      href: CV_ChrisMuris.pdf
+      href: ./CV/CV_ChrisMuris.pdf
     - text: "Contact"
       href: contact.html
   right:
