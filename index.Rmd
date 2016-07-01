@@ -13,17 +13,17 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 > [Efficient GMM estimation with a general missing data pattern](M2016-missingData.pdf)
 > <small>Updated: June, 2016</small>
 
-> [Expected utility and catastrophic risk in a stochastic economy-climate model](ILMM3.pdf)
-> <small>Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: June, 2016</small>
+> [The trade-off between income inequality and carbon dioxide emissions](GKMM2016-emissions.pdf)
+> <small>Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
+> <small>Updated: May, 2016</small>
 
 ### Work in progress
 
+> Expected utility and catastrophic risk in a stochastic economy-climate model
+> <small>Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+
 > Estimation of a factor-augmented panel data model through instrumental variables
 > <small>Matthew Harding, Carlos Lamarche </small>
-
-> The trade-off between income inequality and carbon dioxide emissions
-> <small>Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
 
 ### Publications
 
