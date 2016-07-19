@@ -10,8 +10,8 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 
 ### Working papers
 
-> [Efficient GMM estimation with incomplete data](M2016-missingData.pdf)
-> <small>Updated: June, 2016</small>
+> [Efficient GMM estimation with incomplete data](./M2016-incompleteData.pdf)
+> <small>Updated: July, 2016</small>
 > <small>[slides](./M2016-incompleteData-slides.pdf)</small>
 
 > [The trade-off between income inequality and carbon dioxide emissions](GKMM2016-emissions.pdf)
