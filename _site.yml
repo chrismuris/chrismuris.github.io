@@ -13,6 +13,7 @@ navbar:
       - text: "BUEC 333"
         href: http://chrismuris.github.io/buec333
       - text: "ECON 435"
+        href: http://chrismuris.github.io/econ435
       - text: "ECON 839"
     - text: "CV"
       href: ./CV/CV_ChrisMuris.pdf
