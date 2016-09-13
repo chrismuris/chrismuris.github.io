@@ -15,6 +15,7 @@ navbar:
       - text: "ECON 435"
         href: http://chrismuris.github.io/econ435
       - text: "ECON 839"
+        href: http://chrismuris.github.io/econ839
     - text: "CV"
       href: ./CV/CV_ChrisMuris.pdf
     - text: "Contact"
