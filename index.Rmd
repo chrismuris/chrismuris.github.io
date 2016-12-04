@@ -28,7 +28,7 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 
 ### Publications
 
-> [Estimation in the fixed effects ordered logit model](Muris-FEOL-RESTAT-20160425.pdf) 
+> [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617) 
 > <small>Review of Economics and Statistics, forthcoming, 2016 </small> 
 > <small>[slides](feol-slides-2016004.pdf), [Stata code](http://dx.doi.org/10.7910/DVN/IUJ3VZ)</small>
 
