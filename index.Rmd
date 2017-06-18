@@ -4,11 +4,15 @@ title: ""
 
 <br>
 
-I am an Assistant Professor of Economics at the Department of Economics at Simon Fraser University. 
+I am an Associate Professor of Economics at the Department of Economics at Simon Fraser University. 
 My research interests are in theoretical and applied econometrics, in particular in methods for panel data.
 I teach statistics and econometrics at the undergraduate and graduate level.
 
 ### Working papers
+
+> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2017].pdf)
+> <small>with Irene Botosaru</small>
+> <small>Updated: June, 2017</small>
 
 > [Efficient GMM estimation with incomplete data](./M2016-incompleteData.pdf)
 > <small>[slides](./M2016-incompleteData-slides.pdf)</small>
@@ -21,11 +25,6 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 > [The trade-off between income inequality and carbon dioxide emissions](GKMM2017-emissions.pdf)
 > <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
 > <small>Updated: February, 2017</small>
-
-### Work in progress
-
-> Estimation of a factor-augmented panel data model through instrumental variables
-> <small>with Matthew Harding and Carlos Lamarche </small>
 
 ### Publications
 
