@@ -23,14 +23,15 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
 > <small>Updated: January, 2017</small>
 
-> [The trade-off between income inequality and carbon dioxide emissions](GKMM2017-emissions.pdf)
-> <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
-> <small>Updated: February, 2017</small>
 
 ### Publications
 
+> The trade-off between income inequality and carbon dioxide emissions
+> <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
+> <small> Ecological Economics, forthcoming, 2017</small>
+
 > [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617) 
-> <small>Review of Economics and Statistics, forthcoming, 2016 </small> 
+> <small>Review of Economics and Statistics, forthcoming, 2017 </small> 
 > <small>[slides](feol-slides-201604.pdf), [Stata code](http://dx.doi.org/10.7910/DVN/IUJ3VZ)</small>
 
 > [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002)
