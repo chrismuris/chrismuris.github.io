@@ -6,8 +6,21 @@ navbar:
   title: "Chris Muris"
   type: inverse
   left:
+    - text: "Home"
+      href: index.html
+    - text: "Teaching"
+      menu:
+      - text: "BUEC 333"
+        href: http://chrismuris.github.io/buec333
+      - text: "ECON 435"
+        href: http://chrismuris.github.io/econ435
+      - text: "ECON 839"
+        href: http://chrismuris.github.io/econ839
     - text: "CV"
       href: ./CV/CV_ChrisMuris.pdf
+    - text: "Contact"
+      href: contact.html
+  right:
     - text: "Built with"
       menu:
       - text: "RStudio"
@@ -18,6 +31,7 @@ navbar:
         href: http://bootswatch.com/paper/
       - text: "Github"
         href: https://github.com/chrismuris/homepage
+      
 
 output:
   html_document:
