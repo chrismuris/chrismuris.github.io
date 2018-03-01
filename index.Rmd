@@ -10,18 +10,23 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 
 ### Working papers
 
+> [Interval censored regression with fixed effects](https://github.com/chrismuris/IntervalFixedEffects/raw/master/AbrevayaMuris-2018-IntervalFE.pdf)
+> <small>with Jason Abrevaya</small>
+> <small>Updated: March, 2018. Submitted.</small>
+> <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
+
 > [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2017].pdf)
 > <small>with Irene Botosaru</small>
-> <small>Updated: June, 2017</small>
+> <small>Updated: June, 2017. Submitted.</small>
 > <small>cemmap Working Paper, [CWP31/17](https://www.cemmap.ac.uk/publication/id/9321)</small>
-
-> [Efficient GMM estimation with incomplete data](./M2016-incompleteData.pdf)
-> <small>[slides](./M2016-incompleteData-slides.pdf)</small>
-> <small>Updated: July, 2016</small>
 
 > [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2017-catastrophe.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: January, 2017</small>
+> <small>Updated: January, 2017. R&R at the Journal of Econometrics.</small>
+
+> [Efficient GMM estimation with incomplete data](./M2016-incompleteData.pdf)
+> <small>[slides](./M2016-incompleteData-slides.pdf)</small>
+> <small>Updated: July, 2016. R&R at the Review of Economics and Statistics.</small>
 
 ### Publications
 
