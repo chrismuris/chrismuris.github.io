@@ -10,15 +10,15 @@ I teach statistics and econometrics at the undergraduate and graduate level.
 
 ### Working papers
 
+> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2017].pdf)
+> <small>with Irene Botosaru</small>
+> <small>Updated: June, 2018. Submitted.</small>
+> <small>cemmap Working Paper, [CWP31/17](https://www.cemmap.ac.uk/publication/id/9321)</small>
+
 > [Interval censored regression with fixed effects](https://github.com/chrismuris/IntervalFixedEffects/raw/master/AbrevayaMuris-2018-IntervalFE.pdf)
 > <small>with Jason Abrevaya</small>
 > <small>Updated: March, 2018. Submitted.</small>
 > <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
-
-> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2017].pdf)
-> <small>with Irene Botosaru</small>
-> <small>Updated: June, 2017. Submitted.</small>
-> <small>cemmap Working Paper, [CWP31/17](https://www.cemmap.ac.uk/publication/id/9321)</small>
 
 > [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2017-catastrophe.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
