@@ -4,16 +4,15 @@ title: ""
 
 <br>
 
-I am an Associate Professor of Economics at the Department of Economics at Simon Fraser University. 
-My research interests are in theoretical and applied econometrics, in particular in methods for panel data.
-I teach statistics and econometrics at the undergraduate and graduate level.
+I am a Reader at the Department of Economics at University of Bristol.
+
+My academic interests are in theoretical and applied microeconometrics.
 
 ### Working papers
 
-> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2017].pdf)
+> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2018].pdf)
 > <small>with Irene Botosaru</small>
 > <small>Updated: June, 2018. Submitted.</small>
-> <small>cemmap Working Paper, [CWP31/17](https://www.cemmap.ac.uk/publication/id/9321)</small>
 
 > [Interval censored regression with fixed effects](https://github.com/chrismuris/IntervalFixedEffects/raw/master/AbrevayaMuris-2018-IntervalFE.pdf)
 > <small>with Jason Abrevaya</small>
