@@ -4,28 +4,25 @@ title: ""
 
 <br>
 
-I am a Reader at the Department of Economics at University of Bristol.
-
-My academic interests are in theoretical and applied microeconometrics.
+I am a Reader at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
 
 ### Working papers
+
+> [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2018-catastrophe.pdf)
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+> <small>Updated: December, 2018. Conditionally accepted at the Journal of Econometrics.</small>
+
+> [Efficient GMM estimation with incomplete data](./M2018-incompleteData.pdf)
+> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small>
+
+> [Interval censored regression with fixed effects](./AM2018.pdf)
+> <small>with Jason Abrevaya</small>
+> <small>Updated: December, 2018. Submitted.</small>
+> <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
 
 > [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2018].pdf)
 > <small>with Irene Botosaru</small>
 > <small>Updated: June, 2018. Submitted.</small>
-
-> [Interval censored regression with fixed effects](https://github.com/chrismuris/IntervalFixedEffects/raw/master/AbrevayaMuris-2018-IntervalFE.pdf)
-> <small>with Jason Abrevaya</small>
-> <small>Updated: March, 2018. Submitted.</small>
-> <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
-
-> [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2017-catastrophe.pdf)
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: January, 2017. R&R at the Journal of Econometrics.</small>
-
-> [Efficient GMM estimation with incomplete data](./M2016-incompleteData.pdf)
-> <small>[slides](./M2016-incompleteData-slides.pdf)</small>
-> <small>Updated: July, 2016. R&R at the Review of Economics and Statistics.</small>
 
 ### Publications
 
