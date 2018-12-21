@@ -97,6 +97,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -111,7 +114,6 @@ body {
   padding-top: 69px;
   margin-top: -69px;
 }
-
 .section h2 {
   padding-top: 69px;
   margin-top: -69px;
@@ -131,6 +133,43 @@ body {
 .section h6 {
   padding-top: 69px;
   margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -152,18 +191,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -222,24 +320,27 @@ $(document).ready(function () {
 
 
 <p><br></p>
-<p>I am a Reader at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.</p>
+<p>I am a Reader (Associate professor) at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.</p>
 <div id="working-papers" class="section level3">
 <h3>Working papers</h3>
 <blockquote>
-<p><a href="./ILMM2018-catastrophe.pdf">Expected utility and catastrophic risk in a stochastic economy-climate model</a> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> <small>Updated: December, 2018. Conditionally accepted at the Journal of Econometrics.</small></p>
-</blockquote>
-<blockquote>
-<p><a href="./M2018-incompleteData.pdf">Efficient GMM estimation with incomplete data</a> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small></p>
+<p><a href="./Botosaru%20Muris%20-%20Binarization%20%5B2018%5D.pdf">Binarization for panel models with fixed effects</a> <small>with Irene Botosaru</small> <small>Updated: June, 2018. Submitted.</small></p>
 </blockquote>
 <blockquote>
 <p><a href="./AM2018.pdf">Interval censored regression with fixed effects</a> <small>with Jason Abrevaya</small> <small>Updated: December, 2018. Submitted.</small> <small><a href="https://github.com/chrismuris/IntervalFixedEffects">data and code</a></small></p>
 </blockquote>
 <blockquote>
-<p><a href="./Botosaru%20Muris%20-%20Binarization%20%5B2018%5D.pdf">Binarization for Panel Models with Fixed Effects</a> <small>with Irene Botosaru</small> <small>Updated: June, 2018. Submitted.</small></p>
+<p><a href="./ILMM2018-DICE-simplified.pdf">DICE simplified</a> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> <small>Updated: December 2018. Submitted.</small></p>
+</blockquote>
+<blockquote>
+<p><a href="./M2018-incompleteData.pdf">Efficient GMM estimation with incomplete data</a> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small></p>
 </blockquote>
 </div>
 <div id="publications" class="section level3">
 <h3>Publications</h3>
+<blockquote>
+<p><a href="./ILMM2019-catastrophe.pdf">Expected utility and catastrophic risk in a stochastic economy-climate model</a> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> <small>Journal of Econometrics, forthcoming.</small></p>
+</blockquote>
 <blockquote>
 <p><a href="http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617">Estimation in the fixed effects ordered logit model</a> <small>Review of Economics and Statistics, 99 (3), 465-477, 2017 </small> <small><a href="feol-slides-201604.pdf">slides</a>, <a href="http://dx.doi.org/10.7910/DVN/IUJ3VZ">Stata code</a></small></p>
 </blockquote>

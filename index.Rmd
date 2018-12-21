@@ -4,27 +4,31 @@ title: ""
 
 <br>
 
-I am a Reader at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
+I am a Reader (Associate professor) at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
 
 ### Working papers
 
-> [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2018-catastrophe.pdf)
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: December, 2018. Conditionally accepted at the Journal of Econometrics.</small>
-
-> [Efficient GMM estimation with incomplete data](./M2018-incompleteData.pdf)
-> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small>
+> [Binarization for panel models with fixed effects](./Botosaru Muris - Binarization [2018].pdf)
+> <small>with Irene Botosaru</small>
+> <small>Updated: June, 2018. Submitted.</small>
 
 > [Interval censored regression with fixed effects](./AM2018.pdf)
 > <small>with Jason Abrevaya</small>
 > <small>Updated: December, 2018. Submitted.</small>
 > <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
 
-> [Binarization for Panel Models with Fixed Effects](./Botosaru Muris - Binarization [2018].pdf)
-> <small>with Irene Botosaru</small>
-> <small>Updated: June, 2018. Submitted.</small>
+> [DICE simplified](./ILMM2018-DICE-simplified.pdf)
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+> <small>Updated: December 2018. Submitted.</small>
+
+> [Efficient GMM estimation with incomplete data](./M2018-incompleteData.pdf)
+> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small>
 
 ### Publications
+
+> [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2019-catastrophe.pdf)
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
+> <small>Journal of Econometrics, forthcoming.</small>
 
 > [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617) 
 > <small>Review of Economics and Statistics, 99 (3), 465-477, 2017 </small> 
