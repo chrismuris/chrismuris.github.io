@@ -4,7 +4,7 @@ title: ""
 
 <br>
 
-I am a Reader (Associate professor) at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
+I am an associate professor at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
 
 ### Working papers
 
@@ -14,17 +14,18 @@ I am a Reader (Associate professor) at the Department of Economics at University
 
 > [Interval censored regression with fixed effects](./AM2018.pdf)
 > <small>with Jason Abrevaya</small>
-> <small>Updated: December, 2018. Submitted.</small>
+> <small>Updated: December, 2018. Conditionally accepted at the Journal of Applied Econometrics.</small>
 > <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
 
 > [DICE simplified](./ILMM2018-DICE-simplified.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
 > <small>Updated: December 2018. Submitted.</small>
 
-> [Efficient GMM estimation with incomplete data](./M2018-incompleteData.pdf)
-> <small>Updated: July, 2018. Conditionally accepted at the Review of Economics and Statistics.</small>
-
 ### Publications
+
+> [Efficient GMM estimation with incomplete data](./M2019-incompleteData.pdf)
+> <small>Review of Economics and Statistics, forthcoming.</small>
+> <small>[R code](https://doi.org/10.7910/DVN/ZKQPK7)</small>
 
 > [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2019-catastrophe.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
@@ -36,7 +37,7 @@ I am a Reader (Associate professor) at the Department of Economics at University
 
 > [The trade-off between income inequality and carbon dioxide emissions](https://doi.org/10.1016/j.ecolecon.2017.06.034)
 > <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso </small>
-> <small> Ecological Economics, 142, 249-256, 2017</small>
+> <small>Ecological Economics, 142, 249-256, 2017</small>
 
 > [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002)
 > <small>with Toru Kitagawa </small> 
