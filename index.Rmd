@@ -12,9 +12,15 @@ I am an associate professor at the Department of Economics at University of Bris
 > <small>with Irene Botosaru</small>
 > <small>Updated: June, 2018. Submitted.</small>
 
+> [Estimation of a factor-augmented linear panel data model with applications using student achievement data](./hlm27.pdf)
+> <small>with Matthew Harding and Carlos Lamarche</small> 
+> <small>Updated: July 2019. Submitted.</small>
+
 > [DICE simplified](./ILMM2018-DICE-simplified.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: December 2018. Submitted.</small>
+> <small>Updated: July 2019. Submitted.</small>
+
+
 
 ### Publications
 
