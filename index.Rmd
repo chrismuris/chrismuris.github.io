@@ -16,7 +16,7 @@ I am an associate professor at the Department of Economics at University of Bris
 > <small>with Matthew Harding and Carlos Lamarche</small> 
 > <small>Updated: July 2019. Submitted.</small>
 
-> [DICE simplified](./ILMM2018-DICE-simplified.pdf)
+> [DICE simplified](./ILMM2019-DICE-simplified.pdf)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
 > <small>Updated: July 2019. Submitted.</small>
 
