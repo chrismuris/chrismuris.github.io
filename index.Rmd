@@ -8,6 +8,10 @@ I am an associate professor at the Department of Economics at University of Bris
 
 ### Working papers
 
+> [How importers may hedge demand uncertainty: Inventory, dual sourcing and the effects of trade policy](./MRSS-2019.pdf)
+> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler</small>
+> <small>Updated: August 2019. Resubmitted to the Journal of International Economics.</small>
+
 > [Binarization for panel models with fixed effects](./Botosaru Muris - Binarization [2018].pdf)
 > <small>with Irene Botosaru</small>
 > <small>Updated: June, 2018. Submitted.</small>
