@@ -1,45 +1,50 @@
 ---
-title: ""
+title: "Chris Muris | McMaster University, Department of Economics"
 ---
 
 <br>
 
-I am an associate professor at the Department of Economics at University of Bristol. My academic interests are in theoretical and applied microeconometrics.
+|  |  |
+|---|---|
+| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics. For more information about my research, check out [my CV](./CV/CV_ChrisMuris.pdf), my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, or the website maintained by [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). | ![Chris](./chrissmall.jpg) |
+
 
 ### Working papers
 
+> [Intertemporal Collective Household Models:Identification in Short Panels with UnobservedHeterogeneity in Resource Shares](https://arxiv.org/pdf/2008.05507.pdf)
+> <small>with Irene Botosaru and Krishna Pendakur</small>
+> <small>Updated: August 2020.</small> 
+
+> [A dynamic ordered logit model with fixed effects](https://arxiv.org/pdf/2008.05517)
+> <small>with Pedro Raposo and Sotirios Vandoros</small>
+> <small>Updated: August 2020. Revision requested.</small>
+
 > [How importers may hedge demand uncertainty: Inventory, dual sourcing and the effects of trade policy](./MRSS-2019.pdf)
 > <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler</small>
-> <small>Updated: August 2019. Resubmitted to the Journal of International Economics.</small>
-
-> [Binarization for panel models with fixed effects](./Botosaru Muris - Binarization [2018].pdf)
-> <small>with Irene Botosaru</small>
-> <small>Updated: June, 2018. Submitted.</small>
+> <small>Updated: August 2019.</small>
 
 > [Estimation of a factor-augmented linear panel data model with applications using student achievement data](./hlm27.pdf)
 > <small>with Matthew Harding and Carlos Lamarche</small> 
-> <small>Updated: July 2019. Submitted.</small>
-
-> [DICE simplified](./ILMM2019-DICE-simplified.pdf)
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small>Updated: July 2019. Submitted.</small>
-
-
+> <small>Updated: July 2019.</small>
 
 ### Publications
 
-> [Interval censored regression with fixed effects](./AM2019.pdf)
-> <small>with Jason Abrevaya</small>
-> <small><b>Journal of Applied Econometrics</b>, forthcoming.</small>
-> <small>[data and code](https://github.com/chrismuris/IntervalFixedEffects)</small>
+> [DICE simplified](https://link.springer.com/article/10.1007/s10666-020-09738-2)
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus</small> 
+> <small><b>Environmental Modeling & Assessment</b>, 1-12.</small>
 
-> [Efficient GMM estimation with incomplete data](./M2019-incompleteData.pdf)
-> <small><b>Review of Economics and Statistics</b>, forthcoming.</small>
+> [Interval censored regression with fixed effects](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2737)
+> <small>with Jason Abrevaya</small>
+> <small><b>Journal of Applied Econometrics</b>, 35 (2), 198-216.</small>
+> <small>[code](http://qed.econ.queensu.ca/jae/2020-v35.2/abrevaya-muris/)</small>
+
+> [Efficient GMM estimation with incomplete data](https://direct.mit.edu/rest/article/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data)
+> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477.</small>
 > <small>[R code](https://doi.org/10.7910/DVN/ZKQPK7)</small>
 
-> [Expected utility and catastrophic risk in a stochastic economy-climate model](./ILMM2019-catastrophe.pdf)
+> [Expected utility and catastrophic risk in a stochastic economy-climate model](https://www.sciencedirect.com/science/article/abs/pii/S0304407619301101)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small><b>Journal of Econometrics</b>, forthcoming.</small>
+> <small><b>Journal of Econometrics</b>, 214 (1), 110-129.</small>
 
 > [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617) 
 > <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2017. </small>
