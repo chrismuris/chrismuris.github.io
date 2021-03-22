@@ -11,7 +11,7 @@ title: "Chris Muris | McMaster University, Department of Economics"
 
 ### Working papers
 
-> [Intertemporal Collective Household Models:Identification in Short Panels with UnobservedHeterogeneity in Resource Shares](https://arxiv.org/pdf/2008.05507.pdf)
+> [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://arxiv.org/pdf/2008.05507.pdf)
 > <small>with Irene Botosaru and Krishna Pendakur</small>
 > <small>Updated: August 2020.</small> 
 
