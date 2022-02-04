@@ -6,7 +6,7 @@ title: "Chris Muris | McMaster University, Department of Economics"
 
 |  |  |
 |---|---|
-| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics, with a focus on developing and applying new methods for panel data (longitudinal data). More information about my current research is below, or check out [my CV](./CV/CV_ChrisMuris.pdf), my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, or the website maintained by [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). | ![Chris](./chrissmall.jpg) |
+| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics, with a focus on developing and applying new methods for panel data (longitudinal data). More information about my current research is below, or check out my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, or the website maintained by [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). | ![Chris](./chrissmall.jpg) |
 
 ### Working papers
 

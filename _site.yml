@@ -6,8 +6,6 @@ navbar:
   title: "Chris Muris"
   type: inverse
   left:
-    - text: "CV"
-      href: ./CV/CV_ChrisMuris.pdf
     - text: "Built with"
       menu:
       - text: "RStudio"
