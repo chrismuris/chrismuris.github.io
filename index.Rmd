@@ -1,50 +1,58 @@
 ---
-title: "Chris Muris | McMaster University, Department of Economics"
+title: "Chris Muris"
 ---
+
+<base target="_blank">
 
 <br>
 
-|  |  |
-|---|---|
-| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics, with a focus on developing and applying new methods for panel data (longitudinal data). More information about my current research is below, or check out my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, or the website maintained by [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). | ![Chris](./chrissmall.jpg) |
+|     |     |
+| --- | --- |
+| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics, with a focus on developing and applying new methods for panel (longitudinal) data. More information about my current research is below, or at my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, via [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C), or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca) or find me in Kenneth Taylor Hall 406 on the McMaster campus. | ![Chris](./chrissmall.jpg) |
+
+<div style="display: flex;">
+<div>
 
 ### Working papers
 
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253)
 > <small>with Bo Honore and Martin Weidner</small>
+> <small>Revise and resubmit at Quantitative Economics</small>
 > <small>Updated: December, 2021.</small>
+
+> [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193)
+> <small>with Irene Botosaru</small>
+
+> [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557)
+> <small>with Konstantin Wacker</small>
 
 > [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html)
 > <small>with Irene Botosaru and Senay Sokullu</small>
+> <small>Revise and resubmit at the Journal of Business Economics and Statistics</small>
 > <small>Updated: January, 2022.</small>
+
+> [Estimation of a Factor-Augmented Linear Model with Applications Using Student Achievement Data](https://arxiv.org/abs/2203.03051)
+> <small>with Matthew Harding and Carlos Lamarche</small> 
+> <small>Revise and resubmit at the Journal of Business Economics and Statistics</small> 
+> <small>Updated: February, 2022.</small>
+
+> [Inventory, Sourcing, and the Effects of Trade Costs: Theory and Empirical Evidence](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
+> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler</small>
+> <small>Updated: February, 2023. CESifo Working Paper No. 10253.</small>
+ 
+</div>
+
+<div> 
+ 
+### Publications
 
 > [A dynamic ordered logit model with fixed effects](https://arxiv.org/pdf/2008.05517)
 > <small>with Pedro Raposo and Sotirios Vandoros</small>
-> <small>Updated: August 2020. Second revision requested.</small>
-
-### Work in progress
-
-> *Estimating interaction effects in short panels*
-> <small>with Konstantin Wacker</small>
-> <small>Paper coming soon.</small>
-
-> *Simple bounds for partial effects in short nonlinear panels*
-> <small>with Irene Botosaru</small>
-> <small>Paper coming soon.</small>
-
-> *How importers may hedge demand uncertainty: Inventory, dual sourcing and the effects of trade policy*
-> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler</small>
-> <small>Updated: February, 2022.</small>
-
-> *Estimation of a factor-augmented linear panel data model with applications using student achievement data*
-> <small>with Matthew Harding and Carlos Lamarche</small> 
-> <small>Updated: February, 2022.</small>
-
-### Publications
+> <small>Conditionally accepted at the <b>Review of Economics and Statistics</b>.</small>
 
 > [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://doi.org/10.1016/j.jeconom.2021.11.006)
 > <small>with Irene Botosaru and Krishna Pendakur</small>
-> <small><b>Journal of Econometrics</b>, forthcoming.</small> 
+> <small><b>Journal of Econometrics</b>, 232 (2), 576--597.</small>
 
 > [DICE simplified](https://link.springer.com/article/10.1007/s10666-020-09738-2)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus</small> 
@@ -101,3 +109,6 @@ title: "Chris Muris | McMaster University, Department of Economics"
 > [Specification of variance matrices for panel data models](http://dx.doi.org/10.1017/S0266466609090756)
 > <small>with Jan Magnus</small>
 > <small><b>Econometric Theory</b>, 26, 301-310, 2010.</small>
+
+</div>
+</div>
