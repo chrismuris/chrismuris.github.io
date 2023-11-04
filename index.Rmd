@@ -8,23 +8,19 @@ title: "Chris Muris"
 
 |     |     |
 | --- | --- |
-| I am an associate professor in the Department of Economics at McMaster University. My academic interests are in theoretical and applied microeconometrics, with a focus on developing and applying new methods for panel (longitudinal) data. More information about my current research is below, or at my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, via [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C), or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca) or find me in Kenneth Taylor Hall 406 on the McMaster campus. | ![Chris](./chrissmall.jpg) |
-
-<div style="display: flex;">
-<div>
+| I am an associate professor in the Department of Economics at McMaster University. Most of my research is in the area of theoretical econometrics, where I focus on developing and studying new tools for the analysis of panel (longitudinal) data. More information about my current research is below, or at my [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) page, via [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C), or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris). You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca) or find me in Kenneth Taylor Hall 406 on the McMaster campus. | ![Chris](./chrissmall.jpg) |
 
 ### Working papers
 
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253)
 > <small>with Bo Honore and Martin Weidner</small>
-> <small>Revise and resubmit at Quantitative Economics</small>
-> <small>Updated: December, 2021.</small>
-
-> [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193)
-> <small>with Irene Botosaru</small>
+> <small>Second revision requested, Quantitative Economics</small>
+> <small>Updated: June, 2023.</small>
 
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557)
 > <small>with Konstantin Wacker</small>
+> <small>Revision requested, Journal of Applied Econometrics</small>
+> <small>Updated: November, 2022.</small>
 
 > [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html)
 > <small>with Irene Botosaru and Senay Sokullu</small>
@@ -40,36 +36,36 @@ title: "Chris Muris"
 > <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler</small>
 > <small>Updated: February, 2023. CESifo Working Paper No. 10253.</small>
  
-</div>
-
-<div> 
- 
 ### Publications
 
-> [A dynamic ordered logit model with fixed effects](https://arxiv.org/pdf/2008.05517)
+> [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193)
+> <small>with Irene Botosaru</small>
+> <small>Forthcoming, <b>Journal of Econometrics</b>.</small>
+
+> [A dynamic ordered logit model with fixed effects](https://direct.mit.edu/rest/article-abstract/doi/10.1162/rest_a_01336/116192/A-Dynamic-Ordered-Logit-Model-with-Fixed-Effects?redirectedFrom=fulltext)
 > <small>with Pedro Raposo and Sotirios Vandoros</small>
-> <small>Conditionally accepted at the <b>Review of Economics and Statistics</b>.</small>
+> <small>Forthcoming, <b>Review of Economics and Statistics</b>.</small>
 
 > [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://doi.org/10.1016/j.jeconom.2021.11.006)
 > <small>with Irene Botosaru and Krishna Pendakur</small>
-> <small><b>Journal of Econometrics</b>, 232 (2), 576--597.</small>
+> <small><b>Journal of Econometrics</b>, 232 (2), 576--597, 2023.</small>
 
 > [DICE simplified](https://link.springer.com/article/10.1007/s10666-020-09738-2)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus</small> 
-> <small><b>Environmental Modeling & Assessment</b>, 1-12.</small>
+> <small><b>Environmental Modeling & Assessment</b>, 1-12, 2021.</small>
 
 > [Interval censored regression with fixed effects](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2737)
 > <small>with Jason Abrevaya</small>
-> <small><b>Journal of Applied Econometrics</b>, 35 (2), 198-216.</small>
+> <small><b>Journal of Applied Econometrics</b>, 35 (2), 198-216, 2020.</small>
 > <small>[code](http://qed.econ.queensu.ca/jae/2020-v35.2/abrevaya-muris/)</small>
 
 > [Efficient GMM estimation with incomplete data](https://direct.mit.edu/rest/article/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data)
-> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477.</small>
+> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2020.</small>
 > <small>[R code](https://doi.org/10.7910/DVN/ZKQPK7)</small>
 
 > [Expected utility and catastrophic risk in a stochastic economy-climate model](https://www.sciencedirect.com/science/article/abs/pii/S0304407619301101)
 > <small>with Masako Ikefuji, Roger Laeven and Jan Magnus </small> 
-> <small><b>Journal of Econometrics</b>, 214 (1), 110-129.</small>
+> <small><b>Journal of Econometrics</b>, 214 (1), 110-129, 2020.</small>
 
 > [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617) 
 > <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2017. </small>
@@ -109,6 +105,3 @@ title: "Chris Muris"
 > [Specification of variance matrices for panel data models](http://dx.doi.org/10.1017/S0266466609090756)
 > <small>with Jan Magnus</small>
 > <small><b>Econometric Theory</b>, 26, 301-310, 2010.</small>
-
-</div>
-</div>
