@@ -1,0 +1,118 @@
+I am an associate professor in the Department of Economics at McMaster University. 
+My research is in the area of theoretical econometrics.
+I develop and study new tools for the analysis of panel data (longitudinal data). 
+
+Information about my research is below, and at [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) and [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C).
+<!-- , or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris).  -->
+
+You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). 
+<!-- or find me in Kenneth Taylor Hall 406 on the McMaster campus.  -->
+
+<!-- image: chrissmall.jpg -->
+
+## Publications
+
+> [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
+> <small>with Bo Honore and Martin Weidner.</small>
+> <small>Conditionally accepted, <b>Quantitative Economics</b>.</small>
+
+> [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
+> <small>with Matthew Harding and Carlos Lamarche.</small> 
+> <small>Conditionally accepted, <b>Journal of Business Economics and Statistics</b>.</small> 
+
+<!-- 16 -->
+> [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193),
+> <small>with Irene Botosaru.</small>
+> <small>Forthcoming, <b>Journal of Econometrics</b>.</small>
+
+<!-- 15 -->
+> [A dynamic ordered logit model with fixed effects](https://direct.mit.edu/rest/article-abstract/doi/10.1162/rest_a_01336/116192/A-Dynamic-Ordered-Logit-Model-with-Fixed-Effects?redirectedFrom=fulltext),
+> <small>with Pedro Raposo and Sotirios Vandoros.</small>
+> <small>Forthcoming, <b>Review of Economics and Statistics</b>.</small>
+
+<!-- 14 -->
+> [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://doi.org/10.1016/j.jeconom.2021.11.006),
+> <small>with Irene Botosaru and Krishna Pendakur.</small>
+> <small><b>Journal of Econometrics</b>, 232 (2), 576--597, 2023.</small>
+
+<!-- 13 -->
+> [DICE simplified](https://link.springer.com/article/10.1007/s10666-020-09738-2),
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
+> <small><b>Environmental Modeling & Assessment</b>, 1-12, 2021.</small>
+
+<!-- 12 -->
+> [Interval censored regression with fixed effects](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2737),
+> <small>with Jason Abrevaya.</small>
+> <small><b>Journal of Applied Econometrics</b>, 35 (2), 198-216, 2020.</small>
+> <small>[code](http://qed.econ.queensu.ca/jae/2020-v35.2/abrevaya-muris/).</small>
+
+<!-- 11 -->
+> [Efficient GMM estimation with incomplete data](https://direct.mit.edu/rest/article/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data),
+> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2020.</small>
+> <small>[R code](https://doi.org/10.7910/DVN/ZKQPK7).</small>
+
+<!-- 10 -->
+> [Expected utility and catastrophic risk in a stochastic economy-climate model](https://www.sciencedirect.com/science/article/abs/pii/S0304407619301101),
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
+> <small><b>Journal of Econometrics</b>, 214 (1), 110-129, 2020.</small>
+
+<!-- 9 -->
+> [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617),
+> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2017. </small>
+> <small>[Stata code](http://dx.doi.org/10.7910/DVN/IUJ3VZ).</small>
+
+<!-- 8 -->
+> [The trade-off between income inequality and carbon dioxide emissions](https://doi.org/10.1016/j.ecolecon.2017.06.034),
+> <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso.</small>
+> <small><b>Ecological Economics</b>, 142, 249-256, 2017.</small>
+
+<!-- 7 -->
+> [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002),
+> <small>with Toru Kitagawa.</small> 
+> <small><b>Journal of Econometrics</b>, 193 (1), 271-289, 2016.</small>
+
+<!-- 6 -->
+> [Expected utility and catastrophic consumption risk](http://dx.doi.org/10.1016/j.insmatheco.2015.06.007),
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
+> <small><b>Insurance: Mathematics and Economics</b>, 64, 306-312, 2015.</small>
+
+<!-- 5 -->
+> [Do climate variations explain bilateral migration? A gravity model analysis](http://www.izajom.com/content/4/1/3),
+> <small>with Andreas Backhaus and Inmaculada Martinez-Zarzoso.</small> 
+> <small><b>IZA Journal of Migration</b>, 4:3, 2015.</small>
+
+<!-- 4 -->
+> [Pareto utility](http://dx.doi.org/10.1007/s11238-012-9293-8),
+> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small>
+> <small><b>Theory and Decision</b>, 75, 43-57, 2013.</small>
+
+<!-- 3 -->
+> [Statistical climate-change scenarios](http://www.jenvstat.org/v05/i04),
+> <small>with Jan Magnus, Bertrand Melenberg and Martin Wild</small>
+> <small><b>Journal of Environmental Statistics</b>, 5 (4), 1-18, 2013.</small>
+
+<!-- 2 -->
+> [Global warming and local dimming: the statistical evidence](http://dx.doi.org/10.1198/jasa.2011.ap09508),
+> <small>with Jan Magnus and Bertrand Melenberg.</small>
+> <small><b>Journal of the American Statistical Association</b>, 106, 467-468, 2011.</small>
+> <small>Discussion and [rejoinder](http://dx.doi.org/10.1198/jasa.2011.ap11319).</small>
+
+<!-- 1. -->
+> [Specification of variance matrices for panel data models](http://dx.doi.org/10.1017/S0266466609090756),
+> <small>with Jan Magnus.</small>
+> <small><b>Econometric Theory</b>, 26, 301-310, 2010.</small>
+
+## Working papers
+
+> [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
+> <small>with Konstantin Wacker.</small>
+> <small>Revision requested, <b>Journal of Applied Econometrics</b>, 2023.</small>
+
+> [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html),
+> <small>with Irene Botosaru and Senay Sokullu.</small>
+> <small>2nd revision requested, <b>Journal of Business Economics and Statistics</b>, 2024.</small>
+
+> [How Importers Hedge Demand Uncertainty Through Dual Sourcing and Safety Inventory](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
+> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler.</small>
+> <small>Resubmitted, <b>Canadian Journal of Economics</b>, July 2024.</small>
+ 

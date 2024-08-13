@@ -1,0 +1,20 @@
+project:
+  type: website
+
+# output_dir: "."
+
+website: 
+  title: "Chris Muris"
+  navbar: 
+  #   left:
+  #     - text: Home
+  #       file: index.qmd
+    search: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: left
+    toc-float: true
