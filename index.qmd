@@ -12,10 +12,12 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Publications
 
+<!-- 18 -->
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
 > <small>with Bo Honore and Martin Weidner.</small>
-> <small>Conditionally accepted, <b>Quantitative Economics</b>.</small>
+> <small>Accepted, <b>Quantitative Economics</b>.</small>
 
+<!-- 17 -->
 > [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
 > <small>with Matthew Harding and Carlos Lamarche.</small> 
 > <small>Conditionally accepted, <b>Journal of Business Economics and Statistics</b>.</small> 
