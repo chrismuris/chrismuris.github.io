@@ -1,6 +1,6 @@
 I am an associate professor in the Department of Economics at McMaster University. 
 My research is in the area of theoretical econometrics.
-I develop and study new tools for the analysis of panel data (longitudinal data). 
+I develop and study new tools for the analysis of panel (longitudinal) data.
 
 Information about my research is below, and at [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) and [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C).
 <!-- , or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris).  -->
