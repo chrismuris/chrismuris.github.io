@@ -1,26 +1,18 @@
 I am an associate professor in the Department of Economics at McMaster University. 
 My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
+[CV (pdf)](./CV/CV_ChrisMuris.pdf)
 
 Information about my research is below, and at [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) and [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C).
-<!-- , or at [McMaster](https://socialsciences.mcmaster.ca/people/muris-chris).  -->
 
 You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). 
-<!-- or find me in Kenneth Taylor Hall 406 on the McMaster campus.  -->
-
-<!-- image: chrissmall.jpg -->
 
 ## Publications
 
 <!-- 18 -->
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
 > <small>with Bo Honore and Martin Weidner.</small>
-> <small>Accepted, <b>Quantitative Economics</b>.</small>
-
-<!-- 17 -->
-> [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
-> <small>with Matthew Harding and Carlos Lamarche.</small> 
-> <small>Conditionally accepted, <b>Journal of Business Economics and Statistics</b>.</small> 
+> <small>Conditionally accepted, <b>Quantitative Economics</b>.</small>
 
 <!-- 16 -->
 > [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193),
@@ -32,6 +24,16 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > <small>with Pedro Raposo and Sotirios Vandoros.</small>
 > <small>Forthcoming, <b>Review of Economics and Statistics</b>.</small>
 
+<!-- 17 -->
+> [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
+> <small>with Matthew Harding and Carlos Lamarche.</small> 
+> <small>Forthcoming, <b>Journal of Business Economics and Statistics</b>.</small>
+
+<!-- 19 -->
+> [How Importers Hedge Demand Uncertainty Through Dual Sourcing and Safety Inventory](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
+> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler.</small>
+> <small>Forthcoming, <b>Canadian Journal of Economics</b>.</small>
+ 
 <!-- 14 -->
 > [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://doi.org/10.1016/j.jeconom.2021.11.006),
 > <small>with Irene Botosaru and Krishna Pendakur.</small>
@@ -113,8 +115,3 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html),
 > <small>with Irene Botosaru and Senay Sokullu.</small>
 > <small>2nd revision requested, <b>Journal of Business Economics and Statistics</b>, 2024.</small>
-
-> [How Importers Hedge Demand Uncertainty Through Dual Sourcing and Safety Inventory](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
-> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler.</small>
-> <small>Resubmitted, <b>Canadian Journal of Economics</b>, July 2024.</small>
- 
