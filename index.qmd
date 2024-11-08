@@ -108,6 +108,10 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Working papers
 
+> [An Adversarial Approach to Identification and Inference](https://arxiv.org/abs/2411.04239),
+> <small>with Irene Botosaru and Isaac Loh.</small>
+> <small>Posted, November 2024.</small>
+
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
 > <small>with Konstantin Wacker.</small>
 > <small>Revision requested, <b>Journal of Applied Econometrics</b>, 2023.</small>
