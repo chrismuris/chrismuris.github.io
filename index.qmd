@@ -12,7 +12,7 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 <!-- 18 -->
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
 > <small>with Bo Honore and Martin Weidner.</small>
-> <small>Conditionally accepted, <b>Quantitative Economics</b>.</small>
+> <small>Accepted, <b>Quantitative Economics</b>.</small>
 
 <!-- 16 -->
 > [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193),
@@ -108,9 +108,10 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Working papers
 
-> [An Adversarial Approach to Identification and Inference](https://arxiv.org/abs/2411.04239),
+> [An Adversarial Approach to Identification](https://arxiv.org/abs/2411.04239),
 > <small>with Irene Botosaru and Isaac Loh.</small>
-> <small>Posted, November 2024.</small>
+> <small>December 2024.</small>
+> <small>[slides](20250113-UTK-slides.pdf)</small>
 
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
 > <small>with Konstantin Wacker.</small>
@@ -119,3 +120,4 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html),
 > <small>with Irene Botosaru and Senay Sokullu.</small>
 > <small>2nd revision requested, <b>Journal of Business Economics and Statistics</b>, 2024.</small>
+
