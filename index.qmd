@@ -111,7 +111,6 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > [An Adversarial Approach to Identification](https://arxiv.org/abs/2411.04239),
 > <small>with Irene Botosaru and Isaac Loh.</small>
 > <small>December 2024.</small>
-> <small>[slides](20250113-UTK-slides.pdf)</small>
 
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
 > <small>with Konstantin Wacker.</small>
