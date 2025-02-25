@@ -108,6 +108,10 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Working papers
 
+> [Identifying Long-Run Neighborhood Effects via Race-based Neighborhood Sorting](https://dionissialiprantis.com/pdfs/Identifying_Neighborhood_Effects_Feb_2025.pdf)
+> <small>with Dionissi Aliprantis and Daniel Hartley.</small>
+> <small>February 2025.</small>
+
 > [An Adversarial Approach to Identification](https://arxiv.org/abs/2411.04239),
 > <small>with Irene Botosaru and Isaac Loh.</small>
 > <small>December 2024.</small>
