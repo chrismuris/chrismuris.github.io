@@ -115,10 +115,11 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > [An Adversarial Approach to Identification](https://arxiv.org/abs/2411.04239),
 > <small>with Irene Botosaru and Isaac Loh.</small>
 > <small>December 2024.</small>
+> <small>[McGill slides](./20250325-McGill-adversarial-slides.pdf).</small>
 
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
 > <small>with Konstantin Wacker.</small>
-> <small>Revision requested, <b>Journal of Applied Econometrics</b>, 2023.</small>
+> <small>Resubmitted to <b>Journal of Applied Econometrics</b>, 2025.</small>
 
 > [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html),
 > <small>with Irene Botosaru and Senay Sokullu.</small>
