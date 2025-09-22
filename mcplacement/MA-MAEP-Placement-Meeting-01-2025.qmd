@@ -1,0 +1,728 @@
+---
+title: "MA/MAEP Career Placement Meeting 1"
+subtitle: "McMaster Department of Economics"
+author: "Chris Muris (materials adapted from Arthur Sweetman & Pau Pujolas)"
+date: "Sep 2025"
+date-format: "MMMM, YYYY"
+format:
+  revealjs:
+    theme: simple
+    slide-number: c/t
+    progress: true
+    hash: true
+    controls: true
+    incremental: false
+    number-sections: true
+    fontsize: 18pt
+  typst: default
+---
+
+<!-- Notes for 2026:
+
+- emphasize that "placement" is the wrong word: it sounds like I can centrally assign students to jobs. 
+- that is not at all the case. All I can do is support you as you find opportunities and apply to them. -->
+
+# Introduction
+
+## Who am I / what is this
+
+- Who I am
+  - I coordinate career placement for MA/MAEP this year and pass along opportunities.
+  - I’m here to organize, motivate, nudge, and help you aim at roles that fit your skills.
+
+. . .
+
+- What **placement** means:
+  - Everything that gets you to a good next step: jobs, co-ops, PhD, pre-doc, …
+  - We’ll focus on planning, writing, where to look, and what good applications look like.
+- What placement does **not** mean:
+  - We are not centrally assigning students to jobs.
+  - We can only support you in searching and applying ...
+  - ... but we cannot arrange jobs for you.
+  <!-- No "phone calls from friends who are looking" -->
+
+## Why now? . .
+
+- Why so early in the year?
+  - **Early deadlines.** Several top federal processes move **now**. More in a minute.
+  - Missing fall windows can push starts ~**14 months** out.
+  - Getting materials into good shape **early** pays off.
+
+. . .
+
+- During this session
+  - **Ask questions at any point.** Interrupt for clarifications; others likely have the same question.
+
+## Placement activities
+
+- Now: **Meeting 1** — orientation, timelines, where to look, how to prepare.
+  - This deck will go on **Avenue to Learn** (with links/resources for later).
+- In 2–3 weeks: **Meeting 2** — writing workshop (CVs & cover letters).
+  - Bring a **2-page CV** and **1-page template cover letters** tailored by sector.
+  - Try one **unsolicited** application (e.g., Big Five, insurer, pharma, Rogers, Amnesty).
+- January: **WIL/co-op session** — mechanics, paperwork, strategy, timelines.
+- Ongoing:
+  - Possible **campus visits** during the year (gov/industry).
+  - **Emails from me** when opportunities arrive (to the **list**). **Time-sensitive.**
+  - **Meet anytime**: email me to set up a chat.
+
+## Main takeaways
+
+::: {.incremental}
+- **Start now.** Some top **federal** processes move **Sept/Oct/Nov**; missing fall can push starts ~**14 months**.
+- **Work hard + plan + track.** Deadlines and paperwork stack up fast (multiple portals, forms, references).
+- **Write well.** Clear, tight writing is a screening margin.
+- **Be strategic.** What does the other side want?
+:::
+
+## Before we start, 1: Immigration status
+
+- In general, and specifically for jobs with the federal government, migration status matters
+- For core public admin, [Public Service Employment Act](https://laws-lois.justice.gc.ca/eng/acts/p-33.01/) applies
+    - Read [this report](https://www.canada.ca/en/public-service-commission/services/publications/open-info/citizenship-applicants-external-appointments.html) to learn more
+    - Veterans > Citizens > PR > Work permit
+- Implications depend on specific agency
+    - Core public administration: 
+        - Global Affairs Canada, Statistics Canada, Health Canada, Department of Finance
+        - Follows the PSEA
+    - Crown corporation (e.g. Bank of Canada): 
+        - Governed by [Canada Labour Code](https://laws-lois.justice.gc.ca/eng/ACTS/L-2/index.html), no PSEA
+        - Not subject to PSEA
+    - Federal agency (e.g. Canada Revenue Agency): 
+        - Governed by Canada Revenue Agency Act
+        - "must be legally entitled to work in Canada"
+- Some positions (e.g. high-level security clearance) only open to citizens.
+
+## Before we start, 2: Language
+
+- Not being bilingual at high level may limit what you can apply to
+- All must abide by the [Official Languages Act](https://laws-lois.justice.gc.ca/eng/acts/o-3.01/), [non-technical version](https://www.canada.ca/en/treasury-board-secretariat/topics/values-ethics/official-languages.html)
+- Language requirement depends on job, is stated in ad:
+    - Bilingual imperative
+        - Must meet the *language profile* at the time of being hired
+        - "Bilingual CBB", etc., 
+    - Bilingual non-imperative 
+        - You sign a contract saying you will meet it within pre-specified time
+    - English/French essential
+        - CRA office in Toronto v Montreal
+    - For economist and analyst roles at CRA/StatCan in Ottawa: expect Bilingual Imperative at the BBB/BBB or CBC/CBC level
+
+## Agenda
+
+1. Job market, planning & writing  
+2. Career paths  
+   - Overview  
+   - Federal  
+   - Other government (provincial, …)  
+   - International organizations  
+   - Private sector  
+   - Co-ops/WIL  
+   - Further study  
+3. Conclusion & next steps
+
+# Job market, planning & writing
+
+## The market
+
+- It’s a **market**.
+  - Your tastes are one side.
+  - The **offers** you can actually get are the other.
+  - In equilibrium, both determine what you’ll be doing next year.
+  - If you only get one offer, your tastes matter less.
+
+. . .
+
+- **Think (& act) strategically.**
+  - What does the **other side** want?
+  - How will **HR → hiring manager → senior manager** read your file at each stage?
+  - Align signals to their incentives.
+
+. . .
+
+- **Uncertainty & fallbacks.**
+  - Uncertainty is high; the economy is shifting.
+  - Your tastes can change between **Sept and May**.
+  - Work hard to keep more than one path alive (e.g., jobs **and** PhD).
+
+## This takes work
+
+- **Writing & rewriting**: many rounds are normal; clarity beats jargon.
+- **Job search & applications** (very time-consuming):
+  - Federal: one main portal but many **process pages, streams, exams**.
+  - Non-federal/public, private, third sector: **no single portal** — lots of clicking around.
+  - Managing **CVs/letters**, tailoring, uploading **transcripts**, filling long forms.
+  - **Chasing references** and giving referees enough time/materials.
+
+. . .
+
+- **Recruiter visits**
+  - **ATTEND. BE INTERESTED.** Ask questions as we go.
+  - Keep a good reputation for **your program**.
+- Job fairs
+- **Networking**
+  - Events (see **TABE/CABE** later).
+  - Alumni reach-outs.
+  - **LinkedIn** to discover pathways.
+
+## Planning is essential
+
+- **Plan ahead** and track **deadlines**.
+  - Some paths require **lots of paperwork** and early steps.
+- Materials live on **Avenue to Learn** (“Economics Graduate Careers”); if you can’t see it, email **[econgrd@mcmaster.ca](mailto:econgrd@mcmaster.ca)**.
+- **Email discipline & responsiveness**
+  - Treat list emails as **deadlines**; opportunities are **time-sensitive**.
+  - Apply when a posting fits; do **not** “batch” apply.
+- Many federal processes **cannot** be joined in spring.
+  - Typical outcome: **wait 4–5 months** to apply for a job that starts ~**14 months** later.
+  - Plan now to avoid this.
+  - I will be sympathetic but unable to help.
+
+## Writing matters
+
+<!-- from Arthur slides: 
+"writing is more important than math"
+"employers don't care if you can take a derivative"
+
+I'd say:
+"math in courses is a prerequisite for a job"
+"even though writing is not central in coursework, it is fundamental for this part of your MA" -->
+
+- Writing is underemphasized in coursework, but is important for success.
+- It is a skill that can be acquired with practice.
+- Writing is a **hiring signal** and an easy **screening margin** when there’s 1 job and 300 applicants.
+- **Show, don’t tell.**
+  - Typical ad: “strong quantitative/statistical skills, **excellent writing**, strategic thinker.”
+  - **Sell yourself (credibly).**
+    - Don’t just list courses.
+    - Show outputs and impact.
+    - Use micro-examples (memos, dashboards, research briefs, code + results).
+- Practical tips
+  - Lead with the **reader’s problem**; mirror the posting’s language (don’t parrot).
+  - Short sentences; verbs over nouns; cut filler; proofread aloud.
+  - Avoid **faux-formal** prose; fix **articles** (a/an/the) if that’s a weakness (see reference).
+
+---
+
+- References
+  - McCloskey, *Economical Writing* — [PDF](https://www.deirdremccloskey.com/docs/pdf/Article_86.pdf)
+  - *Schaum’s Outline of English Grammar* — [PDF](https://uodiyala.edu.iq/uploads/PDF%20ELIBRARY%20UODIYALA/EL36/English_Grammar.pdf)
+  - Strunk & White, *The Elements of Style* — [PDF](https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf)
+- Prep before writing your drafts
+  - CBC *Under the Influence* — “Selling Yourself: The Art of Personal Branding” (27 min):
+    - [Transcript](http://www.cbc.ca/radio/undertheinfluence/selling-yourself-the-art-of-personal-branding-1.3106068)
+
+---
+
+- AI / LLM / ChatGPT and co. can help
+    - Check restrictions in job post
+    - Be careful when peer reviewing
+    - Be careful when feeding in your background info
+    - *Jevons Paradox*
+
+<!--
+
+Jevons paradox takeaway: 
+
+- cannot NOT use chatgpt: if i see a spelling error or so, I reject immediately
+- you cannot "quickly use chatgpt" for your cover letter.
+- everybody will see that
+- your letter will be lower than those who use it productively
+- good candidates will use this technology productively
+- productively: use it to iterate, as a peer review
+- use it to generate possible paragraphs if you are stuck
+
+Jevons paradox = technological arms race
+
+Well-documented phenomenon known as the "Jevons paradox" or "rebound effect," 
+as applied to household technology: vacuum cleaner did not reduce the amount
+of time people spent cleaning their house!
+
+The core idea, in this context, is that while a new, 
+more efficient technology (like the vacuum cleaner) is designed to 
+save time or effort, it can sometimes lead to an increase in 
+overall consumption of that resource.
+
+This phenomenon, often referred to as the Jevons paradox, 
+applies directly to using AI for creating resumes and cover letters. 
+While the technology makes the process more efficient, it raises 
+job market expectations, which can lead to no net time savings 
+for applicants.
+-->
+
+# Career paths — overview
+
+<!--
+Acronyms used below:
+CRA = Canada Revenue Agency
+PBO = Office of the Parliamentary Budget Officer
+CMHC = Canada Mortgage and Housing Corporation
+BCSC = British Columbia Securities Commission
+OSC = Ontario Securities Commission
+LMIC = Labour Market Information Council
+NUS = National University of Singapore
+DFO = Fisheries and Oceans Canada
+ISED = Innovation, Science and Economic Development Canada
+HICC = Housing, Infrastructure and Communities Canada
+StatCan = Statistics Canada
+EC-02/EC-04 = Federal Economist/Analyst classification levels
+CBoC = Conference Board of Canada
+CRDCN = Canadian Research Data Centre Network
+E-Comm = Emergency Communications for British Columbia
+-->
+
+## Versatility
+
+- You can **do whatever you want** with an MA/MAEP in ECON
+  - policy, research, analytics
+  - industry, non-profit, start-ups
+  - start your own business (**entrepreneurship/self-employment**)
+  - freelance consulting
+  - advanced jobs or faculty position via PhD
+  - do something completely unrelated to ECON
+  - …
+
+. . .
+
+- Alumni move **across sectors**
+  - government ↔ private
+  - policy ↔ data science
+  - research ↔ management
+- Careers are often **non-linear**
+  - co-ops/terms → analyst roles → senior economist/manager
+  - industry → PhD → academia
+  - analyst → founder and CEO
+
+. . .
+
+- Today’s focus: **logistics** that unlock **common next steps on your path**
+
+## Alumni snapshots (mixing MA and MAEP)
+
+Not posted, for privacy reasons.
+
+<!-- CMHC contributes to the well-being of Canada's housing system. We provide housing finance solutions and we provide lenders reliable access to mortgage funding. Our commitment extends to providing crucial research and data to inform decisions for better housing sector outcomes. And, we deliver housing programs for the Government of Canada. -->
+<!-- DFO: Fisheries and Oceans Canada
+HICC: Housing, Infrastructure Communities Canada -->
+<!-- CBOC: COnference Board of Canada -->
+<!-- 
+::: columns
+::: column
+- **HC** — MA ’11 → Economics Instructor → Economist, **CRA**
+- **ZV** — MA ’22 → Analyst, **PBO**
+- **LP** — MA ’10 → PhD → Associate Professor of Economics
+- **MS** — MA ’22 → Senior Economist, **Government of Alberta**
+- **RM** — MA ’21 → Data Scientist, **Canadian Tire** → Founder & Senior Data Scientist (sports analytics)
+- **RT** — MA ’13 → Founder, CEO, AI marketing
+- **SR** — MA ’15 → Senior Economist, **CMHC**
+- **CY** — MA ’17 → Data Scientist, Portland Electric → Senior Applied Scientist, **FLYR**
+:::
+::: column
+- **LS** — MA ’12 → PhD → Assistant Professor of Economics
+- **PN** — MA ’16 → Economist, **BCSC** → Specialist, **CMHC** → Senior Economist, **OSC/LMIC**
+- **MT** — MA ’17 → Economist, **Finance Canada** → Senior Policy Advisor/Acting Manager, **DFO** → Senior Policy Analyst/Acting Manager, **HICC**
+- **TV** — PhD ’18 → Economics Instructor → Data Scientist, **E-Comm**
+- **CCC** — MA ’14 → Sales & Pricing Controller, **Electrolux**
+- **DD** — MA ’20 → Economist, **StatCan**
+- **BK** — MA ’22 → Analyst, **StatCan** → (Senior) Economist, **CBoC**
+- **GG** — PhD ’17 → Assistant Director, **CRDCN**
+:::
+::: -->
+
+## Career Pathways
+
+- We will consider 6 types of career pathways:
+    - Federal  
+    - Other government (provincial, …)  
+    - International organizations  
+    - Private sector  
+    - Co-ops/WIL  
+    - Further study
+- Next slide: examples
+- After that: **specific logistics** for each path:
+    - **timelines**, **where to look**, **how to apply**, and **common pitfalls**.
+
+---
+
+::: {.columns}
+::: {.column width="50%"}
+- Federal
+    -   **Central Hubs**
+        -   Dept. of Finance, Bank of Canada, StatCan, PBO
+    -   **Economic & Social Departments**
+        -   ISED, Environment (ECCC), ESDC <!--, Health Canada-->
+    -   **Regulators**: Competition Bureau, OSFI
+    -   **Crown Corporations**: CMHC, EDC, BDC
+
+- Other government
+    -   **Provincial**
+        -   Ministries of Finance (ON, BC, AB)
+        -   Ministries of Health, Energy, Labour
+        <!-- -   Provincial Regulators (e.g., OEB) -->
+    -   **Municipal & Regional**
+        -   Cities of Toronto, Vancouver, ...
+        -   Transit (Metrolinx, ...) <!-- TransLink)-->
+    -   **Crowns / Quasi-governmental**
+        -   Hydro One, BC Hydro, WSIB
+:::
+
+::: {.column width="50%"}
+- International Organizations
+    -   **Multilateral Institutions**
+        -   World Bank, IMF, OECD
+    -   **UN Agencies**
+        -   WHO, ILO, UNICEF, UNDP
+    -   **Regional Development Banks**
+        -   ADB, EBRD, IDB
+:::
+:::
+
+---
+
+::: {.columns}
+::: {.column width="50%"}
+- Private Sector
+    -   **Finance & Asset Management**
+        -   **Banks:** RBC, TD, BMO, Scotiabank, CIBC
+        -   **Pension Funds:** CPP Investments, OTPP, CDPQ
+        -   **Insurance:** Manulife, Sun Life
+    -   **Consulting**
+        -   **Economic:** Analysis Group, CRA (*PhD preferred*)
+        -   **Management:** McKinsey, BCG, Bain
+        -   **Big 4:** Deloitte, PwC, EY, KPMG
+    -   **Corporate & Industry**
+        -   **Strategy/Forecasting:** Bell, Canadian Tire, Enbridge
+        -   **Pricing:** Air Canada, CN Rail
+        -   **Data/Tech:** Shopify, Loblaws PC Optimum
+    - Startups
+:::
+
+::: {.column width="50%"}
+- Third Sector
+    -   **Think Tanks & Institutes**
+        -   C.D. Howe Institute
+        -   Conference Board of Canada
+    -   **NGOs & Charities**
+        -   Red Cross, Amnesty International
+    -   **Industry & Sector Associations**
+        -   Canadian Bankers Association
+        -   Canadian Chamber of Commerce
+
+- Co-ops / WIL
+- Further study
+
+<!-- -   **Professional Programs**
+    -   Law (LSAT), Medicine (MCAT), MBA
+    -   Other PhDs (e.g., Public Policy, Finance) -->
+:::
+:::
+
+# Federal
+
+## At a glance
+
+<!-- EC is the federal Public Service occupational group “Economics and Social Science Services.”
+It covers economists, statisticians, and social-science policy/research analysts across departments. -->
+
+- **Why it’s attractive**
+  - Scale, training, **mobility** across departments, mission-driven work, and a structured early-career pipeline.
+  - Easy to move around horizontally: where you start does not determine your career.
+  - May hire initially through internships/co-ops; can then apply internally.
+- **Typical starting roles**
+  - EC stream work: research, policy analysis, program evaluation, forecasting, data analytics.
+- **Where jobs are**
+  - Mostly **Ottawa** 
+  - Some roles in Toronto, Montréal, Vancouver, Calgary, Edmonton
+  - Some hybrid/remote.
+
+<!-- To be successful in this type of job, you should probably be prepared to live in Ottawa -->
+<!-- As economists, because of your training you'll be slotted in a certain type of work, initially -->
+
+## Process
+
+- **How hiring works**
+  - Central postings
+  - **Multi-stage processes** (screening → online testing → interview → references → security).
+- **Highly structured** recruiting aimed at top talent and a **“fair”** process; strong interest in **diversity/equity** (geographic, linguistic, disciplinary, ethnic).
+- **Very formalized**: you must follow **procedures** and **deadlines** precisely; the process takes **time/effort** and has **multiple stages**.
+- Example: [Public Service Entrance Exam (PSEE)](https://www.canada.ca/en/public-service-commission/services/staffing-assessment-tools-resources/human-resources-specialists-hiring-managers/unsupervised-internet-testing/public-service-entrance-exam-unsupervised-internet-test-370.html), now [Test of Judgement 376 (TOJ 376)](https://www.canada.ca/en/public-service-commission/services/staffing-assessment-tools-resources/human-resources-specialists-hiring-managers/human-resources-toolbox/personnel-psychology-centre/consultation-test-services/public-service-commission-tests/test-judgement-376.html).
+- Immigration status matters:
+    - Strong preference for **citizens**
+    - Preference ordering often **veterans/citizens/PRs**
+    - **Non-citizens can apply**, but odds are lower and some streams restrict eligibility.
+
+## Timelines (Sept–Nov heavy)
+
+- Reason for the timing of this session.
+- **For next-summer starts, many campaigns run now.** 
+    - Screening and assessments can span **months**.
+    - It’s normal to be in **multiple processes** at once.
+- **Start early**: 
+    - Block time for tests/interviews.
+    - Maintain a **tracker** (process, deadlines, contacts, status).
+    - Line up **references** early if needed.
+
+::: callout-warning
+**Missed the fall window?**  
+Students who ask in **April/May** how to start that summer typically must **wait 4–5 months** and apply for a job that starts ~**14 months** later (co-ops later).
+:::
+
+## Key portals & programs (next-summer starts)
+
+- **GC Jobs (official search/apply portal)** — [Portal](https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440?toggleLanguage=en)
+- **PSC recruitment overview** — [Recruitment programs](https://www.canada.ca/en/public-service-commission/jobs/services/recruitment.html)
+- **Post-Secondary Recruitment (PSR)** — [PSR programs](https://www.canada.ca/en/public-service-commission/jobs/services/recruitment/graduates/post-secondary-recruitment.html)
+- **Advanced Policy Analyst Program (APAP)** — [Program page](https://www.canada.ca/en/treasury-board-secretariat/topics/professional-development/advanced-policy-analyst-program.html)
+- **Department of Finance — University/Annual Recruitment** — [Recruitment](https://www.canada.ca/en/department-finance/corporate/jobs/university-recruitment.html)
+- **Bank of Canada — Careers / Students** — [Careers](https://www.bankofcanada.ca/careers/) · [Students](https://www.bankofcanada.ca/careers/students/)
+- **Research Affiliate Program** — [RAP overview](https://www.canada.ca/en/public-service-commission/jobs/services/recruitment/students/research-affiliate-program.html)
+- [**Federal Student Work Experience Program**](https://www.canada.ca/en/public-service-commission/jobs/services/recruitment/students/federal-student-work-program.html)
+
+# Other government
+
+## Provincial
+
+- **Less structured** overall; many applications in **late winter/spring**. Ontario jobs portal: [Ontario Jobs](http://www.gojobs.gov.on.ca/Jobs.aspx). See the department site for links to **all provinces**.
+- **Ontario Internship Program (OIP)** — opens **Jan/Feb**; **short window**; policy is competitive — also consider **Program & Service Delivery**, **Labour**, etc. [OIP page](https://www.internship.gov.on.ca/mbs/sdb/intern.nsf/lkpwebcontent/epublishedhome)
+- Don’t forget provinces beyond Ontario.
+- Who’s eligible?
+    - Provinces are generally **more open** to **PRs** and **visa students** than the federal government.  
+
+## Municipal & quasi-governmental / Crowns
+
+- Check department links and general job boards; make **cold calls** and **cold CV submissions**.  
+- Examples to search: 
+    - **Ontario Hydro**; **Ontario Lottery & Gaming (OLG)**; **Ports Authority**, etc.
+    - Extensive list in appendix
+
+<!-- **Teachers/OMERS**; -->
+
+# International organizations
+
+## What these organizations are
+
+- **Who:** **World Bank**, **IMF**, **UN** (UNICEF, ILO), **ADB**, **EBRD**, **WHO**, **OECD**.  
+- **Roles for MA/MAEP:** research assistants/analysts, policy/economic analysts, monitoring & evaluation; **HEOR/health analytics** (e.g., WHO); junior-economist tracks
+- **PhD expectations:** some **non-field** roles prefer/require a **PhD**; check fine print.
+
+## Entry routes & programs
+
+- **Young Professionals Programs (YPPs)** (e.g., **UN YPP**) — check nationality/eligibility. 
+- **Internships/terms** — summer and off-cycle; department-specific portals.  
+- **Direct hire** — via organization job boards; **networking + informational chats** help.
+
+## Official portals
+
+- **UN YPP** — [Overview](https://careers.un.org/lbw/home.aspx?viewtype=NCE)  
+- **WHO** — [Careers](https://www.who.int/careers/en/)  
+- **ILO** — [Jobs](https://jobs.ilo.org/content/Working-at-the-ILO/?locale=en_GB)  
+- **World Bank** — [Careers](https://www.worldbank.org/en/about/careers) 
+
+- Many job boards are easy to find on Google; good ones **do not charge**; see the department web page for additional links; **search online**. 
+
+# Private sector
+
+## How recruiting differs
+
+- The private sector tends to put **less visible effort** into recruiting people in your position
+    - **Except for big banks**, whose cycles resembles federal government
+- Translation: you’ll see fewer formal pipelines; you must be more **proactive**.
+
+::: callout-note
+**Immigration status in the private sector**
+Generally **status-agnostic**; skills/fit dominate.
+:::
+
+## Where economists actually work (examples)
+
+- **Banks** (risk, analytics, macro/markets), 
+- **Insurance**
+- **Investment houses**
+- **Consulting** (e.g., **KPMG**)
+- **Pharma** (HEOR, pricing)
+- ... and **less obvious** employers.
+    - Example: **Canadian Tire**’s **credit-card** business is a major profit centre and is run in-house.
+- See Appendix for a longer list, but options are limitless.
+
+## Start early & be proactive
+
+- Check **large-firm portals** (esp. big banks) and apply directly when interested.
+- Read the department’s employment-resources pages; **investigate options yourself** (don’t wait for postings).
+- Talk to people; take the **right courses** and **do well** in them; leverage **family/volunteer** contacts.
+- Use **LinkedIn** to spot alumni in roles you want.
+
+## TABE/CABE — networking that actually helps
+
+- **TABE** (Toronto Association for Business Economics), chapter of **CABE** (Canadian Association for Business Economics). You will get an email soon.  
+  CABE — [Main site](https://cabe.ca/) · TABE — [Chapter page](https://cabe.ca/chapters/tabe/) 
+- The department **buys a group membership** for students. Membership **reduces**, but does **not** eliminate, event fees (typically **$30** for lunch).
+- This is a **networking opportunity**. It’s a (mostly) **volunteer-run** organization. For this to be valuable for you, you need to **take the initiative**.
+
+# Co-ops/WIL
+
+## Timing & strategy
+
+- **Co-op applications for summer open in January**; we’ll hold a **January** session.
+- A **good permanent job** usually **trumps** a co-op (start with higher pay/benefits). Our grads have done well — but it **takes work**.
+
+## Program mechanics & competition
+
+- Formal co-op option in MA/MAEP; many postings with **federal** and **Ontario** governments; co-ops are often a **way into** those civil services.
+- **Winter-term** co-ops can be **easier** (less competition; in other terms you often compete with MBAs/CS/physics).
+- Practically, co-op can stretch the MA to **~2 years**.
+- The grad admin assistant circulates many postings — **but you should also seek your own options**.
+
+## Paperwork & tuition
+
+- Read the **Graduate Calendar** rules.
+- Co-op is **for-credit** (Econ **796** and **797**)
+    - You **pay tuition** and stay **full-time**.
+- The option is not always “finished”: some accept a **permanent job** after **796** and don’t do **797**.
+- To return to full-time studies, a **report** is required at the end of **each** co-op course. 
+
+## International students (PGWP + program length)
+
+<!-- PGWP: Post-graduate work permit -->
+
+- Know your **PGWP** rules and how they interact with **program length**.
+- Common path from prior cohorts:
+  - Extend a 12-month MA to **16–20 months** via a **second-year fall/winter co-op** to build Canadian experience.
+- **Timing:** Summer co-op applications open in **January**; paperwork can be slow → **start early**.
+
+# Further study
+
+## PhD & professional programs
+
+- **PhD in Economics**
+  - **NOT FOR EVERYBODY**; competitive; apply to a **few** places; understand **which departments** are strong in which **fields**; think about **what you want to do** after. **GRE** required in the **US** (and some others). Talk to your profs.
+  - To encourage you, we have created a stream to move from our MA to our PhD
+- **Professional tracks**
+  - **Law** — **LSAT**; **Medicine** — **MCAT**; other PhDs (e.g., **Health Policy**, IR, Business, Public Policy) often require **GRE** (esp. US).
+- Register early for **GRE/LSAT/MCAT** and plan backwards from deadlines (prep + score reporting).
+
+## Funding — internal & external (early!)
+
+- **Start early.** Internal timelines are **very early**; many applications take more time than you expect.
+- **Internal** (host university)
+  - Minimum stipends (e.g., MAC Econ PhD) and internal awards; often automatic if you apply **early**; larger awards may require extra steps.
+- **External** (agency/foundation)
+  - **OGS** — open to **visa students** and **citizens/PRs**; minimum **A-** (10.0/12); “over-time” students (e.g., 2nd-year MA in a 1-year program) **not eligible**; internal **SGS** deadline early **Oct/Nov**. [Scholarships overview](https://gs.mcmaster.ca/current-students/scholarships/) 
+  - **SSHRC** (Talent): **$20k/yr** (CGS-M), **$35k/yr** (Doctoral); **Vanier** **$50k/yr**; **CIHR** **$50k/yr** (plus research stipend in some cases). SSHRC: [Talent](https://www.sshrc-crsh.gc.ca/funding-financement/umbrella_programs-programme_cadre/talent-eng.aspx) · CIHR: [Apply through SGS](https://cihr-irsc.gc.ca/)
+  - **Routing**: You can apply to **one** of **CIHR or SSHRC**. Unsuccessful **SSHRC/CIHR** applications are usually **shifted to OGS automatically** — if eligible, you may as well **apply**. 
+  - Other foundations: **Trudeau Foundation** — [Program](http://www.trudeaufoundation.ca/en); **Commonwealth Scholarships**; **IDRC** (topic-specific) — [Funding page](https://www.idrc.ca/en/funding/applying-funding).
+- **Bottom line**: deadlines are **crazy early**; strong applications require **100% effort** — partial effort is usually wasted.
+
+# Conclusion & next steps
+
+## Next
+
+- Prepare a **CV (≈2 pages)** and **two 1-page cover letters**. Keep the **philosophy of the employer/granting agency** in mind.
+- If targeting federal roles, note **Sept/Oct/Nov** deadlines (**Bank of Canada** may close by ~**3rd week of Sept**). Start **now**.
+- Keep options open (jobs **and** PhD); keep an eye on **Avenue**; watch **list emails** for opportunities and visits. **Meet with me** if you want feedback.
+- Slides and extended lists live on **Avenue to Learn**.
+
+# Appendix — Extended Lists
+
+## Federal Government {.scrollable}
+
+### Core Central Agencies & Economic Hubs
+- Department of Finance Canada
+- Bank of Canada (BoC)
+- Statistics Canada (StatCan)
+- Parliamentary Budget Officer (PBO)
+- Privy Council Office (PCO)
+- Treasury Board of Canada Secretariat (TBS)
+
+### Key Economic & Social Departments
+- Innovation, Science and Economic Development (ISED)
+- Employment and Social Development Canada (ESDC)
+- Environment and Climate Change Canada (ECCC)
+- Natural Resources Canada (NRCan)
+- Health Canada / Public Health Agency of Canada (PHAC)
+- Immigration, Refugees and Citizenship Canada (IRCC)
+- Transport Canada
+- Agriculture and Agri-Food Canada
+
+### Regulators & Other Bodies
+- Competition Bureau
+- Office of the Superintendent of Financial Institutions (OSFI)
+- Canadian Radio-television and Telecommunications Commission (CRTC)
+- Canadian Transportation Agency
+
+### Crown Corporations & Federal Financial Institutions
+- Canada Mortgage and Housing Corporation (CMHC)
+- Export Development Canada (EDC)
+- Business Development Bank of Canada (BDC)
+- Canada Infrastructure Bank (CIB)
+- Invest in Canada
+
+## Provincial & Municipal Government {.scrollable}
+
+### Provincial Finance & Central Agencies
+- Ministries of Finance (e.g., Ontario, BC, Alberta, Quebec)
+- Treasury Boards
+- Provincial Statistical Agencies (e.g., ISQ, BC Stats)
+
+### Provincial Line Ministries & Regulators
+- Health, Labour, Education, Energy, Environment, Transportation
+- Provincial Financial Regulators (e.g., FSRA in Ontario)
+- Energy Regulators (e.g., Ontario Energy Board, Alberta Utilities Commission)
+
+### Municipalities & Regional Bodies
+- Large Cities (e.g., Toronto, Vancouver, Calgary, Montreal) for urban/transport/planning economics
+- Regional Governments (e.g., Region of Peel/York)
+- Transit Authorities (e.g., Metrolinx, TransLink, TTC)
+
+### Provincial Crown Corporations
+- Utilities (e.g., Hydro One, BC Hydro, Hydro-Québec, OPG)
+- Workers’ Compensation Boards (e.g., WSIB, WorkSafeBC)
+- Port Authorities (e.g., Port of Vancouver)
+
+## Asset Management & Pensions {.scrollable}
+- CPP Investments
+- Caisse de dépôt et placement du Québec (CDPQ)
+- Ontario Teachers’ Pension Plan (OTPP)
+- Public Sector Pension Investment Board (PSP)
+- OMERS, HOOPP, OPTrust, AIMCo, BCI, IMCO
+
+## International Organizations {.scrollable}
+- **Multilateral Institutions** (Note: PhD often preferred for Economist roles)
+  - World Bank
+  - International Monetary Fund (IMF)
+  - Organisation for Economic Co-operation and Development (OECD)
+- **UN Agencies:** UNICEF, ILO, WHO, UNDP, WFP
+- **Regional Development Banks:** ADB, EBRD, IDB
+
+## Private Sector {.scrollable}
+
+### Banking & Financial Services
+- **Bank Economics Depts:** RBC, TD, Scotiabank, BMO, CIBC, National Bank, Desjardins
+- **Capital Markets/IB:** Quantitative and strategy roles
+- **Insurance:** Manulife, Sun Life, Intact Financial
+
+### Consulting
+- **Economic Consulting** (Note: PhD strongly preferred)
+  - Analysis Group, Charles River Associates, The Brattle Group, Compass Lexecon
+- **Management/Strategy Consulting**
+  - McKinsey & Co., Boston Consulting Group (BCG), Bain & Company
+- **"Big 4" & Policy Shops**
+  - Deloitte, PwC, EY, KPMG (economics/policy advisory)
+  - MNP Economics, Copenhagen Economics
+
+### Industry & Corporate Roles
+- **Tech/Data/Telecom:** Shopify, Bell, Rogers, TELUS
+- **Retail/CPG:** Canadian Tire, Loblaw/Shoppers, Couche-Tard
+- **Transportation/Energy:** Air Canada, CN/CP, Enbridge, Suncor
+- **Health Economics/Pharma:** Pfizer Canada, GSK, Novartis, ICES, CADTH
+
+## Third Sector & Research {.scrollable}
+
+### Think Tanks & Policy Institutes
+- C.D. Howe Institute
+- Conference Board of Canada
+- Institute for Research on Public Policy (IRPP)
+- Fraser Institute
+- Broadbent Institute
+
+### Non-profits, NGOs & Associations
+- Sector Associations (e.g., Canadian Bankers Association, Canadian Chamber of Commerce)
+- Large NGOs (fewer dedicated economist roles)
