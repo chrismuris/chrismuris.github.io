@@ -9,7 +9,12 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Publications
 
-<!-- 18 -->
+<!-- 20 -->
+> [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://doi.org/10.1080/07350015.2025.2566352),
+> <small>with Irene Botosaru and Senay Sokullu.</small>
+> <small>Forthcoming, <b>Journal of Business Economics and Statistics</b>, 2025.</small>
+
+<!-- 19 -->
 > [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
 > <small>with Bo Honore and Martin Weidner.</small>
 > <small>Accepted, <b>Quantitative Economics</b>.</small>
@@ -24,12 +29,12 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 > <small>with Pedro Raposo and Sotirios Vandoros.</small>
 > <small>Forthcoming, <b>Review of Economics and Statistics</b>.</small>
 
-<!-- 17 -->
+<!-- 18 -->
 > [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
 > <small>with Matthew Harding and Carlos Lamarche.</small> 
 > <small>Forthcoming, <b>Journal of Business Economics and Statistics</b>.</small>
 
-<!-- 19 -->
+<!-- 17 -->
 > [How Importers Hedge Demand Uncertainty Through Dual Sourcing and Safety Inventory](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
 > <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler.</small>
 > <small>Forthcoming, <b>Canadian Journal of Economics</b>.</small>
@@ -108,20 +113,20 @@ You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca).
 
 ## Working papers
 
-> [Identifying Long-Run Neighborhood Effects via Race-based Neighborhood Sorting](https://dionissialiprantis.com/pdfs/Identifying_Neighborhood_Effects_Feb_2025.pdf)
+> [Identifying long-Run neighborhood effects via race-based neighborhood sorting](https://dionissialiprantis.com/pdfs/Identifying_Neighborhood_Effects_Feb_2025.pdf)
 > <small>with Dionissi Aliprantis and Daniel Hartley.</small>
 > <small>February 2025.</small>
 
-> [An Adversarial Approach to Identification](https://arxiv.org/abs/2411.04239),
+> [An adversarial approach to identification](https://arxiv.org/abs/2411.04239),
 > <small>with Irene Botosaru and Isaac Loh.</small>
 > <small>December 2024.</small>
-> <small>[McGill slides](./20250325-McGill-adversarial-slides.pdf).</small>
 
 > [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
 > <small>with Konstantin Wacker.</small>
 > <small>Resubmitted to <b>Journal of Applied Econometrics</b>, 2025.</small>
 
-> [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://ideas.repec.org/p/mcm/deptwp/2022-01.html),
-> <small>with Irene Botosaru and Senay Sokullu.</small>
-> <small>2nd revision requested, <b>Journal of Business Economics and Statistics</b>, 2024.</small>
+> [Triadic network formation](https://arxiv.org/abs/2509.26420)
+> <small>with Cavit Pakel.</small>
 
+> [Dyadic data with ordered outcome variables](https://arxiv.org/abs/2507.16689)
+> <small>with Cavit Pakel and Qichen Zhang.</small>

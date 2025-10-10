@@ -18,6 +18,7 @@ format:
 ---
 
 # Introduction
+
 <!-- 
 Our session will be a semi-interactive workshop designed to help you craft compelling CVs and cover letters. The meeting will have two parts:
 - A short presentation on effective writing strategies for application materials.
