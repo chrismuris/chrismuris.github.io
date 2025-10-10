@@ -1,0 +1,1447 @@
+---
+title: "MA/MAEP Career Placement Meeting 2"
+subtitle: "CVs, Cover Letters & Interviews"
+author: "Chris Muris (materials adapted from Arthur Sweetman)"
+date: "Oct 2025"
+date-format: "MMMM, YYYY"
+format:
+  revealjs:
+    theme: simple
+    slide-number: c/t
+    progress: true
+    hash: true
+    controls: true
+    incremental: false
+    number-sections: false
+    fontsize: 18pt
+  typst: default
+---
+
+# Introduction
+<!-- 
+Our session will be a semi-interactive workshop designed to help you craft compelling CVs and cover letters. The meeting will have two parts:
+- A short presentation on effective writing strategies for application materials.
+- A hands-on workshop where you will work in small groups to exchange constructive feedback on your documents. Peer review is one of the best ways to improve your writing.
+To ensure you get the most out of our time together, please come prepared ...
+
+For the volunteers:
+
+- We can then schedule a meeting to discuss a rewriting strategy together. This may help you get a head start on your materials.
+-->
+
+## Today's agenda
+
+- **Writing** — Why "sweating the details" matters
+- **Application components**
+    - Cover letters
+    - CVs
+    - References
+<!-- - **File management** — Naming conventions and organization -->
+- **Interviews** — Preparation and practice
+<!-- - **Digital presence** — LinkedIn and GitHub considerations -->
+- **Workshop (optional/take-home)** — Exchange and critique materials
+
+. . .
+
+**Time:** ~45 minutes
+
+## Before we dive in
+
+- **Feedback welcome**: If you see ways to improve these meetings and other "placement support" at McMaster Economics, please tell me or email me.
+- **Bring materials**: Have your draft **2-page CV** and **1-page cover letter** ready for the optional workshop at the end.
+- **Collegiality**: You're on the **same team**. Help each other — have classmates read your materials and practice interviews together.
+
+<!-- Other groups of students are doing this, and they will collectively beat you to these jobs if you do not collaborate. Helping your colleague get a good job may help you get a job with them later! -->
+
+## APAP intake is open!
+
+- Flagship federal government program.
+- Deadline: November 3, 2025, 23:59 Pacific Time.
+- Click [here](https://tbs-sct.hiringplatform.ca/processes/fa067410-edaa-438a-8c0b-e2c978ecbf34?locale=en).
+
+# Writing
+
+## Write well — it matters
+
+::: {.incremental}
+- **Grammar and style** reflect your communication skills.
+- Used as a **predictor of success** by employers and scholarship reviewers.
+- When there's **1 position and 300 applications**, they need reasons to reject files.
+- Young economists often harm their careers by not paying **as much attention to communication skills** as competitors in other disciplines.
+:::
+
+. . .
+
+**Bottom line**: Writing well gets you the interview. Your other skills will do the rest.
+
+## Sweat the details
+
+You need to **check everything**:
+
+- **Formatting** — Consistent fonts, sizes, spacing, alignment
+- **Spelling** — No typos, even in names or organizations
+- **Punctuation** — Spaces after periods, proper comma usage
+- **Articles** — Correct use of "a," "an," "the" (common issue for non-native speakers)
+
+. . .
+
+**Many rounds of revision are normal.** A sentence like this is enough to stop an HR officer, or the [AI in an ATS system](https://studentsuccess.mcmaster.ca/job-applications-applicant-tracking-systems-ats/) from reading:
+
+> "Strong grasp on economic theory having taken several honours only courses which are similar to graduate school level course."
+
+Issues: "on" vs. "of," "course" vs. "courses," awkward phrasing.
+
+## Common writing pitfalls
+
+- **Articles (a/an/the)**: Common problem for non-English speakers and some native speakers. See [Cambridge Grammar Guide](https://dictionary.cambridge.org/grammar/british-grammar/a-an-and-the).
+- **"Faux-formal" writing**: Trying to sound fancy and falling flat. Write clearly and directly.
+- **Sentence fragments**: If you use periods, write full sentences. 
+    - Not fragments that look like sentences. 
+    - #$%# I just did it.
+- **Consistency**: Pick a style (bullets with/without periods, date formats, ...) and stick to it.
+
+. . .
+
+### How to fix this if you are bad at it?
+
+- Practice, practice, practice.
+- Iterate with friends, LLMs (with care), and your placement officer.
+- Read aloud.
+- More resources: see meeting 1 slides.
+
+# Application Components
+
+## What you'll typically need
+
+Applications usually require some combination of:
+
+1. **Cover letter** (or statement of interest) — Write for your **audience**!
+2. **CV** (or résumé) 
+3. **References** — Sometimes a list on CV, sometimes letters
+4. **Transcripts** (sometimes)
+5. **Application forms** (sometimes — web-based portals)
+
+. . .
+
+**Federal government**: 
+
+- Formal process with **Public Service Entrance Exam**, which tests
+    - writing
+    - judgment
+    - personality
+    - ...
+
+## Employer advice
+
+From recent employers who hired our students:
+
+> "Read carefully what the posting is looking for, and don't provide anything that's not requested in the job posting, unless you explain it in your cover letter. For example, if you really think you should include a paper you've written but they haven't asked for it, address in your cover letter **why** you're including it."
+
+. . .
+
+> "Unless the job posting asks for it, **do not include your transcript** with your application package."
+
+. . . 
+
+> "Make sure you **customize your cover letter** for the job. If you're not willing to put in the effort to customize your cover letter, then that signals to the employer that you're not really interested in the job."
+
+. . .
+
+> "You may also consider **customizing your résumé** for a job. Highlight the aspects of your previous jobs that closely align with the job you're applying for."
+
+<!-- . . .
+
+> "If the hiring manager opens themselves up to being **contacted** about the job, make sure you do it, even if just to ask more about the type of work. It shows you're interested in the job, and makes your name stand out." -->
+<!-- **Use judgment** on this last point! -->
+
+## Alumni advice
+
+Based on a conversation (October 8, 2025) with a recent grad, about applying to a co-op:
+
+> I submitted 10 packages in total. I personalized 3. I got 3 interviews...
+
+# Cover letters
+
+- No writing mistakes. Cover letter has to be perfect. This is a screening margin.
+- **Personalize** every letter. The opening lines should **not** be generic.
+- **Look at the job ad** — make sure to respond to the issues raised.
+- Reference your **interest in and/or fit with** the specific job/organization.
+- You need **key words** from the job ad in your cover letter or you may be excluded.
+- Think about the humans and machines that will read your letter.
+- Especially in the **private sector**, computer programs/HR firms do a "first sort."
+
+## Cover letter: Optimal structure
+
+1. **Header** — Name · Email · Phone · LinkedIn · *(GitHub if relevant)* · City, Province
+2. **Date** and **Recipient block** — Person/Team, Organization, Division/Branch *(address optional for email)*
+3. **Re:** *Application for [Role] at [Organization] (Posting [ID])*
+4. **Opening (≤4 sentences)**: Role + source; 1–2 sentence value proposition in mandate language; concise thesis of fit
+5. **Evidence paragraph(s)**: Map **Essential** qualifications (and top **Asset** items) to **STAR** mini‑cases (methods/tools + measurable outcomes)
+6. **Fit & motivation**: Why this organization/division? Reference one initiative/policy area; connect skills to mandate
+7. **Closing**: Logistics *(availability, attachments)*; courteous ask; sign‑off
+
+**Formatting (ATS‑friendly):** 
+
+- One column, left‑aligned,  keep to **one page**.
+- Standard headings; no text boxes/images; export as **selectable PDF**.
+- Mirror posting language.
+
+<!-- You can select, copy, and search the text (Ctrl/Cmd+F), and software (ATS parsers, screen readers) can reliably read it. -->
+
+## Cover letter ingredient 1: Header
+
+<!-- PII = personal identifiable information -->
+- **Include**: Name · professional email · phone · LinkedIn · *(GitHub if relevant)* · City, Province.
+    - If using LinkedIn: make sure it is complete and matches your resume. 
+    - Recruiters will look at it, and inconsistencies raise flags.
+- **Conventions**: One line (or two lines), left‑aligned, plain text; no headshot; no full street address; links must work.
+    - Links like [this](google.com), not like [https://direct.mit.edu/rest/article-abstract/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data](https://direct.mit.edu/rest/article-abstract/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data).
+<!-- - **Federal signals (optional, if true)**: Language ability; clearance eligibility (briefly in closing rather than header). -->
+- Style:
+    - Keep the header visually light; recruiters focus on content below. 
+    - Check that links work in the exported PDF.
+
+## Cover letter ingredient 2: Date and recipient block
+
+- **Purpose**: Targets the letter to a specific competition and audience; aids routing and audit.
+- **Include**: Date, Recipient name/title (or team/committee), Organization, Division/Branch; address optional for email submissions.
+- **Salutation**: See next slide.
+- **Consistency**: Organization and division names exactly as in the posting.
+
+---
+
+### Salutations
+
+Preferred:
+
+- Dear [Team Name] Hiring Committee:
+- Dear [Department Name] Team:
+- Dear HRSDC Co-op Applications Manager,
+- Dear Ministry of Health Hiring Committee:
+- Dear [Person's name]:
+
+OK, but a bit dated:
+
+- Dear Sir or Madam:
+- Dear Hiring Committee:
+
+Not OK:
+
+- "Hi" (too informal) — err toward **formality**
+
+Style:
+
+- Watch gender (get it right or avoid)
+- Spaces after punctuation
+
+## Cover letter ingredient 3: "Re: line"
+
+- **Purpose**: Identifies exact competition; improves searchability and routing.
+- **Content**: Role title; Organization/Division; Posting ID (if provided).
+- **Placement**: On its own line, directly above the salutation; bold for skimmability.
+- **Style**: Mirror the posting’s capitalization and wording (e.g., *Junior Policy Analyst*, not *junior policy analyst*).
+- Standard in public sector. 
+    - For private sector roles, use if posting includes reference number or if unsure.
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+Re: Job application for analyst
+:::
+
+::: {.column width="50%"}
+#### Good
+Re: Application for **Junior Policy Analyst** at **Environment and Climate Change Canada** (Posting **74321**)
+:::
+:::
+
+## Cover letter ingredient 4: Opening
+
+- **Purpose**: Call out the specific position or competition; preview your "value" in their language.
+- **Include (≤4 sentences):**
+    - **Role + source**: Exact title, org/division, posting ID if given.
+    - **Value proposition (1–2 sentences)**: 1–2 high‑value capabilities/results (methods/tools + deliverables) relevant to the unit’s work.
+    - **Thesis of fit**: A short line linking your profile to the division/initiative.
+- **Style**: Plain, specific, no filler; mirror the posting's terminology; avoid claims without evidence.
+- Use **posting keywords** in the opening to pass skims and assist search.
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I wish to leverage my synergy and passion to contribute to your dynamic organization. I saw your advertisement for an analyst and I think I am a perfect fit.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am an **MA Economics** candidate who has built **R/Python data pipelines** and authored **policy memos** on labour and emissions indicators. I would apply these skills to **Net‑Zero 2050** reporting and related briefing materials.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why**: Previews concrete capabilities in mandate language; links to a specific initiative; ≤4 sentences.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I am writing to apply for an analyst job at your municipality. I have strong analytical skills and am passionate about public service. I believe my background makes me a great fit.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am applying for the **Policy/Analyst** position in the **Township of Langley’s Corporate Planning Division**. I use **Python, R, and Excel** to build clean datasets and clear, short reports. My work supports ....
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why this works**: specific role and unit; concrete tools; concrete outputs; direct link to the division’s work; no filler.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Option A: Value first
+I am applying for the **Policy/Analyst** role in the **Township of Langley’s Corporate Planning Division**. I use **Python, R, and Excel** to prepare clean datasets and write short, clear summaries. My work helps teams **track results** and **make planning decisions**.
+:::
+
+::: {.column width="50%"}
+#### Option B: Status first
+As a **Master’s student in Economic Policy** at **McMaster**, I am applying for the **Policy/Analyst** role in **Corporate Planning**. I use **Python, R, and Excel** to prepare clean datasets and clear, short summaries for decision‑makers.
+:::
+:::
+
+### Which to choose?
+- **Use A** when the posting doesn’t gate on status, focus on **what you deliver**.  
+- **Use B** when the posting **requires or favors** current students or when timing/eligibility is a key filter.
+- If status is relevant but not decisive, start with **A** and add a short clause in sentence 2: "I am completing an **MA in Economic Policy** at **McMaster**."
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+Please accept my application for the Programme Associate role. I did coursework in econometrics and worked on many projects. I am a hardworking person and a team player who can contribute to your organization.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am applying for the **Programme Associate** position in the **Country Policy and Delivery Division (CPD)** at the **IMF**. In my graduate research, I modeled **debt sustainability** across emerging markets using Stata, then summarized findings in **plain-language briefs** for policy audiences. I would apply these analytical and communication skills to CPD's **country assessment work**.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Opens with **specific role and division**; names a **concrete project topic** (debt sustainability) + **tools** (Stata); shows **communication skill** (translating for audiences); connects to **CPD's actual work** (country assessments); no generic claims ("hardworking," "team player").
+::: -->
+
+## Cover letter ingredient 5: Evidence paragraph
+
+**Purpose**: Show that you meet the posting's **Essential qualifications** with concrete, verifiable examples.
+
+**How (plain STAR in sentences):**
+
+- **Situation/Task**: One clause to set context (who/what/why).
+- **Action**: What you did, with **methods/tools/approaches** when relevant.
+- **Result**: A measurable outcome (%, hours saved, users, accuracy) or a clear deliverable (briefing note, dashboard, report, presentation).
+
+**Structure**
+
+- 1–2 paragraphs total; 4–6 sentences each; each paragraph addresses **one cluster** of requirements.
+- Mirror a few **exact words from the posting** (e.g., "quantitative analysis," "policy writing," "stakeholder engagement").
+- Keep verbs active; avoid duty phrases ("responsible for").
+
+---
+
+### What to emphasize 
+
+Match to the posting:
+
+- **Quantitative work**: Name methods (regression, forecasting) and tools (R, Python, Excel, Stata) when used
+- **Research**: Describe scope, methods, and outputs (working papers, presentations, datasets)
+- **Writing/communication**: Specify audience, format, and length (policy brief, memo, presentation)
+- **Collaboration**: Note team size, cross-functional work, stakeholder groups
+- **Project management**: Show deliverables completed, timelines met, coordination activities
+
+<!-- Examples above are mostly coursework. -->
+
+For public/private sector, work experience > co-op experience > RA works > course-related activities, but all are valid.
+
+::: {.callout-tip}
+**Template sentence**: In [context], I [action with method/approach], which [result]; this demonstrates [requirement from posting].
+:::
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad (generic, duties)
+During my co‑op I worked with data and helped make dashboards. I was responsible for analysis and reporting using various software. I collaborated with different stakeholders and improved processes. I believe these experiences make me qualified for the role.
+:::
+
+::: {.column width="50%"}
+#### Good (plain STAR, measurable)
+In a four‑month co‑op with a federal department, our team needed **inflation‑adjusted indicators** for monthly reports. I built a **Python/SQL** process to update the series and check for errors. This cut manual work by **about 8 hours per week** and fed a simple **Power BI** page used by **two program teams**. I also wrote a **two‑page summary** so non‑technical staff could explain the numbers to managers.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: specific context; concrete action with named tools; **numerical result**; clear deliverables; wording reuses terms common in postings (**analysis, reporting, visualization**), but stays plain and short.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad (research without impact)
+As a research assistant, I helped with a project on trade policy. I collected data and did literature reviews. I attended team meetings and contributed ideas. This gave me valuable research experience.
+:::
+
+::: {.column width="50%"}
+#### Good (research with clear outputs)
+As a **Research Assistant** for Professor Chen's trade policy project (Jan–Aug 2024), I conducted a **systematic review of 45 empirical papers** on tariff impacts, summarized findings in a **15-page annotated bibliography**, and created a **comparative table** showing methodology and results across studies. This literature synthesis informed the **theoretical framework** for a working paper now under review at the *Canadian Journal of Economics*.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Quantifies work (45 papers, 15-page document); names **clear deliverables** (annotated bibliography, comparative table); shows **impact** (informed working paper); mentions **outlet** (journal under review). No software needed—this demonstrates research rigor, synthesis skills, and written communication.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad (writing without specifics)
+I have strong writing skills from my coursework. I wrote several papers and received good grades. I can communicate complex ideas clearly to different audiences.
+:::
+
+::: {.column width="50%"}
+#### Good (writing with audience and impact)
+For my **Applied Public Finance** course, I wrote a **12-page policy memo** analyzing the distributional impact of child care subsidies, using **microsimulation** on Statistics Canada data. My professor shared it as an **exemplar** with the next cohort. I also condensed the analysis into a **2-page executive summary** and **8-slide presentation** for non-specialist audiences, demonstrating my ability to tailor communication to different stakeholders.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Specifies **format** (12-page memo, 2-page summary, 8 slides); names **audience** (professor, students, non-specialists); shows **quality** (used as exemplar); demonstrates **adaptation** (same content, multiple formats). Software mentioned (microsimulation) but focus is on **communication outputs**.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad (presentation without context)
+I presented my research at a conference. I explained my findings and answered questions. People seemed interested in my work.
+:::
+
+::: {.column width="50%"}
+#### Good (presentation with scope and engagement)
+I presented my co-authored paper on **regional unemployment persistence** at the **Canadian Economics Association conference** (June 2024) to an audience of **70+ economists**. I fielded questions on our **panel data methodology** and **policy implications** for **15 minutes**. Based on feedback, we revised our **robustness tests**, which strengthened the paper before journal submission.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Names **venue** and **audience size** (CEA, 70+ people); specifies **content** (regional unemployment, panel data); shows **engagement** (15-minute Q&A); demonstrates **impact** (revised paper based on feedback). This proves research communication skills without mentioning any software.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad (collaboration without substance)
+I worked with a team on an economics project. We met regularly and divided up the work. I was responsible for my section and contributed to group discussions.
+:::
+
+::: {.column width="50%"}
+#### Good (collaboration with coordination and output)
+For our **Industrial Organization** group project, I coordinated a **team of 4 students** analyzing market concentration in Canada's grocery sector. I organized **weekly meetings**, delegated research tasks across **5 retail chains**, and integrated our findings into a **25-page report** with **12 exhibits**. I also synthesized our **policy recommendations** into the final **10-minute presentation** that received the **highest grade in the class**.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Shows **leadership** (coordinated team of 4); quantifies **scope** (5 chains, 25 pages, 12 exhibits); demonstrates **integration** (brought pieces together); proves **quality** (highest grade). Emphasizes **project management** and **collaboration**, not software.
+::: -->
+
+---
+
+### Examples for different skill emphases
+
+**Quantitative/Technical roles** → Emphasize methods and tools:
+
+- "Built a **difference-in-differences model** in **Stata** to evaluate program impact..."
+- "Cleaned and merged **3 administrative datasets** (200K records) using **R**..."
+
+**Research roles** → Emphasize rigor and outputs:
+
+- "Conducted **systematic literature review** of **60 papers** on monetary policy transmission..."
+- "Designed and implemented **survey instrument** fielded to **500 respondents**..."
+- "Co-authored **working paper** presented at **3 conferences**..."
+
+**Policy/Writing roles** → Emphasize communication and audience:
+
+- "Authored **5-page policy brief** on housing affordability for **municipal decision-makers**..."
+- "Translated technical regression results into **plain-language summary** for **public consultation**..."
+- "Prepared **briefing deck** (15 slides) for **Deputy Minister** on fiscal sustainability..."
+
+**Coordination/Management roles** → Emphasize stakeholders and deliverables:
+
+- "Coordinated consultation with **8 community organizations** to inform program design..."
+- "Managed logistics for **policy symposium** with **120 attendees** and **6 speakers**..."
+- "Led team of **5 research assistants** collecting data from **15 municipalities**..."
+
+## Cover letter ingredient 6: Fit and motivation
+
+**Purpose**: Demonstrate research and connect your capabilities to the organization's specific work; signals genuine interest.
+
+**Include (2–3 sentences):**
+
+- Reference **one specific initiative, policy area, or strategic priority**.
+- Link your background to that work.
+- Avoid generic claims ("dynamic team," "exciting opportunity").
+
+**How to research:**
+
+- Check the organization's website for current priorities, strategic plans, recent reports.
+- Search recent news about the division/department.
+- For government: look at mandate letters, departmental plans, recent ministerial announcements.
+
+**Style**: Specific, brief, genuine; name something concrete; no flattery.
+
+::: {.callout-tip}
+**Formula**: "I am particularly interested in [Organization's] work on [specific initiative/policy area]. My [skill/background] would support [how you'd contribute]."
+:::
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I am very interested in working for the Township of Langley because it is a dynamic organization doing important work in the community. I believe I would be a great fit for your innovative team and I am passionate about making a difference.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am particularly drawn to the Township's work on **affordable housing policy** and the recent **Housing Needs Assessment**. My coursework on housing economics and experience building cost-effectiveness models would support ongoing analysis in this area.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: names a **specific initiative** (Housing Needs Assessment); connects **concrete skills** (cost-effectiveness models, housing economics) to that work; no generic language; shows the candidate researched the organization.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+Environment and Climate Change Canada does important work protecting the environment. I have always been passionate about climate change and sustainability. I would love to contribute my skills to your mission of building a better future for Canadians.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am particularly interested in ECCC's **Net‑Zero 2050** reporting and the **Greenhouse Gas Inventory**. I would contribute my experience preparing **emissions indicators** and writing **plain‑language summaries** for non‑technical audiences.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why**: references **two specific programs**; links **concrete deliverables** (emissions indicators, plain-language summaries) to those programs; mirrors mandate language.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I am motivated by TD's purpose-driven culture and reputation in risk excellence. I would value the opportunity to contribute to credit or enterprise risk, model governance and validation, or fraud strategy.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am particularly interested in TD's **Fraud Detection and Prevention** work, especially the recent deployment of **machine learning models** for real-time transaction monitoring mentioned in your 2024 Risk Report. My experience building **anomaly detection algorithms in Python** and my coursework in **time-series forecasting** would support the team's efforts to reduce false positives while catching emerging fraud patterns.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Names a **specific area** (Fraud Detection), references **actual TD work** (2024 Risk Report, ML for transaction monitoring), connects **concrete skills** (anomaly detection in Python, time-series forecasting) to **specific challenges** (reducing false positives). The left column is generic praise that could apply to any bank.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+SANEM's commitment to developing talent through extensive training programs and mentorship has inspired me. My primary objective aligns with the work culture of SANEM, that is, to surround myself in an environment that encourages intensive research practices while improving my ability to apply my theoretical economics knowledge in real-world circumstances.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am drawn to SANEM's recent work on **labor market dynamics in the garment sector**, particularly the **2024 wage survey** covering 500+ factories. My experience analyzing **large survey datasets in Stata** and my undergraduate thesis on **employment elasticity** would allow me to contribute to SANEM's ongoing research on **fair wage policies** and **worker productivity**.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: References **specific SANEM research** (2024 wage survey, garment sector work); connects **your skills** (Stata, employment elasticity) to **their actual projects** (fair wage policies); focuses on **contribution** not "what will SANEM do for me." The left column talks only about what the candidate wants to gain (training, development) rather than what they'll contribute.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I would welcome the opportunity to bring this mix of policy training, quantitative skills, and service mindset to your organization. I am excited to contribute analytical skills, clear communication, and a proactive, can-do attitude to your team.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am particularly interested in the Township's **Official Community Plan update** and the **Housing Needs Assessment** published in March 2025. My coursework in **urban economics** and my capstone project analyzing **residential density and affordability trade-offs using R** would support the Planning Division's work on **evidence-based zoning recommendations** and **affordable housing targets**.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Names **two specific initiatives** (OCP update, March 2025 Housing Needs Assessment—shows you did recent research); links **concrete coursework** (urban economics) and **a specific project** (density analysis in R) to **actual deliverables** the division produces (zoning recommendations, housing targets). The left column is empty buzzwords ("service mindset," "can-do attitude").
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I am particularly drawn to Stripe's innovative approach to risk management and fraud detection, as well as its deep commitment to supporting small businesses. I am excited about Stripe's innovative research and collaborative culture.
+:::
+
+::: {.column width="50%"}
+#### Good
+After attending Stripe's **Data and AI event** in September, I learned about the team's work on **causal inference for payment optimization**. I am particularly interested in how Stripe uses **difference-in-differences** and **synthetic control methods** to evaluate product changes—techniques I applied in my **City of Hamilton project** using **panel data and fixed effects models** to measure policy impact on property values. I would bring this causal inference expertise to Stripe's experimentation work.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Shows **actual engagement** (attended event—demonstrates initiative); references **specific technical work** at Stripe (causal inference for payment optimization, diff-in-diff, synthetic control); makes a **direct connection** to candidate's project (Hamilton property study with panel data); focuses on **what you'd contribute** (causal inference expertise), not vague "excitement" about culture. The left column repeats "innovative" twice and stays completely generic.
+::: -->
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I am particularly drawn to CPP Investments for its collaborative culture and commitment to sustainable investing, values that deeply resonate with me. I am excited about applying my theoretical knowledge and research experience to contribute to your team's success.
+:::
+
+::: {.column width="50%"}
+#### Good
+I am particularly interested in CPP Investments' **Sustainable Investing Report 2024**, which highlights the integration of **climate risk into portfolio modeling**. My PhD research on **volatility modeling** using **GARCH and Markov-switching models** directly relates to CPP's work on **measuring climate-related financial risks** in equity portfolios. I would apply these time-series techniques to support the Quantitative Research team's climate risk assessments.
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: References a **specific publication** (Sustainable Investing Report 2024—proves research); identifies **concrete technical work** (climate risk in portfolio modeling); connects **PhD methods** (GARCH, Markov-switching) to **CPP's actual needs** (measuring climate risks); names the **specific team** you'd support (Quantitative Research). The left column uses empty phrases ("values that resonate," "collaborative culture") without demonstrating any real knowledge of CPP's work.
+::: -->
+
+---
+
+### Common mistakes in "Fit and motivation" paragraphs:
+
+**Don't:**
+
+- Talk about what the organization will do for YOU ("training opportunities," "professional development")
+- Use generic praise that fits any company ("innovative," "dynamic," "collaborative culture")
+- Mention values without connecting to specific work ("commitment to excellence")
+- List multiple areas of interest without depth ("I'd be interested in X, Y, or Z")
+- Claim you're "drawn to" or "passionate about" without evidence
+
+**Do:**
+
+- Name a **specific initiative, program, report, or publication** (with date if possible)
+- Connect **your concrete skills/project** to **their specific work**
+- Show you've done **recent research** (mention 2024/2025 developments)
+- Focus on **what you'll contribute**, not what you'll gain
+- Reference **how you learned** about their work (if applicable: attended event, read report, spoke with employee)
+
+## Cover letter ingredient 7: Closing
+
+**Purpose**: Confirm logistics, express availability, and end courteously without weakening your application.
+
+**Formula (2–3 sentences):**
+
+```
+[Attachment] + [Availability] + [Thanks]
+
+[Sign-off],
+[Your name]
+```
+
+**Sign‑offs:**
+
+- Sincerely, *(standard, always safe)*
+- Best regards, *(slightly less formal)*
+- Respectfully, *(very formal government)*
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+I really hope you will consider me for this position as I am very eager to work for your organization. Please feel free to contact me at any time. I look forward to hearing from you soon and I hope we can set up an interview at your earliest convenience. Thank you so much for taking the time to read my letter.
+:::
+
+::: {.column width="50%"}
+#### Good
+I have attached my résumé for your review. I am available for an interview at your convenience. Thank you for your consideration.
+
+Sincerely,
+
+[Your name]
+:::
+:::
+
+<!-- ::: {.callout-note}
+**Why the right column wins**: Brief (3 sentences); no desperation; no pressure; proper sign-off. The left column repeats "hope" and "thank you," sounds eager, and wastes space.
+::: -->
+
+---
+
+### Three standard versions
+
+**Version 1 (minimal):**
+```
+I have attached my résumé. I am available for an interview at your convenience. Thank you for your consideration.
+
+Sincerely,
+[Your name]
+```
+
+**Version 2 (with role):**
+```
+I have attached my résumé and am available to discuss the Policy Analyst position at your convenience. Thank you for your consideration.
+
+Sincerely,
+[Your name]
+```
+
+**Version 3 (multiple attachments):**
+```
+I have attached my résumé and writing sample as requested. I am available for an interview at your convenience. Thank you for considering my application.
+
+Respectfully,
+[Your name]
+```
+
+---
+
+### Extensions for special cases
+
+Add **one contextual element** only when genuinely relevant:
+
+**Referral:**
+```
+Thank you to [Name] for connecting me with this opportunity. I have attached my résumé and am available to discuss how my experience aligns with [Team/Division]. Thank you for your consideration.
+```
+
+**Event follow-up:**
+```
+Thank you for the conversation at [Event] in [Month]. I have attached my résumé and am available to discuss this opportunity further.
+```
+
+**Specific timeline:**
+```
+I have attached my résumé and am available for interviews throughout [specific months] before my [reason: teaching term concludes/graduation]. Thank you for your consideration.
+```
+
+**Key principle**: Use the standard formula for 95% of applications. Only add context if it strengthens your application.
+
+---
+
+### Common mistakes
+
+- "I look forward to hearing from you soon" *(puts pressure)*
+- "I hope you will consider me" *(sounds uncertain)*
+- "Please feel free to contact me" *(obvious; wastes words)*
+- "I would be honored/thrilled/excited" *(save for interview)*
+- "At your earliest convenience" *(sounds pushy)*
+- "Repeating your qualifications" *(already made your case)*
+- "Repeating contact info" *(already in header)*
+- "Going over 3 sentences" *(too long)*
+
+## Cover letter, final checks
+
+**ATS‑friendly formatting rules:**
+
+- **One column, left‑aligned**; no text boxes, tables, images, or headers/footers.
+- **Standard fonts**: Arial, Calibri, Times New Roman (11–12pt).
+- **Save as selectable PDF** (not scanned image; not Word unless posting requests it).
+- **Test**: Can you select, copy, and paste text from the PDF? If yes, it's ATS‑friendly.
+
+. . .
+
+**Formatting for human readers:**
+
+- **One page**.
+- **White space**: small breaks between sections; standard margins.
+- **Bold key terms sparingly**: role title, organization name in Re: line; methods/tools in evidence paragraphs.
+- **No dense blocks**: break long paragraphs into 4–6 sentence chunks.
+
+. . .
+
+**Tips**
+
+- Let someone else review it (fresh eyes catch errors you'll miss).
+- If submitting by email:
+    - Make sure the **cover email itself** has no errors.
+    - Subject line mirrors Re: line: 'Application for [Role] – [Your Name] – Posting [ID]'.
+
+# CVs (Résumés)
+
+## Standard structure
+
+Many different formats and structures can work, but deviate from following default only if you have reason to:
+
+1. Header → 2. Education → 3. Work Experience → 4. Skills → 5. Additional (if space)
+
+## CV ingredient 1: Header
+
+**Include:**
+
+- Full name (bold, slightly larger)
+- Professional email
+- Phone number
+- City, Province (no full street address)
+- LinkedIn (optional; ensure profile matches CV)
+- GitHub (only if relevant and repos are polished)
+
+**Do NOT include:**
+
+- Photo (not standard in Canada/US)
+- Full address, age, marital status, gender
+- Unprofessional email
+
+**Formatting:**
+
+- Center or left-align
+- 1-2 lines max
+- Ensure links are clickable in PDF
+
+## CV ingredient 2: Education
+
+**Include for each degree:**
+
+- Degree and major (e.g., "Master of Arts in Economic Policy")
+- Institution name and location
+- Graduation date (or "Expected April 2025")
+- GPA (optional; include if ≥3.7/4.0 or ≥80%)
+- Relevant coursework (2–4 courses max, only if directly relevant)
+- Thesis/capstone title (optional, if relevant)
+- Significant awards/scholarships
+
+**Formatting:**
+
+- Reverse chronological (most recent first)
+- Institution and degree on one line; dates right-aligned
+- 1-2 lines of detail per degree
+
+**Note:** Use "Expected [Month Year]" for in-progress degrees. If doing a co-op, your completion date may shift—update accordingly.
+
+## CV ingredient 3: Work experience
+
+**Purpose**: Show you deliver results; demonstrate skills through achievements.
+
+**Structure for each role:**
+
+- Job title | Organization, Location | Dates (Month Year – Month Year)
+- 3–5 bullet points using **STAR framework**
+- Past tense for completed roles; present tense only for current role
+
+**How to write bullets:**
+
+- Start with **action verb** (analyzed, built, led, improved)
+- Add **brief context** (who, what, why)
+- Name **tools/methods** (R, Python, Stata, Excel)
+- **Quantify results** (%, hours saved, audience size, cost savings)
+
+**Action verbs by category:**
+
+- Analysis: Analyzed, evaluated, assessed, forecasted, modeled
+- Creation: Built, developed, designed, created, authored
+- Improvement: Improved, optimized, streamlined, reduced, increased
+- Collaboration: Collaborated, coordinated, presented, communicated
+- Leadership: Led, managed, supervised, trained, mentored
+
+---
+
+::: columns
+::: {.column width="50%"}
+#### Bad
+**Policy Intern** | Government Agency  
+Sep 2024 – Dec 2024
+
+- Responsible for data analysis
+- Helped with reports
+- Worked with team members
+- Used various software tools
+:::
+
+::: {.column width="50%"}
+#### Good
+**Policy Analyst Intern** | Employment and Social Development Canada, Ottawa, ON  
+Sep 2024 – Dec 2024
+
+- Built Python/SQL pipeline to process 200K employment records monthly, reducing manual work by 12 hours/week
+- Analyzed wage trends across 15 sectors using Stata; presented findings in 5-page briefing note for senior management
+- Collaborated with 3 regional offices to standardize data collection, improving consistency by 30%
+:::
+:::
+
+::: {.callout-note}
+**Why the right column wins**: Specific job title; concrete tools; **measurable outcomes** (200K records, 12 hours, 15 sectors, 30%); active verbs; shows technical and communication skills.
+:::
+
+<!-- ---
+
+**Quantifying when you lack exact numbers:**
+
+Estimate scope or describe deliverables:
+
+- "Analyzed dataset with 50,000+ observations"
+- "Supported team of 5 analysts"
+- "Reduced processing time from 2 hours to 30 minutes"
+- "Presented to audience of 40+ stakeholders"
+- "Authored 10-page policy brief on housing affordability"
+- "Built interactive dashboard for budget tracking" -->
+
+## CV ingredient 4: Skills
+
+**Purpose**: Scannable list of competencies; includes keywords for ATS.
+
+**Categories:**
+
+**Technical Skills/Tools:**
+
+- Programming: Python, R, Stata, SQL, MATLAB
+- Software: Excel (advanced), Power BI, Tableau, SPSS, EViews
+- Other: Git/GitHub, LaTeX, Markdown
+
+**Data Skills:**
+
+- Statistical analysis, econometric modeling, data cleaning, visualization, forecasting
+
+**Languages:**
+
+- English (native), French (intermediate)
+- Or: Fluent in English and French (both official languages)
+
+**Certifications** (if relevant):
+
+- Security clearance level
+- Professional certifications (CFA, etc.)
+
+---
+
+**Formatting options:**
+
+::: columns
+::: {.column width="50%"}
+#### Option A: By category
+**Technical Skills**  
+*Programming*: Python, R, SQL, Stata  
+*Software*: Excel, Power BI, Tableau  
+*Languages*: English, French (intermediate)
+:::
+
+::: {.column width="50%"}
+#### Option B: Simple list
+**Skills**  
+Python, R, Stata, SQL, Excel, Power BI, LaTeX, Git  
+English (native), French (intermediate)
+:::
+:::
+
+. . .
+
+**Do NOT:**
+
+- Rate skills with bars/stars (subjective)
+- List basic skills ("Microsoft Word," "Email")
+- Exaggerate proficiency (you may be tested)
+
+## CV ingredient 5: Additional sections (optional)
+
+**Projects** (if you lack work experience):
+
+- 1–3 significant projects (capstone, thesis, research assistantship)
+- Format like work experience: title, dates, 2–3 bullets with tools and results
+- Example: "**Housing Affordability Analysis** | Jan–Apr 2024  
+  - Analyzed 10 years of CMHC data using R  
+  - Built predictive model achieving 85% accuracy; presented to class of 30"
+
+**Volunteer Experience** (if substantial or shows leadership):
+
+- "**Volunteer Tax Preparer** | YMCA, Hamilton | Jan–Apr 2024  
+  - Prepared 45 tax returns; average refund $1,200"
+
+**Awards and Honours:**
+
+- Significant scholarships, competitions (include amount if substantial)
+
+**Publications** (research roles only):
+
+- Only if published or accepted (not working papers)
+
+## Formatting & ATS
+
+
+**Formatting:**
+
+- **ATS-friendly**: One column, left-aligned, **selectable PDF**
+    - Clear section headings
+    - Standard fonts: Arial, Calibri, Times New Roman (10–12pt)
+    - No text boxes, tables, images, or graphics
+- **Consistency**: Same date format, bullet style, verb tense throughout
+- **White space**: Use margins and spacing; don't cram
+- **Length**: One page strongly preferred for students; two pages acceptable if you have substantial relevant experience
+
+**Length:**
+
+- **Students/early career**: One page strongly preferred
+- **Two pages acceptable** if you have substantial relevant experience (multiple internships, significant projects, TA roles)
+- Never go to page 2 with only 2–3 lines
+- Don't pad to fill space; don't cram to fit one page
+
+**Visual consistency:**
+
+- Same fonts, limit different styles
+- Same bullet style throughout (• or –, not both)
+- Same date format (Jan 2024 or 01/2024, not both)
+- Same verb tense within sections
+- Consistent spacing and indentation
+
+---
+
+**Content:**
+
+- **Most recent first** within each section
+- **Quantify results**: Numbers, percentages, outcomes
+- **Demonstrate, don't state**: Show skills through examples, not course lists
+- **Tailor for each job**: 
+    - Highlight relevant experience
+    - Different jobs emphasize different skills
+    - ATS systems scan for keywords from posting
+    - Shows you read the posting carefully
+
+**How to tailor (15–30 min per application):**
+
+1. **Reorder bullets**: Put most relevant experience first
+2. **Mirror posting language**: Use their exact phrases ("quantitative analysis" not "statistical work")
+3. **Adjust skills section**: Move relevant tools to top
+4. **Emphasize relevant projects**: Expand descriptions that match posting
+5. **De-emphasize or remove**: Irrelevant experience can be shortened
+
+**Maintain a master CV** and adjust emphasis for each job—don't start from scratch.
+
+## Common mistakes
+
+**Content errors:**
+
+- Objective statement ("Seeking a challenging position...")
+- "References available upon request"
+- Listing duties instead of achievements
+- Using first person ("I analyzed..." → "Analyzed...")
+- Including irrelevant old work
+- Just listing courses instead of showing what you did
+
+**Formatting errors:**
+
+- Multiple columns or text boxes (breaks ATS)
+- Fancy fonts, colors, graphics
+- Inconsistent dates, bullets, or verb tenses
+- Walls of text without bullet points
+
+**Credibility errors:**
+
+- Typos or grammar errors
+- Exaggerating skills or results
+- Unprofessional email address
+- Broken links
+- Generic CV not tailored to posting
+
+<!-- ## Academic vs. industry focus
+
+**Academic CV emphasizes:**
+
+- Publications, conference presentations
+- Teaching and research roles
+- Thesis/dissertation
+- Grants, fellowships
+
+**Industry/Government CV emphasizes:**
+
+- Measurable work outcomes
+- Technical skills and tools
+- Communication and collaboration
+- Project deliverables and impact
+
+**For MA students applying to government/industry:**
+
+- Lead with **work experience** showing results
+- Name **technical skills** prominently
+- Frame **academic work as projects** with deliverables
+- You can include publications/conferences, but as supporting evidence, not the main selling point
+
+**Key difference**: Academic CVs show scholarly contributions; industry CVs show what you delivered and how.
+
+--- -->
+
+## Cover letter + CV: The package
+
+Remember they work together:
+
+- **Cover letter**: Tells a story; explains fit; highlights 1–2 key qualifications with STAR examples
+- **CV**: Comprehensive list of all relevant experience and skills; scannable format
+
+**Consistency is critical:**
+
+- Job titles, dates, organization names must match exactly
+- Skills mentioned in cover letter must appear in CV
+- Don't contradict yourself across documents
+
+**Before submitting:**
+
+- Cover letter references specific role and organization
+- CV is tailored to emphasize relevant experience
+- Both documents use keywords from posting
+- Both are saved as professional PDFs with clear filenames
+- If submitting by email, the email itself is professional and error-free
+
+# References
+
+## Finding and managing references
+
+- **Find references early**.
+- Sometimes a letter is required; sometimes only name and contact info.
+- Increasingly, references are **phone calls**, not letters. If you know which, let the person know early.
+
+. . .
+
+- **Ask directly**: "Will you be able to provide me a **good** reference?" (without going overboard)
+- A **good** reference from a less well-known person is better than a mediocre or negative reference from a "famous" person.
+
+## References: Diversity and content
+
+**Diversity helps**:
+
+- Especially for **private sector**, have someone who can say you:
+  - "Know how to roll up your sleeves and work hard"
+  - "Are a good colleague"
+  - It's not all about academics (though some of it is)
+
+. . .
+
+**Provide the reference with materials**:
+
+- Marks, statement of interest, background material
+- Indicate if there's anything special
+- **2–3 pages is good; 8–10 pages is bad** (don't swamp them)
+
+## References: Limits and logistics
+
+Act with your reference letter writer in mind:
+
+- Be nice to your reference letter providers.
+- If applying to many positions, the reference writer will usually provide a **generic letter**, but may be willing to provide 1–2 **targeted** letters.
+- Most reference writers will be **reluctant to provide you** with a written reference directly — they prefer to send it directly to the employer.
+
+<!-- 
+# File Management
+
+## File naming conventions
+
+**Why it matters**:
+
+- You may send **one file**; the recipient may receive **hundreds of submissions**
+- Good filenames help you stay organized and help employers track your materials
+- Many organizations have detailed file naming conventions
+
+. . .
+
+**What makes a good filename**:
+
+- Identifies **you**
+- Identifies the **recipient/job**
+- Identifies the **content**
+- Includes a **date**
+
+## File naming examples
+
+**Example for a co-op at TD Bank**:
+
+- `Muris-ApplicationTDCoop-2Oct2025.pdf`
+
+. . .
+
+**Avoid**:
+
+- Generic names: `CV.pdf`, `CoverLetter.pdf`, `Application.pdf`
+- Numbers for dates: `2102025` — Is this Feb 10 or Oct 2?
+- Special characters or spaces: `CV (final) v2!.pdf`
+
+. . .
+
+**Best practices**:
+
+- Use **dashes or underscores**, not spaces
+- Spell out months: `2Oct2025`, `Oct2-2025`, `2025-10-02`
+- Be consistent across all files in an application package
+
+## Organization beyond applications
+
+**Apply these principles broadly**:
+
+- For **assignments** submitted electronically to McMaster
+- For **research** projects and data analysis
+- For **keeping yourself organized**
+
+. . .
+
+**Use directories sensibly**:
+
+```
+/Documents
+  /JobApplications
+    /FederalGovernment
+      /BankOfCanada
+      /StatisticsCanada
+    /PrivateSector
+      /RBC
+      /Deloitte
+  /Coursework
+  /Research
+``` -->
+
+# Interviews
+
+## Preparation is essential
+
+**Before the interview**:
+
+- **Dress well** — Better dressed than the interviewer is not unusual
+- **Basic hygiene** — Wash, brush teeth, etc.
+- **Be polite yet relaxed** (without going overboard on either)
+- **Get a good night's sleep**
+
+. . .
+
+**Research and preparation**:
+
+- **Stay up-to-date on current events** related to the job (read business section, check economic indicators)
+- **Know the organization** — Check their website, recent news, key initiatives
+- For economist roles: Brush up on relevant subfields (e.g., Industrial Organization for Industry Canada)
+- **Prepare questions** to ask — Shows seriousness and interest
+
+## Interview practice
+
+**Practice with peers**:
+
+- Form groups of **2–3 friends**
+- Practice answering **"standard" interview questions**
+- Practice **asking questions** (asking sensible questions indicates seriousness)
+- **Do not let practice turn into "rote responses"** — avoid going too far
+
+. . .
+
+**Remember**:
+
+- This is a **formal environment**
+- **Read your email and check your phone** — Some students apply but don't check for callbacks for 2 weeks. Good way NOT to gain employment!
+
+## Standard interview questions
+
+Be prepared to address:
+
+- Why are you interested in **this organization**?
+- What are your **strengths and weaknesses**?
+- Describe a time you **solved a problem** or **worked in a team**.
+- Where do you see yourself in **5 years**?
+- What relevant **skills** do you bring?
+- What questions do you have **for us**?
+
+. . .
+
+Think about how to **demonstrate** (not just claim) your:
+
+- Quantitative/statistical skills
+- Writing and communication abilities
+- Strategic thinking
+- Teamwork and collegiality
+
+---
+
+## Job-specific questions
+
+- Interview can have very specific questions.
+- Be ready to demonstrate your domain-specific knowledge, including responses to follow-ups from the panel.
+- Depending on the division, may ask:
+    - Specific questions about methodology or program evaluation.
+    - How the CPI is constructed. 
+    - The pros and cons of different policies that impact emissions.
+    - ...
+
+
+<!-- 
+# Digital Presence
+
+## LinkedIn
+
+**Why it matters**:
+
+- Recruiters use LinkedIn to find candidates and vet applicants
+- Your profile is often the **first impression** after your CV
+- Networking tool for informational interviews and connections
+
+. . .
+
+**Key elements**:
+
+- **Professional photo** — Headshot, business casual, good lighting
+- **Headline** — Not just "MA Student" — add specialization: "Economics MA Student | Data Analysis & Policy Research"
+- **About section** — 2–3 paragraphs highlighting your skills, interests, and what you're looking for
+- **Experience** — Include RA work, projects, relevant coursework with deliverables
+- **Skills & endorsements** — Add relevant technical skills (Stata, R, Python, econometrics)
+
+## LinkedIn: Strategy
+
+**Building your network**:
+
+- Connect with **classmates, professors, alumni** from McMaster Economics
+- Follow **companies and organizations** you're interested in
+- Join groups like **CABE/TABE**, economics/policy groups
+- Engage with content (like, comment thoughtfully on posts from economists/orgs you follow)
+
+. . .
+
+**Job search features**:
+
+- Set your profile to "**Open to work**" (visible to recruiters only, not your network)
+- Use **LinkedIn job search** — many postings are LinkedIn-exclusive
+- Apply through LinkedIn when possible (easier for recruiters to review your profile)
+
+## LinkedIn: Best practices
+
+**What to avoid**:
+
+- Unprofessional photos (cropped group photos, party pics, too casual)
+- Typos and grammatical errors (yes, this matters here too!)
+- Generic connection requests ("I'd like to add you to my professional network")
+- Over-posting or posting controversial content
+
+. . .
+
+**What to do**:
+
+- Keep profile **up-to-date** (add new skills, projects, certifications)
+- Write **personalized connection requests**: "Hi [Name], I'm an MA student at McMaster interested in [field]. I noticed your work at [org] and would love to connect."
+- Ask for **recommendations** from supervisors, professors (similar to references)
+- Share relevant content occasionally (research, articles) to stay visible
+
+## GitHub
+
+**When GitHub matters**:
+
+- Positions requiring **coding, data analysis, or technical skills**
+- Research assistant roles
+- Tech companies, data science roles, quantitative positions
+- Demonstrating your **portfolio** of work
+
+. . .
+
+**What to include**:
+
+- **Pinned repositories** — Showcase your best 3–4 projects
+- **README files** — Explain what each project does, methods used, results
+- **Code quality** — Clean, commented, reproducible code
+- **Documentation** — Installation instructions, dependencies, how to run
+- **Contributions** — Even small contributions to open-source projects show engagement
+
+## GitHub: Strategy
+
+**Building your presence**:
+
+- Make repositories **public** for portfolio projects (unless proprietary)
+- Link your GitHub in your **CV and LinkedIn**
+- Include projects from:
+  - Course assignments (with permission)
+  - RA work (if allowed)
+  - Personal projects (data analysis, replication studies)
+  - Hackathons or competitions
+
+. . .
+
+**Best practices**:
+
+- **Commit regularly** — Shows ongoing engagement (green squares matter)
+- **Organize repositories** — Use clear names and folder structures
+- Write **meaningful commit messages** — Not "update" or "fix"; be specific
+- Keep a **clean profile** — Archive or delete abandoned/messy projects
+
+## GitHub: What employers look for
+
+When employers check your GitHub:
+
+1. **Can you write clean, functional code?**
+2. **Can you document and explain your work?**
+3. **Do you follow best practices?** (version control, reproducibility)
+4. **Are your projects relevant** to the role?
+
+. . .
+
+**Quick wins**:
+
+- Create a **profile README** — A landing page for your GitHub with intro, skills, contact
+- Fork and contribute to **economics/data repos** (e.g., replication packages)
+- Show **progression** — Early projects can be simple; recent ones should be polished -->
+
+# Conclusion & Next Steps
+
+## Action items
+
+1. **Finalize your CV** and **cover letter templates**
+2. **Update your LinkedIn profile** — Professional photo, compelling headline, complete experience
+3. **Polish your GitHub** (if you have one) — Pin 2–3 best projects with good READMEs
+4. **Organize your files** — Use sensible naming conventions
+5. **Practice interviews** with classmates
+6. Continue finding job opportunities using links in meeting 1 alides
+
+. . .
+
+**Ongoing**:
+
+- **Watch list emails** for opportunities (time-sensitive!)
+- Contact me if you need assistance.
+
+## Workshop (Optional)
+
+If time permits or as take-home exercise:
+
+### In-person workshop structure
+
+1. **Form small groups of 2–3**
+2. **Exchange draft federal government cover letters**
+   - Read and constructively critique
+   - Broad comments for group discussion
+3. **Form different small groups**
+   - Exchange draft CVs
+   - Individual discussion, then large group discussion
+4. **Form third small group**
+   - Exchange private sector cover letters
+   - Individual discussion, then large group discussion
+
+### Take-home alternative
+
+- **Swap materials with 2–3 classmates**
+- Provide written feedback on:
+  - Clarity and persuasiveness
+  - Formatting and consistency
+  - Grammar and style
+  - Alignment with job requirements
+- Schedule a follow-up meeting to discuss feedback
