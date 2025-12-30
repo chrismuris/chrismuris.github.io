@@ -14,7 +14,7 @@ format:
 
 :::{.custom-header}
 :::{.profile-pic-container}
-<img src="profile_pic.jpg" class="profile-pic">
+<img src="profile_pic.jpg" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: block;">
 :::
 
 :::{.hero-content}
