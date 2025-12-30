@@ -155,8 +155,22 @@ df <- pubs |>
   }) |>
   arrange(desc(year))
 
+# Helper function to generate buttons
+generate_buttons <- function(row) {
+  doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
+  url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
+  
+  p_btn <- if (!is.na(doi_link)) make_btn("Paper", doi_link, "bi-file-earmark-text", "btn-outline-primary") else if (!is.na(url_link)) make_btn("Paper", url_link, "bi-file-earmark-text", "btn-outline-primary") else NULL
+  pre_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) make_btn("Preprint", url_link, "bi-file-earmark-pdf", "btn-outline-secondary") else NULL
+  c_btns <- if (length(row$code[[1]]) > 0) lapply(row$code[[1]], function(c) make_btn(c$name, c$url, "bi-github", "btn-outline-dark")) else NULL
+  s_btn <- if (!is.na(row$slides)) make_btn("Slides", row$slides, "bi-easel", "btn-outline-secondary") else NULL
+  ci_btn <- tags$button(class = "btn pub-btn btn-outline-info", onclick = paste0("copyToClipboard(`", row$bibtex, "`)"), tags$i(class = "bi bi-quote me-1"), "Cite")
+  
+  list(p_btn, pre_btn, c_btns, s_btn, ci_btn)
+}
+
 # Helper function to render table
-render_pubs_table <- function(data, searchable = TRUE) {
+render_pubs_table <- function(data, searchable = TRUE, inline_buttons = FALSE) {
   reactable(
     data,
     searchable = searchable,
@@ -206,28 +220,39 @@ render_pubs_table <- function(data, searchable = TRUE) {
 
           suffix <- if (!is.null(venue_part)) "," else "."
           
-          tags$div(
+          citation_div <- tags$div(
             class = "pub-citation-container",
             style = "font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; padding-left: 20px; text-indent: -20px; margin-bottom: 4px; display: block;",
             tags$span(class = "me-2", style = "text-indent: 0px; display: inline-block; width: 15px; color: #999;", tags$i(class = "bi bi-chevron-right small")),
             tags$span(class = "pub-citation", tags$span(style = "font-weight: 500;", auth_str), tags$span(paste0(" (", row$year, "): ")), tags$span("“", title_el, suffix, "”"), if (!is.null(venue_part)) tags$span(" ", venue_part, tags$span(". ")))
           )
+          
+          if (inline_buttons) {
+             btns <- generate_buttons(row)
+             # Filter out NULLs to check if we have buttons
+             valid_btns <- Filter(Negate(is.null), btns)
+             # Flatten list for rendering
+             if (length(valid_btns) > 0) {
+                btn_div <- tags$div(
+                  class = "d-flex gap-2 flex-wrap",
+                  style = "margin-left: 20px; margin-top: 4px; margin-bottom: 8px;",
+                  btns
+                )
+                tags$div(citation_div, btn_div)
+             } else {
+                citation_div
+             }
+          } else {
+             citation_div
+          }
         }
       )
     ),
     details = function(index) {
       row <- data[index, ]
       
-      # Always generate buttons for the expanded view
-      doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
-      url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
-      p_btn <- if (!is.na(doi_link)) make_btn("Paper", doi_link, "bi-file-earmark-text", "btn-outline-primary") else if (!is.na(url_link)) make_btn("Paper", url_link, "bi-file-earmark-text", "btn-outline-primary") else NULL
-      pre_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) make_btn("Preprint", url_link, "bi-file-earmark-pdf", "btn-outline-secondary") else NULL
-      c_btns <- if (length(row$code[[1]]) > 0) lapply(row$code[[1]], function(c) make_btn(c$name, c$url, "bi-github", "btn-outline-dark")) else NULL
-      s_btn <- if (!is.na(row$slides)) make_btn("Slides", row$slides, "bi-easel", "btn-outline-secondary") else NULL
-      ci_btn <- tags$button(class = "btn pub-btn btn-outline-info", onclick = paste0("copyToClipboard(`", row$bibtex, "`)"), tags$i(class = "bi bi-quote me-1"), "Cite")
-      
-      details_btns <- tags$div(class = "d-flex gap-2 mb-3 flex-wrap", p_btn, pre_btn, c_btns, s_btn, ci_btn)
+      btns <- generate_buttons(row)
+      details_btns <- if (!inline_buttons) tags$div(class = "d-flex gap-2 mb-3 flex-wrap", btns) else NULL
 
       if (nchar(row$abstract) > 0 || !is.null(details_btns)) {
         tags$div(class = "p-4 bg-light border-top", details_btns, if (nchar(row$abstract) > 0) tags$p(class = "abstract-text text-muted mb-0", style = "font-family: 'Roboto', sans-serif; font-size: 0.95rem; text-align: left; max-width: 800px; line-height: 1.6;", row$abstract) else NULL)
@@ -254,5 +279,5 @@ render_pubs_table(wp_df, searchable = FALSE)
 
 ````{r}
 #| echo: false
-render_pubs_table(pubs_df)
+render_pubs_table(pubs_df, inline_buttons = TRUE)
 ````
