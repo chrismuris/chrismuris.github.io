@@ -5,6 +5,7 @@ project:
 brand: _brand.yml
 
 website: 
+  title: "Chris Muris"
   navbar: 
     search: true
 
