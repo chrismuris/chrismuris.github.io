@@ -65,8 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-pic-main {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-info {
-    flex: 1; /* Take up remaining space */
+    flex: 1;
     min-width: 300px;
 }
 
@@ -94,8 +94,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    margin-top: 3.5rem !important; /* Spacing after bio */
-    margin-bottom: 1rem !important; /* Spacing before table */
+    margin-top: 2.5rem !important; /* Space after bio */
+    margin-bottom: 1rem !important; /* Space before table */
+}
+
+/* Fix mobile button text overflow */
+.btn {
+    white-space: nowrap;
+    width: auto;
 }
 
 /* Ensure Left Alignment */

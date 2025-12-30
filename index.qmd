@@ -229,19 +229,19 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
             paper_btn <- if (!is.na(doi_link)) {
                 a(href = doi_link, onclick = "event.stopPropagation();",
                   class = "btn btn-sm btn-outline-primary", target = "_blank",
-                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  style = "font-size: 0.75rem; padding: 2px 12px;",
                   tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
             } else if (!is.na(url_link)) {
                 a(href = url_link, onclick = "event.stopPropagation();",
                   class = "btn btn-sm btn-outline-primary", target = "_blank",
-                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  style = "font-size: 0.75rem; padding: 2px 12px;",
                   tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
             } else NULL
 
             preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
                 a(href = url_link, onclick = "event.stopPropagation();",
                   class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  style = "font-size: 0.75rem; padding: 2px 12px;",
                   tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
             } else NULL
 
@@ -250,7 +250,7 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
               code_btns <- lapply(row$code[[1]], function(c_item) {
                  a(href = c_item$url, onclick = "event.stopPropagation();",
                   class = "btn btn-sm btn-outline-dark", target = "_blank",
-                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  style = "font-size: 0.75rem; padding: 2px 12px;",
                   tags$i(class = "bi bi-github me-1"), c_item$name)
               })
             }
@@ -258,13 +258,13 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
             slides_btn <- if (!is.na(row$slides)) {
                 a(href = row$slides, onclick = "event.stopPropagation();",
                   class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  style = "font-size: 0.75rem; padding: 2px 12px;",
                   tags$i(class = "bi bi-easel me-1"), "Slides")
             } else NULL
 
             cite_btn <- tags$button(
               class = "btn btn-sm btn-outline-info",
-              style = "font-size: 0.75rem; padding: 2px 8px;",
+              style = "font-size: 0.75rem; padding: 2px 12px;",
               onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"),
               tags$i(class = "bi bi-quote me-1"), "Cite"
             )
