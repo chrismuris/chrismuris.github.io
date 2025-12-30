@@ -10,6 +10,23 @@ format:
         <meta property="og:image" content="profile_pic.jpg">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="profile_pic.jpg">
+        <style>
+          .profile-pic-main {
+              width: 280px !important;
+              height: 280px !important;
+          }
+          .pub-citation-container .btn {
+              white-space: nowrap !important;
+              width: auto !important;
+              min-width: max-content !important;
+              padding: 6px 16px !important;
+              font-size: 0.85rem !important;
+              display: inline-flex !important;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 4px;
+          }
+        </style>
 ---
 
 :::{.profile-header}
@@ -228,11 +245,11 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
 
             paper_btn <- if (!is.na(doi_link)) {
                 a(href = doi_link, onclick = "event.stopPropagation();",
-                  class = "btn btn-sm btn-outline-primary", target = "_blank",
+                  class = "btn btn-outline-primary", target = "_blank",
                   tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
             } else if (!is.na(url_link)) {
                 a(href = url_link, onclick = "event.stopPropagation();",
-                  class = "btn btn-sm btn-outline-primary", target = "_blank",
+                  class = "btn btn-outline-primary", target = "_blank",
                   tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
             } else NULL
 
@@ -246,7 +263,7 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
             if (length(row$code[[1]]) > 0) {
               code_btns <- lapply(row$code[[1]], function(c_item) {
                  a(href = c_item$url, onclick = "event.stopPropagation();",
-                  class = "btn btn-sm btn-outline-dark", target = "_blank",
+                  class = "btn btn-outline-dark", target = "_blank",
                   tags$i(class = "bi bi-github me-1"), c_item$name)
               })
             }
@@ -258,7 +275,7 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
             } else NULL
 
             cite_btn <- tags$button(
-              class = "btn btn-sm btn-outline-info",
+              class = "btn btn-outline-info",
               onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"),
               tags$i(class = "bi bi-quote me-1"), "Cite"
             )
@@ -301,10 +318,10 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
           url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
 
           paper_btn <- if (!is.na(doi_link)) {
-              a(href = doi_link, class = "btn btn-sm btn-outline-primary", target = "_blank",
+              a(href = doi_link, class = "btn btn-outline-primary", target = "_blank",
                 tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
           } else if (!is.na(url_link)) {
-              a(href = url_link, class = "btn btn-sm btn-outline-primary", target = "_blank",
+              a(href = url_link, class = "btn btn-outline-primary", target = "_blank",
                 tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
           } else NULL
 
@@ -316,7 +333,7 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
           code_btns <- NULL
           if (length(row$code[[1]]) > 0) {
             code_btns <- lapply(row$code[[1]], function(c_item) {
-               a(href = c_item$url, class = "btn btn-sm btn-outline-dark", target = "_blank",
+               a(href = c_item$url, class = "btn btn-outline-dark", target = "_blank",
                 tags$i(class = "bi bi-github me-1"), c_item$name)
             })
           }
@@ -327,7 +344,7 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
           } else NULL
 
           cite_btn <- tags$button(
-            class = "btn btn-sm btn-outline-info",
+            class = "btn btn-outline-info",
             onclick = paste0("copyToClipboard(`", row$bibtex, "`)"),
             tags$i(class = "bi bi-quote me-1"), "Cite"
           )
