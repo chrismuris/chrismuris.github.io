@@ -32,11 +32,11 @@ format:
 :::
 :::
 
-::: {.lead}
+<div class="lead">
 I am an associate professor in the Department of Economics at McMaster University. 
 My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
-:::
+</div>
 
 ```{r}
 #| echo: false
@@ -86,7 +86,7 @@ df <- pubs |>
   map_dfr(function(x) {
     # Handle Code: Can be string or list. Store as a list to be safe.
     code_val <- if (is.null(x$code)) {
-      list() 
+      list()
     } else if (is.character(x$code)) {
       list(list(name = "Code", url = x$code))
     } else {
@@ -136,7 +136,7 @@ df <- pubs |>
   arrange(desc(year))
 
 # Helper function to render table
-render_pubs_table <- function(data, searchable = TRUE) {
+render_pubs_table <- function(data, searchable = TRUE, show_buttons = TRUE) {
   reactable(
     data,
     searchable = searchable,
@@ -244,69 +244,72 @@ render_pubs_table <- function(data, searchable = TRUE) {
           }
 
           # 6. Generate Buttons (Now in the main cell)
-          doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
-          url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
+          btns_div <- NULL
+          if (show_buttons) {
+            doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
+            url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
 
-          paper_btn <- if (!is.na(doi_link)) {
-              a(href = doi_link, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-outline-primary", target = "_blank",
-                style = "font-size: 0.75rem; padding: 2px 8px;",
-                tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-          } else if (!is.na(url_link)) {
-              a(href = url_link, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-outline-primary", target = "_blank",
-                style = "font-size: 0.75rem; padding: 2px 8px;",
-                tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-          } else NULL
+            paper_btn <- if (!is.na(doi_link)) {
+                a(href = doi_link, onclick = "event.stopPropagation();",
+                  class = "btn btn-sm btn-outline-primary", target = "_blank",
+                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
+            } else if (!is.na(url_link)) {
+                a(href = url_link, onclick = "event.stopPropagation();",
+                  class = "btn btn-sm btn-outline-primary", target = "_blank",
+                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
+            } else NULL
 
-          preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
-              a(href = url_link, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                style = "font-size: 0.75rem; padding: 2px 8px;",
-                tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
-          } else NULL
+            preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
+                a(href = url_link, onclick = "event.stopPropagation();",
+                  class = "btn btn-sm btn-outline-secondary", target = "_blank",
+                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
+            } else NULL
 
-          code_btns <- NULL
-          if (length(row$code[[1]]) > 0) {
-            code_btns <- lapply(row$code[[1]], function(c_item) {
-               a(href = c_item$url, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-outline-dark", target = "_blank",
-                style = "font-size: 0.75rem; padding: 2px 8px;",
-                tags$i(class = "bi bi-github me-1"), c_item$name)
-            })
+            code_btns <- NULL
+            if (length(row$code[[1]]) > 0) {
+              code_btns <- lapply(row$code[[1]], function(c_item) {
+                 a(href = c_item$url, onclick = "event.stopPropagation();",
+                  class = "btn btn-sm btn-outline-dark", target = "_blank",
+                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  tags$i(class = "bi bi-github me-1"), c_item$name)
+              })
+            }
+
+            slides_btn <- if (!is.na(row$slides)) {
+                a(href = row$slides, onclick = "event.stopPropagation();",
+                  class = "btn btn-sm btn-outline-secondary", target = "_blank",
+                  style = "font-size: 0.75rem; padding: 2px 8px;",
+                  tags$i(class = "bi bi-easel me-1"), "Slides")
+            } else NULL
+
+            cite_btn <- tags$button(
+              class = "btn btn-sm btn-outline-info",
+              style = "font-size: 0.75rem; padding: 2px 8px;",
+              onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"),
+              tags$i(class = "bi bi-quote me-1"), "Cite"
+            )
+
+            btns_div <- span(
+              class = "d-inline-flex gap-2 ms-2 flex-wrap", 
+              style = "vertical-align: middle; width: auto;",
+              paper_btn, preprint_btn, code_btns, slides_btn, cite_btn
+            )
           }
-
-          slides_btn <- if (!is.na(row$slides)) {
-              a(href = row$slides, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                style = "font-size: 0.75rem; padding: 2px 8px;",
-                tags$i(class = "bi bi-easel me-1"), "Slides")
-          } else NULL
-
-          cite_btn <- tags$button(
-            class = "btn btn-sm btn-outline-info",
-            style = "font-size: 0.75rem; padding: 2px 8px;",
-            onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"),
-            tags$i(class = "bi bi-quote me-1"), "Cite"
-          )
-
-          btns_div <- div(
-            class = "d-flex justify-content-start gap-2 mt-2 flex-wrap", 
-            style = "text-indent: 0px; margin-left: 0px;", # Reset indent for the button row
-            paper_btn, preprint_btn, code_btns, slides_btn, cite_btn
-          )
           
           # Combine: Citation + Buttons
           div(
             class = "pub-citation-container",
-            style = "font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; padding-left: 20px; text-indent: -20px; margin-bottom: 25px;",
+            style = "font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; padding-left: 20px; text-indent: -20px; margin-bottom: 12px; display: block;",
             
-            div(
+            span(
               class = "pub-citation",
               span(style = "font-weight: 500;", auth_str),
               span(paste0(" (", row$year, "): ")),
               title_el,
-              if (!is.null(venue_part)) span(" ", venue_part, span("."))
+              if (!is.null(venue_part)) span(" ", venue_part, span(". "))
             ),
             btns_div
           )
@@ -352,7 +355,7 @@ wp_df <- df |> filter(type != "journal_article")
 
 ```{r}
 #| echo: false
-render_pubs_table(wp_df, searchable = FALSE)
+render_pubs_table(wp_df, searchable = FALSE, show_buttons = FALSE)
 ```
 
 ## Publications
@@ -362,5 +365,3 @@ render_pubs_table(wp_df, searchable = FALSE)
 render_pubs_table(pubs_df)
 ```
 
- 
- 

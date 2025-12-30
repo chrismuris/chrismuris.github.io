@@ -88,13 +88,14 @@ h1, h2, h3, h4, h5, h6 {
 .lead {
     font-size: 1.2rem;
     font-weight: 400;
-    color: #222; /* Darker than default lead */
+    color: #222;
     line-height: 1.6;
+    text-align: left;
 }
 
 h2 {
-    margin-top: 4rem !important; /* Space before research sections */
-    margin-bottom: 1.5rem !important;
+    margin-top: 3.5rem !important; /* Spacing after bio */
+    margin-bottom: 1rem !important; /* Spacing before table */
 }
 
 /* Ensure Left Alignment */
