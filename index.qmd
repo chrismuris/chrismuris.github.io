@@ -250,12 +250,12 @@ render_pubs_table <- function(data, searchable = TRUE) {
 
           paper_btn <- if (!is.na(doi_link)) {
               a(href = doi_link, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-primary", target = "_blank",
+                class = "btn btn-sm btn-outline-primary", target = "_blank",
                 style = "font-size: 0.75rem; padding: 2px 8px;",
                 tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
           } else if (!is.na(url_link)) {
               a(href = url_link, onclick = "event.stopPropagation();",
-                class = "btn btn-sm btn-primary", target = "_blank",
+                class = "btn btn-sm btn-outline-primary", target = "_blank",
                 style = "font-size: 0.75rem; padding: 2px 8px;",
                 tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
           } else NULL
