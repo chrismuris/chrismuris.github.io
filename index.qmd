@@ -14,7 +14,7 @@ format:
 
 :::{.custom-header}
 :::{.profile-pic-container}
-![](profile_pic.jpg){.profile-pic}
+<img src="profile_pic.jpg" class="profile-pic">
 :::
 
 :::{.hero-content}
