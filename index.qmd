@@ -18,13 +18,10 @@ format:
 :::
 
 :::{.profile-info}
-<div class="cv-container">
-  <a href="./CV/CV_ChrisMuris.pdf" class="btn btn-primary" target="_blank">
-    <i class="bi bi-file-earmark-person me-2"></i> CV
-  </a>
-</div>
-
 :::{.profile-links-grid}
+<a href="./CV/CV_ChrisMuris.pdf" class="btn btn-primary" target="_blank">
+  <i class="bi bi-file-earmark-person me-2"></i> CV
+</a>
 <a href="mailto:muerisc@mcmaster.ca" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Email</a>
 <a href="https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en" class="btn btn-outline-primary" target="_blank"><i class="bi bi-mortarboard"></i> Scholar</a>
 <a href="https://github.com/chrismuris" class="btn btn-outline-primary" target="_blank"><i class="bi bi-github"></i> Github</a>
