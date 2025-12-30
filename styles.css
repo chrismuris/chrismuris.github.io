@@ -94,14 +94,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    margin-top: 2.5rem !important; /* Space after bio */
-    margin-bottom: 1rem !important; /* Space before table */
+    margin-top: 1.5rem !important; /* Ultra-tight spacing */
+    margin-bottom: 0.75rem !important;
 }
 
-/* Fix mobile button text overflow */
-.btn {
-    white-space: nowrap;
-    width: auto;
+/* Fix mobile button text overflow - Force expansion */
+.pub-citation-container .btn {
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: max-content !important;
+    padding: 4px 12px !important; /* Generous padding */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Ensure Left Alignment */
