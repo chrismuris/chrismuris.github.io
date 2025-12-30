@@ -254,23 +254,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Chris Muris",
+    "title": "Javascript for Clipboard Copy",
     "section": "",
-    "text": "CV   Email  Scholar  Github  Arxiv  LinkedIn  ORCID"
-  },
-  {
-    "objectID": "index.html#working-papers",
-    "href": "index.html#working-papers",
-    "title": "Chris Muris",
-    "section": "Working Papers",
-    "text": "Working Papers"
+    "text": "CV   Email  Scholar  Github  Arxiv  LinkedIn  ORCID\n````{{{ #| echo: false #| warning: false #| message: false\nlibrary(yaml) library(reactable) library(htmltools) library(dplyr) library(purrr)"
   },
   {
     "objectID": "index.html#publications",
     "href": "index.html#publications",
-    "title": "Chris Muris",
+    "title": "Javascript for Clipboard Copy",
     "section": "Publications",
-    "text": "Publications"
+    "text": "Publications\n{{{ #| echo: false render_pubs_table(pubs_df)"
   },
   {
     "objectID": "mcplacement/MA-MAEP-Placement-Meeting-01-2025.html#who-am-i-what-is-this",

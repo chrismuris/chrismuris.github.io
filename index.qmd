@@ -20,14 +20,13 @@ format:
               white-space: nowrap !important;
               width: auto !important;
               min-width: max-content !important;
-              padding: 4px 12px !important;
+              padding: 4px 14px !important;
               font-size: 0.8rem !important;
               display: inline-flex !important;
               align-items: center;
               justify-content: center;
               text-decoration: none !important;
               border-radius: 4px !important;
-              margin-bottom: 2px !important;
           }
         </style>
 ---
@@ -58,7 +57,7 @@ My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
 </div>
 
-```{r}
+````{{{
 #| echo: false
 #| warning: false
 #| message: false
@@ -232,18 +231,18 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
 
 pubs_df <- df |> filter(type == "journal_article")
 wp_df <- df |> filter(type != "journal_article")
-```
+````
 
 ## Working Papers
 
-```{r}
+````{{{
 #| echo: false
 render_pubs_table(wp_df, searchable = FALSE, show_buttons_inline = FALSE, show_buttons_in_details = TRUE)
-```
+````
 
 ## Publications
 
-```{r}
+````{{{
 #| echo: false
 render_pubs_table(pubs_df)
-```
+````
