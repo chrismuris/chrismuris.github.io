@@ -35,9 +35,11 @@ format:
 :::
 :::
 
+::: {.lead}
 I am an associate professor in the Department of Economics at McMaster University. 
 My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
+:::
 
 ```{r}
 #| echo: false
