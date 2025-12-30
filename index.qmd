@@ -15,16 +15,19 @@ format:
               width: 280px !important;
               height: 280px !important;
           }
-          .pub-citation-container .btn {
+          /* Force buttons to contain text and have consistent sizing */
+          .pub-btn {
               white-space: nowrap !important;
               width: auto !important;
               min-width: max-content !important;
-              padding: 6px 16px !important;
-              font-size: 0.85rem !important;
+              padding: 4px 12px !important;
+              font-size: 0.8rem !important;
               display: inline-flex !important;
               align-items: center;
               justify-content: center;
-              margin-bottom: 4px;
+              text-decoration: none !important;
+              border-radius: 4px !important;
+              margin-bottom: 2px !important;
           }
         </style>
 ---
@@ -68,9 +71,20 @@ library(purrr)
 
 # Javascript for Clipboard Copy
 htmltools::tagList(
-  tags$script(HTML(
-    "\n    function copyToClipboard(text) {\n      if (navigator.clipboard && window.isSecureContext) {\n        navigator.clipboard.writeText(text).then(function() {\n          alert('BibTeX copied to clipboard!');\n        }, function(err) {\n          console.error('Async: Could not copy text: ', err);\n        });\n      } else {\n        // Fallback for non-secure contexts (if any)\n        let textArea = document.createElement('textarea');\n        textArea.value = text;\n        document.body.appendChild(textArea);\n        textArea.focus();\n        textArea.select();\n        try {\n          document.execCommand('copy');\n          alert('BibTeX copied to clipboard!');\n        } catch (err) {\n          console.error('Fallback: Unable to copy', err);\n        }\n        document.body.removeChild(textArea);\n      }\n    }\n  "))
+  tags$script(HTML("\n    function copyToClipboard(text) {\n      if (navigator.clipboard && window.isSecureContext) {\n        navigator.clipboard.writeText(text).then(function() {\n          alert('BibTeX copied to clipboard!');\n        }, function(err) {\n          console.error('Async: Could not copy text: ', err);\n        });\n      } else {\n        // Fallback for non-secure contexts (if any)\n        let textArea = document.createElement('textarea');\n        textArea.value = text;\n        document.body.appendChild(textArea);\n        textArea.focus();\n        textArea.select();\n        try {\n          document.execCommand('copy');\n          alert('BibTeX copied to clipboard!');\n        } catch (err) {\n          console.error('Fallback: Unable to copy', err);\n        }\n        document.body.removeChild(textArea);\n      }\n    }\n  "))
 )
+
+# Helper to render consistent buttons
+make_btn <- function(label, href, icon, class_type, onclick = NULL) {
+  tags$a(
+    href = href,
+    class = paste("btn pub-btn", class_type),
+    target = "_blank",
+    onclick = onclick,
+    tags$i(class = paste("bi", icon, "me-1")),
+    label
+  )
+}
 
 # Load data
 pubs <- yaml::read_yaml("publications.yml")
@@ -78,21 +92,12 @@ pubs <- yaml::read_yaml("publications.yml")
 # Convert to data frame
 df <- pubs |>
   map_dfr(function(x) {
-    # Handle Code: Can be string or list. Store as a list to be safe.
-    code_val <- if (is.null(x$code)) {
-      list() 
-    } else if (is.character(x$code)) {
-      list(list(name = "Code", url = x$code))
-    } else {
-      x$code
-    }
+    code_val <- if (is.null(x$code)) list() else if (is.character(x$code)) list(list(name = "Code", url = x$code)) else x$code
     
-    # Generate BibTeX ID (AuthorYear)
+    # BibTeX
     first_author_last <- strsplit(strsplit(x$author, ",")[[1]][1], " ")[[1]]
     first_author_last <- first_author_last[length(first_author_last)]
     bib_id <- paste0(first_author_last, x$year)
-    
-    # Generate BibTeX String
     bib_type <- if(x$type == "journal_article") "article" else "workingpaper"
     bib_str <- paste0(
       "@", bib_type, "{", bib_id, ",\n",
@@ -113,15 +118,13 @@ df <- pubs |>
       title = x$title,
       author = x$author,
       journal = ifelse(is.null(x$journal), "", x$journal),
-      status = ifelse(is.null(x$status), "", x$status),
       type = ifelse(is.null(x$type), "journal_article", x$type),
       abstract = ifelse(is.null(x$abstract), "", x$abstract),
       doi = ifelse(is.null(x$doi), NA, x$doi),
       url = ifelse(is.null(x$url), NA, x$url),
-      code = list(code_val), # Store as list-column
+      code = list(code_val),
       slides = ifelse(is.null(x$slides), NA, x$slides),
-      bibtex = bib_str, # Store BibTeX
-      # Bibliographic Info
+      bibtex = bib_str,
       volume = ifelse(is.null(x$volume), NA, x$volume),
       issue = ifelse(is.null(x$issue), NA, x$issue),
       pages = ifelse(is.null(x$pages), NA, x$pages)
@@ -135,11 +138,9 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
     data,
     searchable = searchable,
     columns = list(
-      # Hide standard columns but keep them searchable
       year = colDef(show = FALSE, searchable = TRUE),
       author = colDef(show = FALSE, searchable = TRUE),
       journal = colDef(show = FALSE, searchable = TRUE),
-      status = colDef(show = FALSE),
       type = colDef(show = FALSE),
       abstract = colDef(show = FALSE, searchable = TRUE),
       doi = colDef(show = FALSE),
@@ -151,158 +152,56 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
       issue = colDef(show = FALSE),
       pages = colDef(show = FALSE),
 
-      # Main Citation Column
       title = colDef(
-        name = "", # No header
+        name = "",
         cell = function(value, index) {
           row <- data[index, ]
-          
-          # 1. Authors: Split, Sort by Last Name, Format
           auths <- trimws(unlist(strsplit(row$author, ",")))
-          
-          # Sort by last name (assume format "First Last")
-          last_names <- sapply(auths, function(x) {
-            parts <- unlist(strsplit(x, " "))
-            parts[length(parts)]
-          })
+          last_names <- sapply(auths, function(x) { parts <- unlist(strsplit(x, " ")); parts[length(parts)] })
           auths <- auths[order(last_names)]
+          auth_str <- if (length(auths) > 1) paste0(paste(auths[-length(auths)], collapse = ", "), " and ", auths[length(auths)]) else auths
           
-          if (length(auths) > 1) {
-            last_auth <- auths[length(auths)]
-            other_auths <- auths[-length(auths)]
-            auth_str <- paste0(paste(other_auths, collapse = ", "), " and ", last_auth)
-          } else {
-            auth_str <- auths
-          }
-          
-          # 2. Title Link
           doi_val <- row$doi
           url_val <- row$url
-          final_url <- NA
-          if (!is.na(doi_val) && doi_val != "") {
-             final_url <- paste0("https://doi.org/", doi_val)
-          } else if (!is.na(url_val) && url_val != "") {
-             final_url <- url_val
-          }
+          final_url <- if (!is.na(doi_val) && doi_val != "") paste0("https://doi.org/", doi_val) else url_val
           
           title_el <- if (!is.na(final_url)) {
-            a(href = final_url, target = "_blank", 
-              style = "text-decoration: none; color: #1a5276; font-weight: 500;", 
-              onclick = "event.stopPropagation();", # Prevent row toggle when clicking link
-              row$title
-            )
+            tags$a(href = final_url, target = "_blank", style = "text-decoration: none; color: #1a5276; font-weight: 500;", onclick = "event.stopPropagation();", row$title)
           } else {
-            span(style = "font-weight: 500;", row$title)
+            tags$span(style = "font-weight: 500;", row$title)
           }
           
-          # 3. Journal / Venue Info
           venue_part <- NULL
           if (!is.na(row$journal) && row$journal != "") {
-             j_text <- tags$i(row$journal)
-             
-             # Check for forthcoming status: if volume/pages are missing
-             is_forthcoming <- (is.na(row$volume) || row$volume == "") && 
-                               (is.na(row$pages) || row$pages == "")
-             
+             is_forthcoming <- (is.na(row$volume) || row$volume == "") && (is.na(row$pages) || row$pages == "")
              if (is_forthcoming) {
-                venue_part <- span(j_text, ", forthcoming")
+                venue_part <- tags$span(tags$i(row$journal), ", forthcoming")
              } else {
-                vol_text <- NULL
-                if (!is.na(row$volume) && row$volume != "") vol_text <- paste0(", ", row$volume)
-                
-                iss_text <- NULL
-                if (!is.na(row$issue) && row$issue != "") iss_text <- paste0("(", row$issue, ")")
-                
-                pg_text <- NULL
-                if (!is.na(row$pages) && row$pages != "") pg_text <- paste0(": ", row$pages)
-                
-                venue_part <- span(j_text, vol_text, iss_text, pg_text)
+                venue_part <- tags$span(tags$i(row$journal), if(!is.na(row$volume)) paste0(", ", row$volume) else "", if(!is.na(row$issue)) paste0("(", row$issue, ")") else "", if(!is.na(row$pages)) paste0(": ", row$pages) else "")
              }
           }
 
-          # 4. Determine Punctuation
-          # If we have a venue, end title with comma. If not, end with period.
           suffix <- if (!is.null(venue_part)) "," else "."
-
-          # 5. Title (Quoted with Punctuation)
-          title_text <- paste0("“", row$title, suffix, "”")
           
-          title_el <- if (!is.na(final_url)) {
-            a(href = final_url, target = "_blank", 
-              style = "text-decoration: none; color: #1a5276; font-weight: 500;", 
-              onclick = "event.stopPropagation();", 
-              title_text
-            )
-          } else {
-            span(style = "font-weight: 500;", title_text)
-          }
-
-          # 6. Generate Buttons (Inline)
           btns_div_inline <- NULL
           if (show_buttons_inline) {
             doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
             url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
 
-            paper_btn <- if (!is.na(doi_link)) {
-                a(href = doi_link, onclick = "event.stopPropagation();",
-                  class = "btn btn-outline-primary", target = "_blank",
-                  tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-            } else if (!is.na(url_link)) {
-                a(href = url_link, onclick = "event.stopPropagation();",
-                  class = "btn btn-outline-primary", target = "_blank",
-                  tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-            } else NULL
+            p_btn <- if (!is.na(doi_link)) make_btn("Paper", doi_link, "bi-file-earmark-text", "btn-outline-primary", "event.stopPropagation();") else if (!is.na(url_link)) make_btn("Paper", url_link, "bi-file-earmark-text", "btn-outline-primary", "event.stopPropagation();") else NULL
+            pre_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) make_btn("Preprint", url_link, "bi-file-earmark-pdf", "btn-outline-secondary", "event.stopPropagation();") else NULL
+            c_btns <- if (length(row$code[[1]]) > 0) lapply(row$code[[1]], function(c) make_btn(c$name, c$url, "bi-github", "btn-outline-dark", "event.stopPropagation();")) else NULL
+            s_btn <- if (!is.na(row$slides)) make_btn("Slides", row$slides, "bi-easel", "btn-outline-secondary", "event.stopPropagation();") else NULL
+            ci_btn <- tags$button(class = "btn pub-btn btn-outline-info", onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"), tags$i(class = "bi bi-quote me-1"), "Cite")
 
-            preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
-                a(href = url_link, onclick = "event.stopPropagation();",
-                  class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                  tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
-            } else NULL
-
-            code_btns <- NULL
-            if (length(row$code[[1]]) > 0) {
-              code_btns <- lapply(row$code[[1]], function(c_item) {
-                 a(href = c_item$url, onclick = "event.stopPropagation();",
-                  class = "btn btn-outline-dark", target = "_blank",
-                  tags$i(class = "bi bi-github me-1"), c_item$name)
-              })
-            }
-
-            slides_btn <- if (!is.na(row$slides)) {
-                a(href = row$slides, onclick = "event.stopPropagation();",
-                  class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                  tags$i(class = "bi bi-easel me-1"), "Slides")
-            } else NULL
-
-            cite_btn <- tags$button(
-              class = "btn btn-outline-info",
-              onclick = paste0("event.stopPropagation(); copyToClipboard(`", row$bibtex, "`)"),
-              tags$i(class = "bi bi-quote me-1"), "Cite"
-            )
-
-            btns_div_inline <- span(
-              class = "d-inline-flex gap-2 ms-2 flex-wrap", 
-              style = "vertical-align: middle; width: auto;",
-              paper_btn, preprint_btn, code_btns, slides_btn, cite_btn
-            )
+            btns_div_inline <- tags$span(class = "d-inline-flex gap-2 ms-2 flex-wrap", style = "vertical-align: middle; width: auto;", p_btn, pre_btn, c_btns, s_btn, ci_btn)
           }
           
-          # Combine: Chevron + Citation + Buttons
-          div(
+          tags$div(
             class = "pub-citation-container",
             style = "font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; padding-left: 20px; text-indent: -20px; margin-bottom: 12px; display: block;",
-            
-            # Expander Indicator (Chevron)
-            span(class = "me-2", style = "text-indent: 0px; display: inline-block; width: 15px; color: #999;", 
-                 tags$i(class = "bi bi-chevron-right small")),
-
-            span(
-              class = "pub-citation",
-              span(style = "font-weight: 500;", auth_str),
-              span(paste0(" (", row$year, "): ")),
-              title_el,
-              if (!is.null(venue_part)) span(" ", venue_part, span(". "))
-            ),
+            tags$span(class = "me-2", style = "text-indent: 0px; display: inline-block; width: 15px; color: #999;", tags$i(class = "bi bi-chevron-right small")),
+            tags$span(class = "pub-citation", tags$span(style = "font-weight: 500;", auth_str), tags$span(paste0(" (", row$year, "): ")), tags$span("“", title_el, suffix, "”"), if (!is.null(venue_part)) tags$span(" ", venue_part, tags$span(". "))),
             btns_div_inline
           )
         }
@@ -310,78 +209,27 @@ render_pubs_table <- function(data, searchable = TRUE, show_buttons_inline = TRU
     ),
     details = function(index) {
       row <- data[index, ]
-      
-      # Buttons if requested (for Working Papers)
       details_btns <- NULL
       if (show_buttons_in_details) {
           doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
           url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
-
-          paper_btn <- if (!is.na(doi_link)) {
-              a(href = doi_link, class = "btn btn-outline-primary", target = "_blank",
-                tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-          } else if (!is.na(url_link)) {
-              a(href = url_link, class = "btn btn-outline-primary", target = "_blank",
-                tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
-          } else NULL
-
-          preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
-              a(href = url_link, class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
-          } else NULL
-
-          code_btns <- NULL
-          if (length(row$code[[1]]) > 0) {
-            code_btns <- lapply(row$code[[1]], function(c_item) {
-               a(href = c_item$url, class = "btn btn-outline-dark", target = "_blank",
-                tags$i(class = "bi bi-github me-1"), c_item$name)
-            })
-          }
-
-          slides_btn <- if (!is.na(row$slides)) {
-              a(href = row$slides, class = "btn btn-sm btn-outline-secondary", target = "_blank",
-                tags$i(class = "bi bi-easel me-1"), "Slides")
-          } else NULL
-
-          cite_btn <- tags$button(
-            class = "btn btn-outline-info",
-            onclick = paste0("copyToClipboard(`", row$bibtex, "`)"),
-            tags$i(class = "bi bi-quote me-1"), "Cite"
-          )
-
-          details_btns <- div(class = "d-flex gap-2 mb-3 flex-wrap", paper_btn, preprint_btn, code_btns, slides_btn, cite_btn)
+          p_btn <- if (!is.na(doi_link)) make_btn("Paper", doi_link, "bi-file-earmark-text", "btn-outline-primary") else if (!is.na(url_link)) make_btn("Paper", url_link, "bi-file-earmark-text", "btn-outline-primary") else NULL
+          pre_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) make_btn("Preprint", url_link, "bi-file-earmark-pdf", "btn-outline-secondary") else NULL
+          c_btns <- if (length(row$code[[1]]) > 0) lapply(row$code[[1]], function(c) make_btn(c$name, c$url, "bi-github", "btn-outline-dark")) else NULL
+          s_btn <- if (!is.na(row$slides)) make_btn("Slides", row$slides, "bi-easel", "btn-outline-secondary") else NULL
+          ci_btn <- tags$button(class = "btn pub-btn btn-outline-info", onclick = paste0("copyToClipboard(`", row$bibtex, "`)"), tags$i(class = "bi bi-quote me-1"), "Cite")
+          details_btns <- tags$div(class = "d-flex gap-2 mb-3 flex-wrap", p_btn, pre_btn, c_btns, s_btn, ci_btn)
       }
-
-      # Content
       if (nchar(row$abstract) > 0 || !is.null(details_btns)) {
-        div(
-          class = "p-4 bg-light border-top",
-          details_btns,
-          if (nchar(row$abstract) > 0) p(class = "abstract-text text-muted mb-0", 
-            style = "font-family: 'Roboto', sans-serif; font-size: 0.95rem; text-align: left; max-width: 800px; line-height: 1.6;", 
-            row$abstract) else NULL
-        )
-      } else {
-        NULL
-      }
+        tags$div(class = "p-4 bg-light border-top", details_btns, if (nchar(row$abstract) > 0) tags$p(class = "abstract-text text-muted mb-0", style = "font-family: 'Roboto', sans-serif; font-size: 0.95rem; text-align: left; max-width: 800px; line-height: 1.6;", row$abstract) else NULL)
+      } else NULL
     },
-    pagination = FALSE,
-    highlight = TRUE,
-    striped = FALSE,
-    outlined = FALSE,
-    borderless = TRUE,
-    width = "100%",
-    theme = reactableTheme(
-      cellPadding = "12px 0px",
-      searchInputStyle = list(width = "100%", marginBottom = "10px"),
-      headerStyle = list(display = "none")
-    ),
-    onClick = "expand",
-    class = "custom-reactable"
+    pagination = FALSE, highlight = TRUE, striped = FALSE, outlined = FALSE, borderless = TRUE, width = "100%",
+    theme = reactableTheme(cellPadding = "12px 0px", searchInputStyle = list(width = "100%", marginBottom = "10px"), headerStyle = list(display = "none")),
+    onClick = "expand", class = "custom-reactable"
   )
 }
 
-# Split data
 pubs_df <- df |> filter(type == "journal_article")
 wp_df <- df |> filter(type != "journal_article")
 ```
