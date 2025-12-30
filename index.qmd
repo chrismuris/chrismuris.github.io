@@ -11,7 +11,7 @@ format:
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="profile_pic.jpg">
 about:
-  template: trestles
+  template: jolla
   image: profile_pic.jpg
   links:
     - icon: file-earmark-person
