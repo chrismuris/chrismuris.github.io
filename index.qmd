@@ -1,132 +1,379 @@
+---
+format:
+  html:
+    page-layout: article
+    toc: false
+    include-in-header:
+      text: |
+        <link rel="shortcut icon" href="profile_pic.jpg">
+        <meta property="og:description" content="Associate Professor of Economics at McMaster University specializing in theoretical econometrics and panel data.">
+        <meta property="og:image" content="profile_pic.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="profile_pic.jpg">
+---
+
+:::{.custom-header}
+:::{.profile-pic-container}
+![](profile_pic.jpg){.profile-pic}
+:::
+
+:::{.hero-content}
+<!-- CV Button (Highlighted/Elevated) -->
+<div class="mb-3">
+  <a href="./CV/CV_ChrisMuris.pdf" class="btn btn-primary btn-sm" target="_blank">
+    <i class="bi bi-file-earmark-person me-2"></i> CV
+  </a>
+</div>
+
+<!-- Other Links -->
+<!-- Other Links -->
+:::{.profile-links}
+<a href="mailto:muerisc@mcmaster.ca" class="btn btn-outline-primary btn-sm"><i class="bi bi-envelope"></i> Email</a>
+<a href="https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-mortarboard"></i> Scholar</a>
+<a href="https://github.com/chrismuris" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-github"></i> Github</a>
+<a href="https://arxiv.org/a/0000-0003-2781-3514.html" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-journal-text"></i> Arxiv</a>
+<a href="https://www.linkedin.com/in/chris-muris-4b5b03382" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+<a href="https://orcid.org/0000-0003-2781-3514" class="btn btn-outline-primary btn-sm" target="_blank"><i class="bi bi-person-badge"></i> ORCID</a>
+:::
+:::
+:::
+
 I am an associate professor in the Department of Economics at McMaster University. 
 My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
-[CV (pdf)](./CV/CV_ChrisMuris.pdf)
 
-Information about my research is below, and at [Google scholar](https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en) and [arXiv](https://arxiv.org/search/econ?searchtype=author&query=Muris%2C+C).
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
 
-You can reach me at [muerisc@mcmaster.ca](mailto:muerisc@mcmaster.ca). 
+library(yaml)
+library(reactable)
+library(htmltools)
+library(dplyr)
+library(purrr)
+
+# Javascript for Clipboard Copy
+htmltools::tagList(
+  tags$script(HTML("
+    function copyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert('BibTeX copied to clipboard!');
+        }, function(err) {
+          console.error('Async: Could not copy text: ', err);
+        });
+      } else {
+        // Fallback for non-secure contexts (if any)
+        let textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          alert('BibTeX copied to clipboard!');
+        } catch (err) {
+          console.error('Fallback: Unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+      }
+    }
+  "))
+)
+
+# Load data
+pubs <- yaml::read_yaml("publications.yml")
+
+# Convert to data frame
+df <- pubs |>
+  map_dfr(function(x) {
+    # Handle Code: Can be string or list. Store as a list to be safe.
+    code_val <- if (is.null(x$code)) {
+      list() 
+    } else if (is.character(x$code)) {
+      list(list(name = "Code", url = x$code))
+    } else {
+      x$code
+    }
+    
+    # Generate BibTeX ID (AuthorYear)
+    first_author_last <- strsplit(strsplit(x$author, ",")[[1]][1], " ")[[1]]
+    first_author_last <- first_author_last[length(first_author_last)]
+    bib_id <- paste0(first_author_last, x$year)
+    
+    # Generate BibTeX String
+    bib_type <- if(x$type == "journal_article") "article" else "workingpaper"
+    bib_str <- paste0(
+      "@", bib_type, "{", bib_id, ",\n",
+      "  title = {", x$title, "},\n",
+      "  author = {", gsub(",", " and", x$author), "},\n",
+      "  year = {", x$year, "},\n",
+      if (!is.null(x$journal)) paste0("  journal = {", x$journal, "},\n") else "",
+      if (!is.null(x$volume)) paste0("  volume = {", x$volume, "},\n") else "",
+      if (!is.null(x$issue)) paste0("  number = {", x$issue, "},\n") else "",
+      if (!is.null(x$pages)) paste0("  pages = {", x$pages, "},\n") else "",
+      if (!is.null(x$doi)) paste0("  doi = {", x$doi, "},\n") else "",
+      if (!is.null(x$url)) paste0("  url = {", x$url, "}\n") else "",
+      "}"
+    )
+
+    tibble(
+      year = as.character(x$year),
+      title = x$title,
+      author = x$author,
+      journal = ifelse(is.null(x$journal), "", x$journal),
+      status = ifelse(is.null(x$status), "", x$status),
+      type = ifelse(is.null(x$type), "journal_article", x$type),
+      abstract = ifelse(is.null(x$abstract), "", x$abstract),
+      doi = ifelse(is.null(x$doi), NA, x$doi),
+      url = ifelse(is.null(x$url), NA, x$url),
+      code = list(code_val), # Store as list-column
+      slides = ifelse(is.null(x$slides), NA, x$slides),
+      bibtex = bib_str, # Store BibTeX
+      # Bibliographic Info
+      volume = ifelse(is.null(x$volume), NA, x$volume),
+      issue = ifelse(is.null(x$issue), NA, x$issue),
+      pages = ifelse(is.null(x$pages), NA, x$pages)
+    )
+  }) |>
+  arrange(desc(year))
+
+# Helper function to render table
+render_pubs_table <- function(data, searchable = TRUE) {
+  reactable(
+    data,
+    searchable = searchable,
+    columns = list(
+      # Hide standard columns but keep them searchable
+      year = colDef(show = FALSE, searchable = TRUE),
+      author = colDef(show = FALSE, searchable = TRUE),
+      journal = colDef(show = FALSE, searchable = TRUE),
+      status = colDef(show = FALSE),
+      type = colDef(show = FALSE),
+      abstract = colDef(show = FALSE, searchable = TRUE),
+      doi = colDef(show = FALSE),
+      url = colDef(show = FALSE),
+      code = colDef(show = FALSE),
+      slides = colDef(show = FALSE),
+      bibtex = colDef(show = FALSE),
+      volume = colDef(show = FALSE),
+      issue = colDef(show = FALSE),
+      pages = colDef(show = FALSE),
+
+      # Main Citation Column
+      title = colDef(
+        name = "", # No header
+        cell = function(value, index) {
+          row <- data[index, ]
+          
+          # 1. Authors: Split, Sort by Last Name, Format
+          auths <- trimws(unlist(strsplit(row$author, ",")))
+          
+          # Sort by last name (assume format "First Last")
+          last_names <- sapply(auths, function(x) {
+            parts <- unlist(strsplit(x, " "))
+            parts[length(parts)]
+          })
+          auths <- auths[order(last_names)]
+          
+          if (length(auths) > 1) {
+            last_auth <- auths[length(auths)]
+            other_auths <- auths[-length(auths)]
+            auth_str <- paste0(paste(other_auths, collapse = ", "), " and ", last_auth)
+          } else {
+            auth_str <- auths
+          }
+          
+          # 2. Title Link
+          doi_val <- row$doi
+          url_val <- row$url
+          final_url <- NA
+          if (!is.na(doi_val) && doi_val != "") {
+             final_url <- paste0("https://doi.org/", doi_val)
+          } else if (!is.na(url_val) && url_val != "") {
+             final_url <- url_val
+          }
+          
+          title_el <- if (!is.na(final_url)) {
+            a(href = final_url, target = "_blank", 
+              style = "text-decoration: none; color: #1a5276; font-weight: 500;", 
+              onclick = "event.stopPropagation();", # Prevent row toggle when clicking link
+              row$title
+            )
+          } else {
+            span(style = "font-weight: 500;", row$title)
+          }
+          
+          # 3. Journal / Venue Info
+          venue_part <- NULL
+          if (!is.na(row$journal) && row$journal != "") {
+             j_text <- tags$i(row$journal)
+             
+             # Check for forthcoming status: if volume/pages are missing
+             is_forthcoming <- (is.na(row$volume) || row$volume == "") && 
+                               (is.na(row$pages) || row$pages == "")
+             
+             if (is_forthcoming) {
+                venue_part <- span(j_text, ", forthcoming")
+             } else {
+                vol_text <- NULL
+                if (!is.na(row$volume) && row$volume != "") vol_text <- paste0(", ", row$volume)
+                
+                iss_text <- NULL
+                if (!is.na(row$issue) && row$issue != "") iss_text <- paste0("(", row$issue, ")")
+                
+                pg_text <- NULL
+                if (!is.na(row$pages) && row$pages != "") pg_text <- paste0(": ", row$pages)
+                
+                venue_part <- span(j_text, vol_text, iss_text, pg_text)
+             }
+          }
+
+          # 4. Determine Punctuation
+          # If we have a venue, end title with comma. If not, end with period.
+          suffix <- if (!is.null(venue_part)) "," else "."
+
+          # 5. Title (Quoted with Punctuation)
+          title_text <- paste0("“", row$title, suffix, "”")
+          
+          title_el <- if (!is.na(final_url)) {
+            a(href = final_url, target = "_blank", 
+              style = "text-decoration: none; color: #1a5276; font-weight: 500;", 
+              onclick = "event.stopPropagation();", 
+              title_text
+            )
+          } else {
+            span(style = "font-weight: 500;", title_text)
+          }
+          
+          # Combine: Authors (Year): "Title[,/.]" [Venue.]
+          div(
+            class = "pub-citation",
+            style = "font-family: 'Roboto', sans-serif; line-height: 1.5; color: #333; padding-left: 20px; text-indent: -20px;",
+            
+            # Authors (Standard Case, Boldish)
+            span(style = "font-weight: 500;", auth_str),
+            
+            # Year
+            span(paste0(" (", row$year, "): ")),
+            
+            # Title
+            title_el,
+            
+            # Venue (if exists)
+            if (!is.null(venue_part)) span(" ", venue_part, span("."))
+          )
+        }
+      )
+    ),
+    details = function(index) {
+      row <- data[index, ]
+      
+      # Determine Paper Link (DOI > URL) used in buttons
+      doi_link <- if (!is.na(row$doi) && row$doi != "") paste0("https://doi.org/", row$doi) else NA
+      url_link <- if (!is.na(row$url) && row$url != "") row$url else NA
+
+      # Generate Buttons
+      # 1. Paper (Published Version)
+      paper_btn <- if (!is.na(doi_link)) {
+          a(href = doi_link, 
+            class = "btn btn-sm btn-primary", target = "_blank",
+            tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
+      } else if (!is.na(url_link)) {
+          a(href = url_link, 
+            class = "btn btn-sm btn-primary", target = "_blank",
+            tags$i(class = "bi bi-file-earmark-text me-1"), "Paper")
+      } else NULL
+
+      # 2. Preprint (Only if DOI exists and URL is a separate link)
+      preprint_btn <- if (!is.na(doi_link) && !is.na(url_link) && url_link != doi_link) {
+          a(href = url_link, 
+            class = "btn btn-sm btn-outline-secondary", target = "_blank",
+            tags$i(class = "bi bi-file-earmark-pdf me-1"), "Preprint")
+      } else NULL
+
+      # 3. Code (Handle List)
+      code_btns <- NULL
+      code_data <- row$code[[1]] # Extract list from list-column
+      if (length(code_data) > 0) {
+        code_btns <- lapply(code_data, function(c_item) {
+           a(href = c_item$url, class = "btn btn-sm btn-outline-dark", target = "_blank",
+            tags$i(class = "bi bi-github me-1"), c_item$name)
+        })
+      }
+
+      # 4. Slides
+      slides_btn <- if (!is.na(row$slides)) {
+          a(href = row$slides, class = "btn btn-sm btn-outline-secondary", target = "_blank",
+            tags$i(class = "bi bi-easel me-1"), "Slides")
+      } else NULL
+
+      # 5. Cite (BibTeX)
+      cite_btn <- tags$button(
+        class = "btn btn-sm btn-outline-info",
+        onclick = paste0("copyToClipboard(`", row$bibtex, "`)"),
+        tags$i(class = "bi bi-quote me-1"), "Cite"
+      )
+
+      # Combine Buttons
+      btns <- div(
+        class = "d-flex gap-2 mb-2 flex-wrap", 
+        paper_btn,
+        preprint_btn,
+        code_btns,
+        slides_btn,
+        cite_btn
+      )
+
+      # Abstract
+      abst <- if (nchar(row$abstract) > 0) {
+        div(
+          class = "abstract-container mt-2",
+          p(class = "abstract-text text-muted mb-0", 
+            style = "font-family: 'Roboto', sans-serif; font-size: 0.95rem; text-align: left; max-width: 800px; line-height: 1.6;", 
+            row$abstract)
+        )
+      } else {
+        NULL
+      }
+      
+      div(class = "p-3 bg-light border-top", btns, abst)
+    },
+    pagination = FALSE,
+    highlight = TRUE,
+    striped = FALSE,
+    outlined = FALSE,
+    borderless = TRUE,
+    width = "100%",
+    theme = reactableTheme(
+      cellPadding = "12px 0px",
+      searchInputStyle = list(width = "100%", marginBottom = "10px"),
+      headerStyle = list(display = "none")
+    ),
+    onClick = "expand",
+    class = "custom-reactable"
+  )
+}
+
+# Split data
+pubs_df <- df |> filter(type == "journal_article")
+wp_df <- df |> filter(type != "journal_article")
+```
+
+## Working Papers
+
+```{r}
+#| echo: false
+render_pubs_table(wp_df, searchable = FALSE)
+```
 
 ## Publications
 
-<!-- 20 -->
-> [Time-Varying Linear Transformation Models with Fixed Effects and Endogeneity for Short Panels](https://doi.org/10.1080/07350015.2025.2566352),
-> <small>with Irene Botosaru and Senay Sokullu.</small>
-> <small>Forthcoming, <b>Journal of Business Economics and Statistics</b>, 2025.</small>
+```{r}
+#| echo: false
+render_pubs_table(pubs_df)
+```
 
-<!-- 19 -->
-> [Dynamic Ordered Panel Logit Models](https://arxiv.org/abs/2107.03253),
-> <small>with Bo Honore and Martin Weidner.</small>
-> <small>Accepted, <b>Quantitative Economics</b>.</small>
-
-<!-- 16 -->
-> [Identification of time-varying counterfactual parameters in nonlinear panel models](https://arxiv.org/abs/2212.09193),
-> <small>with Irene Botosaru.</small>
-> <small>Forthcoming, <b>Journal of Econometrics</b>.</small>
-
-<!-- 15 -->
-> [A dynamic ordered logit model with fixed effects](https://direct.mit.edu/rest/article-abstract/doi/10.1162/rest_a_01336/116192/A-Dynamic-Ordered-Logit-Model-with-Fixed-Effects?redirectedFrom=fulltext),
-> <small>with Pedro Raposo and Sotirios Vandoros.</small>
-> <small>Forthcoming, <b>Review of Economics and Statistics</b>.</small>
-
-<!-- 18 -->
-> [Combining Instrumental Variable Estimators for a Panel Data Model with Factors](https://arxiv.org/abs/2203.03051),
-> <small>with Matthew Harding and Carlos Lamarche.</small> 
-> <small>Forthcoming, <b>Journal of Business Economics and Statistics</b>.</small>
-
-<!-- 17 -->
-> [How Importers Hedge Demand Uncertainty Through Dual Sourcing and Safety Inventory](https://www.cesifo.org/en/publications/2023/working-paper/inventory-sourcing-and-effects-trade-costs-theory-and-empirical)
-> <small>with Horst Raff, Nicolas Schmitt, and Frank Staehler.</small>
-> <small>Forthcoming, <b>Canadian Journal of Economics</b>.</small>
- 
-<!-- 14 -->
-> [Intertemporal Collective Household Models: Identification in Short Panels with Unobserved Heterogeneity in Resource Shares](https://doi.org/10.1016/j.jeconom.2021.11.006),
-> <small>with Irene Botosaru and Krishna Pendakur.</small>
-> <small><b>Journal of Econometrics</b>, 232 (2), 576--597, 2023.</small>
-
-<!-- 13 -->
-> [DICE simplified](https://link.springer.com/article/10.1007/s10666-020-09738-2),
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
-> <small><b>Environmental Modeling & Assessment</b>, 1-12, 2021.</small>
-
-<!-- 12 -->
-> [Interval censored regression with fixed effects](https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2737),
-> <small>with Jason Abrevaya.</small>
-> <small><b>Journal of Applied Econometrics</b>, 35 (2), 198-216, 2020.</small>
-> <small>[code](http://qed.econ.queensu.ca/jae/2020-v35.2/abrevaya-muris/).</small>
-
-<!-- 11 -->
-> [Efficient GMM estimation with incomplete data](https://direct.mit.edu/rest/article/102/3/518/96782/Efficient-GMM-Estimation-with-Incomplete-Data),
-> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2020.</small>
-> <small>[R code](https://doi.org/10.7910/DVN/ZKQPK7).</small>
-
-<!-- 10 -->
-> [Expected utility and catastrophic risk in a stochastic economy-climate model](https://www.sciencedirect.com/science/article/abs/pii/S0304407619301101),
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
-> <small><b>Journal of Econometrics</b>, 214 (1), 110-129, 2020.</small>
-
-<!-- 9 -->
-> [Estimation in the fixed effects ordered logit model](http://www.mitpressjournals.org/doi/pdf/10.1162/REST_a_00617),
-> <small><b>Review of Economics and Statistics</b>, 99 (3), 465-477, 2017. </small>
-> <small>[Stata code](http://dx.doi.org/10.7910/DVN/IUJ3VZ).</small>
-
-<!-- 8 -->
-> [The trade-off between income inequality and carbon dioxide emissions](https://doi.org/10.1016/j.ecolecon.2017.06.034),
-> <small>with Nicole Grunewald, Stephan Klasen, and Inmaculada Martinez-Zarzoso.</small>
-> <small><b>Ecological Economics</b>, 142, 249-256, 2017.</small>
-
-<!-- 7 -->
-> [Model averaging in semiparametric estimation of treatment effects](http://dx.doi.org/10.1016/j.jeconom.2016.03.002),
-> <small>with Toru Kitagawa.</small> 
-> <small><b>Journal of Econometrics</b>, 193 (1), 271-289, 2016.</small>
-
-<!-- 6 -->
-> [Expected utility and catastrophic consumption risk](http://dx.doi.org/10.1016/j.insmatheco.2015.06.007),
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small> 
-> <small><b>Insurance: Mathematics and Economics</b>, 64, 306-312, 2015.</small>
-
-<!-- 5 -->
-> [Do climate variations explain bilateral migration? A gravity model analysis](http://www.izajom.com/content/4/1/3),
-> <small>with Andreas Backhaus and Inmaculada Martinez-Zarzoso.</small> 
-> <small><b>IZA Journal of Migration</b>, 4:3, 2015.</small>
-
-<!-- 4 -->
-> [Pareto utility](http://dx.doi.org/10.1007/s11238-012-9293-8),
-> <small>with Masako Ikefuji, Roger Laeven and Jan Magnus.</small>
-> <small><b>Theory and Decision</b>, 75, 43-57, 2013.</small>
-
-<!-- 3 -->
-> [Statistical climate-change scenarios](http://www.jenvstat.org/v05/i04),
-> <small>with Jan Magnus, Bertrand Melenberg and Martin Wild</small>
-> <small><b>Journal of Environmental Statistics</b>, 5 (4), 1-18, 2013.</small>
-
-<!-- 2 -->
-> [Global warming and local dimming: the statistical evidence](http://dx.doi.org/10.1198/jasa.2011.ap09508),
-> <small>with Jan Magnus and Bertrand Melenberg.</small>
-> <small><b>Journal of the American Statistical Association</b>, 106, 467-468, 2011.</small>
-> <small>Discussion and [rejoinder](http://dx.doi.org/10.1198/jasa.2011.ap11319).</small>
-
-<!-- 1. -->
-> [Specification of variance matrices for panel data models](http://dx.doi.org/10.1017/S0266466609090756),
-> <small>with Jan Magnus.</small>
-> <small><b>Econometric Theory</b>, 26, 301-310, 2010.</small>
-
-## Working papers
-
-> [Identifying long-Run neighborhood effects via race-based neighborhood sorting](https://dionissialiprantis.com/pdfs/Identifying_Neighborhood_Effects_Feb_2025.pdf)
-> <small>with Dionissi Aliprantis and Daniel Hartley.</small>
-> <small>February 2025.</small>
-
-> [An adversarial approach to identification](https://arxiv.org/abs/2411.04239),
-> <small>with Irene Botosaru and Isaac Loh.</small>
-> <small>December 2024.</small>
-
-> [Estimating interaction effects in short panels](https://arxiv.org/abs/2211.01557),
-> <small>with Konstantin Wacker.</small>
-> <small>Resubmitted to <b>Journal of Applied Econometrics</b>, 2025.</small>
-
-> [Triadic network formation](https://arxiv.org/abs/2509.26420)
-> <small>with Cavit Pakel.</small>
-
-> [Dyadic data with ordered outcome variables](https://arxiv.org/abs/2507.16689)
-> <small>with Cavit Pakel and Qichen Zhang.</small>
+ 
+ 

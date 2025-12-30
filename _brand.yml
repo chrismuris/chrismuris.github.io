@@ -1,0 +1,14 @@
+meta:
+  name: "Chris Muris"
+  title: "Chris Muris | Associate Professor of Economics"
+
+color:
+  primary: "#1a5276"
+  secondary: "#6c757d"
+  foreground: "#333333"
+  background: "#fdfdfd"
+
+typography:
+  base: "Roboto"
+  headings: "Roboto"
+  monospace: "Roboto Mono"

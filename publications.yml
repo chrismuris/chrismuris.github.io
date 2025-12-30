@@ -1,0 +1,297 @@
+- title: "Estimating interaction effects in short panels"
+  author: "Chris Muris, Konstantin Wacker"
+  year: 2026
+  journal: "Journal of Applied Econometrics"
+  doi: ""
+  url: "https://arxiv.org/abs/2211.01557"
+  code:
+    - name: "Code (Sim)"
+      url: "https://github.com/chrismuris/CITE-simulation"
+    - name: "Code (Emp)"
+      url: "https://github.com/KMWacker/RSE_robots"
+  type: "journal_article"
+  categories: ["Panel Data", "Interaction Effects"]
+  abstract: "This paper analyzes how interaction effects can be consistently estimated under economically plausible assumptions in linear panel models with a fixed T-dimension. We advocate for a correlated interaction term estimator (CITE) and show that it is consistent under conditions that are not sufficient for consistency of the interaction term estimator that is most common in applied econometric work. Our paper discusses the empirical content of these conditions, shows that standard inference procedures can be applied to CITE, and analyzes consistency, relative efficiency, inference, and their finite sample properties in a simulation study."
+
+- title: "Time-varying linear transformation models with fixed effects and endogeneity for short panels"
+  author: "Chris Muris, Irene Botosaru, Senay Sokullu"
+  year: 2026
+  journal: "Journal of Business Economics and Statistics"
+  doi: "10.1080/07350015.2025.2566352"
+  url: "https://doi.org/10.1080/07350015.2025.2566352"
+  type: "journal_article"
+  categories: ["Panel Data", "Transformation Models"]
+  abstract: "This paper considers a class of fixed-T nonlinear panel models with time-varying link function, fixed effects, and endogenous regressors. We establish sufficient conditions for the identification of the regression coefficients, the time-varying link function, the distribution of counterfactual outcomes, and certain (time-varying) average partial effects. We propose estimators for these objects and study their asymptotic properties. We show the relevance of our model by estimating the effect of teaching practices on student attainment as measured by test scores on standardized tests in mathematics and science."
+
+- title: "Dynamic ordered panel logit models"
+  author: "Chris Muris, Bo Honoré, Martin Weidner"
+  year: 2025
+  journal: "Quantitative Economics"
+  volume: "16"
+  pages: "899-945"
+  doi: "10.3982/QE2052"
+  url: "https://doi.org/10.3982/QE2052"
+  code: "https://doi.org/10.5281/zenodo.10562596"
+  type: "journal_article"
+  categories: ["Panel Data", "Discrete Choice"]
+  abstract: "We study a dynamic ordered logit model for panel data with fixed effects. We propose a set of valid moment conditions that rely on the model structure but are independent of the fixed effects. These moment conditions can be computed with four or more periods of data. We establish sufficient conditions for identification of the regression coefficients, autoregressive parameters, and threshold parameters. We propose a GMM estimator and demonstrate its performance via Monte Carlo simulations and an empirical application to self-reported health."
+
+- title: "Combining instrumental variable estimators for a panel data model with factors"
+  author: "Chris Muris, Matthew Harding, Carlos Lamarche"
+  year: 2025
+  journal: "Journal of Business Economics and Statistics"
+  volume: "43"
+  issue: "3"
+  pages: "684-695"
+  doi: "10.1080/07350015.2024.2421991"
+  url: "https://doi.org/10.1080/07350015.2024.2421991"
+  type: "journal_article"
+  categories: ["Panel Data", "IV Estimation", "Factors"]
+  abstract: "We propose a new class of estimators for factor-augmented panel data models that are linear combinations of instrumental variable estimators. The method addresses the challenge of selecting proxies for unobserved factors when multiple measurements are available. We provide large sample results and demonstrate the existence of an optimal weighting scheme that yields efficiency gains. The approach is illustrated using data on test scores from U.S. school districts."
+
+- title: "Identification of time-varying counterfactual parameters in nonlinear panel models"
+  author: "Chris Muris, Irene Botosaru"
+  year: 2025
+  journal: "Journal of Econometrics"
+  volume: "252B"
+  pages: "105639"
+  doi: "10.1016/j.jeconom.2023.105639"
+  url: "https://doi.org/10.1016/j.jeconom.2023.105639"
+  type: "journal_article"
+  categories: ["Panel Data", "Identification", "Nonlinear Models"]
+  abstract: "We develop a general framework for the identification of counterfactual parameters in a class of nonlinear semiparametric panel models with fixed effects and time effects. Our method applies to models for discrete outcomes or continuous outcomes, with discrete or continuous regressors. We show that the survival distribution of counterfactual outcomes is identified (point or partial) in this class of models. This parameter is a building block for most partial and marginal effects of interest in applied practice."
+
+- title: "A dynamic ordered logit model with fixed effects"
+  author: "Chris Muris, Pedro Raposo, Sotirios Vandoros"
+  year: 2025
+  journal: "Review of Economics and Statistics"
+  volume: "107"
+  issue: "4"
+  pages: "1104-1114"
+  doi: "10.1162/rest_a_01336"
+  url: "https://doi.org/10.1162/rest_a_01336"
+  code: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/P4Y12W"
+  type: "journal_article"
+  categories: ["Panel Data", "Discrete Choice"]
+  abstract: "We study a fixed-T panel data logit model for ordered outcomes that accommodates fixed effects and state dependence. We provide identification results for the autoregressive parameter, regression coefficients, and the threshold parameters in this model using only four observations. We propose a composite conditional maximum likelihood estimator that is consistent and asymptotically normal. We apply our estimator to analyze the determinants of self-reported health in European countries."
+
+- title: "How importers hedge demand uncertainty through dual sourcing and safety inventory"
+  author: "Chris Muris, Horst Raff, Nicolas Schmitt, Frank Staehler"
+  year: 2025
+  journal: "Canadian Journal of Economics"
+  volume: "58"
+  issue: "3"
+  pages: "1055-1069"
+  doi: "10.1111/caje.70019"
+  url: "https://doi.org/10.1111/caje.70019"
+  type: "journal_article"
+  categories: ["International Trade", "Uncertainty"]
+  abstract: "This paper presents a dynamic model of inventory and trade to examine how importers manage demand uncertainty when importing involves an order lead time. We demonstrate that when import costs are low, the optimal strategy for an importer is to maintain a safety inventory of imported goods, exceeding expected sales, to handle demand surges. However, as import costs increase, firms shift their hedging strategy from relying on safety inventory to employing dual sourcing. This involves covering demand surges with readily available but more expensive domestic supplies, while continuing to use imports for base-level demand. Our results indicate that this endogenous adjustment of the hedging strategy leads to a greater reduction in the volume of inventory and imports than the expected sales as import costs rise, an effect that is further amplified by an increase in demand uncertainty."
+
+- title: "Intertemporal collective household models: Identification in short panels with unobserved heterogeneity in resource shares"
+  author: "Chris Muris, Irene Botosaru, Krishna Pendakur"
+  year: 2023
+  journal: "Journal of Econometrics"
+  volume: "232"
+  issue: "2"
+  pages: "576-597"
+  doi: "10.1016/j.jeconom.2021.11.006"
+  url: "https://doi.org/10.1016/j.jeconom.2021.11.006"
+  type: "journal_article"
+  categories: ["Panel Data", "Identification"]
+  abstract: "We provide a new full-commitment intertemporal collective household model (ICHM). We establish sufficient conditions for the identification of the (time-varying) resource share and the distribution of the (time-invariant) unobserved heterogeneity in resource shares using three or more periods of data on household-level aggregate consumption of a single private good. Our identification results accommodate unobserved heterogeneity in resource shares, as well as unobserved heterogeneity and endogeneity in the individual-level demand functions. We propose a GMM estimator for the parameters of interest and study its asymptotic properties. We apply our method to study the resource shares of men and women in Malawi."
+
+- title: "DICE simplified"
+  author: "Chris Muris, Masako Ikefuji, Roger Laeven, Jan Magnus"
+  year: 2021
+  journal: "Environmental Modeling & Assessment"
+  pages: "1-12"
+  doi: "10.1007/s10666-020-09738-2"
+  url: "https://doi.org/10.1007/s10666-020-09738-2"
+  code: "https://github.com/chrismuris/S-DICE"
+  type: "journal_article"
+  categories: ["Environmental Economics"]
+  abstract: "We analyze Nordhaus' DICE model and show that the temperature and CO2 equations are needlessly complicated and can be simplified without loss of essence. In addition, we argue that the damage function can be altered in such a way that it lends itself to experiments involving extreme risk. We conclude that, within the philosophy of the DICE model, significant simplifications can be made which make the model more transparent, more robust, and easier to apply."
+
+- title: "Interval censored regression with fixed effects"
+  author: "Chris Muris, Jason Abrevaya"
+  year: 2020
+  journal: "Journal of Applied Econometrics"
+  volume: "35"
+  issue: "2"
+  pages: "198-216"
+  doi: "10.1002/jae.2737"
+  url: "https://doi.org/10.1002/jae.2737"
+  type: "journal_article"
+  categories: ["Panel Data", "Censored Regression"]
+  abstract: "This paper considers the identification and estimation of a fixed-effects model where the dependent variable is interval-censored. We explore two versions of the model: a parametric model with logistic errors and a semiparametric model where the errors have an unspecified distribution. In both models, error disturbances can be heteroskedastic across cross-sectional units, provided they are stationary within a cross-sectional unit. The semiparametric model also accommodates serial correlation of error disturbances. We propose a conditional-logit-type composite likelihood estimator for the logistic fixed-effects model and a composite maximum-score-type estimator for the semiparametric model. These estimators generally identify the scale of the coefficient parameters. Monte Carlo simulations and an empirical application to birthweight outcomes are used to demonstrate the performance of the parametric estimator."
+
+- title: "Efficient GMM estimation with incomplete data"
+  author: "Chris Muris"
+  year: 2020
+  journal: "Review of Economics and Statistics"
+  volume: "99"
+  issue: "3"
+  pages: "465-477"
+  doi: "10.1162/rest_a_00836"
+  url: "https://doi.org/10.1162/rest_a_00836"
+  code: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/29047"
+  type: "journal_article"
+  categories: ["GMM", "Missing Data"]
+  abstract: "In the standard missing data model, data are either complete or completely missing. However, applied researchers often encounter situations with an arbitrary number of strata of incompleteness. Examples include unbalanced panels and instrumental variables settings where some observations lack certain instruments. I propose a model for these scenarios where observations may be incomplete, with an arbitrary number of incompleteness strata. I derive a set of moment conditions that generalizes those found in Graham's (2011) standard missing data setup, establish the associated efficiency bound, and introduce efficient estimators."
+
+- title: "Expected utility and catastrophic risk in a stochastic economy-climate model"
+  author: "Chris Muris, Masako Ikefuji, Roger Laeven, Jan Magnus"
+  year: 2020
+  journal: "Journal of Econometrics"
+  volume: "214"
+  issue: "1"
+  pages: "110-129"
+  doi: "10.1016/j.jeconom.2019.05.007"
+  url: "https://doi.org/10.1016/j.jeconom.2019.05.007"
+  type: "journal_article"
+  categories: ["Environmental Economics", "Risk"]
+  abstract: "We analyze a stochastic dynamic finite-horizon economic model with climate change (SDICE*), which incorporates potentially heavy-tailed stochasticity into Nordhaus' deterministic DICE model. We show that the expected utility framework, particularly with constant relative risk aversion, is fragile when confronted with heavy-tailed distributional assumptions that model economic catastrophes. We derive necessary and sufficient compatibility conditions for the utility function to avoid this fragility, ensuring that expected (marginal) utility remains finite. We develop and implement a regression-based numerical method for solving this class of models. Numerical results suggest that higher levels of uncertainty lead to less abatement and consumption, and more investment, which can be substantial depending on the nature of uncertainty and social preferences."
+
+- title: "Estimation in the fixed effects ordered logit model"
+  author: "Chris Muris"
+  year: 2017
+  journal: "Review of Economics and Statistics"
+  volume: "99"
+  issue: "3"
+  pages: "465-477"
+  doi: "10.1162/REST_a_00617"
+  url: "https://doi.org/10.1162/REST_a_00617"
+  code: "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/IUJ3VZ"
+  type: "journal_article"
+  categories: ["Panel Data", "Discrete Choice"]
+  abstract: "This paper introduces a new estimator for the fixed-effects ordered logit model. The proposed method has two advantages over existing estimators. First, it estimates the differences in the cut points along with the regression coefficient, leading to provide bounds on partial effects. Second, the proposed estimator for the regression coefficient is more efficient. The author uses the fact that the ordered logit model with J outcomes and T observations can be converted to a binary choice logit model in (J - 1)T ways. As an empirical illustration, the paper examines the income-health gradient for children using the Medical Expenditure Panel Survey."
+
+- title: "The trade-off between income inequality and carbon dioxide emissions"
+  author: "Chris Muris, Nicole Grunewald, Stephan Klasen, Inmaculada Martinez-Zarzoso"
+  year: 2017
+  journal: "Ecological Economics"
+  volume: "142"
+  pages: "249-256"
+  doi: "10.1016/j.ecolecon.2017.06.034"
+  url: "https://doi.org/10.1016/j.ecolecon.2017.06.034"
+  type: "journal_article"
+  categories: ["Environmental Economics", "Inequality"]
+  abstract: "We investigate the theoretically ambiguous link between income inequality and per capita carbon dioxide emissions using a panel data set that is substantially larger than those used in the existing literature. Using an arguably superior group fixed effects estimator, we find that the relationship between income inequality and per capita emissions depends on the level of income. We show that for low and middle-income economies, higher income inequality is associated with lower carbon emissions while in upper middle-income and high-income economies, greater income inequality is associated with higher carbon emissions."
+
+- title: "Model averaging in semiparametric estimation of treatment effects"
+  author: "Chris Muris, Toru Kitagawa"
+  year: 2016
+  journal: "Journal of Econometrics"
+  volume: "193"
+  issue: "1"
+  pages: "271-289"
+  doi: "10.1016/j.jeconom.2016.03.002"
+  url: "https://doi.org/10.1016/j.jeconom.2016.03.002"
+  type: "journal_article"
+  categories: ["Model Averaging", "Treatment Effects"]
+  abstract: "Choosing the covariates and functional form of the propensity score is a crucial decision in estimating treatment effects. This paper introduces a data-driven method for averaging estimators across various candidate specifications to address the uncertainty in model specification when using propensity score weighting to estimate the Average Treatment Effect on the Treated (ATT). The proposed procedures aim to minimize the estimated Mean Squared Error (MSE) within a local asymptotic framework. Model averaging is framed as a statistical decision problem in a limit experiment, leading to the derivation of an averaging scheme that is Bayes optimal. The averaging estimator demonstrates superior performance compared to selection estimators. Monte Carlo studies and an application to a labor market program illustrate the gains in MSE achieved by this method."
+
+- title: "Expected utility and catastrophic consumption risk"
+  author: "Chris Muris, Masako Ikefuji, Roger Laeven, Jan Magnus"
+  year: 2015
+  journal: "Insurance: Mathematics and Economics"
+  volume: "64"
+  pages: "306-312"
+  doi: "10.1016/j.insmatheco.2015.06.007"
+  url: "https://doi.org/10.1016/j.insmatheco.2015.06.007"
+  type: "journal_article"
+  categories: ["Risk", "Insurance"]
+  abstract: "An expected utility based cost-benefit analysis is, in general, fragile to distributional assumptions. We derive necessary and sufficient conditions on the utility function of consumption in the expected utility model to avoid this. The conditions ensure that expected (marginal) utility of consumption and the expected intertemporal marginal rate of substitution that trades off consumption and self-insurance remain finite, also under heavy-tailed distributional assumptions. Our results are relevant to various fields encountering catastrophic consumption risk in cost-benefit analysis."
+
+- title: "Do climate variations explain bilateral migration? A gravity model analysis"
+  author: "Chris Muris, Andreas Backhaus, Inmaculada Martinez-Zarzoso"
+  year: 2015
+  journal: "IZA Journal of Migration"
+  volume: "4"
+  issue: "3"
+  doi: "10.1186/s40176-014-0026-3"
+  url: "https://doi.org/10.1186/s40176-014-0026-3"
+  type: "journal_article"
+  categories: ["Migration", "Climate Change"]
+  abstract: "This paper investigates the extent to which international migration can be explained by climatic variations. We estimate a gravity model of migration, augmented with average temperature and precipitation in the country of origin, using a panel data set of 142 sending countries for the period 1995 to 2006. Temperature is positively correlated with migration, and changes in precipitation are also associated with small changes in migration. These effects are robust to various model modifications. The study also explores the channels relating climate changes with migration via agriculture and internal conflict."
+
+- title: "Pareto utility"
+  author: "Chris Muris, Masako Ikefuji, Roger Laeven, Jan Magnus"
+  year: 2013
+  journal: "Theory and Decision"
+  volume: "75"
+  pages: "43-57"
+  doi: "10.1007/s11238-012-9293-8"
+  url: "https://doi.org/10.1007/s11238-012-9293-8"
+  type: "journal_article"
+  categories: ["Utility Theory"]
+  abstract: "In searching for an appropriate utility function in the expected utility framework, we formulate four properties that we want the utility function to satisfy. We identify Pareto utility as a function satisfying all four desired properties. Pareto utility is a flexible yet simple and parsimonious two-parameter family. It exhibits decreasing absolute risk aversion and increasing but bounded relative risk aversion. It is applicable irrespective of the probability distribution relevant to the prospect to be evaluated. Pareto utility is therefore particularly suited for catastrophic risk analysis. A new and related class of generalized exponential (gexpo) utility functions is also studied."
+
+- title: "Statistical climate-change scenarios"
+  author: "Chris Muris, Jan Magnus, Bertrand Melenberg, Martin Wild"
+  year: 2013
+  journal: "Journal of Environmental Statistics"
+  volume: "5"
+  issue: "4"
+  pages: "1-18"
+  url: "http://www.jenvstat.org/v05/i04"
+  type: "journal_article"
+  categories: ["Climate Change", "Statistics"]
+  abstract: "This paper reports on climate projections generated by a simple model of climate change. The model captures the effects of variations in surface solar radiation, using information over the period 1959–2002 from observational records (GEBA), as well as increases in greenhouse gases on surface temperature. The model performs well with respect to observational data and is simple enough to admit a rigorous statistical analysis. This allows us to quantify the uncertainty associated with estimated parameter values using observational data only. The methodology directly yields estimates with corresponding confidence intervals, which can be translated into confidence intervals for climate projections. Specifically, we construct probabilistic climate projections using standard scenarios for carbon dioxide and sulphur dioxide emissions."
+
+- title: "Global warming and local dimming: the statistical evidence"
+  author: "Chris Muris, Jan Magnus, Bertrand Melenberg"
+  year: 2011
+  journal: "Journal of the American Statistical Association"
+  volume: "106"
+  pages: "467-468"
+  doi: "10.1198/jasa.2011.ap09508"
+  url: "https://doi.org/10.1198/jasa.2011.ap09508"
+  type: "journal_article"
+  categories: ["Climate Change", "Statistics"]
+  abstract: "Global warming comprises two opposing components: the global greenhouse effect and the local solar radiation effect (global dimming). Only the sum of these two effects is observed. The purpose of this research is to identify these two effects using a simple climate model and data from a large number of weather stations worldwide for the period 1959–2002. The parameters are estimated using dynamic panel data methods, and the associated parameter uncertainty is quantified. The estimated temperature change of 0.73°C is decomposed into a greenhouse effect of 1.87°C, a solar radiation effect of -1.09°C, and a small remainder term."
+
+- title: "Specification of variance matrices for panel data models"
+  author: "Chris Muris, Jan Magnus"
+  year: 2010
+  journal: "Econometric Theory"
+  volume: "26"
+  pages: "301-310"
+  doi: "10.1017/S0266466609090756"
+  url: "https://doi.org/10.1017/S0266466609090756"
+  type: "journal_article"
+  categories: ["Panel Data", "Econometrics"]
+  abstract: "Many regression models have two dimensions, such as time and households in panel data. In estimating such models, we need to specify the structure of the error variance matrix Ω. If the dimensions are large, direct computation of the determinant and inverse of Ω is not practical. In this note, we define structures of Ω that allow the computation of its determinant and inverse using only smaller component matrices, while allowing for heteroskedasticity, household-specific autocorrelation, and time-specific spatial correlation."
+
+- title: "Identifying long-run neighborhood effects via race-based neighborhood sorting"
+  author: "Chris Muris, Dionissi Aliprantis, Daniel Hartley"
+  year: 2025
+  url: "https://dionissialiprantis.com/pdfs/Identifying_Neighborhood_Effects_Feb_2025.pdf"
+  type: "working_paper"
+  categories: ["Neighborhood Effects", "Sorting"]
+  abstract: "Children's adult outcomes are influenced by both their parents' socioeconomic status (SES) and the SES of the neighborhood where they grew up. We explicitly distinguish between these factors to identify long-run neighborhood effects. We estimate an ordered probit model of neighborhood choice and use it to infer how population shares of parental SES in each neighborhood vary along both observed and unobserved dimensions. We then regress the average observed outcomes in neighborhoods on these population shares to identify potential outcomes. Using race-based neighborhood sorting as an instrument, we estimate that about half of recent racial inequality in intergenerational mobility is explained by residential segregation."
+
+- title: "An adversarial approach to identification"
+  author: "Chris Muris, Irene Botosaru, Isaac Loh"
+  year: 2024
+  url: "https://arxiv.org/abs/2411.04239"
+  type: "working_paper"
+  categories: ["Identification", "Adversarial Estimation"]
+  abstract: "We introduce a new framework for characterizing identified sets of structural and counterfactual parameters in econometric models. By reformulating the identification problem as a set membership question, we leverage the separating hyperplane theorem in the space of observed probability measures to characterize the identified set through the zeros of a discrepancy function with an adversarial game interpretation. The set can be a singleton, resulting in point identification. A feature of many econometric models, with or without distributional assumptions on the error terms, is that the probability measure of observed variables can be expressed as a linear transformation of the probability measure of latent variables. This structure provides a unifying framework and facilitates computation and inference via linear programming. We demonstrate the versatility of our approach by applying it to nonlinear panel models with fixed effects, with parametric and nonparametric error distributions, and across various exogeneity restrictions, including strict and sequential."
+
+- title: "Triadic network formation"
+  author: "Chris Muris, Cavit Pakel"
+  year: 2025
+  url: "https://arxiv.org/abs/2509.26420"
+  type: "working_paper"
+  categories: ["Networks"]
+  abstract: "We study estimation and inference for triadic link formation with dyad-level fixed effects in a nonlinear binary choice logit framework. Dyad-level effects provide a richer and more realistic representation of heterogeneity across pairs of dimensions (e.g. importer-exporter, importer-product, exporter-product), yet their sheer number creates a severe incidental parameter problem. We propose a novel ``hexad logit'' estimator and establish its consistency and asymptotic normality. Identification is achieved through a conditional likelihood approach that eliminates the fixed effects by conditioning on sufficient statistics, in the form of hexads -- wirings that involve two nodes from each part of the network. Our central finding is that dyad-level heterogeneity fundamentally changes how information accumulates. Unlike under node-level heterogeneity, where informative wirings automatically grow with link formation, under dyad-level heterogeneity the network may generate infinitely many links yet asymptotically zero informative wirings. We derive explicit sparsity thresholds that determine when consistency holds and when asymptotic normality is attainable. These results have important practical implications, as they reveal that there is a limit to how granular or disaggregate a dataset one can employ under dyad-level heterogeneity."
+
+- title: "Dyadic data with ordered outcome variables"
+  author: "Chris Muris, Cavit Pakel, Qichen Zhang"
+  year: 2025
+  url: "https://arxiv.org/abs/2507.16689"
+  type: "working_paper"
+  categories: ["Networks", "Ordered Outcome"]
+  abstract: "We consider ordered logit models for directed network data that allow for flexible sender and receiver fixed effects that can vary arbitrarily across outcome categories. This structure poses a significant incidental parameter problem, particularly challenging under network sparsity or when some outcome categories are rare. We develop the first estimation method for this setting by extending tetrad-differencing conditional maximum likelihood (CML) techniques from binary choice network models. This approach yields conditional probabilities free of the fixed effects, enabling consistent estimation even under sparsity. Applying the CML principle to ordered data yields multiple likelihood contributions corresponding to different outcome thresholds. We propose and analyze two distinct estimators based on aggregating these contributions: an Equally-Weighted Tetrad Logit Estimator (ETLE) and a Pooled Tetrad Logit Estimator (PTLE). We prove PTLE is consistent under weaker identification conditions, requiring only sufficient information when pooling across categories, rather than sufficient information in each category. Monte Carlo simulations confirm the theoretical preference for PTLE, and an empirical application to friendship networks among Dutch university students demonstrates the method's value. Our approach reveals significant positive homophily effects for gender, smoking behavior, and academic program similarities, while standard methods without fixed effects produce counterintuitive results."

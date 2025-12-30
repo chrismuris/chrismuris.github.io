@@ -2,18 +2,16 @@ project:
   type: website
   output-dir: "."
 
+brand: _brand.yml
+
 website: 
-  title: "Chris Muris"
   navbar: 
-  #   left:
-  #     - text: Home
-  #       file: index.qmd
     search: true
 
 format:
   html:
-    theme: cosmo
+    theme: litera
     css: styles.css
-    toc: true
+    toc: false
     toc-location: left
     toc-float: true
