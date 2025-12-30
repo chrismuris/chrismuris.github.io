@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: "."
 
+execute:
+  freeze: auto
+
 brand: _brand.yml
 
 website: 

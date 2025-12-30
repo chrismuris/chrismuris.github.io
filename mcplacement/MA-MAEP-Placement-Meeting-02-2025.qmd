@@ -14,7 +14,6 @@ format:
     incremental: false
     number-sections: false
     fontsize: 18pt
-  typst: default
 ---
 
 # Introduction
