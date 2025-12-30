@@ -11,4 +11,4 @@ color:
 typography:
   base: "Roboto"
   headings: "Roboto"
-  monospace: "Roboto Mono"
+  monospace: "Consolas"
