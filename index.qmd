@@ -20,8 +20,8 @@ format:
               white-space: nowrap !important;
               width: auto !important;
               min-width: max-content !important;
-              padding: 6px 16px !important;
-              font-size: 0.85rem !important;
+              padding: 4px 10px !important;
+              font-size: 0.75rem !important;
               display: inline-flex !important;
               align-items: center;
               justify-content: center;
@@ -235,7 +235,7 @@ render_pubs_table <- function(data, searchable = TRUE, inline_buttons = FALSE) {
              if (length(valid_btns) > 0) {
                 btn_div <- tags$div(
                   class = "d-flex gap-2 flex-wrap",
-                  style = "margin-left: 20px; margin-top: 4px; margin-bottom: 8px;",
+                  style = "margin-left: 20px; margin-top: 2px; margin-bottom: 6px;",
                   btns
                 )
                 tags$div(citation_div, btn_div)
