@@ -175,7 +175,7 @@ window.Quarto = {
 <div class="lead">
 <p>I am an associate professor in the Department of Economics at McMaster University. My research is in the area of theoretical econometrics. I develop and study new tools for the analysis of panel (longitudinal) data.</p>
 </div>
-<p>````{{{ #| echo: false #| warning: false #| message: false</p>
+<p>```{{{{#| #| echo: false #| warning: false #| message: false</p>
 <p>library(yaml) library(reactable) library(htmltools) library(dplyr) library(purrr)</p>
 <section id="javascript-for-clipboard-copy" class="level1">
 <h1>Javascript for Clipboard Copy</h1>
@@ -317,12 +317,12 @@ onClick = "expand", class = "custom-reactable"</code></pre>
 <pre><code>
 ## Working Papers
 
-````{{{
+````{{{{#|
 #| echo: false
 render_pubs_table(wp_df, searchable = FALSE, show_buttons_inline = FALSE, show_buttons_in_details = TRUE)</code></pre>
 <section id="publications" class="level2">
 <h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<p><code>{{{ #| echo: false render_pubs_table(pubs_df)</code></p>
+<p><code>{{{{#| #| echo: false render_pubs_table(pubs_df)</code></p>
 
 
 </section>

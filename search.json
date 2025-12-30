@@ -256,14 +256,14 @@
     "href": "index.html",
     "title": "Javascript for Clipboard Copy",
     "section": "",
-    "text": "CV   Email  Scholar  Github  Arxiv  LinkedIn  ORCID\n````{{{ #| echo: false #| warning: false #| message: false\nlibrary(yaml) library(reactable) library(htmltools) library(dplyr) library(purrr)"
+    "text": "CV   Email  Scholar  Github  Arxiv  LinkedIn  ORCID\n```{{{{#| #| echo: false #| warning: false #| message: false\nlibrary(yaml) library(reactable) library(htmltools) library(dplyr) library(purrr)"
   },
   {
     "objectID": "index.html#publications",
     "href": "index.html#publications",
     "title": "Javascript for Clipboard Copy",
     "section": "Publications",
-    "text": "Publications\n{{{ #| echo: false render_pubs_table(pubs_df)"
+    "text": "Publications\n{{{{#| #| echo: false render_pubs_table(pubs_df)"
   },
   {
     "objectID": "mcplacement/MA-MAEP-Placement-Meeting-01-2025.html#who-am-i-what-is-this",
