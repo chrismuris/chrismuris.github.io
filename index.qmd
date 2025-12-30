@@ -57,7 +57,7 @@ My research is in the area of theoretical econometrics.
 I develop and study new tools for the analysis of panel (longitudinal) data.
 </div>
 
-```{{{{#|
+```{
 #| echo: false
 #| warning: false
 #| message: false
@@ -235,14 +235,14 @@ wp_df <- df |> filter(type != "journal_article")
 
 ## Working Papers
 
-````{{{{#|
+````{
 #| echo: false
 render_pubs_table(wp_df, searchable = FALSE, show_buttons_inline = FALSE, show_buttons_in_details = TRUE)
 ````
 
 ## Publications
 
-````{{{{#|
+````{
 #| echo: false
 render_pubs_table(pubs_df)
 ````
