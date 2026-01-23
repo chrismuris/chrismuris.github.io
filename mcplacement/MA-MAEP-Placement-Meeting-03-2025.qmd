@@ -4,12 +4,6 @@ subtitle: "Spring job search and co-ops"
 author: "Chris Muris (materials adapted from Arthur Sweetman)"
 date: "Jan 2026"
 date-format: "MMMM, YYYY"
-filters:
-  - reveal-auto-agenda
-auto-agenda:
-  bullets: numbered
-  heading: Agenda
-  clickable: true
 format:
   revealjs:
     theme: simple
@@ -20,7 +14,6 @@ format:
     incremental: false
     number-sections: true
     fontsize: 18pt
-  typst: default
 ---
 
 <!-- This meeting is about job search AND about co-op!!! -->
