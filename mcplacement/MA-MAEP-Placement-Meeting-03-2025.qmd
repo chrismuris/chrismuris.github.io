@@ -1,0 +1,417 @@
+---
+title: "MA/MAEP Career Placement Meeting 3"
+subtitle: "Spring job search and co-ops"
+author: "Chris Muris (materials adapted from Arthur Sweetman)"
+date: "Jan 2026"
+date-format: "MMMM, YYYY"
+filters:
+  - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: Agenda
+  clickable: true
+format:
+  revealjs:
+    theme: simple
+    slide-number: c/t
+    progress: true
+    hash: true
+    controls: true
+    incremental: false
+    number-sections: true
+    fontsize: 18pt
+  typst: default
+---
+
+<!-- This meeting is about job search AND about co-op!!! -->
+
+
+<!-- 
+Changes relative to Arthur Sweetman's original slides (2023):
+
+- Format: Converted from PPTX to Quarto/RevealJS.
+- Structure: Added 'reveal-auto-agenda' and reorganized into 5 logical sections.
+- Content: Refactored dense calendar text into summary + appendix.
+- Style: Modernized 'Private Sector' and 'Strategy' sections.
+-->
+
+<!--
+
+Commented out. Think about bringing this back, though.
+
+
+
+## Avenue to Learn CONTINUING (not term) courses
+
+1. Economics Graduate Careers "course"
+2. (joint) Econ 796/797 course (new)
+
+- Everyone should be in Grad. Careers
+- Those registered in Econ 796/797 should be able to see that course
+- Contact the graduate administrative assistant (econgrd@mcmaster.ca) if there is a problem
+- This presentation and other relevant material in courses
+--> 
+
+<!--
+https://economics.mcmaster.ca/graduate-programs/ma-economics/
+https://economics.mcmaster.ca/graduate-programs/ma-in-economic-policy/
+https://academiccalendars.romcmaster.ca/search_advanced.php?cur_cat_oid=61&search_database=Search&search_db=Search&cpage=1&ecpage=1&ppage=1&spage=1&tpage=1&location=33&filter%5Bkeyword%5D=econ+796&filter%5Bexact_match%5D=1
+https://academiccalendars.romcmaster.ca/preview_program.php?catoid=55&poid=27893&hl=%22work+integrated+learning%22&returnto=search
+-->
+
+# Job Search Strategy
+
+## Think strategically
+
+- Job search and search for co-op placements is competitive!
+
+. . .
+
+- What does the other side of the market want?
+- How will various readers of your application, at various stages of the process, react to your application package?
+  - HR, local manger, senior manager, etc.
+- What can you do to make yourself attractive to the employer/supervisor?
+
+. . .
+
+- See Meetings 1 and 2
+
+## Spring Recruitment Targets {.scrollable}
+
+- Ontario Internship Program (OIP):
+  - [Apply Here](https://www.ontario.ca/page/apply-ontario-internship-program)
+  - Status: Prestigious, highly competitive
+  - Action: Deadline January 30, 2026 (12:00 PM)
+- Bank of Canada:
+  - [Student Careers](https://www.bankofcanada.ca/careers/students/)
+  - Spring Campaign: Often recruits in Feb for Summer/Permanent roles
+- Parliamentary Internship Programme (PIP):
+  - [Apply to PIP](https://pip-psp.org/apply) | [Interns](https://pip-psp.org/interns/)
+  - Canada's premier legislative internship (est. 1969); work with federal MPs
+  - Strong economics track record: multiple alumni in central banking/finance
+  - Deadline: January 31, 2026
+- Ontario Legislative Internship Programme (OLIP):
+  - [Internship](https://www.olipinterns.ca/the-internship) | [Intern Profiles](https://www.olipinterns.ca/the-interns)
+  - Deadline: January 31, 2026
+- Private Sector:
+  - Tends to have "just-in-time" hiring (March/April)
+  - Targets: Banks, Consultants, Insurers
+
+## Spring Recruitment Timeline
+
+- January (NOW):
+  - Deadlines: OIP (Jan 30), PIP/OLIP (Jan 31)
+  - Action: Contact references, start intensive search; networking
+- February:
+  - Focus: Bank of Canada Spring Campaign + Networking
+  - Action: Networking; interview prep; early interviews
+- March/April:
+  - Focus: Private sector "just-in-time" hiring (Banks, Consulting)
+  - Action: Ramped-up applications to posted roles
+- May: Start dates for summer roles
+
+## Spring Networking
+
+- Focus: Alumni at firms with "just-in-time" hiring (Banks, Consulting, Insurance)
+  - Goal: Informational interviews to find unposted roles or understand team needs
+  - Or: Find other fields/organizations with positions
+  - And: Build long-term relationships 
+- LinkedIn:
+  - Strategy: Use LinkedIn to filter by "McMaster Economics" and specific organizations
+  - Outreach: Keep it brief: "I'm a current MA/MAEP student interested in [Team]. I see you started at [Firm] in the Spring..."
+- Networking at events: Go to one event, talk to three people, ask one person for a 15-minute chat later
+
+## Where to Look
+
+- LinkedIn Jobs: Set alerts for "Economist", "Policy Analyst"
+- Online job boards (Indeed / Glassdoor): Useful for smaller private firms and NGOs
+- GC Jobs (jobs.gc.ca): Main portal for Federal roles (filter by "Student" or "Public")
+- GoJobs (gojobs.gov.on.ca): Ontario Public Service
+
+## Municipal Opportunities
+
+Irregular opportunities at municipalities:
+
+- City of Hamilton:
+  - Summer Student Program: Applications open Jan 15 – March 25
+  - Good for local policy, data, and analyst roles
+- City of Toronto:
+  - Urban Fellows: High-prestige policy program (Applications typically open May)
+  - Summer Roles: Check city jobs board directly
+
+## Eligibility & Work Authorization
+
+::: columns
+::: {.column width="50%"}
+Open to work permit holders:
+
+- OIP and many provincial roles
+- Private sector (most flexible)
+:::
+
+::: {.column width="50%"}
+Citizens / PRs only:
+
+- Many federal roles (preference for citizens; some require Secret Clearance)
+- OLIP and PIP 
+:::
+:::
+
+Implication for international students: Focus energy on OIP and private sector
+
+## Web pages of large firms
+
+- Look on webpages of: 
+  - banks
+  - insurance companies
+  - telecommunications firms
+  - consultancies
+  - etc. etc. (this is only the start)
+- For most firms apply if interested
+  - try submitting an application even if no job posted
+
+## TABE (Toronto Association for Business Economics)
+
+- Chapter of CABE (Canadian Association for Business Economics)
+- Networking opportunity
+- (Mostly) Volunteers run organization
+  - [CABE Chapters](https://www.cabe.ca/jmv3/index.php/cabe-chapters/tabe)
+- There are event fees (for lunch)
+- For this to be valuable for you, you need to take the initiative
+
+# Work Integrated Learning (WIL)
+
+## What is WIL / what is a coop?
+
+- From McMaster's point of view, just about any job can be a coop
+- Employer's point of view may differ
+- Some jobs are labelled as "coop" by an employer and may have special rules such as needing to return to school after the placement
+- You must return to do your work term report at the end of each placement
+- Or, employer may view it as a contract position or summer job, or something else
+
+## Co-ops (internships, WIL)
+
+- Getting a coop is not the goal: it is a means to an end
+- The "end" is a career, which for most of you involves permanent full-time positions
+  - Though some of you may have other preferences
+- A co-op may or may not be the most efficient route to the "end" you seek
+  - Keep your ultimate goal in mind
+
+## ECON 796
+
+- ECON 796 / Work Integrated Learning I
+- 3 unit(s)
+
+> The course aims to enrich student learning by providing a first work integrated learning opportunity through a placement that is normally one academic term in duration. Students will work under the supervision of a mentor (or less commonly mentors) on one or more projects involving a research opportunity. 
+
+> Prior to the end of the placement each student must request from their mentor(s) an evaluation that is submitted to the course instructor. Upon returning to the university following their placement, students must submit to the course instructor an academic paper discussing the work undertaken in light of their academic studies. 
+> 
+> Completion of this course is required for partial fulfillment of the work integrated learning stream of the following degrees: M.A. in Economics, M.A. in Economic Policy, PhD in Economics. The course is pass/fail."
+
+. . .
+
+- From the above: after the placement, you will return to the university (and submit a report)
+
+- For MA students, from the MA calendar, one of the required courses is: 
+
+  > ECON 701 / Applied Research Workshop for MA in Economics OR ECON 796 / Work Integrated Learning I (with departmental permission)
+
+## How to finding a co-op?
+
+- Department circulate (mostly public sector) ads
+- Self-sourcing: You must seek out additional public sector roles, and private sector roles, by yourself 
+  - This can be very time-consuming
+- Use resources provided above for job search as a starting point
+
+. . .
+
+- Reminder: eligibility constraints, see Meetings 1 and 2:
+  - Federal: Strict citizenship/PR preference
+  - Provincial: More flexible
+  - Private: Most flexible
+
+---
+
+- One source of placements is FSWEP: Federal Student Work Experience Program
+- [Apply to FSWEP](https://www.canada.ca/en/public-service-commission/jobs/services/recruitment/students/federal-student-work-program.html)
+- Timing: Open year-round; agencies pull from this pool as needs arise
+- Eligibility: You must be a current student returning to full-time studies
+<!-- - Context: Not for graduating students (unless starting a PhD/next degree) -->
+
+---
+
+- The best way of finding positions is always changing
+- What have you tried so far? 
+- What has proven successful/promising? 
+  - And what has not?
+  
+. . .
+
+- Please, keep me updated!
+
+## International students and work authorization
+
+- Information is on the McMaster website at: [ISS Working in Canada](https://iss.mcmaster.ca/immigration/working-in-canada/)
+- Co-op work permit rules change frequently. Check the ISS website for current requirements before accepting a placement. 
+- Some international students extend the 12-month MA to 16–20 months via co-op to qualify for a longer post-graduation work permit. Verify current PGWP rules with ISS.
+- Applications for a permit can take long. Apply early.
+
+# The Work Integrated Learning Stream
+
+## Work-integrated learning (WIL) stream for MA/MAEP
+
+- You can opt to complete a "Work Integrated Learning Stream" version of your MA or MAEP degree
+- Complete two "co-op" placements, corresponding to ECON 796 and 797
+  - With Departmental permission, this could be one 8-month placement
+- The WIL option is only an option!
+  - Can be "dropped" after the first course
+    - e.g., may accept a permanent job during the first placement and "drop" the second course (797)
+  - If you do a co-op you (assuming success) get a master's degree
+  - In contrast, if you don't do a co-op you get a master's degree! :-)
+
+## Co-op course, paperwork & tuition
+
+- Read the calendar rules: the *Academic Calendar* is the formal "rules" of a university's teaching programs
+  - [Graduate studies landing page](https://graduate.mcmaster.ca/)
+  - [Academic Calendar, Graduate studies, 2025/2026](https://academiccalendars.romcmaster.ca/index.php?catoid=61)
+  - Then look for your program (e.g., search using keywords, "work integrated learning")
+  - After clicking your program, it will have rules on "Work Integrated Learning Stream" under a separate heading
+  - Always read the fine print!!
+
+## Official Calendar Text (2025/26) {.scrollable}
+
+> Students in any graduate program of the Economics Department who have obtained a GPA of B or higher at the time of application and a grade of B+ or higher in ECON 761 OR ECON 6G03 may apply to be moved from the regular stream of their program to the work integrated learning (WIL) stream associated with their degree program. The number of students who will be accepted into the WIL stream of the relevant program will be small and may change over time.
+>
+> Admission to the stream does not guarantee a placement. Working with information available to the department and through their own efforts and contacts, a WIL stream student will compete for and apply for positions on their own. These positions can be held anywhere in the world.
+>
+> To complete the WIL stream, students must work in either one or two placements and successfully complete both ECON 796 and ECON 797. A student who fails to complete both courses will be switched back to the regular stream of the program that they are enrolled in. Both of these courses are for credit and are Pass/Fail. Registration in these courses will be restricted to students who have a placement that has been approved by the Econ 796 or Econ 797 course instructor as appropriate. In addition, PhD students must get permission from their supervisor. PhD students will normally enter the WIL stream having passed all comprehensive examinations as well as the research paper.
+>
+> A placement must include a significant research opportunity. At the completion of four months of a placement, the student must write an academic report discussing the work undertaken in light of their academic studies and must request a letter of evaluation from the mentor(s). These documents must be judged satisfactory by the course instructor to successfully complete either ECON 796 or ECON 797 as appropriate. Successful completion of these courses will be indicated on the student’s transcript. In the event that the student does not complete the full term of a placement, the student will drop the course and join the regular stream of their program.
+>
+> Interested Masters students should normally register for the WIL stream associated with their Masters program (MA or MAEP) at the beginning of term 2 of the first year of their program. Because of the nature of hiring, it is sometimes not known which students will be doing each placement until the month before that placement commences. Students who do not find a position can switch back into the regular stream of their program.
+> 
+> Students taking Econ 796 or Econ 797 by working at a placement while still enrolled in other courses are expected to fulfill requirements of these othercourses outside their placement work hours. While registered in either ECON 796 or ECON 797, a student will be considered a full-time student and will pay term tuition.
+
+## Summary
+
+- Prerequisites: GPA of B or higher; B+ or higher in ECON 761 or 6G03
+- Timeline: Register at the start of Term 2, for 796
+  - Can be dropped if your search is not successful, so register for 796 and the stream if you *intend* to do the coop
+- Requirements: Complete two courses, ECON 796 and ECON 797 (Pass/Fail)
+- Commitment: Remain a full-time student and pay term tuition
+
+. . . 
+
+- No guarantee: Admission to the stream does not guarantee a placement
+- Self-directed: You compete for and apply for positions on your own
+- Global: Positions can be held anywhere in the world
+
+## Deliverables
+
+- Submitting your report after the placement constitutes "returning to full-time studies" for registrar purposes
+- Deliverables:
+  - 4-month placement = 1 course credit
+  - Required: Academic report + Employer evaluation
+  - Documents must be judged satisfactory by the 796/797 instructor
+  - You must write a report at the end of each work term
+
+<!--
+- Employer Reports:
+  - An employer evaluation is the norm (though we cannot strictly force them to submit it)
+-->
+
+## Bridging to permanence
+
+- Some departments have formal mechanisms to turn co-ops into permanent roles. Ask them!
+- Many co-ops are with Fed and Ont govs and are good ways into those civil services
+  - Some with other places (investigate yourselves)
+- Coops need not transition to permanence
+  - Some Ministries/Departments have track records of recruiting from the coop stream ("bridging" to an "indefinite"/permanent position)
+  - While others offer purely a short-term positions
+  - Some are mixed
+
+---
+
+- Employers need not offer/You need not accept an indefinite/permanent position
+- Coops are frequently, but not always:
+  - A trial run at permanence
+  - A source or contacts/reference letter(s)
+  - A source of experience
+- So do your best on ALL professional dimensions
+- Workplace skill set: Economics courses prepare you well for research; the workplace requires coordination, communication, and reliability. **Work on the full set.**
+  - Some students neglect the broad range of skills/abilities/talents required in the labour market
+<!-- - Our programs prepare you very well on some dimensions, but (in my view) not well at all on others -->
+
+# Applications
+
+## References 
+
+- See Meeting 2 for details
+- Timing: Request now; give your referees at least 2 weeks lead time
+- A "good" reference beats a topically appropriate but lukewarm one
+- For private sector: consider someone who can speak to your work ethic, not just academics
+
+## Applications to employers
+
+- Never say or do anything that misleads an employer (or the university)
+- You must be strictly above-board (i.e., honest)
+
+## Do not rule yourself out
+
+- If you do not think you have "exactly" the right qualifications for a position, but the position interests you ---- apply anyway
+- Let the employer say "no" to you (if they wish)
+  - Again, do not rule yourself out
+  - Do not fabricate or misrepresent yourself, and do not get your hopes up too much, but sometimes employers' scope of interest is broader than you think and/or there are few other applicants
+- The only way you can be certain not to get a job is not to apply
+- The only reason not to apply for a job is if you know with certainty that you would not take it as offered
+  - And even then: it could provide a good practice interview
+
+# Navigating offers and transitions
+
+## *Micro-timing* of job search
+
+- It is common that students face hard choices during the job search process to do with multiple opportunities and their timing
+  - Example: you have an offer for job 1 that ends on Feb 17, and an interview for job 2 on Feb 18; you (think you) prefer job 2
+  - This is common. What to do?
+- In general, it is better to ask for an extension on the decision deadline than to say "yes" and then withdraw
+- Decision Hierarchy: Permanent Indefinite > Target Co-op > Any Co-op > No Job
+
+## Reputation costs
+
+- It is costly to your reputation and that of McMaster if you say "yes" to a job and then back-out (withdraw your acceptance)
+  - The economics profession in Canada is "small" & your reputation matters
+  - Do not back-out without seriously considering the costs and benefits
+  - You are economists, you know how to do cost-benefit analysis
+- Many students are very poor at predicting which jobs will be "better" for them
+  - Keep this in mind
+
+---
+
+- In my experience, it is rarely worth withdrawing from one co-op to take another co-op
+  - But there are rare exceptions
+- But, it is commonly worth withdrawing from a co-op to take a permanent/indefinite position
+  - And, sometimes it is worth withdrawing from one indefinite position to take another
+  - Again, there are rare exceptions
+
+## If you must withdraw your acceptance
+
+(after careful cost-benefit deliberation)
+
+- Do so formally and as soon/early as possible
+- Be VERY apologetic
+- NEVER say anything bad/disrespectful about the employer from which you are withdrawing
+  - The other job may be a better "fit" for you, but not a "better job" in an absolute sense
+  - Do not "burn your bridges" (Do you know what this means? If not, use a search engine to find out)
+- Protect your reputation as much as possible!
+
+# Conclusion
+
+## Closing thoughts
+
+- In the job search process
+- And as you start a job (co-op or indefinite)
+- **Do your very best (on all dimensions)!!**
+- Get lots of sleep
+  - Esp., Before interviews and starting your job
+- Be "nice" to those with whom you work
+- Be a "good colleague"!!
