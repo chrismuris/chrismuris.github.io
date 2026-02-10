@@ -1,0 +1,182 @@
+---
+title: "Week 1 Demo: Interactive Workflow"
+---
+
+```{r}
+#| echo: false
+library(webexercises)
+```
+
+## Introduction
+
+This demo showcases the interactive workflow for ECON 2B03.
+
+- **Webexercises**: Fill-in-the-blank, multiple choice, true/false
+- **Quarto-Quiz**: Interactive multiple choice with check button
+- **Master-Only Content**: Hidden cues for the instructor
+- **Placeholders**: Slido & Microsoft Forms
+
+---
+
+# Webexercises Demo
+
+---
+
+## Fill-in-the-blank
+
+Create fill-in-the-blank questions using `fitb()`.
+
+- 2 + 2 is `r fitb(4)`
+
+```{r}
+x <- sample(2:8, 1)
+```
+
+- The square root of `r x^2` is: `r fitb(x)`
+- What is the letter after D? `r fitb("E", ignore_case = TRUE)`
+
+::: {.notes}
+Students see instant feedback: green for correct, red for incorrect.
+:::
+
+---
+
+## Multiple choice
+
+- Which is a measure of central tendency? `r mcq(c("Variance", answer = "Mean", "Range"))`
+- "Never gonna give you up, never gonna: `r mcq(c("let you go", "turn you down", "run away", answer = "let you down"))`"
+
+---
+
+## True or false
+
+- True or False? You can permute values in a vector using `sample()`. `r torf(TRUE)`
+- True or False? The mean is always greater than the median. `r torf(FALSE)`
+
+---
+
+## Longer MCQs
+
+**What is a p-value?**
+
+```{r}
+opts_p <- c(
+   "the probability that the null hypothesis is true",
+   answer = "the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true",
+   "the probability of making an error in your conclusion"
+)
+```
+
+`r longmcq(opts_p)`
+
+---
+
+# Quarto-Quiz Demo
+
+---
+
+## Quarto-Quiz (Quick Check) {.quiz-question}
+
+Which statement is true?
+
+- The mean is always the median
+- [A symmetric distribution has mean = median]{.correct data-explanation="For symmetric distributions, the mean and median coincide."}
+- Variance can be negative
+- A sample is always the full population
+
+---
+
+## Quarto-Quiz (Multi-Select) {.quiz-question .quiz-multiple}
+
+Select all that apply.
+
+- [The mean is a measure of central tendency]{.correct data-explanation="The mean summarizes central location."}
+- [The median is robust to outliers]{.correct data-explanation="The median resists extreme values."}
+- Variance can be negative
+- [The standard deviation is the square root of variance]{.correct data-explanation="Standard deviation is sqrt(variance), which is non-negative."}
+
+---
+
+## Quarto-Quiz (True/False) {.quiz-question}
+
+The sample mean is an unbiased estimator of the population mean.
+
+- [True]{.correct data-explanation="The expected value of the sample mean equals the population mean."}
+- False
+
+---
+
+## Quarto-Quiz (Single Choice) {.quiz-question}
+
+Which term refers to the most frequent value?
+
+- Mean
+- Median
+- Variance
+- [Mode]{.correct data-explanation="The mode is the most frequent value."}
+
+---
+
+## Quarto-Quiz (Ordering) {.quiz-question}
+
+Order these steps for a basic hypothesis test.
+
+1. State the null and alternative hypotheses
+2. Choose a significance level
+3. Compute the test statistic
+4. Compare to a critical value (or compute a p-value)
+5. Draw a conclusion
+
+---
+
+## Quarto-Quiz Demo {.quiz-question}
+
+Which probability distribution is symmetric?
+
+- Chi-square
+- F-distribution
+- [Normal distribution]{.correct data-explanation="The Normal distribution is symmetric around its mean."}
+- Exponential
+
+::: {.master-only}
+⏱️ **Wait 2 minutes** | Teaching Cue: Ask for examples of real-world normal distributions.
+:::
+
+---
+
+## Slido Placeholder
+
+::: {.columns}
+::: {.column width="50%"}
+### Vote Here
+*(Slido Embed Placeholder)*
+[Link to poll](https://example.com/)
+:::
+
+::: {.column width="50%"}
+### Live Results
+*(Slido Results Placeholder)*
+:::
+:::
+
+::: {.master-only}
+🔴 **ACTIVATE POLL #1 NOW**
+:::
+
+---
+
+## Forms Placeholder
+
+### Participation Credit
+
+**Due Today by 11:59 PM**
+
+[Microsoft Forms Placeholder Link](https://example.com/)
+
+*(QR Code Image Placeholder)*
+
+Enter the secret code from today's lecture: **NORMAL**
+
+::: {.master-only}
+Ensure form is open and accepting responses.
+:::

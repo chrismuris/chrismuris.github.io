@@ -1,0 +1,19 @@
+author: "Chris Muris - McMaster University - ECON 2B03"
+date: last-modified
+revealjs-plugins:
+  - quiz
+format:
+  revealjs:
+    multiplex: true
+    css:
+      - /econ2b03/custom.css
+      - include/webex.css
+    theme: [simple, ../metro-seahorse.scss]
+    slide-number: true
+    preview-links: auto
+    menu: false
+    sidebar: false
+    footer: "[Home](/econ2b03/)"
+    include-after-body:
+      - include/webex.js
+navbar: false

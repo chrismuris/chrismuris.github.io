@@ -1,0 +1,10 @@
+---
+title: "C02: Hypothesis Testing"
+subtitle: "Part C - Inferential Statistics"
+---
+
+## Hypothesis Testing
+
+- Null and Alternative Hypotheses
+- P-values
+- Confidence Intervals

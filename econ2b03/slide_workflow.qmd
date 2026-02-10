@@ -1,0 +1,84 @@
+---
+title: "Interactive Slide Workflow Guide"
+format:
+  html:
+    toc: true
+---
+
+This guide explains the setup for creating and presenting interactive slides for ECON 2B03.
+
+## 1. Setup
+
+### Workspace
+**Always open the root folder** (`chrismuris.github.io`) in your editor (e.g., VS Code or RStudio).
+-   Why? Your site configuration (navbar, theory, etc.) lives in the root (`_quarto.yml`).
+-   **Rendering in Subfolder**: You *can* `quarto render` from the `econ2b03` terminal, and Quarto will find the root config. However, your editor (IDE) might lose context for autocompletion and project-wide search.
+
+### Directory Structure
+-   **Slides**: `econ2b03/slides/Part_Name/*.qmd` (organized by part)
+-   **Config**: `econ2b03/slides/_metadata.yml` (controls settings like `footer` and `theme`)
+-   **Theme**: `econ2b03/slides/metro-seahorse.scss` (Custom styling)
+-   **CSS**: `econ2b03/custom.css` (Style for master-only content)
+-   **Extensions**: `econ2b03/_extensions/` (Shared extensions)
+
+## 2. Creating Slides
+
+Enable `multiplex` and link the custom CSS in the YAML header:
+
+```yaml
+---
+format:
+  revealjs:
+    multiplex: true
+    css: ../../custom.css
+---
+```
+
+### Master-Only Content
+
+Use a div with the `.master-only` class. This content will appear on your screen (the master) but be hidden on student devices (clients).
+
+```markdown
+::: {.master-only}
+⏱️ **Wait 2 mins** | Secret Code: ALPHA
+:::
+```
+
+### Quarto-Quiz
+
+Add the `.quiz-question` class to the slide header. Mark the correct answer with `[]{.correct}`.
+
+```markdown
+## Question Title {.quiz-question}
+
+Which is correct?
+- Wrong answer
+- [Correct answer]{.correct}
+- Wrong answer
+
+**Explanation:** Optional explanation text.
+```
+
+### Webexercises
+
+Use R code chunks with the `webexercises` library:
+
+`````markdown
+```{r}
+#| results: "asis"
+library(webexercises)
+cat("Question text", fitb("answer"))
+```
+`````
+
+## 3. Presenting
+
+1. **Prepare**: Open the slide deck on your laptop. This is the **Master** view.
+2. **Share**: Provide the standard URL to students.
+    - **Tip**: Link to `slides/deck.qmd` in your index page, and Quarto will automatically resolve it to `.html`.
+3. **Multiplex**: to enable synchronized advancing, you need to generate a `multiplex` file.
+    - *Note: Standard `multiplex: true` works for async viewing. For synchronous control, you may need to generate a JSON file with secrets. See Quarto documentation for "Multiplexing".*
+
+## 4. Updates
+
+- **Slido/Forms**: Replace placeholders with actual embed codes/links as needed.

@@ -1,0 +1,9 @@
+execute:
+  freeze: auto
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    header-includes: |
+      <meta name="robots" content="noindex, nofollow"/>

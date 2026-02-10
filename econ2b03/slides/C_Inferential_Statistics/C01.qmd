@@ -1,0 +1,10 @@
+---
+title: "C01: Sampling Distributions"
+subtitle: "Part C - Inferential Statistics"
+---
+
+## Sampling
+
+- Population vs Sample
+- The Central Limit Theorem
+- Standard Error

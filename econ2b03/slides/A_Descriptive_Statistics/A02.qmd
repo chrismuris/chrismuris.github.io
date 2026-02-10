@@ -1,0 +1,10 @@
+---
+title: "A02: Visualizing Data"
+subtitle: "Part A - Descriptive Statistics"
+---
+
+## Visualization Basics
+
+- Histograms
+- Box plots
+- Scatter plots

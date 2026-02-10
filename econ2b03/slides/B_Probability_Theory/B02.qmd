@@ -1,0 +1,10 @@
+---
+title: "B02: Random Variables"
+subtitle: "Part B - Probability Theory"
+---
+
+## Random Variables
+
+- Discrete vs Continuous
+- PDFs and CDFs
+- Expected Value

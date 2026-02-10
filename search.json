@@ -469,25 +469,186 @@
     "text": "11.6 Third Sector & Research\n11.6.1 Think Tanks & Policy Institutes\n\nC.D. Howe Institute\nConference Board of Canada\nInstitute for Research on Public Policy (IRPP)\nFraser Institute\nBroadbent Institute\n\n11.6.2 Non-profits, NGOs & Associations\n\nSector Associations (e.g., Canadian Bankers Association, Canadian Chamber of Commerce)\nLarge NGOs (fewer dedicated economist roles)"
   },
   {
+    "objectID": "econ2b03/slide_workflow.html",
+    "href": "econ2b03/slide_workflow.html",
+    "title": "Interactive Slide Workflow Guide",
+    "section": "",
+    "text": "This guide explains the setup for creating and presenting interactive slides for ECON 2B03."
+  },
+  {
+    "objectID": "econ2b03/slide_workflow.html#setup",
+    "href": "econ2b03/slide_workflow.html#setup",
+    "title": "Interactive Slide Workflow Guide",
+    "section": "1. Setup",
+    "text": "1. Setup\n\nWorkspace\nAlways open the root folder (chrismuris.github.io) in your editor (e.g., VS Code or RStudio). - Why? Your site configuration (navbar, theory, etc.) lives in the root (_quarto.yml). - Rendering in Subfolder: You can quarto render from the econ2b03 terminal, and Quarto will find the root config. However, your editor (IDE) might lose context for autocompletion and project-wide search.\n\n\nDirectory Structure\n\nSlides: econ2b03/slides/Part_Name/*.qmd (organized by part)\nConfig: econ2b03/slides/_metadata.yml (controls settings like footer and theme)\nTheme: econ2b03/slides/metro-seahorse.scss (Custom styling)\nCSS: econ2b03/custom.css (Style for master-only content)\nExtensions: econ2b03/_extensions/ (Shared extensions)"
+  },
+  {
+    "objectID": "econ2b03/slide_workflow.html#creating-slides",
+    "href": "econ2b03/slide_workflow.html#creating-slides",
+    "title": "Interactive Slide Workflow Guide",
+    "section": "2. Creating Slides",
+    "text": "2. Creating Slides\nEnable multiplex and link the custom CSS in the YAML header:\n---\nformat:\n  revealjs:\n    multiplex: true\n    css: ../../custom.css\n---\n\nMaster-Only Content\nUse a div with the .master-only class. This content will appear on your screen (the master) but be hidden on student devices (clients).\n::: {.master-only}\n⏱️ **Wait 2 mins** | Secret Code: ALPHA\n:::\n\n\nQuarto-Quiz\nAdd the .quiz-question class to the slide header. Mark the correct answer with []{.correct}.\n## Question Title {.quiz-question}\n\nWhich is correct?\n- Wrong answer\n- [Correct answer]{.correct}\n- Wrong answer\n\n**Explanation:** Optional explanation text.\n\n\nWebexercises\nUse R code chunks with the webexercises library:\n\n```{.r .cell-code}\nlibrary(webexercises)\ncat(\"Question text\", fitb(\"answer\"))\n```\n\nQuestion text &lt;input class='webex-solveme nospaces' size='6' data-answer='[\"answer\"]'/&gt;"
+  },
+  {
+    "objectID": "econ2b03/slide_workflow.html#presenting",
+    "href": "econ2b03/slide_workflow.html#presenting",
+    "title": "Interactive Slide Workflow Guide",
+    "section": "3. Presenting",
+    "text": "3. Presenting\n\nPrepare: Open the slide deck on your laptop. This is the Master view.\nShare: Provide the standard URL to students.\n\nTip: Link to slides/deck.qmd in your index page, and Quarto will automatically resolve it to .html.\n\nMultiplex: to enable synchronized advancing, you need to generate a multiplex file.\n\nNote: Standard multiplex: true works for async viewing. For synchronous control, you may need to generate a JSON file with secrets. See Quarto documentation for “Multiplexing”."
+  },
+  {
+    "objectID": "econ2b03/slide_workflow.html#updates",
+    "href": "econ2b03/slide_workflow.html#updates",
+    "title": "Interactive Slide Workflow Guide",
+    "section": "4. Updates",
+    "text": "4. Updates\n\nSlido/Forms: Replace placeholders with actual embed codes/links as needed."
+  },
+  {
+    "objectID": "econ2b03/slides/C_Inferential_Statistics/C02.html#hypothesis-testing",
+    "href": "econ2b03/slides/C_Inferential_Statistics/C02.html#hypothesis-testing",
+    "title": "C02: Hypothesis Testing",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nNull and Alternative Hypotheses\nP-values\nConfidence Intervals"
+  },
+  {
+    "objectID": "econ2b03/slides/B_Probability_Theory/B02.html#random-variables",
+    "href": "econ2b03/slides/B_Probability_Theory/B02.html#random-variables",
+    "title": "B02: Random Variables",
+    "section": "Random Variables",
+    "text": "Random Variables\n\nDiscrete vs Continuous\nPDFs and CDFs\nExpected Value"
+  },
+  {
+    "objectID": "econ2b03/slides/A_Descriptive_Statistics/A02.html#visualization-basics",
+    "href": "econ2b03/slides/A_Descriptive_Statistics/A02.html#visualization-basics",
+    "title": "A02: Visualizing Data",
+    "section": "Visualization Basics",
+    "text": "Visualization Basics\n\nHistograms\nBox plots\nScatter plots"
+  },
+  {
+    "objectID": "econ2b03/index.html",
+    "href": "econ2b03/index.html",
+    "title": "ECON 2B03: Analysis of Economic Data",
+    "section": "",
+    "text": "This is the course website for ECON2B03. I only update it when I’m teaching the course. For official course materials, announcements, and grades, use Avenue to Learn.\n\nAvenue to Learn\nCourse schedule (PDF)\nCourse information (PDF)\n\nBelow are the slides and notes, organized by part.\n\n\n\n\nPart A: Descriptive Statistics\n\n\n\n– A01: Principles of Data\nslides\n\n\n– A02: Visualizing Data\nslides\n\n\nPart B: Probability Theory\n\n\n\n– B01: Probability Concepts\nslides\n\n\n– B02: Random Variables\nslides\n\n\nPart C: Inferential Statistics\n\n\n\n– C01: Sampling Distributions\nslides\n\n\n– C02: Hypothesis Testing\nslides\n\n\nPart D: Experimental\n\n\n\n– Lecture 1: Week 1 Demo\nslides"
+  },
+  {
+    "objectID": "econ2b03/slides/A_Descriptive_Statistics/A01.html#introduction-to-data",
+    "href": "econ2b03/slides/A_Descriptive_Statistics/A01.html#introduction-to-data",
+    "title": "A01: Principles of Data",
+    "section": "Introduction to Data",
+    "text": "Introduction to Data\n\nWhat is data?\nTypes of variables\nData collection methods"
+  },
+  {
+    "objectID": "econ2b03/slides/B_Probability_Theory/B01.html#basic-probability",
+    "href": "econ2b03/slides/B_Probability_Theory/B01.html#basic-probability",
+    "title": "B01: Probability Concepts",
+    "section": "Basic Probability",
+    "text": "Basic Probability\n\nSample spaces\nEvents\nAxioms of probability"
+  },
+  {
+    "objectID": "econ2b03/slides/C_Inferential_Statistics/C01.html#sampling",
+    "href": "econ2b03/slides/C_Inferential_Statistics/C01.html#sampling",
+    "title": "C01: Sampling Distributions",
+    "section": "Sampling",
+    "text": "Sampling\n\nPopulation vs Sample\nThe Central Limit Theorem\nStandard Error"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#introduction",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#introduction",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Introduction",
+    "text": "Introduction\nThis demo showcases the interactive workflow for ECON 2B03.\n\nWebexercises: Fill-in-the-blank, multiple choice, true/false\nQuarto-Quiz: Interactive multiple choice with check button\nMaster-Only Content: Hidden cues for the instructor\nPlaceholders: Slido & Microsoft Forms"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#fill-in-the-blank",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#fill-in-the-blank",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Fill-in-the-blank",
+    "text": "Fill-in-the-blank\nCreate fill-in-the-blank questions using fitb().\n\n2 + 2 is \n\n\nx &lt;- sample(2:8, 1)\n\n\nThe square root of 49 is: \nWhat is the letter after D? \n\n\nStudents see instant feedback: green for correct, red for incorrect."
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#multiple-choice",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#multiple-choice",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Multiple choice",
+    "text": "Multiple choice\n\nWhich is a measure of central tendency? VarianceMeanRange\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#true-or-false",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#true-or-false",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "True or false",
+    "text": "True or false\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\nTrue or False? The mean is always greater than the median. TRUEFALSE"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#longer-mcqs",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#longer-mcqs",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Longer MCQs",
+    "text": "Longer MCQs\nWhat is a p-value?\n\nopts_p &lt;- c(\n   \"the probability that the null hypothesis is true\",\n   answer = \"the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true\",\n   \"the probability of making an error in your conclusion\"\n)\n\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-quick-check",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-quick-check",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz (Quick Check)",
+    "text": "Quarto-Quiz (Quick Check)\nWhich statement is true?\n\nThe mean is always the median\nA symmetric distribution has mean = median\nVariance can be negative\nA sample is always the full population"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-multi-select",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-multi-select",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz (Multi-Select)",
+    "text": "Quarto-Quiz (Multi-Select)\nSelect all that apply.\n\nThe mean is a measure of central tendency\nThe median is robust to outliers\nVariance can be negative\nThe standard deviation is the square root of variance"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-truefalse",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-truefalse",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz (True/False)",
+    "text": "Quarto-Quiz (True/False)\nThe sample mean is an unbiased estimator of the population mean.\n\nTrue\nFalse"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-single-choice",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-single-choice",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz (Single Choice)",
+    "text": "Quarto-Quiz (Single Choice)\nWhich term refers to the most frequent value?\n\nMean\nMedian\nVariance\nMode"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-ordering",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-ordering",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz (Ordering)",
+    "text": "Quarto-Quiz (Ordering)\nOrder these steps for a basic hypothesis test.\n\nState the null and alternative hypotheses\nChoose a significance level\nCompute the test statistic\nCompare to a critical value (or compute a p-value)\nDraw a conclusion"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-demo-1",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#quarto-quiz-demo-1",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Quarto-Quiz Demo",
+    "text": "Quarto-Quiz Demo\nWhich probability distribution is symmetric?\n\nChi-square\nF-distribution\nNormal distribution\nExponential\n\n\n⏱️ Wait 2 minutes | Teaching Cue: Ask for examples of real-world normal distributions."
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#slido-placeholder",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#slido-placeholder",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Slido Placeholder",
+    "text": "Slido Placeholder\n\n\nVote Here\n(Slido Embed Placeholder) Link to poll\n\nLive Results\n(Slido Results Placeholder)\n\n\n🔴 ACTIVATE POLL #1 NOW"
+  },
+  {
+    "objectID": "econ2b03/slides/D_Experimental/week1_demo.html#forms-placeholder",
+    "href": "econ2b03/slides/D_Experimental/week1_demo.html#forms-placeholder",
+    "title": "Week 1 Demo: Interactive Workflow",
+    "section": "Forms Placeholder",
+    "text": "Forms Placeholder\nParticipation Credit\nDue Today by 11:59 PM\nMicrosoft Forms Placeholder Link\n(QR Code Image Placeholder)\nEnter the secret code from today’s lecture: NORMAL\n\nEnsure form is open and accepting responses."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Chris Muris",
     "section": "",
-    "text": "CV   Email  Scholar  Github  Arxiv  LinkedIn  ORCID"
-  },
-  {
-    "objectID": "index.html#working-papers",
-    "href": "index.html#working-papers",
-    "title": "Chris Muris",
-    "section": "Working Papers",
-    "text": "Working Papers"
-  },
-  {
-    "objectID": "index.html#publications",
-    "href": "index.html#publications",
-    "title": "Chris Muris",
-    "section": "Publications",
-    "text": "Publications"
+    "text": "CV   LinkedIn  ORCID\n\n\n\n\nI am an associate professor in the Department of Economics at McMaster University. My research is in the area of theoretical econometrics. I develop and study new tools for the analysis of panel (longitudinal) data."
   },
   {
     "objectID": "mcplacement/MA-MAEP-Placement-Meeting-02-2025.html#todays-agenda",

@@ -1,0 +1,54 @@
+/*-- scss:defaults --*/
+
+// Import Roboto font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+// Metropolis Layout & Fonts
+$font-family-sans-serif: "Roboto", sans-serif !default;
+$presentation-heading-font: "Roboto", sans-serif !default;
+$presentation-heading-font-weight: 500 !default; // Medium headings, not bold
+$presentation-font-size-root: 28px !default; // Even smaller base (was 32px)
+$presentation-slide-spacing: 0.5em !default;
+
+// Seahorse Colors (Beamer-inspired)
+// Structure: Light Periwinkle/Lavender
+$presentation-heading-color: #4c4c6d !default; // Dark Slate Blue for main text
+$presentation-title-color: #2c2c54 !default; // Darker for title page
+$link-color: #5d5d8d !default; // Medium lavender link
+
+// Backgrounds
+$body-bg: #fdfdfd !default; // Off-white
+$code-block-bg: #f0f0f5 !default; // Very light lavender for code
+
+/*-- scss:rules --*/
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    border-bottom: 2px solid #ccccdd; // Seahorse "structure" line
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.reveal .title-slide h1 {
+    border-bottom: none; // Title slide has huge font instead
+    font-weight: 700;
+    color: #2c2c54;
+}
+
+.reveal .title-slide h2 {
+    // Subtitle
+    color: #5d5d8d;
+    border-bottom: 2px solid #5d5d8d;
+}
+
+// Progress bar color
+.reveal .progress {
+    color: #5d5d8d;
+}
+
+// Plain slide headers (Metropolis style)
+.reveal .slide-number {
+    color: #888;
+    font-family: "Roboto", sans-serif;
+}

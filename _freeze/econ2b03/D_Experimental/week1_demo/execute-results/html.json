@@ -1,0 +1,15 @@
+{
+  "hash": "f6fd825f36994f35cc73a4cabaeee3a2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 1 Demo: Interactive Workflow\"\nfilters: []\n---\n\n## Introduction\n\nThis demo showcases the interactive workflow for ECON 2B03.\n\n- **Webexercises**: Validated R-based questions\n- **Quarto-Quiz**: Interactive multiple choice\n- **Master-Only Content**: Hidden cues for the instructor\n- **Placeholders**: Slido & Microsoft Forms\n\n---\n\n## Webexercises Demo\n\nWhat fits into the blank?  <input class='webex-solveme nospaces' size='9' data-answer='[\"parameter\"]'/> \n\nWhich is a measure of central tendency?\n<select class='webex-select'><option value='blank'></option><option value=''>Variance</option><option value='answer'>Mean</option><option value=''>Range</option></select>\n\n::: {.notes}\n**Master Note:** Explain that students see instant feedback here.\n:::\n\n---\n\n## Quarto-Quiz Demo {.quiz-question}\n\nWhich probability distribution is symmetric?\n\n- Chi-square\n- F-distribution\n- [Normal distribution]{.correct}\n- Exponential\n\n**Explanation:** The Normal distribution is symmetric around its mean.\n\n::: {.master-only}\n⏱️ **Wait 2 minutes** | Teaching Cue: Ask for examples of real-world normal distributions.\n:::\n\n---\n\n## Slido Placeholder\n\n::: {.columns}\n::: {.column width=\"50%\"}\n### Vote Here\n*(Slido Embed Placeholder)*\n[Link to poll](#)\n:::\n\n::: {.column width=\"50%\"}\n### Live Results\n*(Slido Results Placeholder)*\n:::\n:::\n\n::: {.master-only}\n🔴 **ACTIVATE POLL #1 NOW**\n:::\n\n---\n\n## Forms Placeholder\n\n### Participation Credit\n\n**Due Today by 11:59 PM**\n\n[Microsoft Forms Placeholder Link](#)\n\n*(QR Code Image Placeholder)*\n\nEnter the secret code from today's lecture: **NORMAL**\n\n::: {.master-only}\nEnsure form is open and accepting responses.\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "ad124b330d3837ca3478a38dcc561ce2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Interactive Slide Workflow Guide\"\nformat:\n  html:\n    toc: true\n---\n\nThis guide explains the setup for creating and presenting interactive slides for ECON 2B03.\n\n## 1. Setup\n\n### Workspace\n**Always open the root folder** (`chrismuris.github.io`) in your editor (e.g., VS Code or RStudio).\n-   Why? Your site configuration (navbar, theory, etc.) lives in the root (`_quarto.yml`).\n-   **Rendering in Subfolder**: You *can* `quarto render` from the `econ2b03` terminal, and Quarto will find the root config. However, your editor (IDE) might lose context for autocompletion and project-wide search.\n\n### Directory Structure\n-   **Slides**: `econ2b03/slides/Part_Name/*.qmd` (organized by part)\n-   **Config**: `econ2b03/slides/_metadata.yml` (controls settings like `footer` and `theme`)\n-   **Theme**: `econ2b03/slides/metro-seahorse.scss` (Custom styling)\n-   **CSS**: `econ2b03/custom.css` (Style for master-only content)\n-   **Extensions**: `econ2b03/_extensions/` (Shared extensions)\n\n## 2. Creating Slides\n\nEnable `multiplex` and link the custom CSS in the YAML header:\n\n```yaml\n---\nformat:\n  revealjs:\n    multiplex: true\n    css: ../../custom.css\n---\n```\n\n### Master-Only Content\n\nUse a div with the `.master-only` class. This content will appear on your screen (the master) but be hidden on student devices (clients).\n\n```markdown\n::: {.master-only}\n⏱️ **Wait 2 mins** | Secret Code: ALPHA\n:::\n```\n\n### Quarto-Quiz\n\nAdd the `.quiz-question` class to the slide header. Mark the correct answer with `[]{.correct}`.\n\n```markdown\n## Question Title {.quiz-question}\n\nWhich is correct?\n- Wrong answer\n- [Correct answer]{.correct}\n- Wrong answer\n\n**Explanation:** Optional explanation text.\n```\n\n### Webexercises\n\nUse R code chunks with the `webexercises` library:\n\n`````markdown\n\n```{.r .cell-code}\nlibrary(webexercises)\ncat(\"Question text\", fitb(\"answer\"))\n```\n\nQuestion text <input class='webex-solveme nospaces' size='6' data-answer='[\"answer\"]'/>\n`````\n\n## 3. Presenting\n\n1. **Prepare**: Open the slide deck on your laptop. This is the **Master** view.\n2. **Share**: Provide the standard URL to students.\n    - **Tip**: Link to `slides/deck.qmd` in your index page, and Quarto will automatically resolve it to `.html`.\n3. **Multiplex**: to enable synchronized advancing, you need to generate a `multiplex` file.\n    - *Note: Standard `multiplex: true` works for async viewing. For synchronous control, you may need to generate a JSON file with secrets. See Quarto documentation for \"Multiplexing\".*\n\n## 4. Updates\n\n- **Slido/Forms**: Replace placeholders with actual embed codes/links as needed.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

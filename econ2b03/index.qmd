@@ -1,0 +1,34 @@
+---
+title: "ECON 2B03: Analysis of Economic Data"
+date: last-modified
+format:
+  html:
+    toc: false
+    toc-depth: 2
+    link-external-newwindow: true
+    link-external-icon: false
+---
+
+This is the course website for ECON2B03. I only update it when I’m teaching the course. For official course materials, announcements, and grades, use [Avenue to Learn](https://avenue.mcmaster.ca/).
+
+- [Avenue to Learn](https://avenue.mcmaster.ca/)
+- [Course schedule (PDF)](schedule.pdf)
+- [Course information (PDF)](course-info.pdf)
+
+Below are the slides and notes, organized by part.
+
+::: {.slides-table}
+|  |  |
+| --- | :--: |
+| **Part A: Descriptive Statistics** |  |
+| – A01: Principles of Data | [slides](slides/A_Descriptive_Statistics/A01.html) |
+| – A02: Visualizing Data | [slides](slides/A_Descriptive_Statistics/A02.html) |
+| **Part B: Probability Theory** |  |
+| – B01: Probability Concepts | [slides](slides/B_Probability_Theory/B01.html) |
+| – B02: Random Variables | [slides](slides/B_Probability_Theory/B02.html) |
+| **Part C: Inferential Statistics** |  |
+| – C01: Sampling Distributions | [slides](slides/C_Inferential_Statistics/C01.html) |
+| – C02: Hypothesis Testing | [slides](slides/C_Inferential_Statistics/C02.html) |
+| **Part D: Experimental** |  |
+| – Lecture 1: Week 1 Demo | [slides](slides/D_Experimental/week1_demo.html) |
+:::

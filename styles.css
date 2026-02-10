@@ -1,9 +1,13 @@
 /* Modern Color Palette & Typography Refinements */
 :root {
-    --primary-color: #1a5276;   /* Deep Academic Blue */
-    --accent-color: #1a5276;    /* Match primary for consistency */
-    --hover-color: #2c3e50;     /* Darker blue for hover */
-    --bg-color: #fdfdfd;        /* Warmer off-white */
+    --primary-color: #1a5276;
+    /* Deep Academic Blue */
+    --accent-color: #1a5276;
+    /* Match primary for consistency */
+    --hover-color: #2c3e50;
+    /* Darker blue for hover */
+    --bg-color: #fdfdfd;
+    /* Warmer off-white */
     --text-color: #333333;
     --muted-text: #7f8c8d;
     --header-font: 'Roboto', sans-serif;
@@ -25,7 +29,12 @@ a:hover {
     color: var(--hover-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--header-font);
     font-weight: 700;
     color: var(--primary-color);
@@ -35,53 +44,91 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button Styling */
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-  background-color: var(--hover-color);
-  border-color: var(--hover-color);
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
 }
 
 .btn-outline-primary {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  color: white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
 }
 
-/* Profile Header (Horizontal Layout) */
-.profile-header {
-    display: flex;
-    align-items: center; /* Center buttons vertically relative to photo */
+/* Two-Column Page Layout */
+.page-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
     gap: 3rem;
-    margin-bottom: 3.5rem;
-    flex-wrap: wrap;
+    align-items: start;
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Sticky Sidebar */
+.sidebar-col {
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .profile-pic-main {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.profile-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.profile-links-grid {
+.sidebar-links {
     display: flex;
+    flex-direction: column;
     gap: 0.6rem;
-    flex-wrap: wrap;
+    width: max-content;
+}
+
+/* Main Content Column */
+.main-col {
+    min-width: 0;
+}
+
+/* Sidebar button polish */
+.sidebar-links .btn {
+    display: block;
+    width: 7rem;
+    justify-content: flex-start;
+    text-align: left;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 14px rgba(26, 82, 118, 0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sidebar-links .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(26, 82, 118, 0.2);
+}
+
+.sidebar-links .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(26, 82, 118, 0.16);
 }
 
 /* Typography Refinements */
@@ -94,7 +141,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    margin-top: 1.5rem !important; /* Ultra-tight spacing */
+    margin-top: 1.5rem !important;
+    /* Ultra-tight spacing */
     margin-bottom: 0.75rem !important;
 }
 
@@ -103,7 +151,8 @@ h2 {
     white-space: nowrap !important;
     width: auto !important;
     min-width: max-content !important;
-    padding: 4px 12px !important; /* Generous padding */
+    padding: 4px 12px !important;
+    /* Generous padding */
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -131,12 +180,28 @@ h2 {
     opacity: 0 !important;
 }
 
-/* Mobile Tweak */
-@media (max-width: 576px) {
-    .custom-header {
+/* Mobile: collapse to single column */
+@media (max-width: 768px) {
+    .page-grid {
+        grid-template-columns: 1fr;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .sidebar-col {
+        position: static;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
         text-align: center;
-        gap: 1.5rem;
+    }
+
+    .sidebar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+    }
+
+    .sidebar-links .btn {
+        width: auto;
     }
 }

@@ -1,0 +1,42 @@
+/* Hide .master-only content on student devices (clients) */
+.reveal.has-multiplex-client .master-only {
+  display: none !important;
+}
+
+/* Style master-only content for the presenter view */
+.master-only {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: sans-serif;
+  font-size: 0.8em;
+}
+/* (intentionally left blank) */
+/* Hide header row for the slides table */
+.slides-table table thead {
+  display: none;
+}
+
+/* Quarto-Quiz: show only Check, make it more subtle */
+.quiz-question .reset-button,
+.quiz-question .prev-button,
+.quiz-question .next-button {
+  display: none !important;
+}
+
+.quiz-question .check-button {
+  background: transparent;
+  border: 1px solid #9aa5b1;
+  color: #2f3b45;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.quiz-question .check-button:hover {
+  border-color: #6b7a86;
+  color: #1f2a33;
+  background: #f5f7f9;
+}

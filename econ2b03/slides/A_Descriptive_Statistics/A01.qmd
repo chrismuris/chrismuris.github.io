@@ -1,0 +1,10 @@
+---
+title: "A01: Principles of Data"
+subtitle: "Part A - Descriptive Statistics"
+---
+
+## Introduction to Data
+
+- What is data?
+- Types of variables
+- Data collection methods

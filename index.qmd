@@ -1,7 +1,7 @@
 ---
 format:
   html:
-    page-layout: article
+    page-layout: full
     toc: false
     include-in-header:
       text: |
@@ -11,10 +11,6 @@ format:
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="profile_pic.jpg">
         <style>
-          .profile-pic-main {
-              width: 300px !important;
-              height: 300px !important;
-          }
           /* Professional button styling for expanded view */
           .pub-btn {
               white-space: nowrap !important;
@@ -31,25 +27,21 @@ format:
         </style>
 ---
 
-:::{.profile-header}
-:::{.profile-pic-container}
-<img src="profile_pic.jpg" class="profile-pic-main">
-:::
+:::{.page-grid}
 
-:::{.profile-info}
-:::{.profile-links-grid}
+:::{.sidebar-col}
+<img src="profile_pic.jpg" class="profile-pic-main">
+
+:::{.sidebar-links}
 <a href="./CV/CV_ChrisMuris.pdf" class="btn btn-primary" target="_blank">
   <i class="bi bi-file-earmark-person me-2"></i> CV
 </a>
-<a href="mailto:muerisc@mcmaster.ca" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Email</a>
-<a href="https://scholar.google.com/citations?user=zh8YkR8AAAAJ&hl=en" class="btn btn-outline-primary" target="_blank"><i class="bi bi-mortarboard"></i> Scholar</a>
-<a href="https://github.com/chrismuris" class="btn btn-outline-primary" target="_blank"><i class="bi bi-github"></i> Github</a>
-<a href="https://arxiv.org/a/0000-0003-2781-3514.html" class="btn btn-outline-primary" target="_blank"><i class="bi bi-journal-text"></i> Arxiv</a>
 <a href="https://www.linkedin.com/in/chris-muris-4b5b03382" class="btn btn-outline-primary" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
 <a href="https://orcid.org/0000-0003-2781-3514" class="btn btn-outline-primary" target="_blank"><i class="bi bi-person-badge"></i> ORCID</a>
 :::
 :::
-:::
+
+:::{.main-col}
 
 <div class="lead">
 I am an associate professor in the Department of Economics at McMaster University. 
@@ -281,3 +273,6 @@ render_pubs_table(wp_df, searchable = FALSE)
 #| echo: false
 render_pubs_table(pubs_df, inline_buttons = TRUE)
 ````
+
+:::
+:::
