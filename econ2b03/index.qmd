@@ -26,6 +26,8 @@ Below are the slides and notes, organized by part.
 | **Part B: Probability Theory** |  |
 | – B01: Probability Concepts | [slides](slides/B_Probability_Theory/B01.html) |
 | – B02: Random Variables | [slides](slides/B_Probability_Theory/B02.html) |
+| – B08: Sampling | [slides](slides/B_Probability_Theory/B08.html) |
+| – B09: The central limit theorem | [slides](slides/B_Probability_Theory/B09.html) |
 | **Part C: Inferential Statistics** |  |
 | – C01: Sampling Distributions | [slides](slides/C_Inferential_Statistics/C01.html) |
 | – C02: Hypothesis Testing | [slides](slides/C_Inferential_Statistics/C02.html) |
