@@ -280,25 +280,30 @@
 <li>we know how to interpret confidence intervals using repeated sampling</li>
 </ul>
 </section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
 </section>
-<section id="readings-and-homework" class="slide level2 scrollable">
+<section id="readings-and-homework-1" class="slide level2">
 <h2>Readings and homework</h2>
 <ul>
-<li><p><strong>Readings</strong>: SZ 7.1, 7.3-7.4</p></li>
-<li><p><strong>Homework</strong>: SZ 7.3: 1, 3, 5, 7, 9, 13, 15, 19, 21; SZ 7.4: 1, 3, 11, 17</p></li>
-<li><p>Why this matters:</p>
+<li><strong>Readings</strong>: SZ 7.1, 7.3-7.4</li>
+<li><strong>Homework</strong>: SZ 7.3: 1, 3, 5, 7, 9, 13, 15, 19, 21; SZ 7.4: 1, 3, 11, 17</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
 <ul>
-<li>in practice, population variability is usually unknown,</li>
-<li>many economic questions are about proportions.</li>
-</ul></li>
-<li><p>What you will learn:</p>
+<li>What you will learn:
 <ol type="1">
 <li>how to adapt the CI for a population mean when <span class="math inline">\(\sigma\)</span> is unknown</li>
 <li>how to construct CIs for population proportions</li>
 <li>how sample size affects precision and how to choose a sample for a target margin of error</li>
 </ol></li>
+<li>Why this matters:
+<ul>
+<li>in practice, population variability is usually unknown</li>
+<li>many economic questions are about proportions</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -361,6 +366,8 @@
 <section id="same-logic-as-previous-lecture" class="slide level2">
 <h2>Same logic as previous lecture</h2>
 <ul>
+<li>Previously, the standard error came from known population variability: <span class="math display">\[\frac{\sigma}{\sqrt{n}}\]</span></li>
+<li>Now, we estimate that unknown variability from the sample: <span class="math display">\[\frac{s}{\sqrt{n}}\]</span></li>
 <li>Previously: <span class="math display">\[\bar X \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\]</span></li>
 <li>Now: <span class="math display">\[\bar X \pm z_{\alpha/2}\left(\frac{s}{\sqrt{n}}\right)\]</span></li>
 </ul>
@@ -515,6 +522,9 @@
 </ul></li>
 <li>What changes is the standard error: <span class="math display">\[\text{SE}(\widehat P)\approx \sqrt{\frac{\widehat P(1-\widehat P)}{n}}\]</span></li>
 </ul>
+</section>
+<section class="slide level2">
+
 <div title="Payday loan regulations">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -580,8 +590,8 @@
 </div>
 </div>
 </section>
-<section id="backup-example-callback-rate-solution" class="slide level2">
-<h2>Backup example: callback rate solution</h2>
+<section id="example-callback-rate-solution" class="slide level2">
+<h2>Example: callback rate solution</h2>
 <ul>
 <li><span class="math inline">\(\widehat P = 300/900 = 1/3\)</span></li>
 <li>The large-sample conditions hold easily.</li>
@@ -622,7 +632,7 @@
 <div class="callout-content">
 <p>A university examines 600 randomly selected entering students and finds that 312 graduated within six years.</p>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (3 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <ol type="1">
@@ -658,7 +668,7 @@
 <div class="callout-content">
 <p>Verify the large-sample conditions, then compare the 90% and 99% CIs for <span class="math inline">\(p\)</span> in each case.</p>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (4 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (2 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
 <ol type="1">

@@ -26,17 +26,18 @@ homework: "SZ 7.3: 1, 3, 5, 7, 9, 13, 15, 19, 21; SZ 7.4: 1, 3, 11, 17"
 - for means, we already know the large-sample CI when $\sigma$ is known
 - we know how to interpret confidence intervals using repeated sampling
 
-## Overview
+## Readings and homework
 
 {{< include ../_readings_homework.qmd >}}
 
-- Why this matters: 
-  - in practice, population variability is usually unknown, 
-  - many economic questions are about proportions.
+## Overview
 - What you will learn:
     1. how to adapt the CI for a population mean when $\sigma$ is unknown
     2. how to construct CIs for population proportions
     3. how sample size affects precision and how to choose a sample for a target margin of error
+- Why this matters: 
+  - in practice, population variability is usually unknown
+  - many economic questions are about proportions
 
 # Part I: CI for means when $\sigma$ is unknown
 
@@ -72,6 +73,10 @@ The **large-sample $100(1-\alpha)\%$ confidence interval for a population mean  
 
 ## Same logic as previous lecture
 
+- Previously, the standard error came from known population variability:
+  $$\frac{\sigma}{\sqrt{n}}$$
+- Now, we estimate that unknown variability from the sample:
+  $$\frac{s}{\sqrt{n}}$$
 - Previously:
   $$\bar X \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)$$
 - Now:
@@ -181,6 +186,8 @@ $$\widehat P \pm z_{\alpha/2}\frac{\sqrt{\widehat P(1-\widehat P)}}{\sqrt n}.$$
 - What changes is the standard error:
   $$\text{SE}(\widehat P)\approx \sqrt{\frac{\widehat P(1-\widehat P)}{n}}$$
 
+---
+
 ::: {.callout-tip title="Payday loan regulations"}
 Suppose a random sample of 826 payday loan borrowers is surveyed about proposed new regulations for payday lenders.
 
@@ -225,7 +232,7 @@ Construct a 95% confidence interval for $p$, the population callback rate.
 
 ---
 
-## Backup example: callback rate solution
+## Example: callback rate solution
 
 - $\widehat P = 300/900 = 1/3$
 - The large-sample conditions hold easily.
@@ -256,7 +263,7 @@ p_hat + 1.96 * sqrt(p_hat * (1 - p_hat) / 900) * c(-1, 1)
 A university examines 600 randomly selected entering students and finds that 312 graduated within six years.
 
 ::: {.panel-tabset}
-### Question (3 min)
+### Question (2 min)
 1. Compute the sample proportion.
 2. Construct a 95% CI for the six-year graduation rate.
 
@@ -277,7 +284,7 @@ A university examines 600 randomly selected entering students and finds that 312
 Verify the large-sample conditions, then compare the 90% and 99% CIs for $p$ in each case.
 
 ::: {.panel-tabset}
-### Question (4 min)
+### Question (2 min)
 1. $n = 80$, $\widehat P = 0.4$
 2. $n = 325$, $\widehat P = 0.4$
 
