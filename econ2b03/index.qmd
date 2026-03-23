@@ -30,7 +30,8 @@ Below are the slides and notes, organized by part.
 | – B09: The central limit theorem | [slides](slides/B_Probability_Theory/B09.html) |
 | **Part C: Inferential Statistics** |  |
 | – C01: Confidence intervals | [slides](slides/C_Inferential_Statistics/C01.html) |
-| – C02: Hypothesis Testing | [slides](slides/C_Inferential_Statistics/C02.html) |
+| – C02: Confidence intervals: means and proportions | [slides](slides/C_Inferential_Statistics/C02.html) |
 | **Part D: Experimental** |  |
 | – Lecture 1: Week 1 Demo | [slides](slides/D_Experimental/week1_demo.html) |
 :::
+

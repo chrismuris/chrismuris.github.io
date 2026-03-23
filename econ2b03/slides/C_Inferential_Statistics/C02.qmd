@@ -1,10 +1,435 @@
 ---
-title: "C02: Hypothesis Testing"
-subtitle: "Part C - Inferential Statistics"
+title: "Confidence intervals: means and proportions"
+part: C
+lecture_number: 2
+readings: "SZ 7.1, 7.3-7.4"
+homework: "SZ 7.3: 1, 3, 5, 7, 9, 13, 15, 19, 21; SZ 7.4: 1, 3, 11, 17"
 ---
 
-## Hypothesis Testing
+::: {.notes}
+2023: did not get to the "minimum sample size" stuff.
+:::
 
-- Null and Alternative Hypotheses
-- P-values
-- Confidence Intervals
+# Agenda
+
+## Previously: Part A summary
+
+{{< include ../_summary_A.qmd >}}
+
+## Previously: Part B summary
+
+{{< include ../_summary_B.qmd >}}
+
+## Previously: Part C so far
+
+- confidence intervals are random intervals built around sample estimates
+- for means, we already know the large-sample CI when $\sigma$ is known
+- we know how to interpret confidence intervals using repeated sampling
+
+## Overview
+
+{{< include ../_readings_homework.qmd >}}
+
+- Why this matters: 
+  - in practice, population variability is usually unknown, 
+  - many economic questions are about proportions.
+- What you will learn:
+    1. how to adapt the CI for a population mean when $\sigma$ is unknown
+    2. how to construct CIs for population proportions
+    3. how sample size affects precision and how to choose a sample for a target margin of error
+
+# Part I: CI for means when $\sigma$ is unknown
+
+## What changes from previous lecture?
+
+- Previously, we assumed the population standard deviation $\sigma$ was known.
+- In practice, that is unusual.
+- So the practical question is:
+
+> If $\sigma$ is unknown, how do we estimate the standard error of $\bar X$?
+
+. . .
+
+- Answer: we replace $\sigma$ with the sample standard deviation $s$.
+
+## Critical values refresher
+
+We will need critical values that match the confidence level:
+
+::: {.callout-tip title="Three values worth remembering"}
+- 90% CI: $z_{\alpha/2} = z_{0.05} \approx 1.645$
+- 95% CI: $z_{\alpha/2} = z_{0.025} \approx 1.96$
+- 99% CI: $z_{\alpha/2} = z_{0.005} \approx 2.576$
+:::
+
+## CI for mu when $\sigma$ is unknown
+
+For $\sigma$ *unknown* and $n$ large, use $s$ instead of $\sigma$:
+
+::: {.callout-important title="Large-sample CI for a population mean ($\sigma$ unknown)"}
+The **large-sample $100(1-\alpha)\%$ confidence interval for a population mean  if $\sigma$ is unknown** is $$\bar X \pm z_{\alpha/2} \left(\frac{s}{\sqrt{n}}\right),$$ where a sample is considered large when $n \geq 30$.
+:::
+
+## Same logic as previous lecture
+
+- Previously:
+  $$\bar X \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)$$
+- Now:
+  $$\bar X \pm z_{\alpha/2}\left(\frac{s}{\sqrt{n}}\right)$$
+
+. . .
+
+- So the main new idea is not a new philosophy.
+- The main new idea is: estimate the unknown population variability from the sample.
+
+---
+
+::: {.callout-tip title="Groceries"}
+A random sample of 49 students finds:
+
+- sample mean weekly grocery spending: 35 CAD
+- sample standard deviation: 14 CAD
+
+Construct a 99% confidence interval for the population mean weekly grocery spending.
+Then interpret it.
+:::
+
+---
+
+## Worked solution
+
+- Ingredients:
+  - $n = 49$, so the large-sample CI is justified
+  - $\bar X = 35$
+  - $s = 14$
+  - for a 99% CI, $z_{0.005} = 2.576$
+- Estimated standard error:
+  $$\frac{s}{\sqrt{n}}=\frac{14}{\sqrt{49}}=2$$
+- Margin of error:
+  $$2.576 \times 2 = 5.152$$
+
+```{r}
+#| echo: true
+35 + 2.576 * 2 * c(-1, 1)
+```
+
+. . .
+
+- So the 99% CI is approximately $[29.85, 40.15]$.
+- Interpretation:
+  - We are 99\% confident that the population mean weekly grocery spending lies between about 29.85 CAD and 40.15 CAD, in the repeated-sampling sense.
+
+## Repeated-sampling reminder
+
+- The interval is random because it depends on the sample.
+- The population mean is fixed.
+- Confidence refers to the long-run success rate of the method...
+- ... not to the probability that this one fixed interval contains $\mu$.
+
+## Exercise: same sample, different confidence levels
+
+:::: {.callout-important .exercise-callout title="Exercise: confidence level and interval width"}
+Use the grocery-spending example with $\bar X = 35$, $s = 14$, and $n = 49$.
+
+::: {.panel-tabset}
+### Question (2 min)
+Without changing the sample, compare the 90% and 99% confidence intervals.
+
+Which one is wider, and why?
+
+### Answers {.answers}
+The 99% CI is wider because it uses a larger critical value.
+
+- 90% CI uses $z_{0.05} = 1.645$
+- 99% CI uses $z_{0.005} = 2.576$
+- The sample and standard error are unchanged
+- Higher confidence means a larger margin of error
+:::
+::::
+
+# Part II: CI for proportions
+
+## Why proportions are special
+
+- Many empirical questions are yes/no questions:
+    - employed or not
+    - voted or not
+    - received a callback or not
+- In that setting, the parameter of interest is a population proportion $p$.
+- The sample analogue is the sample proportion $\widehat P$.
+
+## CI for p
+
+Large-sample CIs for $p$ are similar to those for $\mu$:
+
+::: {.callout-important title="Large-sample CI for a population proportion"}
+The **large-sample $100(1-\alpha)\%$ confidence interval for a population proportion** is
+$$\widehat P \pm z_{\alpha/2}\frac{\sqrt{\widehat P(1-\widehat P)}}{\sqrt n}.$$
+:::
+
+. . . 
+
+- Use this when the sample is large enough that
+  - $n\widehat P \geq 5$
+  - $n(1-\widehat P) \geq 5$
+- In SZ, the condition is phrased more formally. In class, we will use this simpler rule of thumb.
+
+## Same logic, different standard error
+
+- The structure is still:
+    - point estimate $\pm$ critical value times standard error
+- What changes is the standard error:
+  $$\text{SE}(\widehat P)\approx \sqrt{\frac{\widehat P(1-\widehat P)}{n}}$$
+
+::: {.callout-tip title="Payday loan regulations"}
+Suppose a random sample of 826 payday loan borrowers is surveyed about proposed new regulations for payday lenders.
+
+In the sample, 70% support the new regulations.
+
+Construct a 95% confidence interval for $p$, the population proportion of payday borrowers who support these regulations.
+:::
+
+---
+
+## Worked solution
+
+- Check the conditions:
+  - $\widehat P = 0.70$
+  - $n\widehat P = 826 \times 0.70 \approx 578 \geq 5$
+  - $n(1-\widehat P) = 826 \times 0.30 \approx 248 \geq 5$
+- So the large-sample CI is appropriate.
+
+```{r}
+#| echo: true
+p_hat <- 0.70
+n <- 826
+sqrt(p_hat * (1 - p_hat) / n)
+p_hat + 1.96 * sqrt(p_hat * (1 - p_hat) / n) * c(-1, 1)
+```
+
+. . .
+
+- So the 95% CI is approximately $[0.669, 0.731]$.
+- Interpretation:
+  - We are 95% confident that the true support rate lies between 66.9% and 73.1%, in the repeated-sampling sense.
+
+---
+
+::: {.callout-tip title="Callback rate"}
+Suppose a career centre tracks a random sample of 900 job applications submitted by recent graduates.
+
+Out of those 900 applications, 300 receive a callback.
+
+Construct a 95% confidence interval for $p$, the population callback rate.
+:::
+
+---
+
+## Backup example: callback rate solution
+
+- $\widehat P = 300/900 = 1/3$
+- The large-sample conditions hold easily.
+
+```{r}
+#| echo: true
+p_hat <- 300 / 900
+p_hat + 1.96 * sqrt(p_hat * (1 - p_hat) / 900) * c(-1, 1)
+```
+
+. . .
+
+- So the 95% CI is approximately $[0.30, 0.36]$.
+
+---
+
+## Interpreting the callback example
+
+- Our best estimate of the callback rate is 33.3%.
+- A 95% confidence interval for the population callback rate is about 30% to 36%.
+- The interval is not centered at 0 or 1 because the observed callback rate is not near those extremes.
+- How to interpret $[0.3, 0.36]$? 
+  - We are 95% confident that the true callback rate is between 30% and 36%, in the sense that 95% of intervals constructed this way under repeated random sampling would contain the true rate.
+
+## Exercise: six-year graduation rate
+
+:::: {.callout-important .exercise-callout title="Exercise (adapted from SZ 7.3)"}
+A university examines 600 randomly selected entering students and finds that 312 graduated within six years.
+
+::: {.panel-tabset}
+### Question (3 min)
+1. Compute the sample proportion.
+2. Construct a 95% CI for the six-year graduation rate.
+
+### Answers {.answers}
+- $\widehat P = 312/600 = 0.52$
+- Since $600(0.52)$ and $600(0.48)$ are both much larger than 5, the large-sample CI applies.
+- The interval is
+  $$
+  0.52 \pm 1.96 \sqrt{\frac{0.52(0.48)}{600}}
+  \approx (0.480,\ 0.560)
+  $$
+:::
+::::
+
+## Exercise: same proportion, different sample sizes
+
+:::: {.callout-important .exercise-callout title="Exercise (adapted from SZ 7.3, Exercise 3)"}
+Verify the large-sample conditions, then compare the 90% and 99% CIs for $p$ in each case.
+
+::: {.panel-tabset}
+### Question (4 min)
+1. $n = 80$, $\widehat P = 0.4$
+2. $n = 325$, $\widehat P = 0.4$
+
+### Answers {.answers}
+Both satisfy the large-sample conditions.
+
+- For $n=80$, the standard error is about $0.0548$:
+  - 90% CI: $0.4 \pm 1.645 \times 0.0548 \approx (0.310,\ 0.490)$
+  - 99% CI: $0.4 \pm 2.576 \times 0.0548 \approx (0.259,\ 0.541)$
+- For $n=325$, the standard error is about $0.0272$:
+  - 90% CI: $0.4 \pm 1.645 \times 0.0272 \approx (0.355,\ 0.445)$
+  - 99% CI: $0.4 \pm 2.576 \times 0.0272 \approx (0.330,\ 0.470)$
+- In both cases, the 99% CI is wider, and the larger sample gives the narrower interval.
+:::
+::::
+
+## Takeaway from Parts I and II
+
+- For means and proportions, confidence intervals have the same basic architecture.
+- Precision comes from:
+    - lower variability
+    - larger sample size
+    - lower confidence level
+
+# Part III: Minimum sample size
+
+## Turning precision into a design question
+
+So far, we have asked:
+
+- given a sample, how wide is the confidence interval?
+
+Now we ask the reverse question:
+
+- if I want a narrow interval, how large should the sample be?
+
+## Minimum sample size for a mean
+
+::: {.callout-important title="Minimum sample size for estimating a population mean"}
+To estimate a population mean to within $E$ units at $100(1-\alpha)\%$ confidence, use
+
+$$n=\frac{(z_{\alpha/2})^2 \sigma^2}{E^2},$$
+
+rounded up to the next integer.
+:::
+
+## Where the formula comes from
+
+- Start from the margin of error formula
+$$E = z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$$
+- Solve for $n$.
+
+. . .
+
+- This is the same logic as before.
+- We are just choosing $n$ to hit a target precision level.
+
+## Minimum sample size for a proportion
+
+::: {.callout-important title="Minimum sample size for estimating a population proportion"}
+To estimate a population proportion to within $E$ units at $100(1-\alpha)\%$ confidence, use
+
+$$n=\frac{(z_{\alpha/2})^2 \widehat p (1-\widehat p)}{E^2},$$
+
+rounded up to the next integer.
+:::
+
+## Choosing $\widehat p$
+
+- Sometimes you have a prior estimate from older data.
+- Sometimes you make an informed guess.
+- If you want the most conservative sample size, use $\widehat p = 0.5$.
+
+. . .
+
+- Why? Because $\widehat p(1-\widehat p)$ is largest at $0.5$.
+
+## Example: student fees and a football stadium
+
+:::: {.callout-important .exercise-callout title="Exercise (adapted from OpenIntro)"}
+A university newspaper wants to estimate the proportion of students who support a \$200 annual fee increase to fund a new football stadium.
+
+::: {.panel-tabset}
+### Question (3 min)
+How large should the sample be to get a 95% CI with margin of error at most 0.04, if no prior estimate of support is available?
+
+### Answers {.answers}
+- Use the conservative choice $\widehat p = 0.50$.
+- Then
+  $$
+  n=\frac{1.96^2(0.5)(0.5)}{0.04^2}\approx 600.25
+  $$
+- Round up: $n = 601$.
+:::
+::::
+
+---
+
+## Translating the stadium-fee problem
+
+- Confidence level 95% means $z_{\alpha/2} = 1.96$.
+- Target margin of error: $E = 0.04$.
+- No prior estimate is available, so use the conservative choice $\widehat p = 0.50$.
+
+---
+
+## Computing the required sample size
+
+```{r}
+#| echo: true
+1.96^2 * 0.5 * 0.5 / (0.04)^2
+```
+
+. . .
+
+- Round up: $n = 601$.
+- This is the minimum sample size that guarantees the target margin of error under the conservative assumption.
+
+## Backup example: polling support
+
+::: {.callout-tip title="Optional example"}
+A polling firm wants a 90% CI with margin of error 0.5 percentage points for support near 30%.
+
+Estimate the minimum sample size required. Then give the most conservative estimate.
+:::
+
+---
+
+## Backup example: polling support solution
+
+- Using $\widehat p = 0.30$:
+
+```{r}
+#| echo: true
+1.645^2 * 0.3 * 0.7 / (0.005)^2
+```
+
+- Rounded up: $n = 22731$.
+
+. . .
+
+- Using the conservative choice $\widehat p = 0.50$:
+
+```{r}
+#| echo: true
+1.645^2 * 0.5 * 0.5 / (0.005)^2
+```
+
+- Rounded up: $n = 27061$.
+
+# Conclusion
+
+{{< include ../_references.qmd >}}
+
+Shafer, Douglas S. and Zhiyi Zhang (2012), "Introductory Statistics", available [via this link.](https://open.umn.edu/opentextbooks/textbooks/135)

@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f5e301c3a65cec6d232acd76c98a54b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="C02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="C02_files/libs/quarto-html/tabby.min.js"></script>
+<script src="C02_files/libs/quarto-html/popper.min.js"></script>
+<script src="C02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="C02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="C02_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="C02_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <meta name="author" content="Chris Muris - McMaster University - ECON 2B03">
-  <meta name="dcterms.date" content="2026-02-10">
-  <title>Chris Muris – C02: Hypothesis Testing</title>
+  <title>Confidence intervals: means and proportions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="C02_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="C02_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -50,15 +27,81 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-ab9faa747559c40c7419c582d2bdafe3.css">
-  <link rel="stylesheet" href="../../../econ2b03/custom.css">
-  <link rel="stylesheet" href="../include/webex.css">
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="C02_files/libs/revealjs/dist/theme/quarto-3110bf7756f5b9ec31d894777b7ad9fd.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="C02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="C02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="C02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="C02_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="C02_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="C02_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -70,6 +113,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -152,53 +196,726 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">C02: Hypothesis Testing</h1>
-  <p class="subtitle">Part C - Inferential Statistics</p>
+  <h1 class="title">Confidence intervals: means and proportions</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part C | Lecture 2<br>Chris Muris, McMaster University</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Chris Muris - McMaster University - ECON 2B03 
-</div>
-</div>
 </div>
 
-  <p class="date">2026-02-10</p>
 </section>
-<section id="hypothesis-testing" class="slide level2">
-<h2>Hypothesis Testing</h2>
+<section class="slide level2">
+
+<aside class="notes">
+<p>2023: did not get to the “minimum sample size” stuff.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="previously-part-a-summary" class="slide level2">
+<h2>Previously: Part A summary</h2>
 <ul>
-<li>Null and Alternative Hypotheses</li>
-<li>P-values</li>
-<li>Confidence Intervals</li>
+<li>Foundations:
+<ul>
+<li>descriptive vs inferential statistics</li>
+<li>populations vs samples; parameters vs statistics</li>
+</ul></li>
+<li>Data and variables: measurement, types, and study design</li>
+<li>Descriptive statistics:
+<ul>
+<li>tables and graphs</li>
+<li>summary measures (mean, sd, median, quartiles, IQR, z-scores)</li>
+<li>correlation and simple linear regression</li>
+</ul></li>
+<li>Tools: using R/Quarto to compute, visualize, and report</li>
 </ul>
-
+</section>
+<section id="previously-part-b-summary" class="slide level2">
+<h2>Previously: Part B summary</h2>
+<ul>
+<li>Probability foundations:
+<ul>
+<li>random experiments, sample spaces, and events</li>
+<li>probability rules: complements, unions, intersections, and counting</li>
+</ul></li>
+<li>Conditional structure:
+<ul>
+<li>conditional, joint, and marginal probabilities</li>
+<li>multiplication rule and independence</li>
+</ul></li>
+<li>Random variables and distributions:
+<ul>
+<li>discrete and continuous random variables</li>
+<li>distributions, mean, and variance</li>
+</ul></li>
+<li>Core families:
+<ul>
+<li>binomial distribution</li>
+<li>normal distribution, standardization, and tail areas</li>
+</ul></li>
+<li>Sampling and limits:
+<ul>
+<li>sampling distributions</li>
+<li>the Central Limit Theorem</li>
+</ul></li>
+</ul>
+</section>
+<section id="previously-part-c-so-far" class="slide level2">
+<h2>Previously: Part C so far</h2>
+<ul>
+<li>confidence intervals are random intervals built around sample estimates</li>
+<li>for means, we already know the large-sample CI when <span class="math inline">\(\sigma\)</span> is known</li>
+<li>we know how to interpret confidence intervals using repeated sampling</li>
+</ul>
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+</section>
+<section id="readings-and-homework" class="slide level2 scrollable">
+<h2>Readings and homework</h2>
+<ul>
+<li><p><strong>Readings</strong>: SZ 7.1, 7.3-7.4</p></li>
+<li><p><strong>Homework</strong>: SZ 7.3: 1, 3, 5, 7, 9, 13, 15, 19, 21; SZ 7.4: 1, 3, 11, 17</p></li>
+<li><p>Why this matters:</p>
+<ul>
+<li>in practice, population variability is usually unknown,</li>
+<li>many economic questions are about proportions.</li>
+</ul></li>
+<li><p>What you will learn:</p>
+<ol type="1">
+<li>how to adapt the CI for a population mean when <span class="math inline">\(\sigma\)</span> is unknown</li>
+<li>how to construct CIs for population proportions</li>
+<li>how sample size affects precision and how to choose a sample for a target margin of error</li>
+</ol></li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-ci-for-means-when-sigma-is-unknown" class="title-slide slide level1 center">
+<h1>Part I: CI for means when <span class="math inline">\(\sigma\)</span> is unknown</h1>
 
 </section>
+<section id="what-changes-from-previous-lecture" class="slide level2">
+<h2>What changes from previous lecture?</h2>
+<ul>
+<li>Previously, we assumed the population standard deviation <span class="math inline">\(\sigma\)</span> was known.</li>
+<li>In practice, that is unusual.</li>
+<li>So the practical question is:</li>
+</ul>
+<blockquote>
+<p>If <span class="math inline">\(\sigma\)</span> is unknown, how do we estimate the standard error of <span class="math inline">\(\bar X\)</span>?</p>
+</blockquote>
+<div class="fragment">
+<ul>
+<li>Answer: we replace <span class="math inline">\(\sigma\)</span> with the sample standard deviation <span class="math inline">\(s\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="critical-values-refresher" class="slide level2">
+<h2>Critical values refresher</h2>
+<p>We will need critical values that match the confidence level:</p>
+<div title="Three values worth remembering">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Three values worth remembering</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>90% CI: <span class="math inline">\(z_{\alpha/2} = z_{0.05} \approx 1.645\)</span></li>
+<li>95% CI: <span class="math inline">\(z_{\alpha/2} = z_{0.025} \approx 1.96\)</span></li>
+<li>99% CI: <span class="math inline">\(z_{\alpha/2} = z_{0.005} \approx 2.576\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ci-for-mu-when-sigma-is-unknown" class="slide level2">
+<h2>CI for mu when <span class="math inline">\(\sigma\)</span> is unknown</h2>
+<p>For <span class="math inline">\(\sigma\)</span> <em>unknown</em> and <span class="math inline">\(n\)</span> large, use <span class="math inline">\(s\)</span> instead of <span class="math inline">\(\sigma\)</span>:</p>
+<div title="Large-sample CI for a population mean ($\sigma$ unknown)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Large-sample CI for a population mean (<span class="math inline">\(\sigma\)</span> unknown)</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>large-sample <span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval for a population mean if <span class="math inline">\(\sigma\)</span> is unknown</strong> is <span class="math display">\[\bar X \pm z_{\alpha/2} \left(\frac{s}{\sqrt{n}}\right),\]</span> where a sample is considered large when <span class="math inline">\(n \geq 30\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="same-logic-as-previous-lecture" class="slide level2">
+<h2>Same logic as previous lecture</h2>
+<ul>
+<li>Previously: <span class="math display">\[\bar X \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\]</span></li>
+<li>Now: <span class="math display">\[\bar X \pm z_{\alpha/2}\left(\frac{s}{\sqrt{n}}\right)\]</span></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>So the main new idea is not a new philosophy.</li>
+<li>The main new idea is: estimate the unknown population variability from the sample.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Groceries">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Groceries</strong></p>
+</div>
+<div class="callout-content">
+<p>A random sample of 49 students finds:</p>
+<ul>
+<li>sample mean weekly grocery spending: 35 CAD</li>
+<li>sample standard deviation: 14 CAD</li>
+</ul>
+<p>Construct a 99% confidence interval for the population mean weekly grocery spending. Then interpret it.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="worked-solution" class="slide level2">
+<h2>Worked solution</h2>
+<ul>
+<li>Ingredients:
+<ul>
+<li><span class="math inline">\(n = 49\)</span>, so the large-sample CI is justified</li>
+<li><span class="math inline">\(\bar X = 35\)</span></li>
+<li><span class="math inline">\(s = 14\)</span></li>
+<li>for a 99% CI, <span class="math inline">\(z_{0.005} = 2.576\)</span></li>
+</ul></li>
+<li>Estimated standard error: <span class="math display">\[\frac{s}{\sqrt{n}}=\frac{14}{\sqrt{49}}=2\]</span></li>
+<li>Margin of error: <span class="math display">\[2.576 \times 2 = 5.152\]</span></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="dv">35</span> <span class="sc">+</span> <span class="fl">2.576</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29.848 40.152</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>So the 99% CI is approximately <span class="math inline">\([29.85, 40.15]\)</span>.</li>
+<li>Interpretation:
+<ul>
+<li>We are 99% confident that the population mean weekly grocery spending lies between about 29.85 CAD and 40.15 CAD, in the repeated-sampling sense.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="repeated-sampling-reminder" class="slide level2">
+<h2>Repeated-sampling reminder</h2>
+<ul>
+<li>The interval is random because it depends on the sample.</li>
+<li>The population mean is fixed.</li>
+<li>Confidence refers to the long-run success rate of the method…</li>
+<li>… not to the probability that this one fixed interval contains <span class="math inline">\(\mu\)</span>.</li>
+</ul>
+</section>
+<section id="exercise-same-sample-different-confidence-levels" class="slide level2">
+<h2>Exercise: same sample, different confidence levels</h2>
+<div class="exercise-callout" title="Exercise: confidence level and interval width">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: confidence level and interval width</strong></p>
+</div>
+<div class="callout-content">
+<p>Use the grocery-spending example with <span class="math inline">\(\bar X = 35\)</span>, <span class="math inline">\(s = 14\)</span>, and <span class="math inline">\(n = 49\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (2 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>Without changing the sample, compare the 90% and 99% confidence intervals.</p>
+<p>Which one is wider, and why?</p>
+</div>
+<div id="tabset-1-2">
+<p>The 99% CI is wider because it uses a larger critical value.</p>
+<ul>
+<li>90% CI uses <span class="math inline">\(z_{0.05} = 1.645\)</span></li>
+<li>99% CI uses <span class="math inline">\(z_{0.005} = 2.576\)</span></li>
+<li>The sample and standard error are unchanged</li>
+<li>Higher confidence means a larger margin of error</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-ii-ci-for-proportions" class="title-slide slide level1 center">
+<h1>Part II: CI for proportions</h1>
+
+</section>
+<section id="why-proportions-are-special" class="slide level2">
+<h2>Why proportions are special</h2>
+<ul>
+<li>Many empirical questions are yes/no questions:
+<ul>
+<li>employed or not</li>
+<li>voted or not</li>
+<li>received a callback or not</li>
+</ul></li>
+<li>In that setting, the parameter of interest is a population proportion <span class="math inline">\(p\)</span>.</li>
+<li>The sample analogue is the sample proportion <span class="math inline">\(\widehat P\)</span>.</li>
+</ul>
+</section>
+<section id="ci-for-p" class="slide level2">
+<h2>CI for p</h2>
+<p>Large-sample CIs for <span class="math inline">\(p\)</span> are similar to those for <span class="math inline">\(\mu\)</span>:</p>
+<div title="Large-sample CI for a population proportion">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Large-sample CI for a population proportion</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>large-sample <span class="math inline">\(100(1-\alpha)\%\)</span> confidence interval for a population proportion</strong> is <span class="math display">\[\widehat P \pm z_{\alpha/2}\frac{\sqrt{\widehat P(1-\widehat P)}}{\sqrt n}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Use this when the sample is large enough that
+<ul>
+<li><span class="math inline">\(n\widehat P \geq 5\)</span></li>
+<li><span class="math inline">\(n(1-\widehat P) \geq 5\)</span></li>
+</ul></li>
+<li>In SZ, the condition is phrased more formally. In class, we will use this simpler rule of thumb.</li>
+</ul>
+</div>
+</section>
+<section id="same-logic-different-standard-error" class="slide level2">
+<h2>Same logic, different standard error</h2>
+<ul>
+<li>The structure is still:
+<ul>
+<li>point estimate <span class="math inline">\(\pm\)</span> critical value times standard error</li>
+</ul></li>
+<li>What changes is the standard error: <span class="math display">\[\text{SE}(\widehat P)\approx \sqrt{\frac{\widehat P(1-\widehat P)}{n}}\]</span></li>
+</ul>
+<div title="Payday loan regulations">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Payday loan regulations</strong></p>
+</div>
+<div class="callout-content">
+<p>Suppose a random sample of 826 payday loan borrowers is surveyed about proposed new regulations for payday lenders.</p>
+<p>In the sample, 70% support the new regulations.</p>
+<p>Construct a 95% confidence interval for <span class="math inline">\(p\)</span>, the population proportion of payday borrowers who support these regulations.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="worked-solution-1" class="slide level2">
+<h2>Worked solution</h2>
+<ul>
+<li>Check the conditions:
+<ul>
+<li><span class="math inline">\(\widehat P = 0.70\)</span></li>
+<li><span class="math inline">\(n\widehat P = 826 \times 0.70 \approx 578 \geq 5\)</span></li>
+<li><span class="math inline">\(n(1-\widehat P) = 826 \times 0.30 \approx 248 \geq 5\)</span></li>
+</ul></li>
+<li>So the large-sample CI is appropriate.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>p_hat <span class="ot">&lt;-</span> <span class="fl">0.70</span></span>
+<span id="cb3-2"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">826</span></span>
+<span id="cb3-3"><a href=""></a><span class="fu">sqrt</span>(p_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_hat) <span class="sc">/</span> n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01594482</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>p_hat <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(p_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_hat) <span class="sc">/</span> n) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6687482 0.7312518</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>So the 95% CI is approximately <span class="math inline">\([0.669, 0.731]\)</span>.</li>
+<li>Interpretation:
+<ul>
+<li>We are 95% confident that the true support rate lies between 66.9% and 73.1%, in the repeated-sampling sense.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Callback rate">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Callback rate</strong></p>
+</div>
+<div class="callout-content">
+<p>Suppose a career centre tracks a random sample of 900 job applications submitted by recent graduates.</p>
+<p>Out of those 900 applications, 300 receive a callback.</p>
+<p>Construct a 95% confidence interval for <span class="math inline">\(p\)</span>, the population callback rate.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="backup-example-callback-rate-solution" class="slide level2">
+<h2>Backup example: callback rate solution</h2>
+<ul>
+<li><span class="math inline">\(\widehat P = 300/900 = 1/3\)</span></li>
+<li>The large-sample conditions hold easily.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>p_hat <span class="ot">&lt;-</span> <span class="dv">300</span> <span class="sc">/</span> <span class="dv">900</span></span>
+<span id="cb7-2"><a href=""></a>p_hat <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(p_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p_hat) <span class="sc">/</span> <span class="dv">900</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3025349 0.3641318</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>So the 95% CI is approximately <span class="math inline">\([0.30, 0.36]\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="interpreting-the-callback-example" class="slide level2">
+<h2>Interpreting the callback example</h2>
+<ul>
+<li>Our best estimate of the callback rate is 33.3%.</li>
+<li>A 95% confidence interval for the population callback rate is about 30% to 36%.</li>
+<li>The interval is not centered at 0 or 1 because the observed callback rate is not near those extremes.</li>
+<li>How to interpret <span class="math inline">\([0.3, 0.36]\)</span>?
+<ul>
+<li>We are 95% confident that the true callback rate is between 30% and 36%, in the sense that 95% of intervals constructed this way under repeated random sampling would contain the true rate.</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise-six-year-graduation-rate" class="slide level2 scrollable">
+<h2>Exercise: six-year graduation rate</h2>
+<div class="exercise-callout" title="Exercise (adapted from SZ 7.3)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise (adapted from SZ 7.3)</strong></p>
+</div>
+<div class="callout-content">
+<p>A university examines 600 randomly selected entering students and finds that 312 graduated within six years.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (3 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ol type="1">
+<li>Compute the sample proportion.</li>
+<li>Construct a 95% CI for the six-year graduation rate.</li>
+</ol>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li><span class="math inline">\(\widehat P = 312/600 = 0.52\)</span></li>
+<li>Since <span class="math inline">\(600(0.52)\)</span> and <span class="math inline">\(600(0.48)\)</span> are both much larger than 5, the large-sample CI applies.</li>
+<li>The interval is <span class="math display">\[
+0.52 \pm 1.96 \sqrt{\frac{0.52(0.48)}{600}}
+\approx (0.480,\ 0.560)
+\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-same-proportion-different-sample-sizes" class="slide level2 scrollable">
+<h2>Exercise: same proportion, different sample sizes</h2>
+<div class="exercise-callout" title="Exercise (adapted from SZ 7.3, Exercise 3)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise (adapted from SZ 7.3, Exercise 3)</strong></p>
+</div>
+<div class="callout-content">
+<p>Verify the large-sample conditions, then compare the 90% and 99% CIs for <span class="math inline">\(p\)</span> in each case.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (4 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ol type="1">
+<li><span class="math inline">\(n = 80\)</span>, <span class="math inline">\(\widehat P = 0.4\)</span></li>
+<li><span class="math inline">\(n = 325\)</span>, <span class="math inline">\(\widehat P = 0.4\)</span></li>
+</ol>
+</div>
+<div id="tabset-3-2">
+<p>Both satisfy the large-sample conditions.</p>
+<ul>
+<li>For <span class="math inline">\(n=80\)</span>, the standard error is about <span class="math inline">\(0.0548\)</span>:
+<ul>
+<li>90% CI: <span class="math inline">\(0.4 \pm 1.645 \times 0.0548 \approx (0.310,\ 0.490)\)</span></li>
+<li>99% CI: <span class="math inline">\(0.4 \pm 2.576 \times 0.0548 \approx (0.259,\ 0.541)\)</span></li>
+</ul></li>
+<li>For <span class="math inline">\(n=325\)</span>, the standard error is about <span class="math inline">\(0.0272\)</span>:
+<ul>
+<li>90% CI: <span class="math inline">\(0.4 \pm 1.645 \times 0.0272 \approx (0.355,\ 0.445)\)</span></li>
+<li>99% CI: <span class="math inline">\(0.4 \pm 2.576 \times 0.0272 \approx (0.330,\ 0.470)\)</span></li>
+</ul></li>
+<li>In both cases, the 99% CI is wider, and the larger sample gives the narrower interval.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="takeaway-from-parts-i-and-ii" class="slide level2">
+<h2>Takeaway from Parts I and II</h2>
+<ul>
+<li>For means and proportions, confidence intervals have the same basic architecture.</li>
+<li>Precision comes from:
+<ul>
+<li>lower variability</li>
+<li>larger sample size</li>
+<li>lower confidence level</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="part-iii-minimum-sample-size" class="title-slide slide level1 center">
+<h1>Part III: Minimum sample size</h1>
+
+</section>
+<section id="turning-precision-into-a-design-question" class="slide level2">
+<h2>Turning precision into a design question</h2>
+<p>So far, we have asked:</p>
+<ul>
+<li>given a sample, how wide is the confidence interval?</li>
+</ul>
+<p>Now we ask the reverse question:</p>
+<ul>
+<li>if I want a narrow interval, how large should the sample be?</li>
+</ul>
+</section>
+<section id="minimum-sample-size-for-a-mean" class="slide level2">
+<h2>Minimum sample size for a mean</h2>
+<div title="Minimum sample size for estimating a population mean">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Minimum sample size for estimating a population mean</strong></p>
+</div>
+<div class="callout-content">
+<p>To estimate a population mean to within <span class="math inline">\(E\)</span> units at <span class="math inline">\(100(1-\alpha)\%\)</span> confidence, use</p>
+<p><span class="math display">\[n=\frac{(z_{\alpha/2})^2 \sigma^2}{E^2},\]</span></p>
+<p>rounded up to the next integer.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="where-the-formula-comes-from" class="slide level2">
+<h2>Where the formula comes from</h2>
+<ul>
+<li>Start from the margin of error formula <span class="math display">\[E = z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\]</span></li>
+<li>Solve for <span class="math inline">\(n\)</span>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>This is the same logic as before.</li>
+<li>We are just choosing <span class="math inline">\(n\)</span> to hit a target precision level.</li>
+</ul>
+</div>
+</section>
+<section id="minimum-sample-size-for-a-proportion" class="slide level2">
+<h2>Minimum sample size for a proportion</h2>
+<div title="Minimum sample size for estimating a population proportion">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Minimum sample size for estimating a population proportion</strong></p>
+</div>
+<div class="callout-content">
+<p>To estimate a population proportion to within <span class="math inline">\(E\)</span> units at <span class="math inline">\(100(1-\alpha)\%\)</span> confidence, use</p>
+<p><span class="math display">\[n=\frac{(z_{\alpha/2})^2 \widehat p (1-\widehat p)}{E^2},\]</span></p>
+<p>rounded up to the next integer.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="choosing-widehat-p" class="slide level2">
+<h2>Choosing <span class="math inline">\(\widehat p\)</span></h2>
+<ul>
+<li>Sometimes you have a prior estimate from older data.</li>
+<li>Sometimes you make an informed guess.</li>
+<li>If you want the most conservative sample size, use <span class="math inline">\(\widehat p = 0.5\)</span>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Why? Because <span class="math inline">\(\widehat p(1-\widehat p)\)</span> is largest at <span class="math inline">\(0.5\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="example-student-fees-and-a-football-stadium" class="slide level2">
+<h2>Example: student fees and a football stadium</h2>
+<div class="exercise-callout" title="Exercise (adapted from OpenIntro)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise (adapted from OpenIntro)</strong></p>
+</div>
+<div class="callout-content">
+<p>A university newspaper wants to estimate the proportion of students who support a $200 annual fee increase to fund a new football stadium.</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (3 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>How large should the sample be to get a 95% CI with margin of error at most 0.04, if no prior estimate of support is available?</p>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>Use the conservative choice <span class="math inline">\(\widehat p = 0.50\)</span>.</li>
+<li>Then <span class="math display">\[
+n=\frac{1.96^2(0.5)(0.5)}{0.04^2}\approx 600.25
+\]</span></li>
+<li>Round up: <span class="math inline">\(n = 601\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="translating-the-stadium-fee-problem" class="slide level2">
+<h2>Translating the stadium-fee problem</h2>
+<ul>
+<li>Confidence level 95% means <span class="math inline">\(z_{\alpha/2} = 1.96\)</span>.</li>
+<li>Target margin of error: <span class="math inline">\(E = 0.04\)</span>.</li>
+<li>No prior estimate is available, so use the conservative choice <span class="math inline">\(\widehat p = 0.50\)</span>.</li>
+</ul>
+</section>
+<section id="computing-the-required-sample-size" class="slide level2">
+<h2>Computing the required sample size</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fl">1.96</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.04</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 600.25</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Round up: <span class="math inline">\(n = 601\)</span>.</li>
+<li>This is the minimum sample size that guarantees the target margin of error under the conservative assumption.</li>
+</ul>
+</div>
+</section>
+<section id="backup-example-polling-support" class="slide level2">
+<h2>Backup example: polling support</h2>
+<div title="Optional example">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Optional example</strong></p>
+</div>
+<div class="callout-content">
+<p>A polling firm wants a 90% CI with margin of error 0.5 percentage points for support near 30%.</p>
+<p>Estimate the minimum sample size required. Then give the most conservative estimate.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="backup-example-polling-support-solution" class="slide level2">
+<h2>Backup example: polling support solution</h2>
+<ul>
+<li>Using <span class="math inline">\(\widehat p = 0.30\)</span>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fl">1.645</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.7</span> <span class="sc">/</span> (<span class="fl">0.005</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22730.61</code></pre>
+</div>
+</div>
+<ul>
+<li>Rounded up: <span class="math inline">\(n = 22731\)</span>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Using the conservative choice <span class="math inline">\(\widehat p = 0.50\)</span>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fl">1.645</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.005</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27060.25</code></pre>
+</div>
+</div>
+<ul>
+<li>Rounded up: <span class="math inline">\(n = 27061\)</span>.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+<p>Shafer, Douglas S. and Zhiyi Zhang (2012), “Introductory Statistics”, available <a href="https://open.umn.edu/opentextbooks/textbooks/135">via this link.</a></p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="../../..\econ2b03/">Home</a></p>
+
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="C02_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="C02_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -207,15 +924,14 @@ Chris Muris - McMaster University - ECON 2B03
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
-'multiplex': {"secret":null,"id":"eb7cc3afd53de0d5eeedc447b0079996f1219b6b279fe7a1fb6763d7ccbb31b0","url":"https://multiplex.up.railway.app/"},
-'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -361,12 +1077,12 @@ Chris Muris - McMaster University - ECON 2B03
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -386,221 +1102,91 @@ Chris Muris - McMaster University - ECON 2B03
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
-          
+          RevealNotes,
           RevealSearch,
           RevealZoom
         ]
       });
     </script>
+    
+
     <script>
 
-    /* update total correct if #webex-total_correct exists */
-    update_total_correct = function() {
-      console.log("webex: update total_correct");
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
 
-      var t = document.getElementsByClassName("webex-total_correct");
-      for (var i = 0; i < t.length; i++) {
-        p = t[i].parentElement;
-        var correct = p.getElementsByClassName("webex-correct").length;
-        var solvemes = p.getElementsByClassName("webex-solveme").length;
-        var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-        var selects = p.getElementsByClassName("webex-select").length;
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
 
-        t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-      }
-    }
+      // slide changes (different for each slide format).
 
-    /* webex-solution button toggling function */
-    b_func = function() {
-      console.log("webex: toggle hide");
+      (function () {
 
-      var cl = this.parentElement.classList;
-      if (cl.contains('open')) {
-        cl.remove("open");
-      } else {
-        cl.add("open");
-      }
-    }
+        // dispatch for htmlwidgets
 
-    /* check answers */
-    check_func = function() {
-      console.log("webex: check answers");
+        function fireSlideEnter() {
 
-      var cl = this.parentElement.classList;
-      if (cl.contains('unchecked')) {
-        cl.remove("unchecked");
-        this.innerHTML = "Hide Answers";
-      } else {
-        cl.add("unchecked");
-        this.innerHTML = "Show Answers";
-      }
-    }
+          const event = window.document.createEvent("Event");
 
-    /* function for checking solveme answers */
-    solveme_func = function(e) {
-      console.log("webex: check solveme");
+          event.initEvent("slideenter", true, true);
 
-      var real_answers = JSON.parse(this.dataset.answer);
-      var my_answer = this.value;
-      var cl = this.classList;
-      if (cl.contains("ignorecase")) {
-        my_answer = my_answer.toLowerCase();
-      }
-      if (cl.contains("nospaces")) {
-        my_answer = my_answer.replace(/ /g, "")
-      }
+          window.document.dispatchEvent(event);
 
-      if (my_answer == "") {
-        cl.remove("webex-correct");
-        cl.remove("webex-incorrect");
-      } else if (real_answers.includes(my_answer)) {
-        cl.add("webex-correct");
-        cl.remove("webex-incorrect");
-      } else {
-        cl.add("webex-incorrect");
-        cl.remove("webex-correct");
-      }
-
-      // match numeric answers within a specified tolerance
-      if(this.dataset.tol > 0){
-        var tol = JSON.parse(this.dataset.tol);
-        var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-        if (matches.reduce((a, b) => a + b, 0) > 0) {
-          cl.add("webex-correct");
-        } else {
-          cl.remove("webex-correct");
         }
-      }
 
-      // added regex bit
-      if (cl.contains("regex")){
-        answer_regex = RegExp(real_answers.join("|"))
-        if (answer_regex.test(my_answer)) {
-          cl.add("webex-correct");
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
         }
-      }
 
-      update_total_correct();
-    }
+    
 
-    /* function for checking select answers */
-    select_func = function(e) {
-      console.log("webex: check select");
+        // hookup for slidy
 
-      var cl = this.classList
+        if (window.w3c_slidy) {
 
-      /* add style */
-      cl.remove("webex-incorrect");
-      cl.remove("webex-correct");
-      if (this.value == "answer") {
-        cl.add("webex-correct");
-      } else if (this.value != "blank") {
-        cl.add("webex-incorrect");
-      }
+          window.w3c_slidy.add_observer(function (slide_num) {
 
-      update_total_correct();
-    }
+            // slide_num starts at position 1
 
-    /* function for checking radiogroups answers */
-    radiogroups_func = function(e) {
-      console.log("webex: check radiogroups");
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
 
-      var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-      var cl = checked_button.parentElement.classList;
-      var labels = checked_button.parentElement.parentElement.children;
+          });
 
-      /* get rid of styles */
-      for (i = 0; i < labels.length; i++) {
-        labels[i].classList.remove("webex-incorrect");
-        labels[i].classList.remove("webex-correct");
-      }
-
-      /* add style */
-      if (checked_button.value == "answer") {
-        cl.add("webex-correct");
-      } else {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    window.onload = function() {
-      console.log("webex onload");
-      /* set up solution buttons */
-      var buttons = document.getElementsByTagName("button");
-
-      for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].parentElement.classList.contains('webex-solution')) {
-          buttons[i].onclick = b_func;
         }
-      }
 
-      var check_sections = document.getElementsByClassName("webex-check");
-      console.log("check:", check_sections.length);
-      for (var i = 0; i < check_sections.length; i++) {
-        check_sections[i].classList.add("unchecked");
+    
 
-        let btn = document.createElement("button");
-        btn.innerHTML = "Show Answers";
-        btn.classList.add("webex-check-button");
-        btn.onclick = check_func;
-        check_sections[i].appendChild(btn);
-
-        let spn = document.createElement("span");
-        spn.classList.add("webex-total_correct");
-        check_sections[i].appendChild(spn);
-      }
-
-      /* set up webex-solveme inputs */
-      var solveme = document.getElementsByClassName("webex-solveme");
-
-      for (var i = 0; i < solveme.length; i++) {
-        /* make sure input boxes don't auto-anything */
-        solveme[i].setAttribute("autocomplete","off");
-        solveme[i].setAttribute("autocorrect", "off");
-        solveme[i].setAttribute("autocapitalize", "off");
-        solveme[i].setAttribute("spellcheck", "false");
-        solveme[i].value = "";
-
-        /* adjust answer for ignorecase or nospaces */
-        var cl = solveme[i].classList;
-        var real_answer = solveme[i].dataset.answer;
-        if (cl.contains("ignorecase")) {
-          real_answer = real_answer.toLowerCase();
-        }
-        if (cl.contains("nospaces")) {
-          real_answer = real_answer.replace(/ /g, "");
-        }
-        solveme[i].dataset.answer = real_answer;
-
-        /* attach checking function */
-        solveme[i].onkeyup = solveme_func;
-        solveme[i].onchange = solveme_func;
-
-        solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      /* set up radiogroups */
-      var radiogroups = document.getElementsByClassName("webex-radiogroup");
-      for (var i = 0; i < radiogroups.length; i++) {
-        radiogroups[i].onchange = radiogroups_func;
-      }
-
-      /* set up selects */
-      var selects = document.getElementsByClassName("webex-select");
-      for (var i = 0; i < selects.length; i++) {
-        selects[i].onchange = select_func;
-        selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      update_total_correct();
-    }
+      })();
 
     </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
