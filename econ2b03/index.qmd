@@ -9,9 +9,8 @@ format:
     link-external-icon: false
 ---
 
-This is the course website for ECON2B03. I only update it when I’m teaching the course. For official course materials, announcements, and grades, use [Avenue to Learn](https://avenue.mcmaster.ca/).
+This is the course website for ECON2B03. I only update it when I’m teaching the course.
 
-- [Avenue to Learn](https://avenue.mcmaster.ca/)
 - [Course schedule (PDF)](schedule.pdf)
 - [Course information (PDF)](course-info.pdf)
 

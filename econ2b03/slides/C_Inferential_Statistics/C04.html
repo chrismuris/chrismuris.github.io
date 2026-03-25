@@ -289,17 +289,17 @@
 <section id="previously-part-c-so-far" class="slide level2">
 <h2>Previously: Part C so far</h2>
 <ul>
-<li>confidence intervals for means and proportions</li>
-<li>the logic of hypothesis testing: null vs alternative</li>
-<li>rejection regions and critical values at a conceptual level</li>
+<li>Confidence intervals for means and proportions</li>
+<li>The logic of hypothesis testing: null vs alternative</li>
+<li>Rejection regions and critical values at a conceptual level</li>
 </ul>
 </section>
 <section id="this-lecture" class="slide level2">
 <h2>This lecture</h2>
 <ul>
 <li>Type I and Type II errors</li>
-<li>significance levels and critical values</li>
-<li>the critical value approach for a population mean</li>
+<li>Significance levels and critical values</li>
+<li>The critical value approach for a population mean</li>
 </ul>
 </section>
 <section id="readings-and-homework" class="slide level2">
@@ -320,24 +320,19 @@
 <li>how to carry out a complete hypothesis test for a population mean using critical values</li>
 </ol></li>
 </ul>
-</section>
-<section id="companion-reading-notes" class="slide level2">
-<h2>Companion reading notes</h2>
-<ul>
-<li>In <strong>Shafer and Zhang</strong>, the clearest matches are Sections 8.1 and 8.2:
-<ul>
-<li>the language of Type I and Type II errors</li>
-<li>the role of the significance level</li>
-<li>the critical value approach for tests about a mean</li>
-</ul></li>
-<li>In <strong>OpenIntro Statistics</strong>, the closest conceptual parallels are the sections on:
-<ul>
-<li>the meaning of the significance level</li>
-<li>the tradeoff between Type I and Type II errors</li>
-<li>one-sided versus two-sided tests</li>
-</ul></li>
-<li>We will keep the examples here simple and procedural, then return to the same logic in C05 through the <span class="math inline">\(p\)</span>-value approach.</li>
-</ul>
+<!--
+## Companion reading notes
+
+- In **Shafer and Zhang**, the clearest matches are Sections 8.1 and 8.2:
+    - the language of Type I and Type II errors
+    - the role of the significance level
+    - the critical value approach for tests about a mean
+- In **OpenIntro Statistics**, the closest conceptual parallels are the sections on:
+    - the meaning of the significance level
+    - the tradeoff between Type I and Type II errors
+    - one-sided versus two-sided tests
+- We will keep the examples here simple and procedural, then return to the same logic in C05 through the $p$-value approach.
+-->
 </section></section>
 <section>
 <section id="part-i-errors-and-significance" class="title-slide slide level1 center">
@@ -380,7 +375,7 @@
 <li>rejecting <span class="math inline">\(H_0\)</span> is like convicting</li>
 <li>failing to reject <span class="math inline">\(H_0\)</span> is like not convicting</li>
 </ul></li>
-<li>Then:
+<li>Therefore:
 <ul>
 <li>Type I error = convicting an innocent person</li>
 <li>Type II error = failing to convict a guilty person</li>
@@ -396,7 +391,10 @@
 <p><strong>Exercise: cannabis vendor and testing errors</strong></p>
 </div>
 <div class="callout-content">
-<p>A cannabis vendor claims that the population mean amount per unit is 1 gram. In reality, the true mean is only 0.9 gram.</p>
+<ul>
+<li>A cannabis vendor claims that the population mean amount per unit is 1 gram.</li>
+<li>In reality, the true mean is only 0.9 gram.</li>
+</ul>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (2 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
 <div class="tab-content">
@@ -424,10 +422,7 @@
 <h2>Significance level</h2>
 <ul>
 <li>The <strong>level of significance</strong>, denoted <span class="math inline">\(\alpha\)</span>, is the probability of a Type I error.</li>
-<li>In words:
-<ul>
-<li><span class="math inline">\(\alpha\)</span> tells us how willing we are to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually true</li>
-</ul></li>
+<li><span class="math inline">\(\alpha\)</span> tells us how willing we are to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is actually true.</li>
 <li>Common choices are:
 <ul>
 <li><span class="math inline">\(\alpha = 0.10\)</span></li>
@@ -442,6 +437,7 @@
 <li>a smaller Type I error probability</li>
 <li>a stricter standard for rejecting <span class="math inline">\(H_0\)</span></li>
 <li>stronger evidence required before rejection</li>
+<li>a greater chance that a borderline sample will fail to reject <span class="math inline">\(H_0\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -455,8 +451,8 @@
 <p><strong>Exercise: choosing a significance level</strong></p>
 </div>
 <div class="callout-content">
-<p>Two firms are considering product-quality tests.</p>
 <ul>
+<li>Two firms are considering product-quality tests.</li>
 <li>In the first case, falsely rejecting a safe batch would be costly but not dangerous.</li>
 <li>In the second case, falsely approving an unsafe batch could harm consumers.</li>
 </ul>
@@ -471,7 +467,7 @@
 </div>
 <div id="tabset-2-2">
 <ul>
-<li>You would want a smaller significance level in the second case, where a false rejection of safety has more serious consequences.</li>
+<li>You would want a smaller significance level in the second case, where falsely approving an unsafe batch would have more serious consequences.</li>
 <li>A smaller <span class="math inline">\(\alpha\)</span> reduces the probability of a Type I error.</li>
 <li>This is the usual logic in higher-stakes testing: make it harder to reject <span class="math inline">\(H_0\)</span> unless the evidence is strong.</li>
 </ul>
@@ -486,11 +482,8 @@
 <section id="why-alpha-determines-the-rejection-region" class="slide level2">
 <h2>Why alpha determines the rejection region</h2>
 <ul>
-<li>In C03, we said we reject <span class="math inline">\(H_0\)</span> when the sample result would be rare if <span class="math inline">\(H_0\)</span> were true.</li>
-<li>Now we make “rare” precise:
-<ul>
-<li>an event is rare if its probability is less than <span class="math inline">\(\alpha\)</span></li>
-</ul></li>
+<li>Previously, we said we reject <span class="math inline">\(H_0\)</span> when the sample result would be <em>rare</em> if <span class="math inline">\(H_0\)</span> were true.</li>
+<li>Now we make “rare” precise: an event is rare if its probability is less than <span class="math inline">\(\alpha\)</span></li>
 <li>So once <span class="math inline">\(\alpha\)</span> is chosen, the rejection region is the set of sample outcomes whose total probability under <span class="math inline">\(H_0\)</span> equals <span class="math inline">\(\alpha\)</span>.</li>
 </ul>
 <div style="text-align:center">
@@ -533,7 +526,7 @@
 <li>if <span class="math inline">\(\sigma\)</span> is known, <span class="math display">\[Z=\frac{\bar X-\mu_0}{\sigma/\sqrt{n}}\]</span></li>
 <li>if <span class="math inline">\(\sigma\)</span> is unknown, <span class="math display">\[Z=\frac{\bar X-\mu_0}{s/\sqrt{n}}\]</span></li>
 </ul></li>
-<li>Under <span class="math inline">\(H_0\)</span>, the test statistic has a standard normal distribution.</li>
+<li>Under <span class="math inline">\(H_0\)</span>, the <strong>test statistic</strong> <span class="math inline">\(Z\)</span> has a standard normal distribution.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -545,14 +538,10 @@
 <li>denominator: standard error of the sample mean</li>
 <li>so <span class="math inline">\(Z\)</span> tells us how many standard errors the sample mean is from the null value</li>
 </ul></li>
-</ul>
-<div class="fragment">
-<ul>
 <li>Large positive <span class="math inline">\(Z\)</span> values are evidence for a right-tailed alternative.</li>
 <li>Large negative <span class="math inline">\(Z\)</span> values are evidence for a left-tailed alternative.</li>
 <li>Large values of <span class="math inline">\(|Z|\)</span> are evidence for a two-tailed alternative.</li>
 </ul>
-</div>
 </section>
 <section id="rejection-regions" class="slide level2">
 <h2>Rejection regions</h2>
@@ -587,7 +576,7 @@
 </div>
 </div>
 </section>
-<section class="slide level2 scrollable">
+<section class="slide level2">
 
 <div class="exercise-callout" title="Exercise: identify the rejection region">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
@@ -596,25 +585,27 @@
 <p><strong>Exercise: identify the rejection region</strong></p>
 </div>
 <div class="callout-content">
-<p>Suppose you are testing the mean waiting time at a clinic against a benchmark of 18 minutes.</p>
+<ul>
+<li>Suppose you are testing the mean waiting time at a clinic against a benchmark of 18 minutes.</li>
+</ul>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (3 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<p>For each alternative hypothesis, state where the rejection region must lie.</p>
-<ol type="1">
+<ul>
+<li>For each alternative hypothesis, state where the rejection region must lie.</li>
 <li><span class="math inline">\(H_a:\mu&lt;18\)</span></li>
 <li><span class="math inline">\(H_a:\mu&gt;18\)</span></li>
 <li><span class="math inline">\(H_a:\mu\neq18\)</span></li>
-</ol>
+</ul>
 </div>
 <div id="tabset-3-2">
-<ol type="1">
+<ul>
 <li>For <span class="math inline">\(H_a:\mu&lt;18\)</span>, the rejection region is in the <strong>left tail</strong>.</li>
 <li>For <span class="math inline">\(H_a:\mu&gt;18\)</span>, the rejection region is in the <strong>right tail</strong>.</li>
 <li>For <span class="math inline">\(H_a:\mu\neq18\)</span>, the rejection region is in <strong>both tails</strong>.</li>
-</ol>
-<p>The alternative hypothesis determines where evidence against <span class="math inline">\(H_0\)</span> can appear.</p>
+<li>The alternative hypothesis determines where evidence against <span class="math inline">\(H_0\)</span> can appear.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -682,7 +673,7 @@
 <section id="step-3-compute-the-test-statistic" class="slide level2">
 <h2>Step 3: compute the test statistic</h2>
 <ul>
-<li>So the observed test statistic is approximately <span class="math inline">\(Z=2.49\)</span>.</li>
+<li>For this sample, <span class="math display">\[Z=\frac{8.2-8.1}{0.22/\sqrt{30}} \approx 2.49.\]</span></li>
 </ul>
 </section>
 <section id="step-4-rejection-region" class="slide level2">
@@ -690,7 +681,7 @@
 <ul>
 <li>This is a two-tailed test at the 1% level.</li>
 <li>Therefore the critical values are <span class="math inline">\(\pm 2.576\)</span>.</li>
-<li>Rejection region: <span class="math display">\[Z \le -2.576 \quad \text{or} \quad Z \ge 2.576\]</span></li>
+<li>Rejection region: <span class="math inline">\(Z \le -2.576\)</span> or <span class="math inline">\(Z \ge 2.576\)</span>.</li>
 </ul>
 </section>
 <section id="step-5-decision" class="slide level2">
@@ -710,11 +701,11 @@
 </section>
 <section class="slide level2">
 
-<div title="Why this makes sense">
+<div title="Sanity check">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Why this makes sense</strong></p>
+<p><strong>Sanity check</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -722,6 +713,43 @@
 <li>But at the 1% level, we require very strong evidence.</li>
 <li>A test statistic of 2.49 standard errors is large, but not quite large enough for that stricter cutoff.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: same sample, different significance levels">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: same sample, different significance levels</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Keep the machine-recalibration example, with observed test statistic <span class="math inline">\(Z=2.49\)</span> for a two-sided test.</li>
+<li>Use that same sample to compare a stricter and a looser decision rule.</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (2 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>What is the decision at the 1% level?</li>
+<li>What is the decision at the 5% level?</li>
+<li>What does this tell you about using a smaller <span class="math inline">\(\alpha\)</span>?</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>At the 1% level, do not reject <span class="math inline">\(H_0\)</span>, because <span class="math inline">\(|2.49| &lt; 2.576\)</span>.</li>
+<li>At the 5% level, reject <span class="math inline">\(H_0\)</span>, because <span class="math inline">\(|2.49| &gt; 1.96\)</span>.</li>
+<li>A smaller significance level makes rejection harder, because the rejection region moves farther into the tails.</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -736,6 +764,10 @@
 <p><strong>Growth hormone for cows</strong></p>
 </div>
 <div class="callout-content">
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question</a></li><li><a href="#tabset-5-2">By hand</a></li><li><a href="#tabset-5-3">In R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
 <ul>
 <li>A sample of 100 cows has mean growth 38.3 inches.</li>
 <li>Historical baseline mean is 36 inches.</li>
@@ -746,10 +778,8 @@
 <li><span class="math inline">\(H_a:\mu&gt;36\)</span></li>
 </ul></li>
 </ul>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">By hand</a></li><li><a href="#tabset-4-2">In R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
+</div>
+<div id="tabset-5-2">
 <ul>
 <li>Test statistic: <span class="math display">\[Z=\frac{38.3-36}{5.6/\sqrt{100}} \approx 4.11\]</span></li>
 <li>Right-tailed rejection region at <span class="math inline">\(\alpha=0.05\)</span>: <span class="math display">\[Z \ge 1.645\]</span></li>
@@ -757,11 +787,11 @@
 <li>The sample provides strong evidence that mean growth is higher than 36 inches.</li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-3">
 <ul>
 <li><p><code>R</code> calculation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>(<span class="fl">38.3</span> <span class="sc">-</span> <span class="dv">36</span>) <span class="sc">/</span> (<span class="fl">5.6</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Output: <code>4.107143</code></p></li>
+<li><p>output: <code>4.107143</code></p></li>
 </ul>
 </div>
 </div>
@@ -773,23 +803,25 @@
 </section>
 <section class="slide level2">
 
-<div title="Worked example (adapted from OpenIntro): textbook prices">
+<div title="Textbook prices">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Worked example (adapted from OpenIntro): textbook prices</strong></p>
+<p><strong>Textbook prices</strong></p>
 </div>
 <div class="callout-content">
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question</a></li><li><a href="#tabset-6-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
 <ul>
 <li>A campus bookstore claims the mean price of introductory textbooks is $90.</li>
 <li>A sample of <span class="math inline">\(n=64\)</span> textbooks has mean price <span class="math inline">\(\bar X=\$94.20\)</span>.</li>
 <li>Assume the population standard deviation is <span class="math inline">\(\sigma=\$16\)</span>.</li>
 <li>Test at the 5% level whether the mean price is <strong>higher</strong> than $90.</li>
 </ul>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Setup</a></li><li><a href="#tabset-5-2">Solution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
+</div>
+<div id="tabset-6-2">
 <ul>
 <li>Hypotheses:
 <ul>
@@ -797,10 +829,6 @@
 <li><span class="math inline">\(H_a:\mu&gt;90\)</span></li>
 </ul></li>
 <li>Test statistic: <span class="math display">\[Z=\frac{\bar X-\mu_0}{\sigma/\sqrt{n}}\]</span></li>
-</ul>
-</div>
-<div id="tabset-5-2">
-<ul>
 <li>Compute <span class="math display">\[Z=\frac{94.2-90}{16/\sqrt{64}}=\frac{4.2}{2}=2.10.\]</span></li>
 <li>Right-tailed critical value at <span class="math inline">\(\alpha=0.05\)</span>: <span class="math display">\[Z \ge 1.645.\]</span></li>
 <li>Since <span class="math inline">\(2.10&gt;1.645\)</span>, reject <span class="math inline">\(H_0\)</span>.</li>
@@ -821,18 +849,21 @@
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: repair times">
+<div class="exercise-callout" title="Repair times">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: repair times</strong></p>
+<p><strong>Repair times</strong></p>
 </div>
 <div class="callout-content">
-<p>The standard time for a repair is 1 hour. A sample of 30 repairs has mean 0.86 hour and standard deviation 0.32 hour.</p>
+<ul>
+<li>The standard time for a repair is 1 hour.</li>
+<li>A sample of 30 repairs has mean 0.86 hour and standard deviation 0.32 hour.</li>
+</ul>
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (3 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (3 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <ul>
 <li>Use the critical value approach at the 1% level to test:
 <ul>
@@ -841,7 +872,7 @@
 </ul></li>
 </ul>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <ul>
 <li>Test statistic: <span class="math display">\[Z=\frac{0.86-1}{0.32/\sqrt{30}} \approx -2.40\]</span></li>
 <li>Two-tailed rejection region at <span class="math inline">\(\alpha=0.01\)</span>: <span class="math display">\[|Z| \ge 2.576\]</span></li>
@@ -858,18 +889,21 @@
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise (adapted from Introductory Statistics): placement exam">
+<div class="exercise-callout" title="Placement exam">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise (adapted from Introductory Statistics): placement exam</strong></p>
+<p><strong>Placement exam</strong></p>
 </div>
 <div class="callout-content">
-<p>The historical mean score on a placement exam is 14.3. A sample of 30 students taking a revised version has mean 14.6 and sample standard deviation 2.4.</p>
+<ul>
+<li>The historical mean score on a placement exam is 14.3.</li>
+<li>A sample of 30 students taking a revised version has mean 14.6 and sample standard deviation 2.4.</li>
+</ul>
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (3 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Question (3 min)</a></li><li><a href="#tabset-8-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-8-1">
 <ul>
 <li>Use the critical value approach at the 5% level to test:
 <ul>
@@ -878,7 +912,7 @@
 </ul></li>
 </ul>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-8-2">
 <ul>
 <li>Test statistic: <span class="math display">\[Z=\frac{14.6-14.3}{2.4/\sqrt{30}} \approx 0.68.\]</span></li>
 <li>Two-tailed rejection region at <span class="math inline">\(\alpha=0.05\)</span>: <span class="math display">\[|Z| \ge 1.96.\]</span></li>
@@ -895,18 +929,22 @@
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: respirator testing">
+<div class="exercise-callout" title="Respirator testing">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: respirator testing</strong></p>
+<p><strong>Respirator testing</strong></p>
 </div>
 <div class="callout-content">
-<p>A manufacturer claims its respirator delivers pure air for 75 minutes on average. A regulator is concerned that the true mean may be lower. In a large sample, the standardized test statistic is <span class="math inline">\(Z=-1.91\)</span>.</p>
+<ul>
+<li>A manufacturer claims its respirator delivers pure air for 75 minutes on average.</li>
+<li>A regulator is concerned that the true mean may be lower.</li>
+<li>In a large sample, the standardized test statistic is <span class="math inline">\(Z=-1.91\)</span>.</li>
+</ul>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Question (2 min)</a></li><li><a href="#tabset-8-2">Answers</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Question (2 min)</a></li><li><a href="#tabset-9-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-9-1">
 <ul>
 <li>Test at the 5% level:
 <ul>
@@ -916,10 +954,10 @@
 <li>What is the rejection region, and what is the decision?</li>
 </ul>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-9-2">
 <ul>
 <li>This is a left-tailed test at <span class="math inline">\(\alpha=0.05\)</span>.</li>
-<li>Rejection region: <span class="math display">\[Z \le -1.645\]</span></li>
+<li>Rejection region: <span class="math inline">\(Z \le -1.645\)</span>.</li>
 <li>Since <span class="math inline">\(-1.91 &lt; -1.645\)</span>, reject <span class="math inline">\(H_0\)</span>.</li>
 <li>There is sufficient evidence at the 5% level that the mean air-delivery time is below 75 minutes.</li>
 </ul>
@@ -931,7 +969,7 @@
 </div>
 </div>
 </section>
-<section class="slide level2 scrollable">
+<section class="slide level2">
 
 <div class="exercise-callout" title="Exercise (adapted from OpenIntro): significance and decisions">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
@@ -940,23 +978,26 @@
 <p><strong>Exercise (adapted from OpenIntro): significance and decisions</strong></p>
 </div>
 <div class="callout-content">
-<p>An analyst tests <span class="math inline">\(H_0:\mu=50\)</span> against <span class="math inline">\(H_a:\mu\neq50\)</span> and computes the test statistic <span class="math inline">\(Z=2.21\)</span>.</p>
+<ul>
+<li>An analyst tests <span class="math inline">\(H_0:\mu=50\)</span> against <span class="math inline">\(H_a:\mu\neq50\)</span>.</li>
+<li>The computed test statistic is <span class="math inline">\(Z=2.21\)</span>.</li>
+</ul>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Question (3 min)</a></li><li><a href="#tabset-9-2">Answers</a></li></ul>
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Question (3 min)</a></li><li><a href="#tabset-10-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-9-1">
-<ol type="1">
+<div id="tabset-10-1">
+<ul>
 <li>What is the decision at the 5% level?</li>
 <li>What is the decision at the 1% level?</li>
 <li>What lesson does this illustrate about the significance level?</li>
-</ol>
+</ul>
 </div>
-<div id="tabset-9-2">
-<ol type="1">
+<div id="tabset-10-2">
+<ul>
 <li>At the 5% level, the two-tailed critical value is <span class="math inline">\(1.96\)</span>, so reject <span class="math inline">\(H_0\)</span>.</li>
 <li>At the 1% level, the two-tailed critical value is <span class="math inline">\(2.576\)</span>, so do not reject <span class="math inline">\(H_0\)</span>.</li>
 <li>A smaller significance level makes the test more conservative: the same sample can lead to different decisions depending on how much Type I error risk we are willing to tolerate.</li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
