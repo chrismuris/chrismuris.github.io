@@ -1,5 +1,5 @@
 ---
-title: "ECON 2B03: Analysis of Economic Data"
+title: "ECON 2B03: Introduction to Data Analysis and Statistics"
 date: last-modified
 format:
   html:
@@ -23,17 +23,17 @@ Below are the slides and notes, organized by part.
 | **Part A: Descriptive Statistics** |  |
 | – A01: Principles of Data | [slides](slides/A_Descriptive_Statistics/A01.html) |
 | – A02: Visualizing Data | [slides](slides/A_Descriptive_Statistics/A02.html) |
+| – A04: Numerical data (1) | [slides](slides/A_Descriptive_Statistics/A04.html) |
 | **Part B: Probability Theory** |  |
 | – B01: Probability Concepts | [slides](slides/B_Probability_Theory/B01.html) |
 | – B02: Random Variables | [slides](slides/B_Probability_Theory/B02.html) |
+| – B03: Discrete Random Variables | [slides](slides/B_Probability_Theory/B03.html) |
 | – B08: Sampling | [slides](slides/B_Probability_Theory/B08.html) |
 | – B09: The central limit theorem | [slides](slides/B_Probability_Theory/B09.html) |
 | **Part C: Inferential Statistics** |  |
 | – C01: Confidence intervals | [slides](slides/C_Inferential_Statistics/C01.html) |
 | – C02: Confidence intervals: means and proportions | [slides](slides/C_Inferential_Statistics/C02.html) |
 | – C03: Introduction to hypothesis testing | [slides](slides/C_Inferential_Statistics/C03.html) |
-| **Part D: Experimental** |  |
-| – Lecture 1: Week 1 Demo | [slides](slides/D_Experimental/week1_demo.html) |
 :::
 
 

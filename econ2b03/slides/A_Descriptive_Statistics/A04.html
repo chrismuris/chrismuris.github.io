@@ -1,0 +1,2891 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="A04_files/libs/clipboard/clipboard.min.js"></script>
+<script src="A04_files/libs/quarto-html/tabby.min.js"></script>
+<script src="A04_files/libs/quarto-html/popper.min.js"></script>
+<script src="A04_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="A04_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="A04_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="A04_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <title>Numerical data (1)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="A04_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="A04_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="A04_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="A04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="A04_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="A04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="A04_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="A04_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="A04_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Numerical data (1)</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part A | Lecture 4<br>Chris Muris, McMaster University</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="roadmap" class="slide level2 scrollable">
+<h2>Roadmap</h2>
+<ul>
+<li>Previously, we:
+<ol type="1">
+<li>Discussed course objectives and organization</li>
+<li>Seen key definitions in statistics:
+<ul>
+<li>descriptive and inferential statistics</li>
+<li>population, sample, census, sample data, and sample size</li>
+<li>parameter and statistic</li>
+<li>individuals, variables, measurements, and distributions</li>
+<li>qualitative/categorical and quantitative/numerical variables</li>
+<li>frequencies and proportions</li>
+<li>data lists, data frequency tables, and bar plots</li>
+</ul></li>
+<li>Started with <code>R</code> and <code>quarto</code></li>
+</ol></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>This lecture, we:
+<ol type="1">
+<li>Frequency tables for numerical data (classes, Sturges’ rule)</li>
+<li>Graphs for one quantitative variable (histogram, density plots)</li>
+<li>Graphs for two quantitative variables (scatter plot)</li>
+<li>Multivariate plots (faceting, coloring) for combining numerical and categorical variables</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
+<ul>
+<li><strong>Readings</strong>: SZ 2.1, IMS 4.6, 5.1-5.3</li>
+<li><strong>Homework</strong>: SZ 2.1: 4, 5, 7, 8, 13, 15; IMS: N/A</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
+<ul>
+<li>Why this matters: histograms and scatter plots reveal patterns in numerical data that tables alone cannot show.</li>
+<li>What you will learn:
+<ol type="1">
+<li>how to construct frequency tables for numerical data using classes</li>
+<li>how to make histograms, density plots, and scatter plots in R</li>
+<li>how to combine numerical and categorical variables in multivariate plots</li>
+</ol></li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-frequency-tables" class="title-slide slide level1 center">
+<h1>Part I: Frequency Tables</h1>
+
+</section>
+<section id="classes" class="slide level2">
+<h2>Classes</h2>
+<ul>
+<li>We saw that frequency tables are useful summaries of categorical variables:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">data</span>(<span class="st">"penguins"</span>)</span>
+<span id="cb1-3"><a href=""></a><span class="fu">table</span>(penguins<span class="sc">$</span>species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Adelie Chinstrap    Gentoo 
+      152        68       124 </code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>In the data frequency table above, we list one frequency for each value in the data list</li>
+<li>Sometimes, there are many values</li>
+<li>This happens with numerical variables, like <code>bill_length</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figures/culmen_depth.png"></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>In these cases, a frequency table is not informative:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">table</span>(penguins<span class="sc">$</span>bill_length_mm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+32.1 33.1 33.5   34 34.1 34.4 34.5 34.6   35 35.1 35.2 35.3 35.5 35.6 35.7 35.9 
+   1    1    1    1    1    1    1    2    2    1    1    1    2    1    3    2 
+  36 36.2 36.3 36.4 36.5 36.6 36.7 36.8 36.9   37 37.2 37.3 37.5 37.6 37.7 37.8 
+   4    3    1    2    2    2    2    1    1    2    2    3    2    3    3    5 
+37.9 38.1 38.2 38.3 38.5 38.6 38.7 38.8 38.9   39 39.1 39.2 39.3 39.5 39.6 39.7 
+   2    4    2    1    1    3    1    3    2    3    1    3    1    3    5    4 
+39.8 40.1 40.2 40.3 40.5 40.6 40.7 40.8 40.9   41 41.1 41.3 41.4 41.5 41.6 41.7 
+   1    1    3    2    2    4    1    2    4    1    7    2    2    2    1    1 
+41.8   42 42.1 42.2 42.3 42.4 42.5 42.6 42.7 42.8 42.9 43.1 43.2 43.3 43.4 43.5 
+   1    3    1    2    1    1    3    1    2    2    2    1    4    2    1    3 
+43.6 43.8   44 44.1 44.4 44.5 44.9   45 45.1 45.2 45.3 45.4 45.5 45.6 45.7 45.8 
+   1    1    1    2    1    3    2    1    3    6    2    2    5    2    3    3 
+45.9   46 46.1 46.2 46.3 46.4 46.5 46.6 46.7 46.8 46.9   47 47.2 47.3 47.4 47.5 
+   1    2    3    5    1    4    5    2    2    4    2    1    2    2    1    4 
+47.6 47.7 47.8 48.1 48.2 48.4 48.5 48.6 48.7 48.8   49 49.1 49.2 49.3 49.4 49.5 
+   2    1    1    2    2    3    3    1    3    1    3    3    2    2    1    3 
+49.6 49.7 49.8 49.9   50 50.1 50.2 50.3 50.4 50.5 50.6 50.7 50.8 50.9   51 51.1 
+   3    1    3    1    5    2    3    1    2    5    1    2    4    2    1    2 
+51.3 51.4 51.5 51.7 51.9   52 52.1 52.2 52.5 52.7 52.8 53.4 53.5 54.2 54.3 55.1 
+   4    1    2    1    1    3    1    2    1    1    1    1    1    1    1    1 
+55.8 55.9   58 59.6 
+   1    1    1    1 </code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Example: wage1 data">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Example: wage1 data</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Similar for the <code>wage1</code> data from the <code>wooldridge</code> package:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">tabyl</span>(wage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  wage  n     percent
+  0.53  1 0.001901141
+  1.43  1 0.001901141
+  1.50  2 0.003802281
+  1.63  1 0.001901141
+  1.67  1 0.001901141
+  1.75  1 0.001901141
+  1.96  1 0.001901141
+  2.00  4 0.007604563
+  2.14  1 0.001901141
+  2.17  1 0.001901141
+  2.23  1 0.001901141
+  2.25  1 0.001901141
+  2.27  1 0.001901141
+  2.30  1 0.001901141
+  2.31  1 0.001901141
+  2.38  1 0.001901141
+  2.50  1 0.001901141
+  2.53  1 0.001901141
+  2.54  1 0.001901141
+  2.60  1 0.001901141
+  2.65  1 0.001901141
+  2.70  1 0.001901141
+  2.75  1 0.001901141
+  2.83  1 0.001901141
+  2.87  1 0.001901141
+  2.88  1 0.001901141
+  2.89  2 0.003802281
+  2.90 16 0.030418251
+  2.91  4 0.007604563
+  2.92  5 0.009505703
+  2.93  1 0.001901141
+  2.95  3 0.005703422
+  3.00 34 0.064638783
+  3.05  3 0.005703422
+  3.06  1 0.001901141
+  3.08  1 0.001901141
+  3.10  4 0.007604563
+  3.13  3 0.005703422
+  3.15  2 0.003802281
+  3.18  1 0.001901141
+  3.20  4 0.007604563
+  3.24  2 0.003802281
+  3.25  8 0.015209125
+  3.26  2 0.003802281
+  3.28  1 0.001901141
+  3.29  1 0.001901141
+  3.30  3 0.005703422
+  3.33  2 0.003802281
+  3.35  5 0.009505703
+  3.37  1 0.001901141
+  3.40  2 0.003802281
+  3.45  2 0.003802281
+  3.50 18 0.034220532
+  3.51  2 0.003802281
+  3.52  1 0.001901141
+  3.54  1 0.001901141
+  3.55  2 0.003802281
+  3.58  1 0.001901141
+  3.60  3 0.005703422
+  3.64  1 0.001901141
+  3.65  1 0.001901141
+  3.71  2 0.003802281
+  3.73  1 0.001901141
+  3.75 11 0.020912548
+  3.76  1 0.001901141
+  3.80  1 0.001901141
+  3.81  1 0.001901141
+  3.83  1 0.001901141
+  3.85  1 0.001901141
+  3.88  1 0.001901141
+  3.91  1 0.001901141
+  3.95  1 0.001901141
+  4.00 15 0.028517110
+  4.05  2 0.003802281
+  4.08  1 0.001901141
+  4.10  3 0.005703422
+  4.11  1 0.001901141
+  4.14  1 0.001901141
+  4.17  1 0.001901141
+  4.20  3 0.005703422
+  4.24  1 0.001901141
+  4.25  1 0.001901141
+  4.27  1 0.001901141
+  4.28  1 0.001901141
+  4.29  2 0.003802281
+  4.33  1 0.001901141
+  4.34  1 0.001901141
+  4.38  2 0.003802281
+  4.44  2 0.003802281
+  4.50 20 0.038022814
+  4.51  1 0.001901141
+  4.55  2 0.003802281
+  4.57  2 0.003802281
+  4.60  1 0.001901141
+  4.63  2 0.003802281
+  4.65  2 0.003802281
+  4.67  1 0.001901141
+  4.68  3 0.005703422
+  4.69  1 0.001901141
+  4.72  1 0.001901141
+  4.75  3 0.005703422
+  4.79  2 0.003802281
+  4.81  1 0.001901141
+  4.91  1 0.001901141
+  4.95  1 0.001901141
+  5.00 14 0.026615970
+  5.05  2 0.003802281
+  5.11  1 0.001901141
+  5.13  1 0.001901141
+  5.15  1 0.001901141
+  5.20  1 0.001901141
+  5.25  5 0.009505703
+  5.30  1 0.001901141
+  5.40  1 0.001901141
+  5.43  1 0.001901141
+  5.48  1 0.001901141
+  5.50  2 0.003802281
+  5.52  1 0.001901141
+  5.58  1 0.001901141
+  5.60  2 0.003802281
+  5.63  1 0.001901141
+  5.65  1 0.001901141
+  5.70  1 0.001901141
+  5.71  3 0.005703422
+  5.75  1 0.001901141
+  5.77  1 0.001901141
+  5.78  1 0.001901141
+  5.80  1 0.001901141
+  5.83  1 0.001901141
+  5.84  1 0.001901141
+  5.90  2 0.003802281
+  5.91  1 0.001901141
+  5.95  1 0.001901141
+  6.00 10 0.019011407
+  6.08  2 0.003802281
+  6.11  1 0.001901141
+  6.15  2 0.003802281
+  6.18  1 0.001901141
+  6.22  1 0.001901141
+  6.25 18 0.034220532
+  6.26  1 0.001901141
+  6.29  1 0.001901141
+  6.33  2 0.003802281
+  6.35  1 0.001901141
+  6.36  2 0.003802281
+  6.38  1 0.001901141
+  6.43  1 0.001901141
+  6.45  1 0.001901141
+  6.46  1 0.001901141
+  6.50  7 0.013307985
+  6.53  1 0.001901141
+  6.63  3 0.005703422
+  6.67  2 0.003802281
+  6.76  1 0.001901141
+  6.80  1 0.001901141
+  6.85  1 0.001901141
+  6.88  4 0.007604563
+  7.00  2 0.003802281
+  7.14  2 0.003802281
+  7.25  1 0.001901141
+  7.26  1 0.001901141
+  7.36  1 0.001901141
+  7.50  6 0.011406844
+  7.60  1 0.001901141
+  7.63  1 0.001901141
+  7.78  2 0.003802281
+  7.81  1 0.001901141
+  7.90  1 0.001901141
+  8.00  6 0.011406844
+  8.02  1 0.001901141
+  8.10  1 0.001901141
+  8.13  1 0.001901141
+  8.18  1 0.001901141
+  8.33  2 0.003802281
+  8.43  2 0.003802281
+  8.45  1 0.001901141
+  8.48  1 0.001901141
+  8.50  1 0.001901141
+  8.53  1 0.001901141
+  8.60  1 0.001901141
+  8.63  1 0.001901141
+  8.64  1 0.001901141
+  8.65  1 0.001901141
+  8.75  7 0.013307985
+  8.77  1 0.001901141
+  8.80  1 0.001901141
+  8.92  1 0.001901141
+  9.00  3 0.005703422
+  9.05  1 0.001901141
+  9.09  1 0.001901141
+  9.13  1 0.001901141
+  9.30  1 0.001901141
+  9.33  1 0.001901141
+  9.42  1 0.001901141
+  9.56  1 0.001901141
+  9.68  1 0.001901141
+  9.80  1 0.001901141
+  9.85  1 0.001901141
+ 10.00 15 0.028517110
+ 10.38  1 0.001901141
+ 10.63  1 0.001901141
+ 10.91  1 0.001901141
+ 10.92  1 0.001901141
+ 10.95  1 0.001901141
+ 11.10  1 0.001901141
+ 11.11  1 0.001901141
+ 11.25  2 0.003802281
+ 11.55  1 0.001901141
+ 11.56  1 0.001901141
+ 11.71  1 0.001901141
+ 11.76  1 0.001901141
+ 11.82  1 0.001901141
+ 11.90  1 0.001901141
+ 11.98  1 0.001901141
+ 12.22  1 0.001901141
+ 12.39  1 0.001901141
+ 12.50  7 0.013307985
+ 13.00  1 0.001901141
+ 13.08  1 0.001901141
+ 13.16  1 0.001901141
+ 13.33  1 0.001901141
+ 13.70  1 0.001901141
+ 13.95  1 0.001901141
+ 14.38  1 0.001901141
+ 14.58  1 0.001901141
+ 15.00  3 0.005703422
+ 15.38  1 0.001901141
+ 17.33  1 0.001901141
+ 17.50  1 0.001901141
+ 17.71  1 0.001901141
+ 18.00  1 0.001901141
+ 18.16  2 0.003802281
+ 18.18  1 0.001901141
+ 18.89  1 0.001901141
+ 19.98  1 0.001901141
+ 20.00  1 0.001901141
+ 21.63  1 0.001901141
+ 21.86  1 0.001901141
+ 22.20  1 0.001901141
+ 22.86  1 0.001901141
+ 24.98  1 0.001901141</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="co"># wage1 |&gt; tabyl(wage) |&gt; gt()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>It makes sense to split sample data into <em>classes</em></li>
+<li>A <strong>class</strong> is a set of values</li>
+<li>For example, one class could be <span class="math inline">\([8,10]\)</span>, the interval of hourly wages between 8 and 10</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>How to pick classes for our sample data?</li>
+<li>How we split the data often depends on the data type:
+<ul>
+<li>qualitative/categorical (nominal or ordinal)</li>
+<li>quantitative/numerical (discrete or continuous)</li>
+</ul></li>
+<li>Data classes should be:
+<ul>
+<li>collectively exhaustive</li>
+<li>mutually exclusive</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>First, pick the number of classes:
+<ul>
+<li>Desirable class number:
+<ul>
+<li>Should fit data type</li>
+<li>Often recommended: between 5 and 20</li>
+</ul></li>
+<li><strong>Sturges’ rule</strong>: desirable number of classes = <span class="math inline">\(k\)</span>, the integer closest to <span class="math display">\[1 + 3.3 \log_{10} n,\]</span> where <span class="math inline">\(\log_{10} n\)</span> is the power to which <span class="math inline">\(10\)</span> is raised to get <span class="math inline">\(n\)</span>.</li>
+</ul></li>
+<li>The <strong>sample size</strong> is the number of individuals in a sample.
+<ul>
+<li>We use the symbol <span class="math inline">\(n\)</span> for the sample size.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Example: Sturges' Rule">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Example: Sturges’ Rule</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>If <span class="math inline">\(n=1,000\)</span>, then <span class="math inline">\(\log_{10}1000=3\)</span></li>
+<li>In this case, <span class="math inline">\(1+3.3\log_{10}1000 = 10.9\)</span></li>
+<li>Sturges’ rule: use <span class="math inline">\(k=11\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-sturges-rule-wage1-data" class="slide level2">
+<h2>Example: Sturges’ Rule, <code>wage1</code> data</h2>
+<ul>
+<li>For the <code>wage1</code> data:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>(n_wage <span class="ot">&lt;-</span> <span class="fu">nrow</span>(wage1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 526</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="dv">1</span> <span class="sc">+</span> <span class="fl">3.3</span> <span class="sc">*</span> <span class="fu">log10</span>(n_wage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9.979253</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>(k_wage <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fl">3.3</span> <span class="sc">*</span> <span class="fu">log10</span>(n_wage)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Second, compute class widths and boundaries.</p></li>
+<li><p>Desirable class widths:</p>
+<ul>
+<li>class width is the difference between the lower and upper limits (boundaries) of a class</li>
+<li>to achieve uniform class widths: <span class="math display">\[\begin{equation*}
+\text{class width}=\frac{\text{largest value - smallest value}}{\text{desirable class number}}
+\end{equation*}\]</span></li>
+</ul></li>
+<li><p>Desirable class boundaries:</p>
+<ul>
+<li>for the lowest (first) class: the left (lower) boundary can be the smallest number in the data set, the right (upper) boundary this number plus the class width</li>
+<li>for subsequent classes: the left boundary of each class can be the upper boundary from the class below it, the right boundary this value plus the class width</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>For the <code>wage1</code> data, recall that we have a sample size, and a number of classes from Sturges’ rule, of</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>n_wage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 526</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>k_wage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>We can use the <code>cut</code> function to classify each measurement. I will save the classified data as a new variable <code>wage_cut</code></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>wage1 <span class="ot">&lt;-</span> wage1 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">wage_cut =</span> <span class="fu">cut</span>(wage, k_wage))</span>
+<span id="cb18-2"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">select</span>(wage, educ, exper, female, wage_cut)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     wage educ exper female     wage_cut
+1    3.10   11     2      1  (2.97,5.42]
+2    3.24   12    22      1  (2.97,5.42]
+3    3.00   11     2      0  (2.97,5.42]
+4    6.00    8    44      0  (5.42,7.86]
+5    5.30   12     7      0  (2.97,5.42]
+6    8.75   16     9      0  (7.86,10.3]
+7   11.25   18    15      0  (10.3,12.8]
+8    5.00   12     5      1  (2.97,5.42]
+9    3.60   12    26      1  (2.97,5.42]
+10  18.18   17    22      0  (17.6,20.1]
+11   6.25   16     8      1  (5.42,7.86]
+12   8.13   13     3      1  (7.86,10.3]
+13   8.77   12    15      0  (7.86,10.3]
+14   5.50   12    18      0  (5.42,7.86]
+15  22.20   12    31      0  (20.1,22.5]
+16  17.33   16    14      0  (15.2,17.6]
+17   7.50   12    10      1  (5.42,7.86]
+18  10.63   13    16      1  (10.3,12.8]
+19   3.60   12    13      1  (2.97,5.42]
+20   4.50   12    36      1  (2.97,5.42]
+21   6.88   12    11      1  (5.42,7.86]
+22   8.48   12    29      0  (7.86,10.3]
+23   6.33   16     9      1  (5.42,7.86]
+24   0.53   12     3      1 (0.506,2.97]
+25   6.00   11    37      1  (5.42,7.86]
+26   9.56   16     3      0  (7.86,10.3]
+27   7.78   16    11      0  (5.42,7.86]
+28  12.50   16    31      0  (10.3,12.8]
+29  12.50   15    30      0  (10.3,12.8]
+30   3.25    8     9      1  (2.97,5.42]
+31  13.00   14    23      0  (12.8,15.2]
+32   4.50   14     2      1  (2.97,5.42]
+33   9.68   13    16      1  (7.86,10.3]
+34   5.00   12     7      1  (2.97,5.42]
+35   4.68   12     3      1  (2.97,5.42]
+36   4.27   16    22      1  (2.97,5.42]
+37   6.15   12    15      1  (5.42,7.86]
+38   3.51    4    39      0  (2.97,5.42]
+39   3.00   14     3      1  (2.97,5.42]
+40   6.25   12    11      1  (5.42,7.86]
+41   7.81   12     3      1  (5.42,7.86]
+42  10.00   12    20      1  (7.86,10.3]
+43   4.50   14    16      1  (2.97,5.42]
+44   4.00   11    45      1  (2.97,5.42]
+45   6.38   13    11      1  (5.42,7.86]
+46  13.70   15    20      0  (12.8,15.2]
+47   1.67   10     1      0 (0.506,2.97]
+48   2.93   12    36      1 (0.506,2.97]
+49   3.65   14     9      0  (2.97,5.42]
+50   2.90   12    15      1 (0.506,2.97]
+51   1.63   12    18      1 (0.506,2.97]
+52   8.60   16     3      1  (7.86,10.3]
+53   5.00   12    15      0  (2.97,5.42]
+54   6.00   12     7      0  (5.42,7.86]
+55   2.50   12     2      0 (0.506,2.97]
+56   3.25   15     3      0  (2.97,5.42]
+57   3.40   16     1      1  (2.97,5.42]
+58  10.00    8    13      0  (7.86,10.3]
+59  21.63   18     8      1  (20.1,22.5]
+60   4.38   16     7      0  (2.97,5.42]
+61  11.71   13    40      1  (10.3,12.8]
+62  12.39   14    42      0  (10.3,12.8]
+63   6.25   10    36      0  (5.42,7.86]
+64   3.71   10    13      1  (2.97,5.42]
+65   7.78   14     9      0  (5.42,7.86]
+66  19.98   14    26      0  (17.6,20.1]
+67   6.25   16     7      1  (5.42,7.86]
+68  10.00   12    25      0  (7.86,10.3]
+69   5.71   16    10      0  (5.42,7.86]
+70   2.00   12     3      1 (0.506,2.97]
+71   5.71   16     3      1  (5.42,7.86]
+72  13.08   17    17      0  (12.8,15.2]
+73   4.91   12    17      0  (2.97,5.42]
+74   2.91   12    20      1 (0.506,2.97]
+75   3.75   12     7      1  (2.97,5.42]
+76  11.90   13    24      0  (10.3,12.8]
+77   4.00   12    28      1  (2.97,5.42]
+78   3.10   12     2      1  (2.97,5.42]
+79   8.45   12    19      0  (7.86,10.3]
+80   7.14   18    13      0  (5.42,7.86]
+81   4.50    9    22      0  (2.97,5.42]
+82   4.65   16     3      0  (2.97,5.42]
+83   2.90   10     4      1 (0.506,2.97]
+84   6.67   12     7      0  (5.42,7.86]
+85   3.50   12     6      1  (2.97,5.42]
+86   3.26   12    13      1  (2.97,5.42]
+87   3.25   12    14      1  (2.97,5.42]
+88   8.00   12    14      1  (7.86,10.3]
+89   9.85    8    40      0  (7.86,10.3]
+90   7.50   12    11      0  (5.42,7.86]
+91   5.91   12    14      0  (5.42,7.86]
+92  11.76   14    40      0  (10.3,12.8]
+93   3.00   12     1      1  (2.97,5.42]
+94   4.81   12     2      1  (2.97,5.42]
+95   6.50   12     4      1  (5.42,7.86]
+96   4.00    9    19      1  (2.97,5.42]
+97   3.50   13     1      0  (2.97,5.42]
+98  13.16   12    34      0  (12.8,15.2]
+99   4.25   14     5      0  (2.97,5.42]
+100  3.50   12     3      0  (2.97,5.42]
+101  5.13   15     6      1  (2.97,5.42]
+102  3.75   12    14      1  (2.97,5.42]
+103  4.50   12    35      1  (2.97,5.42]
+104  7.63   12     8      1  (5.42,7.86]
+105 15.00   14     7      0  (12.8,15.2]
+106  6.85   15    11      1  (5.42,7.86]
+107 13.33   12    14      0  (12.8,15.2]
+108  6.67   12    35      0  (5.42,7.86]
+109  2.53   12    46      1 (0.506,2.97]
+110  9.80   17     7      0  (7.86,10.3]
+111  3.37   11    45      0  (2.97,5.42]
+112 24.98   18    29      0    (22.5,25]
+113  5.40   12     6      0  (2.97,5.42]
+114  6.11   14    15      0  (5.42,7.86]
+115  4.20   14    33      1  (2.97,5.42]
+116  3.75   10    15      0  (2.97,5.42]
+117  3.50   14     5      1  (2.97,5.42]
+118  3.64   12     7      0  (2.97,5.42]
+119  3.80   15     6      0  (2.97,5.42]
+120  3.00    8    33      1  (2.97,5.42]
+121  5.00   16     2      1  (2.97,5.42]
+122  4.63   14     4      1  (2.97,5.42]
+123  3.00   15     1      0  (2.97,5.42]
+124  3.20   12    29      1  (2.97,5.42]
+125  3.91   18    17      0  (2.97,5.42]
+126  6.43   16    17      1  (5.42,7.86]
+127  5.48   10    36      1  (5.42,7.86]
+128  1.50    8    31      0 (0.506,2.97]
+129  2.90   10    23      1 (0.506,2.97]
+130  5.00   11    13      0  (2.97,5.42]
+131  8.92   18     3      0  (7.86,10.3]
+132  5.00   15    15      0  (2.97,5.42]
+133  3.52   12    48      0  (2.97,5.42]
+134  2.90   11     6      1 (0.506,2.97]
+135  4.50   12    12      0  (2.97,5.42]
+136  2.25   12     5      1 (0.506,2.97]
+137  5.00   14    19      0  (2.97,5.42]
+138 10.00   16     9      0  (7.86,10.3]
+139  3.75    2    39      0  (2.97,5.42]
+140 10.00   14    28      1  (7.86,10.3]
+141 10.95   16    23      0  (10.3,12.8]
+142  7.90   12     2      0  (7.86,10.3]
+143  4.72   12    15      1  (2.97,5.42]
+144  5.84   13     5      1  (5.42,7.86]
+145  3.83   12    18      1  (2.97,5.42]
+146  3.20   15     2      1  (2.97,5.42]
+147  2.00   10     3      1 (0.506,2.97]
+148  4.50   12    31      1  (2.97,5.42]
+149 11.55   16    20      1  (10.3,12.8]
+150  2.14   13    34      1 (0.506,2.97]
+151  2.38    9     5      0 (0.506,2.97]
+152  3.75   12    11      0  (2.97,5.42]
+153  5.52   13    31      0  (5.42,7.86]
+154  6.50   12     8      1  (5.42,7.86]
+155  3.10   12     2      1  (2.97,5.42]
+156 10.00   14    18      0  (7.86,10.3]
+157  6.63   16     3      0  (5.42,7.86]
+158 10.00   16     3      0  (7.86,10.3]
+159  2.31    9     4      1 (0.506,2.97]
+160  6.88   18     4      0  (5.42,7.86]
+161  2.83   10     1      0 (0.506,2.97]
+162  3.13   10     1      1  (2.97,5.42]
+163  8.00   13    28      0  (7.86,10.3]
+164  4.50   12    47      1  (2.97,5.42]
+165  8.65   18    13      1  (7.86,10.3]
+166  2.00   13     2      1 (0.506,2.97]
+167  4.75   12    48      1  (2.97,5.42]
+168  6.25   13     6      1  (5.42,7.86]
+169  6.00   13     8      0  (5.42,7.86]
+170 15.38   13    25      0  (15.2,17.6]
+171 14.58   18    13      1  (12.8,15.2]
+172 12.50   12     8      0  (10.3,12.8]
+173  5.25   12    19      1  (2.97,5.42]
+174  2.17   13     1      1 (0.506,2.97]
+175  7.14   12    43      1  (5.42,7.86]
+176  6.22   12    19      1  (5.42,7.86]
+177  9.00   12    11      1  (7.86,10.3]
+178 10.00   14    43      0  (7.86,10.3]
+179  5.77   10    44      0  (5.42,7.86]
+180  4.00   12    22      1  (2.97,5.42]
+181  8.75   16     3      0  (7.86,10.3]
+182  6.53   16     3      1  (5.42,7.86]
+183  7.60   12    41      1  (5.42,7.86]
+184  5.00   14     5      0  (2.97,5.42]
+185  5.00   12    14      1  (2.97,5.42]
+186 21.86   12    24      0  (20.1,22.5]
+187  8.64   12    28      0  (7.86,10.3]
+188  3.30   12    25      0  (2.97,5.42]
+189  4.44   12     3      0  (2.97,5.42]
+190  4.55   12    11      0  (2.97,5.42]
+191  3.50   12     7      1  (2.97,5.42]
+192  6.25   16     9      0  (5.42,7.86]
+193  3.85   16     5      0  (2.97,5.42]
+194  6.18   14     9      1  (5.42,7.86]
+195  2.91   11     1      1 (0.506,2.97]
+196  6.25   16     2      1  (5.42,7.86]
+197  6.25   12    13      1  (5.42,7.86]
+198  9.05   12    10      0  (7.86,10.3]
+199 10.00   17     5      0  (7.86,10.3]
+200 11.11   12    30      0  (10.3,12.8]
+201  6.88   12    31      0  (5.42,7.86]
+202  8.75   16     1      0  (7.86,10.3]
+203 10.00    8     9      0  (7.86,10.3]
+204  3.05   12    10      1  (2.97,5.42]
+205  3.00   12    38      1  (2.97,5.42]
+206  5.80   12    19      1  (5.42,7.86]
+207  4.10   16     5      1  (2.97,5.42]
+208  8.00   12    26      0  (7.86,10.3]
+209  6.15   12    35      1  (5.42,7.86]
+210  2.70    9     2      1 (0.506,2.97]
+211  2.75   13     1      1 (0.506,2.97]
+212  3.00   16    19      1  (2.97,5.42]
+213  3.00   14     3      1  (2.97,5.42]
+214  7.36    8    36      0  (5.42,7.86]
+215  7.50   14    29      0  (5.42,7.86]
+216  3.50   13     1      0  (2.97,5.42]
+217  8.10   12    38      1  (7.86,10.3]
+218  3.75   18     1      0  (2.97,5.42]
+219  3.25    9    29      0  (2.97,5.42]
+220  5.83    8    36      1  (5.42,7.86]
+221  3.50    8     4      0  (2.97,5.42]
+222  3.33   12    45      1  (2.97,5.42]
+223  4.00   14    22      1  (2.97,5.42]
+224  3.50   12    20      1  (2.97,5.42]
+225  6.25   16     5      0  (5.42,7.86]
+226  2.95    8    15      1 (0.506,2.97]
+227  5.71   13    10      1  (5.42,7.86]
+228  3.00    9     3      1  (2.97,5.42]
+229 22.86   16    16      0    (22.5,25]
+230  9.00   12    38      0  (7.86,10.3]
+231  8.33   15    33      0  (7.86,10.3]
+232  3.00   11     2      0  (2.97,5.42]
+233  5.75   14     6      0  (5.42,7.86]
+234  6.76   12    19      0  (5.42,7.86]
+235 10.00   12    29      0  (7.86,10.3]
+236  3.00   12     2      0  (2.97,5.42]
+237  3.50   18     3      1  (2.97,5.42]
+238  3.25   12     4      0  (2.97,5.42]
+239  4.00   12    10      1  (2.97,5.42]
+240  2.92   12     4      1 (0.506,2.97]
+241  3.06   12    14      1  (2.97,5.42]
+242  3.20   12    15      1  (2.97,5.42]
+243  4.75   12    19      0  (2.97,5.42]
+244  3.00   14    17      1  (2.97,5.42]
+245 18.16   16    29      0  (17.6,20.1]
+246  3.50   12     2      1  (2.97,5.42]
+247  4.11   14     5      0  (2.97,5.42]
+248  1.96   11    38      1 (0.506,2.97]
+249  4.29   12     3      1  (2.97,5.42]
+250  3.00   10    47      0  (2.97,5.42]
+251  6.45   12     7      0  (5.42,7.86]
+252  5.20    6    47      0  (2.97,5.42]
+253  4.50   13    23      1  (2.97,5.42]
+254  3.88   12    12      0  (2.97,5.42]
+255  3.45   10    11      1  (2.97,5.42]
+256 10.91   12    25      0  (10.3,12.8]
+257  4.10   14     6      1  (2.97,5.42]
+258  3.00   13     3      0  (2.97,5.42]
+259  5.90   12    14      0  (5.42,7.86]
+260 18.00   18    13      1  (17.6,20.1]
+261  4.00   12     9      0  (2.97,5.42]
+262  3.00   12     1      0  (2.97,5.42]
+263  3.55   12     6      1  (2.97,5.42]
+264  3.00   12    11      1  (2.97,5.42]
+265  8.75   12    47      0  (7.86,10.3]
+266  2.90    8    49      1 (0.506,2.97]
+267  6.26   13    37      1  (5.42,7.86]
+268  3.50   13     2      1  (2.97,5.42]
+269  4.60   14     7      1  (2.97,5.42]
+270  6.00   12    22      0  (5.42,7.86]
+271  2.89   10     8      1 (0.506,2.97]
+272  5.58   16     1      0  (5.42,7.86]
+273  4.00   12    43      1  (2.97,5.42]
+274  6.00   16     2      0  (5.42,7.86]
+275  4.50   12     2      1  (2.97,5.42]
+276  2.92   14     1      0 (0.506,2.97]
+277  4.33   18     1      0  (2.97,5.42]
+278 18.89   17    26      0  (17.6,20.1]
+279  4.28   13     1      1  (2.97,5.42]
+280  4.57   14    37      1  (2.97,5.42]
+281  6.25   15    12      1  (5.42,7.86]
+282  2.95   14    41      0 (0.506,2.97]
+283  8.75   12    24      0  (7.86,10.3]
+284  8.50    8    38      0  (7.86,10.3]
+285  3.75   12    18      1  (2.97,5.42]
+286  3.15   12    26      0  (2.97,5.42]
+287  5.00    8    45      0  (2.97,5.42]
+288  6.46   12    27      0  (5.42,7.86]
+289  2.00    9     2      0 (0.506,2.97]
+290  4.79   12    41      0  (2.97,5.42]
+291  5.78   16    11      0  (5.42,7.86]
+292  3.18   12     5      1  (2.97,5.42]
+293  4.68   16     3      1  (2.97,5.42]
+294  4.10   12     3      1  (2.97,5.42]
+295  2.91   12     4      0 (0.506,2.97]
+296  6.00   13    21      0  (5.42,7.86]
+297  3.60   10    34      1  (2.97,5.42]
+298  3.95    6    49      0  (2.97,5.42]
+299  7.00   12     6      0  (5.42,7.86]
+300  3.00   12    26      1  (2.97,5.42]
+301  6.08   16     9      0  (5.42,7.86]
+302  8.63   12    23      0  (7.86,10.3]
+303  3.00    8    33      0  (2.97,5.42]
+304  3.75   12     5      1  (2.97,5.42]
+305  2.90    6    49      0 (0.506,2.97]
+306  3.00    4    48      0  (2.97,5.42]
+307  6.25   11    35      0  (5.42,7.86]
+308  3.50   11    23      1  (2.97,5.42]
+309  3.00    7    26      1  (2.97,5.42]
+310  3.24   12    16      1  (2.97,5.42]
+311  8.02   18    23      1  (7.86,10.3]
+312  3.33   12    36      1  (2.97,5.42]
+313  5.25   16     4      0  (2.97,5.42]
+314  6.25   12    10      0  (5.42,7.86]
+315  3.50   14    18      0  (2.97,5.42]
+316  2.95   12     3      0 (0.506,2.97]
+317  3.00   10     7      1  (2.97,5.42]
+318  4.69   10     7      0  (2.97,5.42]
+319  3.73    9    33      1  (2.97,5.42]
+320  4.00   10    34      0  (2.97,5.42]
+321  4.00   12     8      1  (2.97,5.42]
+322  2.90   12    17      1 (0.506,2.97]
+323  3.05   12     2      1  (2.97,5.42]
+324  5.05   10     5      1  (2.97,5.42]
+325 13.95   16    41      0  (12.8,15.2]
+326 18.16   16    35      0  (17.6,20.1]
+327  6.25   16    11      0  (5.42,7.86]
+328  5.25   12     4      0  (2.97,5.42]
+329  4.79   12    12      1  (2.97,5.42]
+330  3.35    7    35      1  (2.97,5.42]
+331  3.00    8    33      0  (2.97,5.42]
+332  8.43   16     8      0  (7.86,10.3]
+333  5.70   16     2      0  (5.42,7.86]
+334 11.98   18     8      0  (10.3,12.8]
+335  3.50   13    29      1  (2.97,5.42]
+336  4.24   10    14      0  (2.97,5.42]
+337  7.00   16    26      1  (5.42,7.86]
+338  6.00   14    11      1  (5.42,7.86]
+339 12.22   16    10      0  (10.3,12.8]
+340  4.50   12    13      0  (2.97,5.42]
+341  3.00    9    23      1  (2.97,5.42]
+342  2.90   11     1      0 (0.506,2.97]
+343 15.00   11    35      0  (12.8,15.2]
+344  4.00   12     5      0  (2.97,5.42]
+345  5.25   11    13      0  (2.97,5.42]
+346  4.00   12    22      0  (2.97,5.42]
+347  3.30   12    21      1  (2.97,5.42]
+348  5.05   12    19      1  (2.97,5.42]
+349  3.58   12    13      0  (2.97,5.42]
+350  5.00   14    15      0  (2.97,5.42]
+351  4.57   14     3      0  (2.97,5.42]
+352 12.50   18     6      0  (10.3,12.8]
+353  3.45   12     6      1  (2.97,5.42]
+354  4.63   12    16      1  (2.97,5.42]
+355 10.00   12    31      0  (7.86,10.3]
+356  2.92   11     1      1 (0.506,2.97]
+357  4.51   12     5      0  (2.97,5.42]
+358  6.50   17     3      0  (5.42,7.86]
+359  7.50   16    11      0  (5.42,7.86]
+360  3.54   13     6      1  (2.97,5.42]
+361  4.20   13    11      1  (2.97,5.42]
+362  3.51   12     7      1  (2.97,5.42]
+363  4.50   14     5      0  (2.97,5.42]
+364  3.35   14     5      1  (2.97,5.42]
+365  2.91   11     2      0 (0.506,2.97]
+366  5.25   10    44      0  (2.97,5.42]
+367  4.05    8    44      0  (2.97,5.42]
+368  3.75   14    13      1  (2.97,5.42]
+369  3.40   12    26      1  (2.97,5.42]
+370  3.00   10     2      1  (2.97,5.42]
+371  6.29   17    10      0  (5.42,7.86]
+372  2.54    9     2      1 (0.506,2.97]
+373  4.50   12    35      1  (2.97,5.42]
+374  3.13   12     6      1  (2.97,5.42]
+375  6.36   14     8      0  (5.42,7.86]
+376  4.68   16     1      0  (2.97,5.42]
+377  6.80   12    14      0  (5.42,7.86]
+378  8.53   10    14      0  (7.86,10.3]
+379  4.17    0    22      1  (2.97,5.42]
+380  3.75   14     8      1  (2.97,5.42]
+381 11.10   15     1      1  (10.3,12.8]
+382  3.26   16    15      1  (2.97,5.42]
+383  9.13   12    14      0  (7.86,10.3]
+384  4.50   11    37      0  (2.97,5.42]
+385  3.00   11     1      1  (2.97,5.42]
+386  8.75   12     4      0  (7.86,10.3]
+387  4.14   13    29      1  (2.97,5.42]
+388  2.87   12    45      1 (0.506,2.97]
+389  3.35   13    22      1  (2.97,5.42]
+390  6.08   16    42      0  (5.42,7.86]
+391  3.00   15     9      0  (2.97,5.42]
+392  4.20   16     8      1  (2.97,5.42]
+393  5.60   15    31      1  (5.42,7.86]
+394 10.00   12    24      0  (7.86,10.3]
+395 12.50   18    16      0  (10.3,12.8]
+396  3.76    6     6      0  (2.97,5.42]
+397  3.10    6    14      1  (2.97,5.42]
+398  4.29   12    47      1  (2.97,5.42]
+399 10.92   12    34      0  (10.3,12.8]
+400  7.50   16     6      1  (5.42,7.86]
+401  4.05    9     7      1  (2.97,5.42]
+402  4.65   12    27      0  (2.97,5.42]
+403  5.00   11    24      0  (2.97,5.42]
+404  2.90   10    18      1 (0.506,2.97]
+405  8.00   12    12      1  (7.86,10.3]
+406  8.43    8    27      0  (7.86,10.3]
+407  2.92    9    49      1 (0.506,2.97]
+408  6.25   17     4      1  (5.42,7.86]
+409  6.25   16    24      1  (5.42,7.86]
+410  5.11   11     3      0  (2.97,5.42]
+411  4.00   10     2      1  (2.97,5.42]
+412  4.44    8    29      0  (2.97,5.42]
+413  6.88   13    34      0  (5.42,7.86]
+414  5.43   14    10      0  (5.42,7.86]
+415  3.00   13     5      1  (2.97,5.42]
+416  2.90   11     2      1 (0.506,2.97]
+417  6.25    7    39      0  (5.42,7.86]
+418  4.34   16     5      1  (2.97,5.42]
+419  3.25   12    14      1  (2.97,5.42]
+420  7.26   13     8      0  (5.42,7.86]
+421  6.35   14    10      1  (5.42,7.86]
+422  5.63   16     2      0  (5.42,7.86]
+423  8.75   14     9      0  (7.86,10.3]
+424  3.20   11     1      0  (2.97,5.42]
+425  3.00    8    45      1  (2.97,5.42]
+426  3.00   14    33      1  (2.97,5.42]
+427 12.50   17    21      0  (10.3,12.8]
+428  2.88   10     2      1 (0.506,2.97]
+429  3.35   12     9      0  (2.97,5.42]
+430  6.50   12    33      0  (5.42,7.86]
+431 10.38   18    16      0  (10.3,12.8]
+432  4.50   14    10      0  (2.97,5.42]
+433 10.00   18     9      0  (7.86,10.3]
+434  3.81   12     8      1  (2.97,5.42]
+435  8.80   16     9      0  (7.86,10.3]
+436  9.42   14    23      1  (7.86,10.3]
+437  6.33   12    23      0  (5.42,7.86]
+438  4.00    9    22      0  (2.97,5.42]
+439  2.90   12    37      1 (0.506,2.97]
+440 20.00   12    22      0  (17.6,20.1]
+441 11.25   17    28      0  (10.3,12.8]
+442  3.50   12    14      1  (2.97,5.42]
+443  6.00   15    19      1  (5.42,7.86]
+444 14.38   17    10      0  (12.8,15.2]
+445  6.36   16    25      0  (5.42,7.86]
+446  3.55   12    21      1  (2.97,5.42]
+447  3.00   15    32      0  (2.97,5.42]
+448  4.50   16    21      0  (2.97,5.42]
+449  6.63   12    36      1  (5.42,7.86]
+450  9.30   15     2      0  (7.86,10.3]
+451  3.00   12    11      1  (2.97,5.42]
+452  3.25   12    40      1  (2.97,5.42]
+453  1.50   12    11      1 (0.506,2.97]
+454  5.90   12     9      1  (5.42,7.86]
+455  8.00   16    23      0  (7.86,10.3]
+456  2.90   11     1      1 (0.506,2.97]
+457  3.29   14    30      0  (2.97,5.42]
+458  6.50   14    41      0  (5.42,7.86]
+459  4.00   13     6      1  (2.97,5.42]
+460  6.00   14    11      0  (5.42,7.86]
+461  4.08   12    43      1  (2.97,5.42]
+462  3.75   12    39      1  (2.97,5.42]
+463  3.05    8    50      1  (2.97,5.42]
+464  3.50   12    26      1  (2.97,5.42]
+465  2.92    3    51      0 (0.506,2.97]
+466  4.50   11     3      0  (2.97,5.42]
+467  3.35   15     3      1  (2.97,5.42]
+468  5.95   11    15      0  (5.42,7.86]
+469  8.00   12    17      0  (7.86,10.3]
+470  3.00    4    36      0  (2.97,5.42]
+471  5.00    9    31      0  (2.97,5.42]
+472  5.50   12     9      0  (5.42,7.86]
+473  2.65   12    42      1 (0.506,2.97]
+474  3.00   11     3      1  (2.97,5.42]
+475  4.50   12    37      1  (2.97,5.42]
+476 17.50   16    23      0  (15.2,17.6]
+477  8.18   13    21      0  (7.86,10.3]
+478  9.09   15    11      0  (7.86,10.3]
+479 11.82   16    35      0  (10.3,12.8]
+480  3.25   12    42      1  (2.97,5.42]
+481  4.50   12     3      0  (2.97,5.42]
+482  4.50   12    13      0  (2.97,5.42]
+483  3.71    9    14      0  (2.97,5.42]
+484  6.50   10    14      0  (5.42,7.86]
+485  2.90   12    39      1 (0.506,2.97]
+486  5.60   11    11      0  (5.42,7.86]
+487  2.23    8    28      0 (0.506,2.97]
+488  5.00    6    18      1  (2.97,5.42]
+489  8.33   16     6      0  (7.86,10.3]
+490  2.90   12    26      1 (0.506,2.97]
+491  6.25   12    21      0  (5.42,7.86]
+492  4.55   16    34      0  (2.97,5.42]
+493  3.28   12    17      1  (2.97,5.42]
+494  2.30   10     2      1 (0.506,2.97]
+495  3.30   13     5      1  (2.97,5.42]
+496  3.15   13     1      1  (2.97,5.42]
+497 12.50   14    40      0  (10.3,12.8]
+498  5.15   16    39      1  (2.97,5.42]
+499  3.13   10     1      0  (2.97,5.42]
+500  7.25   12    14      0  (5.42,7.86]
+501  2.90   12     2      1 (0.506,2.97]
+502  1.75   11     2      0 (0.506,2.97]
+503  2.89    0    42      1 (0.506,2.97]
+504  2.90    5    34      1 (0.506,2.97]
+505 17.71   16    10      0  (17.6,20.1]
+506  6.25   16     4      0  (5.42,7.86]
+507  2.60    9     4      0 (0.506,2.97]
+508  6.63   15    21      1  (5.42,7.86]
+509  3.50   12    31      1  (2.97,5.42]
+510  6.50   12    20      0  (5.42,7.86]
+511  3.00   12    36      1  (2.97,5.42]
+512  4.38   13     7      0  (2.97,5.42]
+513 10.00   12    15      0  (7.86,10.3]
+514  4.95    7    25      0  (2.97,5.42]
+515  9.00   17     7      1  (7.86,10.3]
+516  1.43   12    17      1 (0.506,2.97]
+517  3.08   12     3      0  (2.97,5.42]
+518  9.33   14    12      0  (7.86,10.3]
+519  7.50   12    18      0  (5.42,7.86]
+520  4.75   13    47      0  (2.97,5.42]
+521  5.65   12     2      0  (5.42,7.86]
+522 15.00   16    14      1  (12.8,15.2]
+523  2.27   10     2      1 (0.506,2.97]
+524  4.67   15    13      0  (2.97,5.42]
+525 11.56   16     5      0  (10.3,12.8]
+526  3.50   14     5      1  (2.97,5.42]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Now, we can make a frequency <code>tabyl</code> to compute the <em>absolute class frequency distribution</em> and <em>relative class frequency distribution</em></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">tabyl</span>(wage_cut) <span class="sc">|&gt;</span> <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="xsjtfnqkiy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xsjtfnqkiy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xsjtfnqkiy thead, #xsjtfnqkiy tbody, #xsjtfnqkiy tfoot, #xsjtfnqkiy tr, #xsjtfnqkiy td, #xsjtfnqkiy th {
+  border-style: none;
+}
+
+#xsjtfnqkiy p {
+  margin: 0;
+  padding: 0;
+}
+
+#xsjtfnqkiy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xsjtfnqkiy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xsjtfnqkiy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xsjtfnqkiy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xsjtfnqkiy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xsjtfnqkiy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xsjtfnqkiy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xsjtfnqkiy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xsjtfnqkiy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xsjtfnqkiy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xsjtfnqkiy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xsjtfnqkiy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xsjtfnqkiy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xsjtfnqkiy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xsjtfnqkiy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xsjtfnqkiy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xsjtfnqkiy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xsjtfnqkiy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xsjtfnqkiy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xsjtfnqkiy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xsjtfnqkiy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xsjtfnqkiy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xsjtfnqkiy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xsjtfnqkiy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xsjtfnqkiy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xsjtfnqkiy .gt_left {
+  text-align: left;
+}
+
+#xsjtfnqkiy .gt_center {
+  text-align: center;
+}
+
+#xsjtfnqkiy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xsjtfnqkiy .gt_font_normal {
+  font-weight: normal;
+}
+
+#xsjtfnqkiy .gt_font_bold {
+  font-weight: bold;
+}
+
+#xsjtfnqkiy .gt_font_italic {
+  font-style: italic;
+}
+
+#xsjtfnqkiy .gt_super {
+  font-size: 65%;
+}
+
+#xsjtfnqkiy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xsjtfnqkiy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xsjtfnqkiy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xsjtfnqkiy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xsjtfnqkiy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xsjtfnqkiy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xsjtfnqkiy .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xsjtfnqkiy .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xsjtfnqkiy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="wage_cut" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">wage_cut</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="percent" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">percent</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="wage_cut">(0.506,2.97]</td>
+<td class="gt_row gt_right" headers="n">61</td>
+<td class="gt_row gt_right" headers="percent">0.115969582</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="wage_cut">(2.97,5.42]</td>
+<td class="gt_row gt_right" headers="n">244</td>
+<td class="gt_row gt_right" headers="percent">0.463878327</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="wage_cut">(5.42,7.86]</td>
+<td class="gt_row gt_right" headers="n">108</td>
+<td class="gt_row gt_right" headers="percent">0.205323194</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="wage_cut">(7.86,10.3]</td>
+<td class="gt_row gt_right" headers="n">61</td>
+<td class="gt_row gt_right" headers="percent">0.115969582</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="wage_cut">(10.3,12.8]</td>
+<td class="gt_row gt_right" headers="n">25</td>
+<td class="gt_row gt_right" headers="percent">0.047528517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="wage_cut">(12.8,15.2]</td>
+<td class="gt_row gt_right" headers="n">11</td>
+<td class="gt_row gt_right" headers="percent">0.020912548</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="wage_cut">(15.2,17.6]</td>
+<td class="gt_row gt_right" headers="n">3</td>
+<td class="gt_row gt_right" headers="percent">0.005703422</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="wage_cut">(17.6,20.1]</td>
+<td class="gt_row gt_right" headers="n">8</td>
+<td class="gt_row gt_right" headers="percent">0.015209125</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="wage_cut">(20.1,22.5]</td>
+<td class="gt_row gt_right" headers="n">3</td>
+<td class="gt_row gt_right" headers="percent">0.005703422</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="wage_cut">(22.5,25]</td>
+<td class="gt_row gt_right" headers="n">2</td>
+<td class="gt_row gt_right" headers="percent">0.003802281</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>We can now add a definition of <em>class</em> frequency distributions to our definitions of frequency distributions</li>
+<li>The <strong>absolute class frequency</strong>, or <em>class frequency</em>, is the number of measurements in the data set that are in the class
+<ul>
+<li>This is the one we just made for the wage data</li>
+</ul></li>
+<li>The <strong>absolute frequency distribution</strong> is a tabular summary of a data set that shows the absolute class frequency</li>
+<li>The <strong>relative class frequency</strong> is the <em>proportion</em> of all measurements in the data set that are in the class
+<ul>
+<li>For each class: the absolute frequency divided by <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li>The <strong>relative frequency distribution</strong> is a tabular summary of a data set that shows the relative class frequency for each class</li>
+</ul>
+</section>
+<section id="example-class-frequency-distributions" class="slide level2 scrollable">
+<h2>Example: Class frequency distributions</h2>
+<ul>
+<li>You have:
+<ul>
+<li><p><span class="math inline">\(n=100\)</span> observations on net revenues ($ millions) for a random sample of the top 500 Canadian companies in 2018</p></li>
+<li><p>The minimum is -100, maximum is 300</p></li>
+<li><p>Compute:</p></li>
+<li><p>Number of classes via Sturges’ rule: <span class="math inline">\(1+3.3\times \log_{10}100=1+3.3\times 2 = 7.6,\)</span> so <span class="math inline">\(k=8\)</span></p></li>
+<li><p>Class width: <span class="math inline">\((300 - -100)/8=50\)</span></p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Let <span class="math inline">\([a,b]\)</span> denote a <em>closed</em> interval (includes endpoints), <span class="math inline">\((a,b)\)</span> denote an ‘open’ interval (excludes endpoints), and <span class="math inline">\([a,b)\)</span> denote closed on the left open on the right</li>
+</ul>
+<ol type="1">
+<li>Create 9 class endpoints: -100, -50, 0, 50, 100, 150, 200, 250, 300</li>
+<li>Create 8 classes, <span class="math inline">\([-100,-50)\)</span>, <span class="math inline">\([-50,0)\)</span>, …</li>
+<li>Last class: <span class="math inline">\([250,300]\)</span> to ensure the classes are collectively exhaustive</li>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Table 1: Absolute class frequency distribution of 100 Canadian Companies’ Net Revenue in 2018</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Class (net revenues in <span class="math inline">\(10^6\)</span>)</th>
+<th style="text-align: left;">Absolute Class Frequency (number of companies in class)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">-100 to under -50</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-50 to under 0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0 to under 50</td>
+<td style="text-align: left;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50 to under 100</td>
+<td style="text-align: left;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">100 to under 150</td>
+<td style="text-align: left;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">150 to under 200</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">200 to under 250</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">250 to 300</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">100</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Table 2: Absolute and relative class frequency distribution of 100 Canadian Companies’ Net Revenue in 2018</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Class</th>
+<th style="text-align: left;">Absolute Frequency</th>
+<th style="text-align: left;">Relative Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">-100 to under -50</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-50 to under 0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0 to under 50</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">0.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50 to under 100</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">0.35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">100 to under 150</td>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">0.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">150 to under 200</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.05</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">200 to under 250</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">250 to 300</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">1.00</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="part-ii-one-quantitative-variable" class="title-slide slide level1 center">
+<h1>Part II: One Quantitative Variable</h1>
+
+</section>
+<section id="graphs-histograms" class="slide level2">
+<h2>Graphs: Histograms</h2>
+<ul>
+<li></li>
+<li>If we make a bar plot with quantitative data, we run into the same problem we saw when making frequency tables:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-3"><a href=""></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-9-1.png" style="height:100.0%" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<ul>
+<li></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Possible solutions:
+<ul>
+<li>stem and leaf diagrams: <em>self-study, SZ 2.1</em></li>
+<li>dotplot: <em>self-study, IMS 5.2</em></li>
+<li>frequency histograms</li>
+<li>density plots</li>
+<li>…</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>A <strong>frequency histogram</strong> is a graphical device showing how data are distributed across the range of their values by collecting them into classes and indicating the number of measurements in each class
+<ul>
+<li>horizontal axis: upper and lower limits of classes</li>
+<li>vertical axis: number of observations in each class</li>
+<li>rectangles: class frequencies</li>
+<li>in <code>ggplot</code>, use <code>geom_histogram()</code></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> </span>
+<span id="cb22-2"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb22-3"><a href=""></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>You can make a histogram and enforce Sturges’ rule</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb23-2"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb23-3"><a href=""></a>        <span class="fu">aes</span>(<span class="at">x =</span> wage), </span>
+<span id="cb23-4"><a href=""></a>        <span class="at">bins =</span> k_wage</span>
+<span id="cb23-5"><a href=""></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Alternative viewpoint: the histogram is a <em>barplot</em> after turning values into classes: “binning”. You can also <code>cut</code> the data and then make a barplot:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> </span>
+<span id="cb24-2"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a href=""></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage_cut))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>A <strong>relative frequency histogram</strong> is a graphical device showing how data are distributed across the range of their values by collecting them into classes and indicating the proportion of measurements in each class
+<ul>
+<li>Horizontal axis: upper and lower limits of data classes</li>
+<li>Vertical axis: relative class frequency</li>
+</ul></li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb25-2"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb25-3"><a href=""></a>        <span class="fu">aes</span>(<span class="at">x =</span> wage, </span>
+<span id="cb25-4"><a href=""></a>            <span class="at">y =</span> <span class="fu">after_stat</span>(density)</span>
+<span id="cb25-5"><a href=""></a>        ), </span>
+<span id="cb25-6"><a href=""></a>    <span class="at">bins =</span> k_wage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The number of classes is quite important for the resulting visualization.</li>
+<li>Consider using <strong>density plots</strong> for numerical variables
+<ul>
+<li>portray frequency distributions as smooth curves</li>
+<li>remove irregularities from histograms</li>
+</ul></li>
+<li>The density plot is referred to as <em>A Very Fine Relative Frequency Histogram</em> in SZ,
+<ul>
+<li>see SZ Fig. 2.5 and 2.6 for important background.</li>
+<li>see also IMS 5.3</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>With <code>ggplot</code>, use <code>geom_density</code>.</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-2"><a href=""></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Add multiple visualizations to plot using <code>+</code>:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb27-2"><a href=""></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb27-4"><a href=""></a>        <span class="fu">aes</span>(<span class="at">x =</span> wage, </span>
+<span id="cb27-5"><a href=""></a>            <span class="at">y =</span> <span class="fu">after_stat</span>(density)</span>
+<span id="cb27-6"><a href=""></a>        ), </span>
+<span id="cb27-7"><a href=""></a>        <span class="at">bins =</span> <span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Add more frills with <code>+</code>:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href=""></a>wage1 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb28-2"><a href=""></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> wage)) <span class="sc">+</span></span>
+<span id="cb28-3"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb28-4"><a href=""></a>        <span class="fu">aes</span>(<span class="at">x =</span> wage, </span>
+<span id="cb28-5"><a href=""></a>            <span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
+<span id="cb28-6"><a href=""></a>        <span class="at">bins =</span> k_wage</span>
+<span id="cb28-7"><a href=""></a>    ) <span class="sc">+</span></span>
+<span id="cb28-8"><a href=""></a>    <span class="fu">ggtitle</span>(<span class="st">"Hourly wage distribution in the wage1 data"</span>) <span class="sc">+</span></span>
+<span id="cb28-9"><a href=""></a>    <span class="fu">xlab</span>(<span class="st">"Hourly wages"</span>) <span class="sc">+</span></span>
+<span id="cb28-10"><a href=""></a>    <span class="fu">ylab</span>(<span class="st">"Relative frequency"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="old-faithful" class="slide level2">
+<h2>Old Faithful</h2>
+<p><img data-src="figures/yellowstonevacations-old-faithful-trees-header-desktop.jpg" style="width:100.0%"></p>
+<ul>
+<li><p>Old Faithful is the most famous geyser in Yellowstone</p></li>
+<li><!-- - Its eruption times form a famous bimodal distribution --></li>
+<li><p>What does the following plot mean if you are waiting for an eruption?</p></li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>faithful <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> waiting)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb29-3"><a href=""></a>        <span class="at">bins =</span> <span class="dv">20</span>, </span>
+<span id="cb29-4"><a href=""></a>        <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span></span>
+<span id="cb29-5"><a href=""></a>    <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="part-iii-two-quantitative-variables" class="title-slide slide level1 center">
+<h1>Part III: Two Quantitative Variables</h1>
+
+</section>
+<section id="graphs-scatter-plot" class="slide level2">
+<h2>Graphs: scatter plot</h2>
+<ul>
+<li>Scatterplot: relationship between quantitative variables</li>
+<li>We will use the <code>gapminder</code> data for this.
+<ul>
+<li>data on GDP and life expectancy in 142 countries in 5-year increments from 1952 to 2007</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb30-2"><a href=""></a>gapminder</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="gapminder-plot" class="slide level2 scrollable">
+<h2>Gapminder plot</h2>
+<ul>
+<li>Extract the data from 1952 …</li>
+<li>… then create a scatter plot of health (life expectancy) versus wealth (log of GDP per capita)</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb32-2"><a href=""></a>    <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">|&gt;</span></span>
+<span id="cb32-3"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb32-4"><a href=""></a>    <span class="fu">geom_point</span>(</span>
+<span id="cb32-5"><a href=""></a>        <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log</span>(gdpPercap), </span>
+<span id="cb32-6"><a href=""></a>            <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb32-7"><a href=""></a>    <span class="fu">xlab</span>(<span class="st">"log GDP"</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href=""></a>    <span class="fu">ylab</span>(<span class="st">"life expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb32-9"><a href=""></a>    <span class="fu">ggtitle</span>(<span class="st">"Health and wealth in 1952 (source: Gapminder)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<ul>
+<li>Anatomy of a scatterplot:
+<ol type="1">
+<li>Each axis represents a quantitative variable:
+<ul>
+<li><span class="math inline">\(x\)</span>: GDP per capita</li>
+<li><span class="math inline">\(y\)</span>: life expectancy</li>
+</ul></li>
+<li>Every dot corresponds to an observation: a country</li>
+<li>The horizontal position of the dot is the measurement for <span class="math inline">\(x\)</span></li>
+<li>The vertical position of the dot is the measurement for <span class="math inline">\(y\)</span></li>
+</ol></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Conclusions:
+<ol type="1">
+<li>in 1952, wealthier nations are healthier nations</li>
+<li>scatterplots are a powerful tool to visualize the association between numerical variables</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The health-wealth scatter plot reveals a clear relationship.</li>
+<li>How about the relationship length v. depth of penguin’s bill?
+<ul>
+<li>I’d expect a positive relationship, but…</li>
+</ul></li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href=""></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb33-4"><a href=""></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="part-iv-multivariate-plots" class="title-slide slide level1 center">
+<h1>Part IV: Multivariate plots</h1>
+
+</section>
+<section id="multivariate-plots" class="slide level2">
+<h2>Multivariate plots</h2>
+<ul>
+<li>We have seen a few key graphs for your graph-making toolkit:
+<ul>
+<li>barplot (one or two qualitative variable)</li>
+<li>histogram, etc. (one quantitative variable)</li>
+<li>scatter plot (two quantitative variables)</li>
+</ul></li>
+<li>Use basics to create more complex graphs:
+<ul>
+<li>two qualitative variables</li>
+<li>one qualitative, one quantitative variable</li>
+<li>how relationship quantitative variables depends on a third, qualitative variable</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>For barplots, we use a stacked/dodged barplot with <em>colouring</em> to add the information about a second categorical variable:</li>
+</ul>
+
+<img data-src="A04_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+<ul>
+<li>We can use this technique for other graphs: color histogram by value of a qualitative variable</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href=""></a>    <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb34-4"><a href=""></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb34-5"><a href=""></a>        <span class="fu">aes</span>(</span>
+<span id="cb34-6"><a href=""></a>            <span class="at">x =</span> <span class="fu">log</span>(gdpPercap),</span>
+<span id="cb34-7"><a href=""></a>            <span class="at">y =</span> <span class="fu">after_stat</span>(density),</span>
+<span id="cb34-8"><a href=""></a>            <span class="at">fill =</span> continent</span>
+<span id="cb34-9"><a href=""></a>        ),</span>
+<span id="cb34-10"><a href=""></a>        <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">bins =</span> <span class="dv">10</span></span>
+<span id="cb34-11"><a href=""></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>We can color the points in a scatterplot in the same way. For example, the surprising non-relationship between bill depth and length…</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-23-1.png" style="height:70.0%" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>… is resolved if we color by species!</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href=""></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href=""></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb35-4"><a href=""></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">colour =</span> species))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-24-1.png" style="height:60.0%" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Or: scatter plot, color by one qualitative variable and facets by another:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href=""></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb36-3"><a href=""></a>        <span class="at">x =</span> <span class="fu">log</span>(gdpPercap),</span>
+<span id="cb36-4"><a href=""></a>        <span class="at">y =</span> lifeExp,</span>
+<span id="cb36-5"><a href=""></a>        <span class="at">color =</span> continent</span>
+<span id="cb36-6"><a href=""></a>    )) <span class="sc">+</span></span>
+<span id="cb36-7"><a href=""></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb36-8"><a href=""></a>    <span class="fu">xlab</span>(<span class="st">"log of GDP"</span>) <span class="sc">+</span></span>
+<span id="cb36-9"><a href=""></a>    <span class="fu">ylab</span>(<span class="st">"life expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb36-10"><a href=""></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="A04_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="A04_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="A04_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="A04_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="A04_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
