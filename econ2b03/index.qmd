@@ -35,6 +35,8 @@ Below are the slides and notes, organized by part.
 | – C02: Confidence intervals: means and proportions | [slides](slides/C_Inferential_Statistics/C02.html){target="_blank" rel="noopener"} |
 | – C03: Introduction to hypothesis testing | [slides](slides/C_Inferential_Statistics/C03.html){target="_blank" rel="noopener"} |
 | – C04: The critical value approach | [slides](slides/C_Inferential_Statistics/C04.html){target="_blank" rel="noopener"} |
+| – C05: The p-value approach | [slides](slides/C_Inferential_Statistics/C05.html){target="_blank" rel="noopener"} |
+| – C06: Inference in two-population problems | [slides](slides/C_Inferential_Statistics/C06.html){target="_blank" rel="noopener"} |
 :::
 
 
