@@ -209,18 +209,14 @@
 <section class="slide level2">
 
 <aside class="notes">
-<p>This lecture should feel like the reinterpretation of C04, not a brand-new topic.</p>
+<p>Mic check: Is the microphone on?</p>
+<p>This lecture should feel like the reinterpretation of the previous lecture (critical value approach), not a brand-new topic.</p>
 <ul>
-<li>C04: decision rule via critical values</li>
-<li>C05: same logic via tail probabilities</li>
+<li>Previous lecture: decision rule via critical values</li>
+<li>This lecture: same logic via tail probabilities</li>
 <li>Then extend the same testing framework to one population proportion</li>
 </ul>
-<p>Keep emphasizing:</p>
-<ul>
-<li>a p-value is a probability computed under <span class="math inline">\(H_0\)</span></li>
-<li>smaller p-values mean stronger evidence against <span class="math inline">\(H_0\)</span></li>
-<li>CVA and PVA must agree when used correctly</li>
-</ul>
+<p>Keep emphasizing: - a p-value is a probability computed under <span class="math inline">\(H_0\)</span> - smaller p-values mean stronger evidence against <span class="math inline">\(H_0\)</span> - CVA and PVA must agree when used correctly</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -289,9 +285,10 @@
 <section id="previously-part-c-so-far" class="slide level2">
 <h2>Previously: Part C so far</h2>
 <ul>
-<li>hypothesis testing basics</li>
-<li>Type I and Type II errors</li>
-<li>the critical value approach for a population mean</li>
+<li>confidence intervals</li>
+<li>basics of hypothesis testing (null vs alternative)</li>
+<li>making errors (Type I and Type II)</li>
+<li>the critical value approach (rejection regions)</li>
 </ul>
 </section>
 <section id="this-lecture" class="slide level2">
@@ -320,31 +317,14 @@
 <li>how to test hypotheses about a population proportion</li>
 </ol></li>
 </ul>
-</section>
-<section id="companion-reading-notes" class="slide level2">
-<h2>Companion reading notes</h2>
-<ul>
-<li>In <strong>Shafer and Zhang</strong>, the closest reading matches are Sections 8.3 to 8.5:
-<ul>
-<li>observed significance</li>
-<li>the p-value approach</li>
-<li>tests for a population proportion</li>
-</ul></li>
-<li>In <strong>OpenIntro Statistics</strong>, the relevant benchmark is the material on:
-<ul>
-<li>p-values as tail areas under the null</li>
-<li>stronger versus weaker evidence</li>
-<li>one-sided and two-sided tests</li>
-</ul></li>
-</ul>
 </section></section>
 <section>
 <section id="part-i-from-critical-values-to-p-values" class="title-slide slide level1 center">
 <h1>Part I: From critical values to p-values</h1>
 
 </section>
-<section id="warm-up-what-c04-already-gave-us" class="slide level2">
-<h2>Warm-up: what C04 already gave us</h2>
+<section id="warm-up-the-critical-value-approach" class="slide level2">
+<h2>Warm-up: the critical value approach</h2>
 <div class="exercise-callout" title="Exercise: same sample, different alpha">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -352,28 +332,22 @@
 <p><strong>Exercise: same sample, different alpha</strong></p>
 </div>
 <div class="callout-content">
+<p>A machine dispenses <span class="math inline">\(\mu_0 = 8.1\)</span> oz. With known <span class="math inline">\(\sigma = 0.22\)</span>, a sample of <span class="math inline">\(n = 30\)</span> has <span class="math inline">\(\bar{X} = 8.2\)</span>, giving a test statistic <span class="math inline">\(Z \approx 2.49\)</span> for <span class="math inline">\(H_a: \mu \neq 8.1\)</span>.</p>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (2 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
-<li>Recall the machine-recalibration example from C04.</li>
-<li>The test statistic was <span class="math inline">\(Z=2.49\)</span> for a two-sided test of:
-<ul>
-<li><span class="math inline">\(H_0:\mu=8.1\)</span></li>
-<li><span class="math inline">\(H_a:\mu\neq 8.1\)</span></li>
-</ul></li>
-<li>What was the decision at the 1% level?</li>
-<li>What would the decision be at the 5% level?</li>
-<li>What does that suggest about the sample evidence?</li>
+<li>At <span class="math inline">\(\alpha = 0.01\)</span>, the critical value is <span class="math inline">\(z_{0.005} = 2.576\)</span>. Do you reject <span class="math inline">\(H_0\)</span>?</li>
+<li>What if you test at <span class="math inline">\(\alpha = 0.05\)</span> (critical value <span class="math inline">\(1.96\)</span>)?</li>
+<li>What does this suggest about sample evidence?</li>
 </ul>
 </div>
 <div id="tabset-1-2">
 <ul>
-<li>At the 1% level, do not reject <span class="math inline">\(H_0\)</span>, because <span class="math inline">\(|2.49| &lt; 2.576\)</span>.</li>
-<li>At the 5% level, reject <span class="math inline">\(H_0\)</span>, because <span class="math inline">\(|2.49| &gt; 1.96\)</span>.</li>
-<li>The sample evidence is strong enough for rejection at 5%, but not strong enough for rejection at 1%.</li>
-<li>That is exactly the situation the <span class="math inline">\(p\)</span>-value summarizes in one number.</li>
+<li>At 1% level: <span class="math inline">\(|2.49| &lt; 2.576 \implies\)</span> <span class="alert">fail to reject</span></li>
+<li>At 5% level: <span class="math inline">\(|2.49| &gt; 1.96 \implies\)</span> <span class="alert">reject</span></li>
+<li>The sample evidence is the same, but the “yes/no” decision flips!</li>
 </ul>
 </div>
 </div>
@@ -386,7 +360,7 @@
 <section id="observed-significance" class="slide level2">
 <h2>Observed significance</h2>
 <ul>
-<li>The <strong>observed significance</strong>, or <strong><span class="math inline">\(p\)</span>-value</strong>, measures how rare the observed test statistic would be if <span class="math inline">\(H_0\)</span> were true.</li>
+<li>The <strong><span class="math inline">\(p\)</span>-value</strong> measures how rare a result is if <span class="math inline">\(H_0\)</span> were true.</li>
 <li>More precisely:
 <ul>
 <li>it is the probability, under <span class="math inline">\(H_0\)</span>, of getting a result at least as contrary to <span class="math inline">\(H_0\)</span> and in favor of <span class="math inline">\(H_a\)</span> as the one actually observed</li>
@@ -397,7 +371,7 @@
 
 <ul>
 <li>The <span class="math inline">\(p\)</span>-value is computed under the null hypothesis.</li>
-<li>It is <strong>not</strong>:
+<li>It is not:
 <ul>
 <li>the probability that <span class="math inline">\(H_0\)</span> is true</li>
 <li>the probability that the sample happened “by accident”</li>
@@ -442,9 +416,9 @@
 </div>
 <div id="tabset-2-2">
 <ul>
-<li>Left-tailed: the area to the <strong>left</strong> of <span class="math inline">\(-1.84\)</span>.</li>
-<li>Right-tailed: the area to the <strong>right</strong> of <span class="math inline">\(-1.84\)</span>.</li>
-<li>Two-tailed: <strong>twice</strong> the smaller one-tail area, here <span class="math inline">\(2P(Z\le -1.84)\)</span>.</li>
+<li>Left-tailed: the area to the left of <span class="math inline">\(-1.84\)</span>.</li>
+<li>Right-tailed: the area to the right of <span class="math inline">\(-1.84\)</span>.</li>
+<li>Two-tailed: twice the smaller one-tail area, here <span class="math inline">\(2P(Z\le -1.84)\)</span>.</li>
 <li>The alternative hypothesis tells you which outcomes count as evidence against <span class="math inline">\(H_0\)</span>.</li>
 </ul>
 </div>
@@ -458,50 +432,19 @@
 <section id="key-interpretation" class="slide level2">
 <h2>Key interpretation</h2>
 <ul>
-<li>The <span class="math inline">\(p\)</span>-value is the <strong>smallest significance level</strong> at which we would reject <span class="math inline">\(H_0\)</span>.</li>
+<li>The <span class="math inline">\(p\)</span>-value is the smallest significance level at which <span class="math inline">\(H_0\)</span> would be rejected.</li>
 <li>Therefore:
 <ul>
 <li>smaller <span class="math inline">\(p\)</span>-values mean stronger evidence against <span class="math inline">\(H_0\)</span></li>
-<li>the PVA decision rule is: reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p \le \alpha\)</span></li>
+<li>decision rule: <span class="alert">reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p \le \alpha\)</span></span></li>
 </ul></li>
+<li>Example logic:
+<ul>
+<li>if <span class="math inline">\(p=0.032\)</span>, then we would reject at the 5% level (<span class="math inline">\(\alpha=0.05\)</span>)</li>
+<li>but we would not reject at the 1% level (<span class="math inline">\(\alpha=0.01\)</span>)</li>
+</ul></li>
+<li>The <span class="math inline">\(p\)</span>-value replaces many fixed decisions with one summary number.</li>
 </ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>A useful way to read a <span class="math inline">\(p\)</span>-value:
-<ul>
-<li>if <span class="math inline">\(p=0.032\)</span>, then we would reject at the 5% level</li>
-<li>but we would not reject at the 1% level</li>
-</ul></li>
-<li>So the <span class="math inline">\(p\)</span>-value turns many possible CVA decisions into one summary number.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div title="What a small p-value is telling you">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>What a small p-value is telling you</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>A small <span class="math inline">\(p\)</span>-value means:
-<ul>
-<li>the observed sample would be unusual if <span class="math inline">\(H_0\)</span> were true</li>
-<li>the data fit the null model poorly</li>
-</ul></li>
-<li>It does <strong>not</strong> mean:
-<ul>
-<li>the null is impossible</li>
-<li>the alternative is guaranteed to be correct</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="part-ii-the-p-value-approach-for-a-population-mean" class="title-slide slide level1 center">
@@ -521,20 +464,21 @@
 </ol></li>
 </ul>
 </section>
-<section id="worked-example-machine-recalibration-revisited" class="slide level2">
-<h2>Worked example: machine recalibration revisited</h2>
-<div title="Machine recalibration revisited">
+<section id="worked-example-machine-recalibration" class="slide level2">
+<h2>Worked example: machine recalibration</h2>
+<div title="Worked example: Machine recalibration revisited">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Machine recalibration revisited</strong></p>
+<p><strong>Worked example: Machine recalibration revisited</strong></p>
 </div>
 <div class="callout-content">
 <ul>
 <li>A machine is set to dispense 8.1 ounces on average.</li>
-<li>The population standard deviation is known to be <span class="math inline">\(\sigma=0.22\)</span> ounce.</li>
+<li>The population standard deviation is known to be <span class="math inline">\(\sigma=0.22\)</span> ounce.<br>
+</li>
 <li>A sample of <span class="math inline">\(n=30\)</span> containers has sample mean <span class="math inline">\(\bar X=8.2\)</span>.</li>
-<li>Test whether recalibration is needed:
+<li>Test at the 1% and 5% levels whether recalibration is needed:
 <ul>
 <li><span class="math inline">\(H_0:\mu=8.1\)</span></li>
 <li><span class="math inline">\(H_a:\mu\neq8.1\)</span></li>
@@ -568,73 +512,41 @@
 <pre><code>[1] 0.006387155</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <ul>
 <li>The one-tail area is about <span class="math inline">\(0.0064\)</span>.</li>
 <li>Therefore the two-sided <span class="math inline">\(p\)</span>-value is about <span class="math display">\[2 \times 0.0064 = 0.0128.\]</span></li>
 </ul>
 <div style="text-align:center">
-<p><img data-src="figures/shafer_zhang_pvalue_cosmetic.jpg" style="width:68.0%"></p>
+<p><img data-src="figures/shafer_zhang_pvalue_cosmetic.jpg" style="width:60.0%"></p>
 </div>
 </section>
 <section id="step-5-decision" class="slide level2">
 <h2>Step 5: decision</h2>
 <ul>
-<li>At the 5% level:
+<li>At the 5% level (<span class="math inline">\(\alpha=0.05\)</span>):
 <ul>
-<li><span class="math inline">\(0.0128 &lt; 0.05\)</span>, so reject <span class="math inline">\(H_0\)</span></li>
+<li><span class="math inline">\(0.0128 &lt; 0.05 \implies\)</span> <span class="alert">reject <span class="math inline">\(H_0\)</span></span></li>
 </ul></li>
-<li>At the 1% level:
+<li>At the 1% level (<span class="math inline">\(\alpha=0.01\)</span>):
 <ul>
-<li><span class="math inline">\(0.0128 &gt; 0.01\)</span>, so do not reject <span class="math inline">\(H_0\)</span></li>
+<li><span class="math inline">\(0.0128 &gt; 0.01 \implies\)</span> <span class="alert">do not reject <span class="math inline">\(H_0\)</span></span></li>
 </ul></li>
+<li>This matches the CVA conclusions from the previous lecture exactly.</li>
 </ul>
-<div class="fragment">
-<ul>
-<li>This matches the CVA conclusions from C04 exactly.</li>
-<li>The gain from the PVA is that one number lets us answer both questions.</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<div title="Why CVA and PVA agree">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Why CVA and PVA agree</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The CVA asks:
-<ul>
-<li>“is the observed test statistic beyond the critical cutoff?”</li>
-</ul></li>
-<li>The PVA asks:
-<ul>
-<li>“how much tail probability is beyond the observed test statistic?”</li>
-</ul></li>
-<li>They are two ways of expressing the same null-distribution logic.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="worked-example-nba-total-score" class="slide level2">
 <h2>Worked example: NBA total score</h2>
-<div title="NBA total score (SZ 8.3, Example 7)">
+<div title="Worked example: NBA total score">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>NBA total score (SZ 8.3, Example 7)</strong></p>
+<p><strong>Worked example: NBA total score</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Claimed mean total score is 202.5 points.</li>
-<li>A sample of 85 games has mean 199.2 and standard deviation 19.63.</li>
+<li>Claimed mean total score is 202.5 points (<span class="math inline">\(\mu_0 = 202.5\)</span>).</li>
+<li>A random sample of <span class="math inline">\(n=85\)</span> games has mean <span class="math inline">\(\bar X = 199.2\)</span> and <span class="math inline">\(s = 19.63\)</span>.<br>
+</li>
 <li>Test at the 5% level whether the true mean is lower:
 <ul>
 <li><span class="math inline">\(H_0:\mu=202.5\)</span></li>
@@ -649,9 +561,15 @@
 <section class="slide level2">
 
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 3: test statistic</a></li><li><a href="#tabset-3-2">Step 4 and Step 5</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 1 &amp; 2</a></li><li><a href="#tabset-3-2">Step 3: test statistic</a></li><li><a href="#tabset-3-3">Step 4 &amp; 5</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
+<ul>
+<li>Hypotheses: <span class="math inline">\(H_0: \mu = 202.5\)</span> vs <span class="math inline">\(H_a: \mu &lt; 202.5\)</span></li>
+<li>Test statistic: since <span class="math inline">\(n=85\)</span> is large, use the standard normal distribution: <span class="math display">\[Z = \frac{\bar X - \mu_0}{s/\sqrt{n}}\]</span></li>
+</ul>
+</div>
+<div id="tabset-3-2">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>(<span class="fl">199.2</span> <span class="sc">-</span> <span class="fl">202.5</span>) <span class="sc">/</span> (<span class="fl">19.63</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">85</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -659,27 +577,37 @@
 </div>
 </div>
 <ul>
-<li>The observed test statistic is about <span class="math inline">\(Z=-1.54\)</span>.</li>
+<li>The observed test statistic is about <span class="math inline">\(Z = -1.55\)</span>.</li>
 </ul>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-3-3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.54</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.55</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.06178018</code></pre>
+<pre><code>[1] 0.06057076</code></pre>
 </div>
 </div>
 <ul>
-<li>The <span class="math inline">\(p\)</span>-value is about <span class="math inline">\(0.0618\)</span>.</li>
-<li>Since <span class="math inline">\(0.0618 &gt; 0.05\)</span>, do not reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The sample suggests a lower mean, but not strongly enough for rejection at the 5% level.</li>
+<li>The <span class="math inline">\(p\)</span>-value is about <span class="math inline">\(0.0606\)</span>.</li>
+<li>Since <span class="math inline">\(0.0606 &gt; 0.05\)</span>, <span class="alert">do not reject <span class="math inline">\(H_0\)</span></span>.</li>
+<li>Conclusion: The sample evidence is not strong enough to conclude the mean is lower.</li>
 </ul>
 </div>
 </div>
 </div>
-<div style="text-align:center">
-<p><img data-src="figures/shafer_zhang_pvalue_NBA.jpg" style="width:58.0%"></p>
-</div>
+<aside class="notes">
+<p>Source: SZ 8.3, Example 7.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="part-iii-hypothesis-testing-for-a-population-proportion" class="title-slide slide level1 center">
@@ -689,32 +617,28 @@
 <section id="large-sample-test-for-one-proportion" class="slide level2">
 <h2>Large-sample test for one proportion</h2>
 <ul>
-<li>To test hypotheses about a population proportion <span class="math inline">\(p\)</span>, use <span class="math display">\[Z=\frac{\widehat P-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}.\]</span></li>
-<li>Under <span class="math inline">\(H_0\)</span>, the test statistic has the standard normal distribution.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>This is the same structure as before:
+<li><p>To test hypotheses about a population proportion <span class="math inline">\(p\)</span>, use <span class="math display">\[Z=\frac{\widehat P-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}.\]</span></p></li>
+<li><p>Under <span class="math inline">\(H_0\)</span>, the test statistic has the standard normal distribution.</p></li>
+<li><p>Same structure as before:</p>
 <ul>
 <li>estimate minus hypothesized value</li>
 <li>divided by a standard error computed under <span class="math inline">\(H_0\)</span></li>
 </ul></li>
-<li>The only new ingredient is that, for proportions, the null standard error uses <span class="math inline">\(p_0\)</span> rather than <span class="math inline">\(\widehat P\)</span>.</li>
+<li><p>The only new ingredient is that, for proportions, the null standard error uses <span class="math inline">\(p_0\)</span> rather than <span class="math inline">\(\widehat P\)</span>.</p></li>
 </ul>
-</div>
 </section>
-<section id="example-beverage-preference" class="slide level2">
-<h2>Example: beverage preference</h2>
-<div title="Beverage preference (SZ 8.5, Example 12)">
+<section id="worked-example-beverage-preference" class="slide level2">
+<h2>Worked example: beverage preference</h2>
+<div title="Worked example: Beverage preference">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Beverage preference (SZ 8.5, Example 12)</strong></p>
+<p><strong>Worked example: Beverage preference</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>A soft drink maker claims that a majority of adults prefer its beverage.</li>
-<li>Among 500 tasters, 270 preferred it.</li>
+<li>A soft drink maker claims that a majority of adults prefer its beverage (<span class="math inline">\(p_0 = 0.5\)</span>).</li>
+<li>Among 500 tasters, 270 preferred it (<span class="math inline">\(\widehat P = 0.54\)</span>).</li>
 <li>Test at the 5% level:
 <ul>
 <li><span class="math inline">\(H_0:p\le 0.5\)</span></li>
@@ -726,27 +650,28 @@
 </div>
 </div>
 </section>
-<section id="step-1-to-step-3-1" class="slide level2">
-<h2>Step 1 to Step 3</h2>
+<section class="slide level2">
+
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Step 1 to 3</a></li><li><a href="#tabset-4-2">Step 4 &amp; 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
 <ul>
-<li>The sample proportion is <span class="math display">\[\widehat P = \frac{270}{500}=0.54.\]</span></li>
-<li>Because the alternative is <span class="math inline">\(p&gt;0.5\)</span>, we compute the test statistic using the boundary value from the null:
-<ul>
-<li><span class="math inline">\(p_0=0.5\)</span></li>
-</ul></li>
-<li>Under the benchmark value <span class="math inline">\(p_0=0.5\)</span>, the test statistic is</li>
+<li>Test statistic: <span class="math inline">\(Z = \frac{\widehat P - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\)</span></li>
+<li>Computation in <code>R</code>:</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>phat <span class="ot">&lt;-</span> <span class="dv">270</span> <span class="sc">/</span> <span class="dv">500</span></span>
-<span id="cb7-2"><a href=""></a>p0 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb7-3"><a href=""></a>(phat <span class="sc">-</span> p0) <span class="sc">/</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> <span class="dv">500</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>phat <span class="ot">&lt;-</span> <span class="dv">270</span> <span class="sc">/</span> <span class="dv">500</span>; p0 <span class="ot">&lt;-</span> <span class="fl">0.5</span>; n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb7-2"><a href=""></a>(phat <span class="sc">-</span> p0) <span class="sc">/</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.788854</code></pre>
 </div>
 </div>
-</section>
-<section id="step-4-and-step-5-1" class="slide level2">
-<h2>Step 4 and Step 5</h2>
+<ul>
+<li>The observed test statistic is about <span class="math inline">\(Z = 1.79\)</span>.</li>
+</ul>
+</div>
+<div id="tabset-4-2">
 <ul>
 <li>The observed test statistic is about <span class="math inline">\(Z=1.79\)</span>.</li>
 <li>This is a right-tailed test, so compute the upper-tail area.</li>
@@ -757,28 +682,42 @@
 <pre><code>[1] 0.03672696</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <ul>
 <li>The <span class="math inline">\(p\)</span>-value is about <span class="math inline">\(0.0367\)</span>.</li>
-<li>Since <span class="math inline">\(0.0367 &lt; 0.05\)</span>, reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The sample provides sufficient evidence at the 5% level that more than half of adults prefer the beverage.</li>
+<li>Since <span class="math inline">\(0.0367 &lt; 0.05\)</span>, <span class="alert">reject <span class="math inline">\(H_0\)</span></span>.</li>
+<li>Conclusion: there is sufficient evidence at the 5% level that a majority prefer the drink.</li>
 </ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Source: SZ 8.5, Example 12.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="example-poverty-rate" class="slide level2">
-<h2>Example: poverty rate</h2>
-<div title="Poverty rate (adapted from SZ 8.5, Exercise 17)">
+<section id="worked-example-poverty-rate" class="slide level2">
+<h2>Worked example: poverty rate</h2>
+<div title="Worked example: Poverty rate">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Poverty rate (adapted from SZ 8.5, Exercise 17)</strong></p>
+<p><strong>Worked example: Poverty rate</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>The federal poverty rate is 12%.</li>
-<li>In a sample of 1,550 households, 163 are classified as impoverished.</li>
-<li>Test at the 5% level:
+<li>The federal poverty rate is 12% (<span class="math inline">\(p_0 = 0.12\)</span>).</li>
+<li>In a sample of <span class="math inline">\(n = 1550\)</span> households, 163 are classified as impoverished.<br>
+</li>
+<li>Test at the 5% level whether the true rate is lower:
 <ul>
 <li><span class="math inline">\(H_0:p=0.12\)</span></li>
 <li><span class="math inline">\(H_a:p&lt;0.12\)</span></li>
@@ -792,34 +731,48 @@
 <section class="slide level2">
 
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Step 3: test statistic</a></li><li><a href="#tabset-4-2">Step 4 and Step 5</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Step 3: test statistic</a></li><li><a href="#tabset-5-2">Step 4 &amp; 5</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>(<span class="dv">163</span> <span class="sc">/</span> <span class="dv">1550</span> <span class="sc">-</span> <span class="fl">0.12</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fl">0.12</span> <span class="sc">*</span> <span class="fl">0.88</span> <span class="sc">/</span> <span class="dv">1550</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a>phat <span class="ot">&lt;-</span> <span class="dv">163</span> <span class="sc">/</span> <span class="dv">1550</span>; p0 <span class="ot">&lt;-</span> <span class="fl">0.12</span>; n <span class="ot">&lt;-</span> <span class="dv">1550</span></span>
+<span id="cb11-2"><a href=""></a>(phat <span class="sc">-</span> p0) <span class="sc">/</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1.797753</code></pre>
 </div>
 </div>
 <ul>
-<li>The observed test statistic is about <span class="math inline">\(Z=-1.80\)</span>.</li>
+<li>The observed test statistic is about <span class="math inline">\(Z = -1.80\)</span>.</li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.797753</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03610808</code></pre>
+<pre><code>[1] 0.03593032</code></pre>
 </div>
 </div>
 <ul>
-<li>The <span class="math inline">\(p\)</span>-value is about <span class="math inline">\(0.0361\)</span>.</li>
-<li>Since <span class="math inline">\(0.0361 &lt; 0.05\)</span>, reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The sample provides sufficient evidence that the poverty rate is below 12%.</li>
+<li>The <span class="math inline">\(p\)</span>-value is about <span class="math inline">\(0.0359\)</span>.</li>
+<li>Since <span class="math inline">\(0.0359 &lt; 0.05\)</span>, <span class="alert">reject <span class="math inline">\(H_0\)</span></span>.</li>
+<li>Conclusion: the sample provides sufficient evidence that the poverty rate is below 12%.</li>
 </ul>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Source: Adapted from SZ 8.5, Exercise 17.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="exercises" class="title-slide slide level1 center">
@@ -836,9 +789,9 @@
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (3 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (3 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1">
+<div id="tabset-6-1">
 <ul>
 <li>An analyst tests <span class="math inline">\(H_0:\mu=50\)</span> against <span class="math inline">\(H_a:\mu\neq 50\)</span> and obtains <span class="math inline">\(Z=2.21\)</span>.</li>
 <li>What is the decision at the 5% level using the CVA?</li>
@@ -846,7 +799,7 @@
 <li>Without computing it exactly, where must the <span class="math inline">\(p\)</span>-value lie?</li>
 </ul>
 </div>
-<div id="tabset-5-2">
+<div id="tabset-6-2">
 <ul>
 <li>At the 5% level, reject because <span class="math inline">\(|2.21| &gt; 1.96\)</span>.</li>
 <li>At the 1% level, do not reject because <span class="math inline">\(|2.21| &lt; 2.576\)</span>.</li>
@@ -863,17 +816,112 @@
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise (adapted from Introductory Statistics): placement exam">
+<div class="exercise-callout" title="Exercise: Lake pH monitor">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise (adapted from Introductory Statistics): placement exam</strong></p>
+<p><strong>Exercise: Lake pH monitor</strong></p>
+</div>
+<div class="callout-content">
+<p>Environmental scientists want a lake’s pH level to stay at 7.4. Water samples (<span class="math inline">\(n=30\)</span>) yield a mean pH of 7.7 with <span class="math inline">\(s=0.5\)</span>. Test at the 1% level if the pH has shifted.</p>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (4 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>State <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>.</li>
+<li>Compute the <span class="math inline">\(Z\)</span> statistic and the <span class="math inline">\(p\)</span>-value.</li>
+<li>What is the decision?</li>
+</ul>
+</div>
+<div id="tabset-7-2">
+<ul>
+<li>Hypotheses: <span class="math inline">\(H_0: \mu = 7.4\)</span> vs <span class="math inline">\(H_a: \mu \neq 7.4\)</span></li>
+<li>Statistic: <span class="math inline">\(Z = (7.7 - 7.4) / (0.5 / \sqrt{30}) \approx 3.29\)</span></li>
+<li><span class="math inline">\(p\)</span>-value: <span class="math inline">\(2 \times P(Z \ge 3.29) \approx 2 \times 0.0005 = 0.0010\)</span></li>
+<li>Decision: since <span class="math inline">\(0.0010 &lt; 0.01\)</span>, <span class="alert">reject <span class="math inline">\(H_0\)</span></span>. Remedial action is needed.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Source: SZ 8.3, Example 9.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Effectiveness of a new textbook">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Effectiveness of a new textbook</strong></p>
+</div>
+<div class="callout-content">
+<p>Algebra II students usually score <span class="math inline">\(\mu=67\)</span> on the final exam. This year, 64 students used a new textbook and averaged 69.4 with <span class="math inline">\(s=6.1\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Question (4 min)</a></li><li><a href="#tabset-8-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<ul>
+<li>Test at the 1% level whether the new textbook improved scores (<span class="math inline">\(H_a: \mu &gt; 67\)</span>).</li>
+<li>Use the <span class="math inline">\(p\)</span>-value approach.</li>
+</ul>
+</div>
+<div id="tabset-8-2">
+<ul>
+<li>Statistic: <span class="math inline">\(Z = (69.4 - 67) / (6.1 / \sqrt{64}) \approx 3.15\)</span></li>
+<li><span class="math inline">\(p\)</span>-value: <span class="math inline">\(P(Z \ge 3.15) \approx 0.0008\)</span></li>
+<li>Decision: since <span class="math inline">\(0.0008 &lt; 0.01\)</span>, <span class="alert">reject <span class="math inline">\(H_0\)</span></span></li>
+<li>Conclusion: there is strong evidence the new textbook improved scores.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Source: SZ 8.3, Example 8.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: placement exam">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: placement exam</strong></p>
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (4 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Question (4 min)</a></li><li><a href="#tabset-9-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-9-1">
 <ul>
 <li>The mean score on a placement exam is 14.3.</li>
 <li>A revised exam is given to 30 freshmen; the sample mean is 14.6 and the sample standard deviation is 2.4.</li>
@@ -884,7 +932,7 @@
 </ul></li>
 </ul>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-9-2">
 <ul>
 <li>Test statistic: <span class="math display">\[Z=\frac{14.6-14.3}{2.4/\sqrt{30}} \approx 0.68.\]</span></li>
 <li>Because this is a two-sided test and <span class="math inline">\(0.68\)</span> is small, the <span class="math inline">\(p\)</span>-value is much larger than 0.05.</li>
@@ -901,24 +949,24 @@
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise (adapted from OpenIntro): one-sided p-value">
+<div class="exercise-callout" title="Exercise: on-time shipments">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise (adapted from OpenIntro): one-sided p-value</strong></p>
+<p><strong>Exercise: on-time shipments</strong></p>
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (4 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Question (4 min)</a></li><li><a href="#tabset-10-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-10-1">
 <ul>
 <li>A company claims that 88% of shipments arrive on time.</li>
 <li>In a sample of 250 shipments, 210 arrived on time.</li>
 <li>Use the PVA at the 5% level to test whether the on-time rate is lower than 88%.</li>
 </ul>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-10-2">
 <ul>
 <li>Hypotheses:
 <ul>
@@ -949,9 +997,9 @@
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Question (2 min)</a></li><li><a href="#tabset-8-2">Answers</a></li></ul>
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Question (2 min)</a></li><li><a href="#tabset-11-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
+<div id="tabset-11-1">
 <ul>
 <li>A two-sided hypothesis test produces a <span class="math inline">\(p\)</span>-value of 0.083.</li>
 <li>What is the decision at the 10% level?</li>
@@ -959,7 +1007,7 @@
 <li>How strong is the evidence against <span class="math inline">\(H_0\)</span>?</li>
 </ul>
 </div>
-<div id="tabset-8-2">
+<div id="tabset-11-2">
 <ul>
 <li>At the 10% level, reject <span class="math inline">\(H_0\)</span> because <span class="math inline">\(0.083 &lt; 0.10\)</span>.</li>
 <li>At the 5% level, do not reject <span class="math inline">\(H_0\)</span> because <span class="math inline">\(0.083 &gt; 0.05\)</span>.</li>
@@ -983,9 +1031,9 @@
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Question (3 min)</a></li><li><a href="#tabset-9-2">Answers</a></li></ul>
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Question (3 min)</a></li><li><a href="#tabset-12-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-9-1">
+<div id="tabset-12-1">
 <ul>
 <li>A poll tests <span class="math inline">\(H_0:p=0.40\)</span> against <span class="math inline">\(H_a:p&gt;0.40\)</span>.</li>
 <li>The observed test statistic is <span class="math inline">\(Z=1.31\)</span>.</li>
@@ -993,7 +1041,7 @@
 <li>What is the decision at the 10% level?</li>
 </ul>
 </div>
-<div id="tabset-9-2">
+<div id="tabset-12-2">
 <ul>
 <li>For a right-tailed test, the <span class="math inline">\(p\)</span>-value is the area to the right of <span class="math inline">\(1.31\)</span>.</li>
 <li>That area is smaller than 0.10 because the 10% right-tail cutoff is about <span class="math inline">\(1.282\)</span>.</li>

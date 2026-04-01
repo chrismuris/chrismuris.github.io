@@ -9,7 +9,7 @@
 <link href="C06_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <title>Inference in two-population problems</title>
+  <title>Inference: Two-population problems</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -199,7 +199,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Inference in two-population problems</h1>
+  <h1 class="title">Inference: Two-population problems</h1>
   <p class="subtitle">ECON 2B03, Winter 2026<br>Part C | Lecture 6<br>Chris Muris, McMaster University</p>
 
 <div class="quarto-title-authors">
@@ -209,6 +209,7 @@
 <section class="slide level2">
 
 <aside class="notes">
+<p>Mic check: Is the microphone on?</p>
 <p>This lecture is the capstone of non-regression inference.</p>
 <ul>
 <li>first: independent samples and differences in means</li>
@@ -284,9 +285,9 @@
 <section id="previously-part-c-so-far" class="slide level2">
 <h2>Previously: Part C so far</h2>
 <ul>
-<li>confidence intervals and hypothesis tests for one population</li>
-<li>critical value and <span class="math inline">\(p\)</span>-value approaches</li>
-<li>tests for one population proportion</li>
+<li>inference for one population mean</li>
+<li>inference for one population proportion</li>
+<li>the critical value and <span class="math inline">\(p\)</span>-value approaches</li>
 </ul>
 </section>
 <section id="this-lecture" class="slide level2">
@@ -307,7 +308,7 @@
 <section id="overview" class="slide level2 scrollable">
 <h2>Overview</h2>
 <ul>
-<li>Why this matters: economics constantly compares groups, such as treatment versus control, before versus after, or one market versus another.</li>
+<li>Why this matters: economics constantly compares groups (treatment vs control, before vs after).</li>
 <li>What you will learn:
 <ol type="1">
 <li>how to distinguish independent from paired sampling</li>
@@ -330,11 +331,7 @@
 <li>Do two groups differ?</li>
 <li>Did performance improve after an intervention?</li>
 </ul></li>
-<li>That means the target parameter is often a <strong>difference</strong>:
-<ul>
-<li><span class="math inline">\(\mu_1-\mu_2\)</span></li>
-<li>or <span class="math inline">\(p_1-p_2\)</span></li>
-</ul></li>
+<li>Target parameter: <span class="alert">the difference (<span class="math inline">\(\mu_1-\mu_2\)</span> or <span class="math inline">\(p_1-p_2\)</span>)</span></li>
 </ul>
 </section>
 <section id="two-basic-sampling-designs" class="slide level2">
@@ -352,13 +349,13 @@
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level2 scrollable">
 
-<div class="exercise-callout" title="Exercise: independent or paired?">
+<div class="exercise-callout" title="Exercise: Independent or paired?">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: independent or paired?</strong></p>
+<p><strong>Exercise: Independent or paired?</strong></p>
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
@@ -366,18 +363,22 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
-<li>Classify each setting.</li>
-<li>Compare test scores from 50 randomly selected students in School A and 50 different students in School B.</li>
+<li>Classify each setting:
+<ol type="1">
+<li>Compare test scores from 50 students in School A and 50 different students in School B.</li>
 <li>Compare blood pressure for the same 20 patients before and after treatment.</li>
 <li>Compare callbacks for matched male and female job applicants sent to the same employers.</li>
+</ol></li>
 </ul>
 </div>
 <div id="tabset-1-2">
-<ul>
+<ol type="1">
 <li>Independent samples.</li>
 <li>Paired samples.</li>
 <li>Paired samples.</li>
-<li>The key question is whether observations are naturally matched across the two groups.</li>
+</ol>
+<ul>
+<li>Key: are observations naturally matched across groups?</li>
 </ul>
 </div>
 </div>
@@ -397,8 +398,8 @@
 <ul>
 <li>Suppose:
 <ul>
-<li>sample 1 has size <span class="math inline">\(n_1\)</span>, mean <span class="math inline">\(\bar X_1\)</span>, standard deviation <span class="math inline">\(s_1\)</span></li>
-<li>sample 2 has size <span class="math inline">\(n_2\)</span>, mean <span class="math inline">\(\bar X_2\)</span>, standard deviation <span class="math inline">\(s_2\)</span></li>
+<li>sample 1: <span class="math inline">\(n_1\)</span>, <span class="math inline">\(\bar X_1\)</span>, <span class="math inline">\(s_1\)</span></li>
+<li>sample 2: <span class="math inline">\(n_2\)</span>, <span class="math inline">\(\bar X_2\)</span>, <span class="math inline">\(s_2\)</span></li>
 </ul></li>
 <li>The natural point estimate of the population difference is <span class="math display">\[\bar X_1-\bar X_2.\]</span></li>
 </ul>
@@ -406,25 +407,19 @@
 <section id="confidence-interval-for-mu_1-mu_2" class="slide level2">
 <h2>Confidence interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
 <ul>
-<li>For large, independent samples, the confidence interval is <span class="math display">\[\bar X_1-\bar X_2 \pm z_{\alpha/2}\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.\]</span></li>
-<li>The logic is familiar:
-<ul>
-<li>estimate <span class="math inline">\(\pm\)</span> critical value times standard error</li>
-</ul></li>
+<li>For large, independent samples: <span class="math display">\[\bar X_1-\bar X_2 \pm z_{\alpha/2}\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}.\]</span></li>
+<li>The logic is familiar: estimate <span class="math inline">\(\pm\)</span> critical value <span class="math inline">\(\times\)</span> standard error.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Key fact to remember:
-<ul>
-<li>for independent samples, the variance of the difference is the sum of the variances</li>
-</ul></li>
+<li><span class="alert">For independent samples, the variance of the difference is the sum of the variances.</span></li>
 </ul>
 </div>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>The most common bookkeeping error is the subtraction order.</li>
+<li><span class="alert">The most common error is the subtraction order.</span></li>
 <li>If you define the parameter as <span class="math inline">\(\mu_1-\mu_2\)</span>, then:
 <ul>
 <li>the estimate must be <span class="math inline">\(\bar X_1-\bar X_2\)</span></li>
@@ -435,11 +430,11 @@
 </section>
 <section id="worked-example-cable-tv-satisfaction" class="slide level2">
 <h2>Worked example: cable TV satisfaction</h2>
-<div title="Cable TV satisfaction (SZ 9.1, Example 1)">
+<div title="Worked example: Cable TV satisfaction">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Cable TV satisfaction (SZ 9.1, Example 1)</strong></p>
+<p><strong>Worked example: Cable TV satisfaction</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -454,9 +449,6 @@
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Point estimate</a></li><li><a href="#tabset-2-2">Confidence interval</a></li></ul>
 <div class="tab-content">
@@ -468,49 +460,52 @@
 <div id="tabset-2-2">
 <ul>
 <li>For a 99% CI, use <span class="math inline">\(z_{\alpha/2}=2.576\)</span>.</li>
-<li>Margin of error:</li>
+<li>Margin of error: <span class="math inline">\(2.576 \times \sqrt{0.51^2/174 + 0.52^2/355} \approx 0.118\)</span></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fl">2.576</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fl">0.51</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">174</span> <span class="sc">+</span> <span class="fl">0.52</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">355</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1223673</code></pre>
-</div>
-</div>
-<ul>
-<li>So the CI is</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fl">0.27</span> <span class="sc">+</span> <span class="fl">2.576</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fl">0.51</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">174</span> <span class="sc">+</span> <span class="fl">0.52</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">355</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fl">0.27</span> <span class="sc">+</span> <span class="fl">2.576</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fl">0.51</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">174</span> <span class="sc">+</span> <span class="fl">0.52</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">355</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1476327 0.3923673</code></pre>
 </div>
 </div>
 <ul>
-<li>Interpretation: customers of Company 1 appear to rate it between about 0.11 and 0.43 points higher on average.</li>
+<li>Interpretation: Company 1 is rated 0.11 to 0.43 points higher on average.</li>
 </ul>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Source: SZ 9.1, Example 1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="hypothesis-test-for-mu_1-mu_2" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
 <ul>
-<li>For large, independent samples, test hypotheses about <span class="math display">\[H_0:\mu_1-\mu_2=D_0\]</span> using <span class="math display">\[Z=\frac{(\bar X_1-\bar X_2)-D_0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}.\]</span></li>
-<li>Under <span class="math inline">\(H_0\)</span>, <span class="math inline">\(Z\)</span> is standard normal.</li>
+<li>Test <span class="math inline">\(H_0:\mu_1-\mu_2=D_0\)</span> using <span class="math display">\[Z=\frac{(\bar X_1-\bar X_2)-D_0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}.\]</span></li>
+<li>Under <span class="math inline">\(H_0\)</span>, <span class="math inline">\(Z\)</span> is standard normal (for large samples).</li>
 </ul>
 </section>
 <section id="worked-example-football-offense" class="slide level2">
 <h2>Worked example: football offense</h2>
-<div title="Football offense (adapted from SZ 9.1, Exercise 23)">
+<div title="Worked example: Football offense">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Football offense (adapted from SZ 9.1, Exercise 23)</strong></p>
+<p><strong>Worked example: Football offense</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>An owner believes the league has become more offense-oriented.</li>
-<li>Compare points per game from two eras:
+<li>Era comparison of points per game:
 <ul>
 <li>earlier sample: <span class="math inline">\(n_1=32\)</span>, <span class="math inline">\(\bar X_1=20.62\)</span>, <span class="math inline">\(s_1=4.17\)</span></li>
 <li>later sample: <span class="math inline">\(n_2=32\)</span>, <span class="math inline">\(\bar X_2=22.05\)</span>, <span class="math inline">\(s_2=4.01\)</span></li>
@@ -521,61 +516,68 @@
 </div>
 </div>
 </div>
-</section>
-<section id="step-1-and-step-2" class="slide level2">
-<h2>Step 1 and Step 2</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Step 1 &amp; 2</a></li><li><a href="#tabset-3-2">Step 3 to 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
 <ul>
-<li>Let population 1 be the earlier era and population 2 be the later era.</li>
-<li>Then
-<ul>
-<li><span class="math inline">\(H_0:\mu_1-\mu_2=0\)</span></li>
-<li><span class="math inline">\(H_a:\mu_1-\mu_2&lt;0\)</span></li>
-</ul></li>
-<li>Use the large-sample test statistic for independent samples.</li>
+<li><span class="math inline">\(H_0: \mu_1 - \mu_2 = 0\)</span> (no change)</li>
+<li><span class="math inline">\(H_a: \mu_1 - \mu_2 &lt; 0\)</span> (later era is higher)</li>
+<li>Statistic: use the large-sample <span class="math inline">\(Z\)</span> statistic.</li>
 </ul>
-</section>
-<section id="step-3-to-step-5" class="slide level2">
-<h2>Step 3 to Step 5</h2>
+</div>
+<div id="tabset-3-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>(<span class="fl">20.62</span> <span class="sc">-</span> <span class="fl">22.05</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fl">4.17</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">32</span> <span class="sc">+</span> <span class="fl">4.01</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">32</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>(<span class="fl">20.62</span> <span class="sc">-</span> <span class="fl">22.05</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fl">4.17</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">32</span> <span class="sc">+</span> <span class="fl">4.01</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">32</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1.398266</code></pre>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <ul>
-<li>The observed test statistic is about <span class="math inline">\(Z=-1.40\)</span>.</li>
-<li>At the 10% level for a left-tailed test, the critical value is about <span class="math inline">\(-1.282\)</span>.</li>
-<li>Since <span class="math inline">\(-1.40 &lt; -1.282\)</span>, reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The sample provides sufficient evidence, at the 10% level, that the later era has a higher mean score.</li>
+<li><span class="math inline">\(Z_{obs} \approx -1.40\)</span>. At 10% level (left-tailed), <span class="math inline">\(z_{crit} = -1.282\)</span>.</li>
+<li>Since <span class="math inline">\(-1.40 &lt; -1.282\)</span>, <span class="alert">reject <span class="math inline">\(H_0\)</span></span>.</li>
 </ul>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Source: Adapted from SZ 9.1, Exercise 23.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: interpreting the sign of $\bar X_1-\bar X_2$">
+<div class="exercise-callout" title="Exercise: Interpreting the sign">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: interpreting the sign of <span class="math inline">\(\bar X_1-\bar X_2\)</span></strong></p>
+<p><strong>Exercise: Interpreting the sign</strong></p>
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (2 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (2 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
+<div id="tabset-4-1">
 <ul>
-<li>Suppose population 1 is the control group and population 2 is the treatment group.</li>
+<li>Population 1 = control, Population 2 = treatment.</li>
 <li>If <span class="math inline">\(\bar X_1-\bar X_2\)</span> is negative, which group has the larger sample mean?</li>
-<li>If your alternative is that treatment increases outcomes, should you test <span class="math inline">\(H_a:\mu_1-\mu_2&lt;0\)</span> or <span class="math inline">\(H_a:\mu_1-\mu_2&gt;0\)</span>?</li>
+<li>If treatment increases outcomes, should you test <span class="math inline">\(H_a:\mu_1-\mu_2&lt;0\)</span> or <span class="math inline">\(H_a:\mu_1-\mu_2&gt;0\)</span>?</li>
 </ul>
 </div>
-<div id="tabset-3-2">
+<div id="tabset-4-2">
 <ul>
-<li>A negative value means sample 2, the treatment group, has the larger sample mean.</li>
-<li>If treatment is population 2, then treatment increases outcomes corresponds to <span class="math inline">\(H_a:\mu_1-\mu_2&lt;0\)</span>.</li>
-<li>A lot of mistakes in two-sample inference come from losing track of the order of subtraction.</li>
+<li>Negative value <span class="math inline">\(\implies\)</span> Population 2 (treatment) is larger.</li>
+<li>Treatment is better <span class="math inline">\(\implies H_a: \mu_1 - \mu_2 &lt; 0\)</span>.</li>
+<li><span class="alert">Always decide the subtraction order before computing anything.</span></li>
 </ul>
 </div>
 </div>
@@ -594,208 +596,136 @@
 <h2>Why pairing changes the problem</h2>
 <ul>
 <li>With paired data, the two observations in a pair are linked.</li>
-<li>So we should not pretend the samples were independent.</li>
+<li><span class="alert">Do not treat paired samples as independent!</span></li>
 <li>Instead:
 <ul>
-<li>compute the difference within each pair</li>
-<li>then analyze the single sample of differences</li>
+<li>compute the difference within each pair (<span class="math inline">\(d_i\)</span>)</li>
+<li>analyze the single sample of differences</li>
 </ul></li>
 </ul>
 </section>
 <section id="the-sample-of-differences" class="slide level2">
 <h2>The sample of differences</h2>
 <ul>
-<li>Let the pairwise differences be <span class="math display">\[d_1,d_2,\ldots,d_n.\]</span></li>
-<li>Then define:
-<ul>
-<li><span class="math inline">\(\bar d\)</span> = sample mean of the differences</li>
-<li><span class="math inline">\(s_d\)</span> = sample standard deviation of the differences</li>
-</ul></li>
-<li>The target parameter is <span class="math display">\[\mu_d=\mu_1-\mu_2.\]</span></li>
+<li>Let pairwise differences be <span class="math inline">\(d_1, d_2, \ldots, d_n\)</span>.</li>
+<li><span class="math inline">\(\bar d\)</span> = sample mean difference; <span class="math inline">\(s_d\)</span> = sample standard deviation of differences.</li>
+<li>Target parameter: <span class="math inline">\(\mu_d = \mu_1 - \mu_2\)</span>.</li>
 </ul>
 </section>
 <section id="confidence-interval-for-paired-samples" class="slide level2">
 <h2>Confidence interval for paired samples</h2>
 <ul>
-<li>The confidence interval for paired data is <span class="math display">\[\bar d \pm t_{\alpha/2}\frac{s_d}{\sqrt n}.\]</span></li>
-<li>Degrees of freedom: <span class="math display">\[df=n-1.\]</span></li>
+<li>For paired data: <span class="math display">\[\bar d \pm t_{\alpha/2}\frac{s_d}{\sqrt n}\]</span></li>
+<li>Degrees of freedom: <span class="math inline">\(df = n-1\)</span>.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li>This should feel familiar:
-<ul>
-<li>paired inference is really a one-sample inference problem applied to the differences</li>
-</ul></li>
+<li><span class="alert">Paired inference is a one-sample problem applied to the differences.</span></li>
 </ul>
 </div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Pairing helps when the match explains part of the variation.</li>
-<li>By taking within-pair differences, we remove pair-specific noise and focus on the treatment or timing contrast.</li>
-</ul>
 </section>
 <section id="worked-example-fuel-economy" class="slide level2">
 <h2>Worked example: fuel economy</h2>
-<div title="Fuel economy (SZ 9.3, Example 7)">
+<div title="Worked example: Fuel economy">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Fuel economy (SZ 9.3, Example 7)</strong></p>
+<p><strong>Worked example: Fuel economy</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Nine matched pairs of vehicles are tested with two gasoline formulations.</li>
-<li>The pairwise differences in fuel economy are <span class="math display">\[d=(0,0.3,-0.1,0.4,0.2,0.3,0.0,0.1,0.1).\]</span></li>
+<li>Nine matched pairs of vehicles tested with two gas formulations.</li>
+<li>Differences: <span class="math inline">\(d=(0,0.3,-0.1,0.4,0.2,0.3,0.0,0.1,0.1)\)</span>.</li>
 <li>Construct a 95% confidence interval for the mean difference.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Ingredients</a></li><li><a href="#tabset-4-2">Confidence interval</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Ingredients</a></li><li><a href="#tabset-5-2">Confidence interval</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.0</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>)</span>
-<span id="cb7-2"><a href=""></a><span class="fu">mean</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.0</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>)</span>
+<span id="cb5-2"><a href=""></a><span class="fu">mean</span>(d); <span class="fu">sd</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1444444</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">sd</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1666667</code></pre>
 </div>
 </div>
 <ul>
-<li>So <span class="math inline">\(\bar d \approx 0.144\)</span> and <span class="math inline">\(s_d \approx 0.167\)</span>.</li>
-<li>Since <span class="math inline">\(n=9\)</span>, use a <span class="math inline">\(t\)</span> critical value with <span class="math inline">\(df=8\)</span>.</li>
+<li><span class="math inline">\(\bar d \approx 0.144\)</span>, <span class="math inline">\(s_d \approx 0.167\)</span>. With <span class="math inline">\(n=9\)</span>, <span class="math inline">\(df=8\)</span>.</li>
 </ul>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">mean</span>(d) <span class="sc">+</span> <span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="at">df =</span> <span class="dv">8</span>) <span class="sc">*</span> <span class="fu">sd</span>(d) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">9</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">mean</span>(d) <span class="sc">+</span> <span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="at">df =</span> <span class="dv">8</span>) <span class="sc">*</span> <span class="fu">sd</span>(d) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">9</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0163331 0.2725558</code></pre>
 </div>
 </div>
 <ul>
-<li>The interval is approximately <span class="math inline">\((0.016, 0.273)\)</span>.</li>
-<li>Since the interval is positive, it suggests formulation 1 yields higher fuel economy on average.</li>
+<li>Interpretation: Formulation 1 yields 0.016 to 0.273 more mpg.</li>
 </ul>
 </div>
 </div>
 </div>
-</section>
-<section id="hypothesis-test-for-paired-samples" class="slide level2">
-<h2>Hypothesis test for paired samples</h2>
-<ul>
-<li>Test hypotheses about <span class="math inline">\(\mu_d\)</span> using <span class="math display">\[T=\frac{\bar d-D_0}{s_d/\sqrt n}.\]</span></li>
-<li>Degrees of freedom are <span class="math inline">\(n-1\)</span>.</li>
-</ul>
+<aside class="notes">
+<p>Source: SZ 9.3, Example 7.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="worked-example-house-appraisals" class="slide level2">
 <h2>Worked example: house appraisals</h2>
-<div title="House appraisals (adapted from SZ 9.3, Exercise 7)">
+<div title="Worked example: House appraisals">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>House appraisals (adapted from SZ 9.3, Exercise 7)</strong></p>
+<p><strong>Worked example: House appraisals</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>For 10 houses, compare county-government appraisals to private-company appraisals.</li>
-<li>Take differences as <span class="math display">\[d=\text{county} - \text{private} = (-2,12,5,0,2,3,18,2,-8,0).\]</span></li>
-<li>Test at the 1% level whether government appraisals are higher on average.</li>
+<li><span class="math inline">\(n=10\)</span> houses, <span class="math inline">\(d = \text{county} - \text{private} = (-2,12,5,0,2,3,18,2,-8,0)\)</span>.<br>
+</li>
+<li>Test at 1% level: Are government appraisals higher?</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="step-1-to-step-3" class="slide level2">
-<h2>Step 1 to Step 3</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Step 1 to 3</a></li><li><a href="#tabset-6-2">Step 4 &amp; 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
 <ul>
-<li>Because differences are defined as county minus private:
-<ul>
-<li><span class="math inline">\(H_0:\mu_d=0\)</span></li>
-<li><span class="math inline">\(H_a:\mu_d&gt;0\)</span></li>
-</ul></li>
+<li><span class="math inline">\(H_0: \mu_d = 0\)</span> vs <span class="math inline">\(H_a: \mu_d &gt; 0\)</span>.</li>
+<li>Statistic: <span class="math inline">\(T = \frac{\bar d - 0}{s_d/\sqrt{n}}\)</span></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">18</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">8</span>, <span class="dv">0</span>)</span>
-<span id="cb13-2"><a href=""></a><span class="fu">mean</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.2</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">sd</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7.269418</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>(<span class="fu">mean</span>(d) <span class="sc">-</span> <span class="dv">0</span>) <span class="sc">/</span> (<span class="fu">sd</span>(d) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">length</span>(d)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">18</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">8</span>, <span class="dv">0</span>)</span>
+<span id="cb10-2"><a href=""></a>(<span class="fu">mean</span>(d) <span class="sc">-</span> <span class="dv">0</span>) <span class="sc">/</span> (<span class="fu">sd</span>(d) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.392035</code></pre>
 </div>
 </div>
-</section>
-<section id="step-4-and-step-5" class="slide level2">
-<h2>Step 4 and Step 5</h2>
+</div>
+<div id="tabset-6-2">
 <ul>
-<li>Here <span class="math inline">\(n=10\)</span>, so <span class="math inline">\(df=9\)</span>.</li>
-<li>For a right-tailed test at the 1% level, the critical value is</li>
+<li><span class="math inline">\(T_{obs} \approx 1.39\)</span>. With <span class="math inline">\(df=9\)</span>, <span class="math inline">\(t_{crit} = qt(0.99, 9) \approx 2.82\)</span>.</li>
+<li>Since <span class="math inline">\(1.39 &lt; 2.82\)</span>, <span class="alert">do not reject <span class="math inline">\(H_0\)</span></span>.</li>
 </ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">qt</span>(<span class="fl">0.99</span>, <span class="at">df =</span> <span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.821438</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>The observed test statistic is about <span class="math inline">\(T=1.39\)</span>.</li>
-<li>The critical value is about <span class="math inline">\(2.82\)</span>.</li>
-<li>Since <span class="math inline">\(1.39 &lt; 2.82\)</span>, do not reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The sample does not provide sufficient evidence, at the 1% level, that government appraisals are higher.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div class="exercise-callout" title="Exercise: choosing the paired difference">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Exercise: choosing the paired difference</strong></p>
-</div>
-<div class="callout-content">
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (3 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<ul>
-<li>A study records each worker’s earnings before training and after training.</li>
-<li>You want positive differences to mean improvement.</li>
-<li>How should you define the pairwise difference?</li>
-<li>If training is effective, what sign should <span class="math inline">\(\bar d\)</span> have?</li>
-</ul>
-</div>
-<div id="tabset-5-2">
-<ul>
-<li>Define the difference as <code>after - before</code>.</li>
-<li>Then positive differences correspond to higher earnings after training.</li>
-<li>If training is effective, <span class="math inline">\(\bar d\)</span> should be positive.</li>
-<li>This sign choice should be made before computing anything else.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -808,58 +738,40 @@
 <section id="confidence-interval-for-p_1-p_2" class="slide level2">
 <h2>Confidence interval for <span class="math inline">\(p_1-p_2\)</span></h2>
 <ul>
-<li>For two independent samples, the confidence interval is <span class="math display">\[\widehat P_1-\widehat P_2 \pm z_{\alpha/2}\sqrt{\frac{\widehat P_1(1-\widehat P_1)}{n_1}+\frac{\widehat P_2(1-\widehat P_2)}{n_2}}.\]</span></li>
+<li>For two independent samples: <span class="math display">\[\widehat P_1-\widehat P_2 \pm z_{\alpha/2}\sqrt{\frac{\widehat P_1(1-\widehat P_1)}{n_1}+\frac{\widehat P_2(1-\widehat P_2)}{n_2}}\]</span></li>
 </ul>
 </section>
 <section id="hypothesis-test-for-p_1-p_2" class="slide level2">
 <h2>Hypothesis test for <span class="math inline">\(p_1-p_2\)</span></h2>
 <ul>
-<li>For testing <span class="math inline">\(H_0:p_1-p_2=0\)</span>, first compute the pooled estimate <span class="math display">\[\widehat P=\frac{x_1+x_2}{n_1+n_2}.\]</span></li>
-<li>Then use the large-sample test statistic <span class="math display">\[Z=\frac{\widehat P_1-\widehat P_2}{\sqrt{\widehat P(1-\widehat P)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}.\]</span></li>
+<li><span class="alert">New step: compute the pooled estimate first!</span> <span class="math display">\[\widehat P=\frac{x_1+x_2}{n_1+n_2}\]</span></li>
+<li>Large-sample test statistic: <span class="math display">\[Z=\frac{\widehat P_1-\widehat P_2}{\sqrt{\widehat P(1-\widehat P)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}\]</span></li>
 </ul>
-<div class="fragment">
-<ul>
-<li>This differs from the confidence-interval formula.</li>
-<li>For the test, the null says the two population proportions are the same, so we pool under that null benchmark.</li>
-</ul>
-</div>
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: comparing machines">
+<div class="exercise-callout" title="Exercise: Comparing machines">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: comparing machines</strong></p>
+<p><strong>Exercise: Comparing machines</strong></p>
 </div>
 <div class="callout-content">
 <div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (4 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (4 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1">
+<div id="tabset-7-1">
 <ul>
-<li>In a sample of 400 products from machine 1, 23 were defective.</li>
-<li>In a sample of 400 products from machine 2, 17 were defective.</li>
-<li>Test at the 5% level:
-<ul>
-<li><span class="math inline">\(H_0:p_1-p_2=0\)</span></li>
-<li><span class="math inline">\(H_a:p_1-p_2\neq 0\)</span></li>
-</ul></li>
+<li>Machine 1: <span class="math inline">\(n_1=400\)</span>, 23 defective. Machine 2: <span class="math inline">\(n_2=400\)</span>, 17 defective.</li>
+<li>Test at 5% level if defect rates differ (<span class="math inline">\(H_a: p_1 - p_2 \neq 0\)</span>).</li>
 </ul>
 </div>
-<div id="tabset-6-2">
+<div id="tabset-7-2">
 <ul>
-<li>Sample proportions:
-<ul>
-<li><span class="math inline">\(\widehat P_1=23/400=0.0575\)</span></li>
-<li><span class="math inline">\(\widehat P_2=17/400=0.0425\)</span></li>
-</ul></li>
-<li>Pooled proportion: <span class="math display">\[\widehat P=\frac{23+17}{400+400}=0.05.\]</span></li>
-<li>Pooled standard error: <span class="math display">\[\sqrt{0.05(0.95)\left(\frac{1}{400}+\frac{1}{400}\right)} \approx 0.0154.\]</span></li>
-<li>Test statistic: <span class="math display">\[Z=\frac{0.0575-0.0425}{0.0154}\approx 0.97.\]</span></li>
-<li>For a two-sided test at 5%, the critical values are <span class="math inline">\(\pm 1.96\)</span>.</li>
-<li>Since <span class="math inline">\(|0.97|&lt;1.96\)</span>, do not reject <span class="math inline">\(H_0\)</span>.</li>
-<li>The observed difference in defect rates is not statistically significant at the 5% level.</li>
+<li><span class="math inline">\(\widehat P_1 = 0.0575, \widehat P_2 = 0.0425\)</span>.</li>
+<li>Pooled <span class="math inline">\(\widehat P = 40/800 = 0.05\)</span>.</li>
+<li><span class="math inline">\(Z = \frac{0.0575 - 0.0425}{\sqrt{0.05(0.95)(1/400 + 1/400)}} \approx 0.97\)</span>.</li>
+<li><span class="math inline">\(|0.97| &lt; 1.96 \implies\)</span> <span class="alert">fail to reject <span class="math inline">\(H_0\)</span></span>.</li>
 </ul>
 </div>
 </div>
@@ -871,51 +783,41 @@
 </section>
 <section id="worked-example-code-enforcement" class="slide level2">
 <h2>Worked example: code enforcement</h2>
-<div title="Code enforcement (adapted from SZ 9.4, Examples 10 and 11)">
+<div title="Worked example: Code enforcement">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Code enforcement (adapted from SZ 9.4, Examples 10 and 11)</strong></p>
+<p><strong>Worked example: Code enforcement</strong></p>
 </div>
 <div class="callout-content">
 <ul>
-<li>Before web publication of inspection records:
-<ul>
-<li><span class="math inline">\(n_1=500\)</span>, <span class="math inline">\(\widehat P_1=0.67\)</span></li>
-</ul></li>
-<li>After web publication:
-<ul>
-<li><span class="math inline">\(n_2=100\)</span>, <span class="math inline">\(\widehat P_2=0.80\)</span></li>
-</ul></li>
+<li>Before web publication: <span class="math inline">\(n_1=500, \widehat P_1=0.67\)</span>.</li>
+<li>After: <span class="math inline">\(n_2=100, \widehat P_2=0.80\)</span>.</li>
 <li>Construct a 90% confidence interval for <span class="math inline">\(p_1-p_2\)</span>.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Point estimate</a></li><li><a href="#tabset-7-2">Confidence interval</a></li></ul>
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Point estimate</a></li><li><a href="#tabset-8-2">Confidence interval</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1">
+<div id="tabset-8-1">
 <ul>
-<li>The point estimate is <span class="math display">\[\widehat P_1-\widehat P_2=0.67-0.80=-0.13.\]</span></li>
+<li>Estimate: <span class="math inline">\(\widehat P_1-\widehat P_2 = 0.67 - 0.80 = -0.13\)</span>.</li>
 </ul>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-8-2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>p1_hat <span class="ot">&lt;-</span> <span class="fl">0.67</span></span>
-<span id="cb21-2"><a href=""></a>p2_hat <span class="ot">&lt;-</span> <span class="fl">0.80</span></span>
-<span id="cb21-3"><a href=""></a><span class="sc">-</span><span class="fl">0.13</span> <span class="sc">+</span> <span class="fl">1.645</span> <span class="sc">*</span> <span class="fu">sqrt</span>(p1_hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1_hat)<span class="sc">/</span><span class="dv">500</span> <span class="sc">+</span> p2_hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p2_hat)<span class="sc">/</span><span class="dv">100</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>p1_hat <span class="ot">&lt;-</span> <span class="fl">0.67</span>; p2_hat <span class="ot">&lt;-</span> <span class="fl">0.80</span>; z_star <span class="ot">&lt;-</span> <span class="fl">1.645</span></span>
+<span id="cb12-2"><a href=""></a><span class="sc">-</span><span class="fl">0.13</span> <span class="sc">+</span> z_star <span class="sc">*</span> <span class="fu">sqrt</span>(p1_hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1_hat)<span class="sc">/</span><span class="dv">500</span> <span class="sc">+</span> p2_hat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p2_hat)<span class="sc">/</span><span class="dv">100</span>) <span class="sc">*</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.20433871 -0.05566129</code></pre>
 </div>
 </div>
 <ul>
-<li>The 90% confidence interval is about <span class="math inline">\((-0.20,-0.06)\)</span>.</li>
-<li>Interpretation: the proportion passing on the first inspection appears to be between 6 and 20 percentage points higher after publication.</li>
+<li>Interpretation: inspection pass rate is 6 to 20 points higher after publication.<br>
+</li>
 </ul>
 </div>
 </div>
@@ -935,10 +837,19 @@
 <li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
 </ul>
 <p><strong>References</strong></p>
-<p>Ashenfelter, O., Levine, P. B., &amp; Zimmerman, D. J. (2003). Statistics and econometrics: Methods and applications. J. Wiley.</p>
-<p>Duflo, E., Banerjee, A., &amp; Kremer, M. (2020). The Influence of Randomized Controlled Trials on Development Economics Research and on Development Policy. In K. Basu, D. Rosenblatt, &amp; C. Sepulveda (Eds.), The State of Economics, the State of the World. The MIT Press. https://doi.org/10.7551/mitpress/11130.001.0001</p>
-<p>Neumark, D., Bank, R. J., &amp; Van Nort, K. D. (1996). Sex Discrimination in Restaurant Hiring: An Audit Study. The Quarterly Journal of Economics, 111(3), 915-941. https://doi.org/10.2307/2946676</p>
-<p>Romero, M., Sandefur, J., &amp; Sandholtz, W. A. (2020). Outsourcing Education: Experimental Evidence from Liberia. American Economic Review, 110(2), 364-400. https://doi.org/10.1257/aer.20181478</p>
+<aside class="notes">
+<p>Sources: - Neumark et al.&nbsp;(1996) audit study logic. - Romero et al.&nbsp;(2020) experimental evidence from Liberia.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 </section></section>
     </div>
