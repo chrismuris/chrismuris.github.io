@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="D01_files/libs/clipboard/clipboard.min.js"></script>
+<script src="D01_files/libs/quarto-html/tabby.min.js"></script>
+<script src="D01_files/libs/quarto-html/popper.min.js"></script>
+<script src="D01_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="D01_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="D01_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="D01_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <title>Simple linear regression (1)</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="D01_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="D01_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="D01_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="D01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="D01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="D01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="D01_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="D01_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="D01_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Simple linear regression (1)</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part D | Lecture 1<br>Chris Muris, McMaster University</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section class="slide level2">
+
+<aside class="notes">
+<p>Teaching notes:</p>
+<ul>
+<li>This deck can run long; keep the motivation/examples moving.</li>
+<li>Emphasize the big picture: regression as a tool to summarize association and make predictions.</li>
+<li>The examples lean on SZ 10, IMS Chapter 7, and the ModernDive (open dive) explanations for the mechanics we are highlighting.</li>
+<li>Useful textbook source files for this lecture:
+<ul>
+<li>Shafer and Zhang: <code>02_slides/other_books/text_introductory-statistics/s14-01-linear-relationships-between-v.html</code></li>
+<li>Shafer and Zhang: <code>02_slides/other_books/text_introductory-statistics/s14-02-the-linear-correlation-coeffic.html</code></li>
+<li>IMS/OpenIntro: <code>02_slides/other_books/text_IMS/ims-main/07-model-slr.Rmd</code></li>
+</ul></li>
+<li>Relevant OpenIntro Statistics readings:
+<ul>
+<li>Chapter 8.1: Fitting a line, residuals, and correlation</li>
+</ul></li>
+<li>Note on local OpenIntro source files:
+<ul>
+<li>the <code>supp_text_openintro_statistics</code> <code>.tex</code> tree in this repo does not include the regression chapters</li>
+<li>for regression, the local editable OpenIntro-style source is the IMS Rmd material</li>
+</ul></li>
+<li>Keep reinforcing that correlation measures linear association only.</li>
+<li>Keep reinforcing that association does not imply causation.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="roadmap" class="slide level2 scrollable">
+<h2>Roadmap</h2>
+<ul>
+<li>Previously: Parts A, B, and C
+<ul>
+<li>descriptive statistics</li>
+<li>probability theory</li>
+<li>inferential statistics (means and proportions)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Previously: Part C summary</p></li>
+<li><p>Estimation:</p>
+<ul>
+<li>point estimates and confidence intervals</li>
+<li>means and proportions</li>
+</ul></li>
+<li><p>Hypothesis testing:</p>
+<ul>
+<li>null and alternative hypotheses</li>
+<li>critical values, rejection regions, and <span class="math inline">\(p\)</span>-values</li>
+</ul></li>
+<li><p>Decisions under uncertainty:</p>
+<ul>
+<li>Type I and Type II errors</li>
+<li>significance levels and interpretation</li>
+</ul></li>
+<li><p>Two-population inference:</p>
+<ul>
+<li>differences in means</li>
+<li>paired samples and differences in proportions</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>This lecture: Part D starts
+<ol type="1">
+<li>Motivate regression with a few examples</li>
+<li>Review linear relationships and scatter plots</li>
+<li>Introduce correlation as a summary of linear association</li>
+<li>Practice with a few short exercises</li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
+<ul>
+<li><strong>Readings</strong>: SZ 10.1-10.3; IMS 7.1</li>
+<li><strong>Homework</strong>: SZ 10.1: 3, 5, 7, 13; SZ 10.2: 3, 9, 15, 19, 21, 25; IMS 7: 3, 4, 5, 6, 7, 8, 9</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
+<ul>
+<li>Why this matters: regression is the most widely used tool in empirical economics — it summarizes the relationship between variables and enables prediction.</li>
+<li>What you will learn:
+<ol type="1">
+<li>how economists use regression to study relationships between variables</li>
+<li>how to read and interpret scatter plots for association</li>
+<li>how to compute and interpret the correlation coefficient</li>
+</ol></li>
+</ul>
+</section>
+<section id="regression-in-economics" class="slide level2">
+<h2>Regression in economics</h2>
+<ul>
+<li>Regression is the workhorse tool for empirical economics.</li>
+<li>We start with <strong>simple linear regression</strong>:
+<ul>
+<li>one outcome variable <span class="math inline">\(y\)</span></li>
+<li>one predictor variable <span class="math inline">\(x\)</span></li>
+</ul></li>
+<li>Think of it as a way to summarize the association between two variables and make predictions.</li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-introduction-to-regression" class="title-slide slide level1 center">
+<h1>Part I: Introduction to Regression</h1>
+
+</section>
+<section id="motivation-why-regression" class="slide level2 scrollable">
+<h2>Motivation: why regression?</h2>
+<ul>
+<li><p>Economics is full of questions about relationships between variables.<br>
+</p></li>
+<li><p>Simple linear regression gives us a summary line and a prediction rule for those relationships.</p></li>
+<li><p>We will look at two examples:</p>
+<ol type="1">
+<li>advertising expenditure and sales</li>
+<li>class-size and student performance</li>
+</ol></li>
+</ul>
+</section>
+<section id="example-advertising-and-sales" class="slide level2">
+<h2>Example: advertising and sales</h2>
+<ul>
+<li>This example is from Chapter 3 of James et al.&nbsp;(2013) and it highlights how firms use data to set budgets</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Data:
+<ul>
+<li>200 markets with <code>Sales</code> (thousands of units)</li>
+<li>Advertising expenditures on <code>TV</code>, <code>Radio</code>, and <code>Newspaper</code> (thousands of dollars)</li>
+</ul></li>
+<li>Goal:
+<ul>
+<li>Estimate whether sales and <code>TV</code> spending move together.</li>
+<li>Gauge how big the average change in sales is for a marginal dollar of advertising</li>
+<li>Preview how other media might complicate interpretation</li>
+</ul></li>
+<li>Questions we keep in mind
+<ul>
+<li>Are sales positively related to advertising?</li>
+<li>Does the relationship look deterministic or random?</li>
+<li>How should we phrase the interpretation for a manager?</li>
+<li>What happens when we bring in other predictors?</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>adv_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/advertising.csv"</span>)</span>
+<span id="cb1-2"><a href=""></a><span class="fu">summary</span>(adv_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code>       TV             Radio          Newspaper          Sales      
+ Min.   :  0.70   Min.   : 0.000   Min.   :  0.30   Min.   : 1.60  
+ 1st Qu.: 74.38   1st Qu.: 9.975   1st Qu.: 12.75   1st Qu.:11.00  
+ Median :149.75   Median :22.900   Median : 25.75   Median :16.00  
+ Mean   :147.04   Mean   :23.264   Mean   : 30.55   Mean   :15.13  
+ 3rd Qu.:218.82   3rd Qu.:36.525   3rd Qu.: 45.10   3rd Qu.:19.05  
+ Max.   :296.40   Max.   :49.600   Max.   :114.00   Max.   :27.00  </code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Produce the scatter plot with regression line:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>adv_df <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TV, <span class="at">y =</span> Sales)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-6"><a href=""></a>    <span class="at">x =</span> <span class="st">"TV advertising (thousands of dollars)"</span>,</span>
+<span id="cb3-7"><a href=""></a>    <span class="at">y =</span> <span class="st">"Sales (thousands of units)"</span></span>
+<span id="cb3-8"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="D01_files/figure-revealjs/unnamed-chunk-3-1.png" style="height:70.0%" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<div title="Quick check">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quick check</strong></p>
+</div>
+<div class="callout-content">
+<p>Before seeing any numeric output:</p>
+<ul>
+<li>Do you expect a positive association between <code>TV</code> and <code>Sales</code>?</li>
+<li>Is the relationship deterministic?</li>
+<li>How would you quantify the relationship?</li>
+<li>Does a straight line seem like a good summary?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="advertising-interpreting-the-slope" class="slide level2">
+<h2>Advertising: interpreting the slope</h2>
+<ul>
+<li>This fit comes from ordinary least squares, which minimizes squared vertical distances.</li>
+<li>The slope estimate is about 0.06.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>adv_lm_tv <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sales <span class="sc">~</span> TV, <span class="at">data =</span> adv_df)</span>
+<span id="cb4-2"><a href=""></a><span class="fu">summary</span>(adv_lm_tv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ TV, data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.4438 -1.4857  0.0218  1.5042  5.6932 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 6.974821   0.322553   21.62   &lt;2e-16 ***
+TV          0.055465   0.001896   29.26   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.296 on 198 degrees of freedom
+Multiple R-squared:  0.8122,    Adjusted R-squared:  0.8112 
+F-statistic: 856.2 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>That slope implies that each additional $1000 of TV advertising is associated with about 0.06 more thousands of units sold, on average in this sample.</li>
+</ul>
+</section>
+<section id="advertising-why-coefficients-change" class="slide level2">
+<h2>Advertising: why coefficients change</h2>
+<p>The advertising spending variables are correlated with each other, so adding more predictors can change the partial slopes.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">TV only</a></li><li><a href="#tabset-1-2">Newspaper only</a></li><li><a href="#tabset-1-3">All three channels</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>adv_lm_tv <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sales <span class="sc">~</span> TV, <span class="at">data =</span> adv_df)</span>
+<span id="cb6-2"><a href=""></a><span class="fu">coef</span>(adv_lm_tv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)          TV 
+ 6.97482149  0.05546477 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>adv_lm_newspaper <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sales <span class="sc">~</span> Newspaper, <span class="at">data =</span> adv_df)</span>
+<span id="cb8-2"><a href=""></a><span class="fu">coef</span>(adv_lm_newspaper)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)   Newspaper 
+  13.959549    0.038324 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>adv_lm_all <span class="ot">&lt;-</span> <span class="fu">lm</span>(Sales <span class="sc">~</span> TV <span class="sc">+</span> Radio <span class="sc">+</span> Newspaper, <span class="at">data =</span> adv_df)</span>
+<span id="cb10-2"><a href=""></a><span class="fu">coef</span>(adv_lm_all)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> (Intercept)           TV        Radio    Newspaper 
+4.6251240788 0.0544457803 0.1070012282 0.0003356579 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div title="Quick check">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quick check</strong></p>
+</div>
+<div class="callout-content">
+<p>Why does the <code>Newspaper</code> coefficient change when we add <code>TV</code> and <code>Radio</code>?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-class-size-and-test-scores" class="slide level2">
+<h2>Example: class size and test scores</h2>
+<ul>
+<li>Stock and Watson (2015) provide a dataset on 420 California K-6 and K-8 districts.
+<ul>
+<li>Outcome: <code>math</code> score (Stanford 9 scale)</li>
+<li>Predictor: <code>str = students/teachers</code>.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Why does the slope matter?">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Why does the slope matter?</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What do you think happens to average test scores when adding more students per teacher?</li>
+<li>Why would the ministry of education or a superintendent care about the direction and size of the slope?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Here is a summary of the data:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">data</span>(<span class="st">"CASchools"</span>)</span>
+<span id="cb12-2"><a href=""></a>CA_df <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(CASchools) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href=""></a>  <span class="fu">mutate</span>(<span class="at">str =</span> students <span class="sc">/</span> teachers)</span>
+<span id="cb12-4"><a href=""></a><span class="fu">summary</span>(CA_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   district            school                  county      grades   
+ Length:420         Length:420         Sonoma     : 29   KK-06: 61  
+ Class :character   Class :character   Kern       : 27   KK-08:359  
+ Mode  :character   Mode  :character   Los Angeles: 27              
+                                       Tulare     : 24              
+                                       San Diego  : 21              
+                                       Santa Clara: 20              
+                                       (Other)    :272              
+    students          teachers          calworks          lunch       
+ Min.   :   81.0   Min.   :   4.85   Min.   : 0.000   Min.   :  0.00  
+ 1st Qu.:  379.0   1st Qu.:  19.66   1st Qu.: 4.395   1st Qu.: 23.28  
+ Median :  950.5   Median :  48.56   Median :10.520   Median : 41.75  
+ Mean   : 2628.8   Mean   : 129.07   Mean   :13.246   Mean   : 44.71  
+ 3rd Qu.: 3008.0   3rd Qu.: 146.35   3rd Qu.:18.981   3rd Qu.: 66.86  
+ Max.   :27176.0   Max.   :1429.00   Max.   :78.994   Max.   :100.00  
+                                                                      
+    computer       expenditure       income          english      
+ Min.   :   0.0   Min.   :3926   Min.   : 5.335   Min.   : 0.000  
+ 1st Qu.:  46.0   1st Qu.:4906   1st Qu.:10.639   1st Qu.: 1.941  
+ Median : 117.5   Median :5215   Median :13.728   Median : 8.778  
+ Mean   : 303.4   Mean   :5312   Mean   :15.317   Mean   :15.768  
+ 3rd Qu.: 375.2   3rd Qu.:5601   3rd Qu.:17.629   3rd Qu.:22.970  
+ Max.   :3324.0   Max.   :7712   Max.   :55.328   Max.   :85.540  
+                                                                  
+      read            math            str       
+ Min.   :604.5   Min.   :605.4   Min.   :14.00  
+ 1st Qu.:640.4   1st Qu.:639.4   1st Qu.:18.58  
+ Median :655.8   Median :652.4   Median :19.72  
+ Mean   :655.0   Mean   :653.3   Mean   :19.64  
+ 3rd Qu.:668.7   3rd Qu.:665.8   3rd Qu.:20.87  
+ Max.   :704.0   Max.   :709.5   Max.   :25.80  
+                                                </code></pre>
+</div>
+</div>
+</section>
+<section id="class-size-vs-test-score" class="slide level2">
+<h2>Class size vs test score</h2>
+<ul>
+<li>Below is a scatterplot with fitted regression line:</li>
+</ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>CA_df <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> str, <span class="at">y =</span> math)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-4"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-6"><a href=""></a>    <span class="at">x =</span> <span class="st">"Students per teacher (STR)"</span>,</span>
+<span id="cb14-7"><a href=""></a>    <span class="at">y =</span> <span class="st">"Math score (Stanford 9)"</span></span>
+<span id="cb14-8"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="D01_files/figure-revealjs/unnamed-chunk-9-1.png" style="height:70.0%" width="960"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="regression-output" class="slide level2">
+<h2>Regression output</h2>
+<ul>
+<li>Here is the regression output from <code>R</code>: can you interpret it?</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>ca_lm_str <span class="ot">&lt;-</span> <span class="fu">lm</span>(math <span class="sc">~</span> str, <span class="at">data =</span> CA_df)</span>
+<span id="cb15-2"><a href=""></a><span class="fu">summary</span>(ca_lm_str)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = math ~ str, data = CA_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-44.615 -13.374  -0.828  12.728  52.711 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 691.4174     9.3825  73.692  &lt; 2e-16 ***
+str          -1.9386     0.4755  -4.077 5.47e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 18.41 on 418 degrees of freedom
+Multiple R-squared:  0.03824,   Adjusted R-squared:  0.03594 
+F-statistic: 16.62 on 1 and 418 DF,  p-value: 5.467e-05</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Slope estimate: about -1.94 points per additional student per teacher.</li>
+<li>Standard deviation of math scores: about 18.8.<br>
+</li>
+<li>Roughly 9.7 more students per teacher is associated with a one-standard-deviation drop in scores.</li>
+</ul>
+</div>
+</section>
+<section id="confounding" class="slide level2">
+<h2>Confounding</h2>
+<ul>
+<li>The slope on <code>str</code> changes when we include the percentage of English learners.</li>
+<li>This previews why observational regressions require careful interpretation.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(math <span class="sc">~</span> str <span class="sc">+</span> english, <span class="at">data =</span> CA_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = math ~ str + english, data = CA_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-48.230 -11.579   0.040   9.794  48.290 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 680.1894     7.8751  86.373   &lt;2e-16 ***
+str          -0.9129     0.4041  -2.259   0.0244 *  
+english      -0.5655     0.0418 -13.528   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 15.37 on 417 degrees of freedom
+Multiple R-squared:  0.3316,    Adjusted R-squared:  0.3284 
+F-statistic: 103.4 on 2 and 417 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="wrap-up-what-questions-come-next" class="slide level2">
+<h2>Wrap-up: what questions come next?</h2>
+<ul>
+<li>How do we choose the “best-fitting” line?</li>
+<li>How do we interpret slopes carefully and translate them into words readers understand?</li>
+<li>How do we include many predictors without losing track of the mechanics?</li>
+</ul>
+</section></section>
+<section>
+<section id="part-ii-linear-relationships" class="title-slide slide level1 center">
+<h1>Part II: Linear Relationships</h1>
+
+</section>
+<section id="deterministic-vs-random-relationships" class="slide level2">
+<h2>Deterministic vs random relationships</h2>
+<ul>
+<li>A relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is <strong>deterministic</strong> if knowing <span class="math inline">\(x\)</span> completely determines <span class="math inline">\(y\)</span>.</li>
+<li>In most economic data, relationships involve <strong>randomness</strong>:
+<ul>
+<li>the same <span class="math inline">\(x\)</span> value can correspond to different <span class="math inline">\(y\)</span> values . . .</li>
+</ul></li>
+<li>Regression lines are <em>average</em> responses because each value of <span class="math inline">\(x\)</span> accompanies a cloud of <span class="math inline">\(y\)</span> outcomes.</li>
+</ul>
+</section>
+<section id="linear-relationships-slope-and-intercept" class="slide level2">
+<h2>Linear relationships: slope and intercept</h2>
+<ul>
+<li>A relationship is <strong>linear</strong> if points lie on a straight line.</li>
+<li>Line equation: <span class="math display">\[y = a x + b\]</span></li>
+<li>Interpretation:
+<ul>
+<li>slope <span class="math inline">\(a\)</span>: change in <span class="math inline">\(y\)</span> for a 1-unit increase in <span class="math inline">\(x\)</span></li>
+<li>intercept <span class="math inline">\(b\)</span>: value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 0\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="scatter-plots" class="slide level2">
+<h2>Scatter plots</h2>
+<ul>
+<li>A <strong>scatter plot</strong> displays pairs <span class="math inline">\((x,y)\)</span>:
+<ul>
+<li><span class="math inline">\(x\)</span> on the horizontal axis</li>
+<li><span class="math inline">\(y\)</span> on the vertical axis</li>
+</ul></li>
+<li>First things to look for:
+<ul>
+<li>direction (upward/downward)</li>
+<li>strength (tight/loose cloud)</li>
+<li>form (linear/nonlinear)</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="part-iii-correlation" class="title-slide slide level1 center">
+<h1>Part III: Correlation</h1>
+
+</section>
+<section id="correlation-what-it-measures" class="slide level2">
+<h2>Correlation: what it measures</h2>
+<ul>
+<li>The <strong>correlation coefficient</strong> summarizes the strength of a <em>linear</em> relationship.</li>
+<li>Intuition: how close are the points to a straight line?</li>
+<li>Correlation is unitless and ranges from -1 to 1.</li>
+</ul>
+</section>
+<section id="correlation-examples" class="slide level2">
+<h2>Correlation: examples</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="figures/crop-yields-af-1.png" style="width:100.0%"></p>
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Plot A (bananas vs potatoes): -0.54</li>
+<li>Plot B (cassava vs soybeans): 0.16</li>
+<li>Plot C (cassava vs maize): 0.46</li>
+<li>Plot D (cocoa vs bananas): -0.44</li>
+<li>Plot E (peas vs barley): 0.69</li>
+<li>Plot F (wheat vs barley): 0.85</li>
+</ul>
+</div></div>
+<div title="Quick check">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quick check</strong></p>
+</div>
+<div class="callout-content">
+<p>Which plot looks closest to zero correlation? Which looks strongest?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="correlation-coefficient" class="slide level2">
+<h2>Correlation coefficient</h2>
+<ul>
+<li>For a sample of <span class="math inline">\(n\)</span> pairs <span class="math inline">\((x,y)\)</span>, the correlation is: <span class="math display">\[r = \frac{SS_{xy}}{\sqrt{SS_{xx}SS_{yy}}}\]</span></li>
+<li>Where:
+<ul>
+<li><span class="math inline">\(SS_{xx} = \sum x^2 - \frac{1}{n}(\sum x)^2\)</span></li>
+<li><span class="math inline">\(SS_{yy} = \sum y^2 - \frac{1}{n}(\sum y)^2\)</span></li>
+<li><span class="math inline">\(SS_{xy} = \sum xy - \frac{1}{n}(\sum x)(\sum y)\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="interpreting-correlation" class="slide level2">
+<h2>Interpreting correlation</h2>
+<ul>
+<li>Range: <span class="math inline">\(-1 \le r \le 1\)</span></li>
+<li>Sign:
+<ul>
+<li><span class="math inline">\(r &lt; 0\)</span>: as <span class="math inline">\(x\)</span> increases, <span class="math inline">\(y\)</span> tends to decrease</li>
+<li><span class="math inline">\(r &gt; 0\)</span>: as <span class="math inline">\(x\)</span> increases, <span class="math inline">\(y\)</span> tends to increase</li>
+</ul></li>
+<li>Magnitude:
+<ul>
+<li><span class="math inline">\(|r|\)</span> close to 1: strong linear relationship</li>
+<li><span class="math inline">\(|r|\)</span> close to 0: weak linear relationship</li>
+</ul></li>
+<li>What <span class="math inline">\(r\)</span> does <em>not</em> tell you:
+<ul>
+<li>slope of the relationship</li>
+<li>nonlinear association</li>
+<li>causality</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center scrollable">
+<h1>Exercises</h1>
+<div class="exercise-callout" title="Exercise: scatter plot and linearity">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: scatter plot and linearity</strong></p>
+</div>
+<div class="callout-content">
+<p>A data set consists of eight <span class="math inline">\((x,y)\)</span> pairs: <span class="math inline">\((0,12),(2,15),(4,16),(5,14),(8,22),(13,24),(15,28),(20,30)\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ol type="1">
+<li>Plot the data in a scatter diagram.</li>
+<li>Is the relationship deterministic or random?</li>
+<li>Does it look linear or nonlinear?</li>
+</ol>
+</div>
+<div id="tabset-2-2">
+<ol type="1">
+<li>The plot shows a positive trend.</li>
+<li>The relationship is not deterministic; points do not fall on a single line.</li>
+<li>It looks roughly linear with random scatter.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: service call costs">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: service call costs</strong></p>
+</div>
+<div class="callout-content">
+<p>The pricing schedule for an elevator repair call is CAD 150 plus CAD 50 per hour on site.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (1 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ol type="1">
+<li>Write the equation relating labor cost <span class="math inline">\(y\)</span> to hours <span class="math inline">\(x\)</span>.</li>
+<li>Find the labor cost for 2.5 hours.</li>
+</ol>
+</div>
+<div id="tabset-3-2">
+<ol type="1">
+<li><span class="math inline">\(y = 150 + 50x\)</span></li>
+<li><span class="math inline">\(y = 150 + 50(2.5) = 275\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: correlation coefficient">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: correlation coefficient</strong></p>
+</div>
+<div class="callout-content">
+<p>For the sample data below:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th>1</th>
+<th>3</th>
+<th>4</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(y\)</span></td>
+<td>4</td>
+<td>1</td>
+<td>3</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (3 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ol type="1">
+<li>Draw the scatter plot.</li>
+<li>Predict the sign of the correlation.</li>
+<li>Compute the correlation coefficient.</li>
+</ol>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>The scatter plot shows a downward trend, so the correlation is negative.</li>
+<li><span class="math inline">\(r \approx -0.79\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: match the correlation (IMS 7.7)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: match the correlation (IMS 7.7)</strong></p>
+</div>
+<div class="callout-content">
+<p>Match each correlation to the corresponding scatterplot in the figure.</p>
+<p><img data-src="figures/ims_correlation_question.png" style="width:100.0%"></p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (1 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Match <span class="math inline">\(r=-0.7\)</span>, <span class="math inline">\(r=0.45\)</span>, <span class="math inline">\(r=0.06\)</span>, and <span class="math inline">\(r=0.92\)</span> to the four plots.</p>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li><span class="math inline">\(r=0.92\)</span> is the tightest upward-sloping plot.</li>
+<li><span class="math inline">\(r=-0.7\)</span> is the tightest downward-sloping plot.</li>
+<li><span class="math inline">\(r=0.06\)</span> is the plot with almost no linear trend.</li>
+<li><span class="math inline">\(r=0.45\)</span> is the remaining moderate positive trend.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+<ul>
+<li>James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2013). <em>An Introduction to Statistical Learning</em> (Vol. 103). Springer New York.</li>
+<li>Stock, J. H., &amp; Watson, M. W. (2015). <em>Introduction to econometrics</em> (Updated third edition, global edition). Pearson.</li>
+</ul>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="D01_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="D01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="D01_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="D01_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 6.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

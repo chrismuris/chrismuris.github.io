@@ -1,0 +1,13 @@
+- Linear relationships:
+    - scatter plots and linear trends
+    - correlation coefficient ($r$)
+- Simple linear regression (SLR):
+    - least squares estimation
+    - coefficient of determination ($R^2$)
+    - interpreting slopes and intercepts
+- Multiple linear regression (MLR):
+    - partial slopes and "holding all else equal"
+    - omitted variable bias and confounding
+- Inference for regression:
+    - hypothesis tests and confidence intervals for slopes
+    - reading and interpreting R regression output

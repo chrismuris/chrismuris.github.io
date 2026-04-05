@@ -6,8 +6,8 @@
 <script src="B08_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="B08_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="B08_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="B08_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="B08_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <title>Sampling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="B08_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="B08_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -94,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="B08_files/libs/revealjs/dist/theme/quarto-3110bf7756f5b9ec31d894777b7ad9fd.css">
+  <link rel="stylesheet" href="B08_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
   <link rel="stylesheet" href="../styles.css">
   <link href="B08_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="B08_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -206,6 +209,7 @@
 <section class="slide level2">
 
 <aside class="notes">
+<p>TODO: - 8+ consecutive histogram slides — consider consolidating into multi-panel figures or a 2×2 grid to tighten pacing</p>
 <p>2025: perfectly timed. talk slowly, walk them through the ideas of sampling. Make it about them: “if i randomly take a student from this room …”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -237,7 +241,6 @@
 <ul>
 <li>tables and graphs</li>
 <li>summary measures (mean, sd, median, quartiles, IQR, z-scores)</li>
-<li>correlation and simple linear regression</li>
 </ul></li>
 <li>Tools: using R/Quarto to compute, visualize, and report</li>
 </ul>
@@ -627,7 +630,7 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>(X1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre><code>[1] 1</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -638,7 +641,7 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb3-2"><a href=""></a>(X1_Xn <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6 2</code></pre>
+<pre><code>[1] 5 6</code></pre>
 </div>
 </div>
 </div>
@@ -649,7 +652,7 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>(Xbar_n <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.5</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
 </div>
@@ -661,8 +664,8 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>Xbar_n_1000 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span>
 <span id="cb7-2"><a href=""></a><span class="fu">head</span>(Xbar_n_1000, <span class="dv">20</span>) <span class="co"># Show first 20</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 5.5 3.5 3.0 2.0 3.0 1.0 2.0 4.0 2.0 4.5 5.0 4.0 2.5 2.5 1.5 5.5 5.0 4.0 5.0
-[20] 4.5</code></pre>
+<pre><code> [1] 1.5 2.0 2.5 3.0 4.0 3.5 3.5 1.0 4.0 4.5 4.5 2.0 3.0 3.0 3.5 3.5 2.5 5.5 2.0
+[20] 3.0</code></pre>
 </div>
 </div>
 </div>

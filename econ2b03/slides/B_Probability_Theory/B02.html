@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f5e301c3a65cec6d232acd76c98a54b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<script src="B02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="B02_files/libs/quarto-html/tabby.min.js"></script>
+<script src="B02_files/libs/quarto-html/popper.min.js"></script>
+<script src="B02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="B02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="B02_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="B02_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Chris Muris - McMaster University - ECON 2B03">
-  <meta name="dcterms.date" content="2026-02-10">
-  <title>Chris Muris – B02: Random Variables</title>
+  <title>Conditional Probability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="B02_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="B02_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -51,14 +31,14 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-ab9faa747559c40c7419c582d2bdafe3.css">
-  <link rel="stylesheet" href="../../../econ2b03/custom.css">
-  <link rel="stylesheet" href="../include/webex.css">
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="B02_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="B02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="B02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="B02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="B02_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="B02_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="B02_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -70,6 +50,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -152,53 +133,1162 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">B02: Random Variables</h1>
-  <p class="subtitle">Part B - Probability Theory</p>
+  <h1 class="title">Conditional Probability</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part B | Lecture 2<br>Chris Muris, McMaster University</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Chris Muris - McMaster University - ECON 2B03 
-</div>
-</div>
 </div>
 
-  <p class="date">2026-02-10</p>
 </section>
-<section id="random-variables" class="slide level2">
-<h2>Random Variables</h2>
+<section class="slide level2">
+
+<aside class="notes">
+<p>TODO: - Too long (55 min before Part IV in 2026) — trim aggressively - Final exercises section has 7 exercises — cut to 3-4; move extras to a problem set - Consider compressing repetitive examples in Part I</p>
+<p>2023: hard work for one hour; did not get around to all the questions; the card example is boring, it would be nice to have better ones. Generally: is it really necessary to do this, now that it is covered in 1ME3? Can probably get rid of B01 and B02!</p>
+<p>2026: this was WAY too long. I can be much quicker with this. Took me 55 minutes to make it to the start of Part IV. And I have definitely not yet gotten to most examples and exercises. So this is now officially too long! This lecture could be interesting though. Maybe a bit of compression, a higher pace, and a better collaboration with the previous lecture?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="roadmap" class="slide level2">
+<h2>Roadmap</h2>
+</section>
+<section id="previously-part-a-summary" class="slide level2">
+<h2>Previously: Part A summary</h2>
 <ul>
-<li>Discrete vs Continuous</li>
-<li>PDFs and CDFs</li>
-<li>Expected Value</li>
+<li>Foundations:
+<ul>
+<li>descriptive vs inferential statistics</li>
+<li>populations vs samples; parameters vs statistics</li>
+</ul></li>
+<li>Data and variables: measurement, types, and study design</li>
+<li>Descriptive statistics:
+<ul>
+<li>tables and graphs</li>
+<li>summary measures (mean, sd, median, quartiles, IQR, z-scores)</li>
+</ul></li>
+<li>Tools: using R/Quarto to compute, visualize, and report</li>
 </ul>
-
+</section>
+<section id="previously-part-b-so-far" class="slide level2">
+<h2>Previously: Part B so far</h2>
+<ul>
+<li>Random experiments, sample spaces, and events</li>
+<li>Probability and basic rules</li>
+<li>Counting techniques (permutations and combinations)</li>
+<li>Combining events: unions, intersections, and complements</li>
+</ul>
+</section>
+<section id="this-lecture" class="slide level2">
+<h2>This lecture</h2>
+<ul>
+<li>Unconditional, joint, and conditional probability</li>
+<li>The unconditional-from-joint rule</li>
+<li>Joint probability tables and interpretation</li>
+<li>Multiplication laws</li>
+</ul>
+</section>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
+<ul>
+<li><strong>Readings</strong>: SZ 3.3</li>
+<li><strong>Homework</strong>: SZ 3.3: 1a-b, 5, 9, 11, 19, 22, 23, 28, 29, 30</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
+<ul>
+<li>Why this matters: conditional probability is the language of updating beliefs.</li>
+<li>What you will learn:
+<ol type="1">
+<li>how information changes probabilities</li>
+<li>how to move between joint, marginal, and conditional probabilities</li>
+<li>how to use multiplication laws and independence</li>
+</ol></li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-conditional-probability" class="title-slide slide level1 center">
+<h1>Part I: Conditional Probability</h1>
 
 </section>
+<section id="why-conditional-probability" class="slide level2">
+<h2>Why conditional probability?</h2>
+<ul>
+<li>Many economic questions are conditional:
+<ul>
+<li>unemployment given education</li>
+<li>default risk given income</li>
+<li>turnout given age</li>
+</ul></li>
+<li>Conditional probability is the precursor to <strong>conditional expectation</strong>:
+<ul>
+<li>it describes how the distribution of one variable changes as we condition on another</li>
+</ul></li>
+<li>This is foundational for empirical analysis, including regression.</li>
+</ul>
+</section>
+<section id="unconditional-joint-and-conditional" class="slide level2 scrollable">
+<h2>Unconditional, joint, and conditional</h2>
+<ul>
+<li>First, we distinguish between:
+<ol type="1">
+<li>unconditional</li>
+<li>joint</li>
+<li>conditional</li>
+</ol></li>
+<li>These concepts only make sense if there are at least two events.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The <strong>unconditional probability</strong> <span class="math inline">\(p(A)\)</span> is the likelihood that a particular event will occur, regardless of whether another event occurs.
+<ul>
+<li>the chance that <span class="math inline">\(A\)</span> happens, ignoring everything else</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The <strong>joint probability</strong> <span class="math inline">\(p(A \cap B)\)</span> is the likelihood that two or more events will occur simultaneously, or <em>jointly</em>.
+<ul>
+<li>it is the probability of the intersection, probability of <span class="math inline">\(A\)</span> <em>and</em> <span class="math inline">\(B\)</span></li>
+<li>the chance that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> happen together</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>The <strong>conditional probability</strong> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(p(A|B)\)</span>, is the probability that event <span class="math inline">\(A\)</span> has occurred in a trial of a random experiment for which it is known that event <span class="math inline">\(B\)</span> has definitely occurred.
+<ul>
+<li>it may be computed using the formula <span class="math display">\[p(A|B)=\frac{p(A\cap B)}{p(B)}.\]</span></li>
+<li>restrict attention to trials where <span class="math inline">\(B\)</span> happened, then compute how often <span class="math inline">\(A\)</span> happens within that restricted group</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Card deck">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Card deck</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><img data-src="figures/cards.png" style="width:90.0%"></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Card deck (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Card deck (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Unconditional: drawing a heart (event <span class="math inline">\(B\)</span>) <span class="math display">\[p(\text{heart})=p(B)=\frac{13}{52}\]</span></li>
+<li>Joint: drawing a face card (event <span class="math inline">\(A\)</span>) <em>and</em> a heart (event <span class="math inline">\(B\)</span>) <span class="math display">\[p(\text{face card}\cap\text{heart})=p(A\cap B)=\frac{3}{52}\]</span></li>
+<li>Conditional: drawing a face card (event <span class="math inline">\(A\)</span>) <em>given</em> the card is a heart (event <span class="math inline">\(B\)</span>) <span class="math display">\[\begin{aligned}
+  p(\text{face card}|\text{heart})&amp;=p(A|B)\\
+  &amp;=\frac{p(A\cap B)}{p(B)}\\
+  &amp;=\frac{3/52}{13/52}\\
+  &amp;=\frac{3}{13}
+  \end{aligned}\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Conditioning on an odd roll">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Conditioning on an odd roll</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A fair die is rolled. Initially, <span class="math inline">\(P(\text{five})=1/6\)</span>.</li>
+<li>You then learn the outcome was odd. The possible outcomes are now <span class="math inline">\(\{1,3,5\}\)</span>, so <span class="math display">\[P(\text{five} \mid \text{odd}) = 1/3.\]</span></li>
+<li>Interpretation: new information changes the probability.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Unemployment and education">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Unemployment and education</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p><span class="math inline">\(U\)</span> = unemployed, <span class="math inline">\(C\)</span> = has a college degree</p></li>
+<li><p><span class="math inline">\(P(U)=0.08\)</span>, <span class="math inline">\(P(C)=0.40\)</span>, <span class="math inline">\(P(U \cap C)=0.02\)</span></p></li>
+<li><p>Then <span class="math display">\[P(U \mid C)=\frac{P(U \cap C)}{P(C)}=\frac{0.02}{0.40}=0.05.\]</span></p></li>
+<li><p>Interpretation: unemployment is lower among college graduates in this example.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Health insurance and health status">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Health insurance and health status</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A survey of adults classifies respondents by health coverage and health status.</li>
+<li>Joint probability table:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Excellent</th>
+<th style="text-align: right;">Not excellent</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Insured</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uninsured</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(P(\text{excellent} \mid \text{insured}) = 0.21/0.87 = 0.241\)</span></li>
+<li><span class="math inline">\(P(\text{excellent} \mid \text{uninsured}) = 0.02/0.13 = 0.154\)</span></li>
+<li>Insured individuals are more likely to report excellent health, though this does not establish causation.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Conditional probability for a standard deck">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Conditional probability for a standard deck</strong></p>
+</div>
+<div class="callout-content">
+<p>You draw one card from a standard 52-card deck.</p>
+<p><img data-src="figures/cards.png" style="width:50.0%"></p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (2 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>What is the probability of drawing a card with an even number, given that you drew a number card with a value of 8 or higher?</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><span class="math inline">\(A\)</span> is “number card of 8 or higher”: there are 12 such cards so <span class="math inline">\(P(A) = 12/52\)</span></li>
+<li><span class="math inline">\(B\)</span> is “even number card”: there are 4*5 such cards, so <span class="math inline">\(P(B) = 20/52\)</span>
+<ul>
+<li>But <span class="math inline">\(P(B)\)</span> is irrelevant!</li>
+</ul></li>
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>: an even number card of 8 or higher: there are 8 such cards, so <span class="math inline">\(P(A \text{ and } B) = 8/52\)</span></li>
+<li><span class="math inline">\(p(B|A) = p(A \text{ and } B)/p(A) = (8 / 52) / ( 12 / 52) = 8 / 12 = 2/3\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-ii-collectively-exhaustive-events" class="title-slide slide level1 center">
+<h1>Part II: Collectively Exhaustive Events</h1>
+
+</section>
+<section id="collectively-exhaustive-events" class="slide level2">
+<h2>Collectively exhaustive events</h2>
+<ul>
+<li>A set of events is called <strong>collectively exhaustive</strong> if the union contains all outcomes in the sample space.</li>
+<li>On any trial, at least one of these events is bound to occur.</li>
+<li>Leading example: the events <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> are:
+<ul>
+<li>mutually exclusive</li>
+<li>collectively exhaustive</li>
+<li>exactly one of <span class="math inline">\(A\)</span>, <span class="math inline">\(A^c\)</span> happens.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Suits as a partition">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Suits as a partition</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The random experiment is to draw a card at random from a standard deck.</li>
+<li>The outcome corresponds to the suit:
+<ul>
+<li><span class="math inline">\(B_1\)</span> is the event of drawing a heart</li>
+<li><span class="math inline">\(B_2\)</span> is the event of drawing a club</li>
+<li><span class="math inline">\(B_3\)</span> is the event of a spade</li>
+<li><span class="math inline">\(B_4\)</span> the event of a diamond.</li>
+</ul></li>
+<li>The events <span class="math inline">\(B_1,B_2,B_3,B_4\)</span> are mutually exclusive and exhaustive.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div title="Dice events">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Dice events</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Random experiment: throwing a die.</li>
+<li>Sample space: <span class="math inline">\(\{1,2,3,4,5,6\}\)</span>.</li>
+<li>Events:
+<ul>
+<li>Let <span class="math inline">\(A\)</span> be the event of rolling an even number,</li>
+<li><span class="math inline">\(B\)</span> the event of rolling an odd number, and</li>
+<li><span class="math inline">\(C\)</span> the event of rolling at least a 2.</li>
+</ul></li>
+<li>Then:
+<ol type="1">
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive</li>
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are collectively exhaustive</li>
+<li><span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are collectively exhaustive</li>
+<li>Are <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> mutually exclusive?</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-unconditional-from-joint-probability-rule" class="slide level2">
+<h2>The unconditional from joint probability rule</h2>
+<ul>
+<li><p>A set of events that is mutually exclusive and collectively exhaustive is called a <strong>partition</strong>.</p></li>
+<li><p>The <strong>unconditional from joint probability rule</strong> says <span class="math display">\[p(A)=\sum_{\text{all } B} p(A\cap B),\]</span> where the sum is taken over events <span class="math inline">\(B\)</span> that form a partition.</p>
+<blockquote>
+<p>to obtain an unconditional probability from joint probabilities, we sum the joint probabilities over all possible events in a partition</p>
+</blockquote></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Unconditional from joint rule">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Unconditional from joint rule</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Suppose you had the set of joint probabilities, say, <span class="math inline">\(p(\text{face card}\cap\text{heart})\)</span>, <span class="math inline">\(p(\text{face card}\cap\text{club})\)</span>, <span class="math inline">\(p(\text{face card}\cap\text{spade})\)</span>, and <span class="math inline">\(p(\text{face card}\cap\text{diamond})\)</span></li>
+<li>You need to compute the unconditional probability of obtaining a face card</li>
+<li>Using the unconditional from joint probability rule:</li>
+</ul>
+<p><span class="math display">\[\begin{aligned}
+p(\text{face card})&amp;=\sum_{\text{all suits}} p(\text{face card}\cap\text{suit})\\
+&amp;= p(\text{face card}\cap\text{heart}) + p(\text{face card}\cap\text{club}) \\
+&amp;\quad + p(\text{face card}\cap\text{spade}) + p(\text{face card}\cap\text{diamond})\\
+&amp;=\frac{3}{52}+\frac{3}{52}+\frac{3}{52}+\frac{3}{52}=\frac{12}{52}.
+\end{aligned}\]</span></p>
+<ul>
+<li>This gives the correct answer, because we already knew that <span class="math inline">\(p(\text{face card}) = 12/52.\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Red light and tickets">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Red light and tickets</strong></p>
+</div>
+<div class="callout-content">
+<p>Out of all cars that arrive at a traffic light: 5% run a red light and get a ticket, 10% run a red light and do not get a ticket, and 85% do not run a red light.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>What is the probability that a randomly selected car that arrives at that traffic light runs a red light?</li>
+<li>Force yourself to use the “unconditional from joint rule”.</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li><span class="math inline">\(P(A)=P(A \cap B)+P(A \cap B^c)=0.05+0.10=0.15\)</span></li>
+<li>Alternatively, <span class="math inline">\(P(A)=1-P(A^c)=1-0.85=0.15\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-iii-joint-probability-tables" class="title-slide slide level1 center">
+<h1>Part III: Joint Probability Tables</h1>
+
+</section>
+<section id="joint-probability-tables" class="slide level2">
+<h2>Joint probability tables</h2>
+<ul>
+<li>A <strong>joint probability table</strong> shows probabilities for <em>joint</em> events.</li>
+<li>Generic layout (rows = <span class="math inline">\(A\)</span> events, columns = <span class="math inline">\(B\)</span> events):</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(B_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(B_2\)</span></th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A_1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_1 \cap B_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_1 \cap B_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(A_2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_2 \cap B_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_2 \cap B_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(A_2)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;"><span class="math inline">\(P(B_1)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(P(B_2)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<div title="Engineering students: counts to probabilities">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Engineering students: counts to probabilities</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Census of first-year engineering students:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;"># Students</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">3,800</td>
+<td style="text-align: right;">4,700</td>
+<td style="text-align: right;">8,500</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">1,600</td>
+<td style="text-align: right;">2,400</td>
+<td style="text-align: right;">4,000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"># Students</td>
+<td style="text-align: right;">5,400</td>
+<td style="text-align: right;">7,100</td>
+<td style="text-align: right;">Total = 12,500</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Divide each entry by 12,500 to get joint probabilities:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Passed</th>
+<th style="text-align: right;">Failed</th>
+<th style="text-align: right;">Marginal Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Male</td>
+<td style="text-align: right;">0.304</td>
+<td style="text-align: right;">0.376</td>
+<td style="text-align: right;">0.680</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Female</td>
+<td style="text-align: right;">0.128</td>
+<td style="text-align: right;">0.192</td>
+<td style="text-align: right;">0.320</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marginal Probability</td>
+<td style="text-align: right;">0.432</td>
+<td style="text-align: right;">0.568</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>We will use this table to read entries, compute marginals, and compute conditionals.</li>
+<li>We read entries in this table as <span class="math inline">\(P(\text{male }\cap\text{ failed}) = 0.376.\)</span></li>
+<li>Numbers in the bottom row and right column are <em>unconditional</em> probabilities:
+<ul>
+<li><span class="math inline">\(P(\text{passed}) = 0.432\)</span> represents the proportion of students who passed (regardless of their sex).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Engineering students: conditional rates">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Engineering students: conditional rates</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Goal: compare failure rates for males and females.</li>
+<li>Notation: <span class="math inline">\(p(\text{failed}|\text{male})\)</span> and <span class="math inline">\(p(\text{failed}|\text{female})\)</span>.</li>
+<li>Male failure rate (table): <span class="math display">\[p(\text{failed}|\text{male}) = \frac{0.376}{0.680} = 0.5529...\]</span></li>
+<li>Female failure rate (table): <span class="math display">\[p(\text{failed}|\text{female}) = \frac{0.192}{0.320} = 0.600.\]</span></li>
+<li>Check against raw counts: <span class="math inline">\(4{,}700/8{,}500\)</span> and <span class="math inline">\(2{,}400/4{,}000\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Labor market: counts to probabilities">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Labor market: counts to probabilities</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Suppose a survey of 1,000 adults records employment status and education.</li>
+<li>Start with counts:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Employed</th>
+<th style="text-align: right;">Unemployed</th>
+<th style="text-align: right;"># Adults</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">College</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No college</td>
+<td style="text-align: right;">540</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">600</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"># Adults</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">1000</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Divide by 1,000 to convert counts to joint probabilities.
+<ul>
+<li><span class="math inline">\(P(\text{college} \cap \text{unemployed}) = 40/1000 = 0.04\)</span></li>
+<li><span class="math inline">\(P(\text{college}) = 400/1000 = 0.40\)</span></li>
+<li><span class="math inline">\(P(\text{unemployed} \mid \text{college})=\frac{0.04}{0.40}=0.10.\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-iv-multiplication-laws" class="title-slide slide level1 center">
+<h1>Part IV: Multiplication Laws</h1>
+
+</section>
+<section id="multiplication-laws" class="slide level2">
+<h2>Multiplication laws</h2>
+<ul>
+<li><p>The <strong>general multiplication law</strong> is <span class="math display">\[p(A\cap B)=p(A)\times p(B|A)=p(B)\times p(A|B).\]</span></p>
+<blockquote>
+<p>The joint probability of two events equals the unconditional probability of one event times the conditional probability of the other event, given that the first event has already occurred.</p>
+</blockquote></li>
+<li><p>This is not a new rule at all! We have previously <em>defined</em> <span class="math display">\[p(A|B) = p(A \cap B) / p(B),\]</span> and this rule just rearranges that.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Unemployment by education">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Unemployment by education</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let <span class="math inline">\(A\)</span> be “adult is unemployed” and <span class="math inline">\(B\)</span> be “adult has a college degree”</li>
+<li>If <span class="math inline">\(P(B)=0.40\)</span> and <span class="math inline">\(P(A \mid B)=0.05\)</span>, then <span class="math display">\[P(A \cap B)=P(B)\,P(A\mid B)=0.40\times0.05=0.02.\]</span>
+<ul>
+<li>Interpretation: 2% of adults are both unemployed and college‑educated.</li>
+</ul></li>
+<li>Also:
+<ul>
+<li><span class="math inline">\(P(A \mid B^c)=\frac{P(A\cap B^c)}{P(B^c)}\)</span></li>
+<li>if <span class="math inline">\(P(A \mid B^c)=0.10\)</span>, then <span class="math inline">\(P(A \cap B^c)=P(B^c)\,P(A\mid B^c)=0.60\times0.10=0.06.\)</span>
+<ul>
+<li>Interpretation: 6% of adults are unemployed and do not have a college degree.</li>
+</ul></li>
+<li>Combine the two groups:
+<ul>
+<li><span class="math inline">\(P(A)=P(A\cap B)+P(A\cap B^c)=0.02+0.06=0.08.\)</span></li>
+<li>Interpretation: overall unemployment is 8%.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="independence-and-dependence" class="slide level2">
+<h2>Independence and dependence</h2>
+<ul>
+<li>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>dependent</strong> when the probability of <span class="math inline">\(A\)</span> is affected by occurrence of <span class="math inline">\(B\)</span>, <span class="math display">\[P(A) \ne P(A|B).\]</span></li>
+<li>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent</strong> if and only if <span class="math inline">\(p(A)= p(A|B)\)</span>.
+<ul>
+<li>if learning that <span class="math inline">\(B\)</span> happened does <strong>not</strong> change the probability of <span class="math inline">\(A\)</span>, then <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="College and unemployment">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>College and unemployment</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let <span class="math inline">\(A\)</span> be “has a college degree” and <span class="math inline">\(B\)</span> be “is unemployed”.</li>
+<li>Suppose <span class="math inline">\(P(B)=0.08\)</span> but <span class="math inline">\(P(B\mid A)=0.05\)</span>.</li>
+<li>Then <span class="math inline">\(P(B\mid A)\ne P(B)\)</span>, so <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are dependent.</li>
+<li>Interpretation: unemployment is lower among college graduates in this example.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Two households, same city">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Two households, same city</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let <span class="math inline">\(A\)</span> be “a randomly selected household rents” and <span class="math inline">\(B\)</span> be “a second, independently selected household rents.”</li>
+<li>Suppose <span class="math inline">\(P(A)=0.35\)</span> and <span class="math inline">\(P(B)=0.35\)</span>, and sampling is independent.</li>
+<li>Then <span class="math inline">\(P(A\mid B)=0.35\)</span>, so <span class="math inline">\(P(A\mid B)=P(A)\)</span>.</li>
+<li>Interpretation: knowing one household rents does not change the probability for another, independently selected household.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Union status and wages">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Union status and wages</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let <span class="math inline">\(A\)</span> be “worker is unionized” and <span class="math inline">\(B\)</span> be “worker earns above the median wage”.</li>
+<li>Suppose <span class="math inline">\(P(B)=0.50\)</span> but <span class="math inline">\(P(B\mid A)=0.65\)</span>.</li>
+<li>Then <span class="math inline">\(P(B\mid A)\ne P(B)\)</span>, so <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are dependent.</li>
+<li>Interpretation: union status is associated with higher wages in this example.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Independent lab tests">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Independent lab tests</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A diagnostic test has sensitivity 0.92:
+<ul>
+<li><span class="math inline">\(P(\text{positive}\mid\text{disease})=0.92\)</span></li>
+</ul></li>
+<li>Two independent labs test the same patient who has the disease.</li>
+<li>Then <span class="math display">\[P(\text{both positive}\mid\text{disease})=0.92\times0.92=0.8464.\]</span></li>
+<li>Interpretation: with independence, the joint conditional probability is the product of the conditional probabilities.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Ride-share">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Ride-share</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(A\)</span> be “a ride‑share driver logs into the app” and let <span class="math inline">\(B\)</span> be “surge pricing is active.” Suppose <span class="math inline">\(P(A)=0.40\)</span>, <span class="math inline">\(P(B)=0.30\)</span>, and <span class="math inline">\(P(A\cap B)=0.18\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (1 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li><span class="math inline">\(P(A)P(B)=0.40\times0.30=0.12\)</span></li>
+<li>Since <span class="math inline">\(P(A\cap B)=0.18\ne0.12\)</span>, the events are not independent.</li>
+<li><span class="math inline">\(P(A\mid B)=P(A\cap B)/P(B)=0.18/0.30=0.60\)</span>, which is higher than <span class="math inline">\(P(A)=0.40\)</span>.</li>
+<li>Interpretation: on surge days, more drivers are likely to log in, and on non‑surge days fewer log in, so we expect <span class="math inline">\(P(A\mid B)\)</span> to be higher than <span class="math inline">\(P(A)\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Repeat purchase in consecutive months">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Repeat purchase in consecutive months</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(A\)</span> be “a customer makes a purchase in January” and <span class="math inline">\(B\)</span> be “the same customer makes a purchase in February.” Suppose <span class="math inline">\(P(A)=0.25\)</span>, <span class="math inline">\(P(B)=0.30\)</span>, and <span class="math inline">\(P(A\cap B)=0.10\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (2 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent? Compute <span class="math inline">\(P(A\mid B)\)</span>.</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li><span class="math inline">\(P(A)P(B)=0.25\times0.30=0.075\)</span>, so <span class="math inline">\(P(A\cap B)\ne P(A)P(B)\)</span>.</li>
+<li>Not independent.</li>
+<li><span class="math inline">\(P(A\mid B)=P(A\cap B)/P(B)=0.10/0.30=0.333\overline{3}\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="special-multiplication-law" class="slide level2">
+<h2>Special multiplication law</h2>
+<ul>
+<li>The <strong>special multiplication law</strong> says that the joint probability of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the product of the unconditional, or marginal, probabilities of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</li>
+<li>Formally: if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math display">\[p(A\cap B)=p(A)\times p(B).\]</span>
+<ul>
+<li>if events do not affect each other, multiply their marginal probabilities</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center">
+<h1>Exercises</h1>
+
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: A fair die">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: A fair die</strong></p>
+</div>
+<div class="callout-content">
+<p>A single fair die is rolled. Let <span class="math inline">\(A=\{3\}\)</span> and <span class="math inline">\(B=\{1,3,5\}\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (2 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</p>
+</div>
+<div id="tabset-5-2">
+<ol type="1">
+<li>No! If it is given that <span class="math inline">\(A\)</span> occurred then we know that <span class="math inline">\(B\)</span> occurred!</li>
+<li>Compute all three probabilities <span class="math inline">\(P(A)=1/6\)</span>, <span class="math inline">\(P(B)=1/2\)</span>, and <span class="math inline">\(P(A \cap B)=P(\{3\})=1/6\)</span>. Since the product <span class="math inline">\(P(A) \times P(B)=(1/6)(1/2)=1/12\)</span> is not the same number as <span class="math inline">\(P(A\cap B)=1/6\)</span>, the events A and B are not independent.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Two coin flips">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Two coin flips</strong></p>
+</div>
+<div class="callout-content">
+<p>You flip a coin twice. Let <span class="math inline">\(A_1\)</span> be the event that you obtain a <em>H</em> on the first throw, and let <span class="math inline">\(A_2\)</span> be the event that you obtain a <em>H</em> on the second throw. Assume that <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are independent.</p>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (2 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<ol type="1">
+<li>Is it reasonable to assume that <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> are independent?</li>
+<li>What is the probability of the event <span class="math inline">\(B\)</span>, that you throw heads on both throws?</li>
+</ol>
+</div>
+<div id="tabset-6-2">
+<ol type="1">
+<li>Yes. We believe that the outcome of one coin flip does not affect the outcome of the next one. (But: “Gambler’s fallacy”.)</li>
+<li>Because the events are independent, we can use the special multiplication rule <span class="math display">\[P(B) = P(A_1 \cap A_2) = P(A_1)P(A_2) = 0.5 \times 0.5 = 0.25.\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Joint probability table">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Joint probability table</strong></p>
+</div>
+<div class="callout-content">
+<p>Out of all cars that arrive at a traffic light: 5% run a red light and get a ticket, 10% run a red light and do not get a ticket, and 85% do not run a red light.</p>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Question (2 min)</a></li><li><a href="#tabset-7-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<ul>
+<li>Write down the joint probability table.</li>
+<li>Compute the probability that a randomly selected car did not run a red light, conditional on not receiving a ticket.</li>
+</ul>
+</div>
+<div id="tabset-7-2">
+<ul>
+<li>Joint probability table:</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Ticket</th>
+<th style="text-align: right;">No ticket</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ran red</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Did not run red</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">0.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(P(\text{no red}\mid\text{no ticket})=0.85/0.95\approx0.895\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Chess game">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Chess game</strong></p>
+</div>
+<div class="callout-content">
+<p>You are going to play a game of chess. We will flip a coin. The event <span class="math inline">\(A\)</span> is whether it comes up <code>H</code> and you will play with white. If not (<code>T</code>), you will play with black. Let the event <span class="math inline">\(B\)</span> correspond to winning the game. If you play with white, you win 70% of the time. If you play with black, you win 50% of the time. Assume <span class="math inline">\(P(A) = 0.5\)</span> (“fair coin”).</p>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Question (homework)</a></li><li><a href="#tabset-8-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<ol type="1">
+<li>What is <span class="math inline">\(P(B|A)\)</span>?</li>
+<li>What is the probability that the coin comes up <code>H</code> <em>and</em> that you win the game?</li>
+<li>What is the probability that you win the game?</li>
+<li>You win the game. What is the probability that the coin came up <code>H</code>?</li>
+<li>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</li>
+<li>Cheating is common in chess. One way to cheat is to introduce an unfair coin. If <span class="math inline">\(P(A)=0.9\)</span>, what is <span class="math inline">\(P(B)\)</span>?</li>
+</ol>
+</div>
+<div id="tabset-8-2">
+<ul>
+<li><span class="math inline">\(P(B\mid A)=0.70\)</span></li>
+<li><span class="math inline">\(P(A\cap B)=0.5\times0.70=0.35\)</span></li>
+<li><span class="math inline">\(P(B)=0.5\times0.70+0.5\times0.50=0.60\)</span></li>
+<li><span class="math inline">\(P(A\mid B)=0.35/0.60\approx0.583\)</span></li>
+<li>Not independent, since <span class="math inline">\(P(B\mid A)=0.70\ne P(B)=0.60\)</span></li>
+<li>If <span class="math inline">\(P(A)=0.9\)</span>, then <span class="math inline">\(P(B)=0.9\times0.70+0.1\times0.50=0.68\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Health coverage and health status">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Health coverage and health status</strong></p>
+</div>
+<div class="callout-content">
+<p>A telephone survey classifies adults by health insurance and self-reported health. The joint probability table is:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Excellent</th>
+<th style="text-align: right;">Not excellent</th>
+<th style="text-align: right;">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Insured</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uninsured</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Question (2 min)</a></li><li><a href="#tabset-9-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<ol type="1">
+<li>What is the probability that a randomly chosen individual reports excellent health given that they are insured?</li>
+<li>What is the same probability given that they are uninsured?</li>
+<li>Are health coverage and excellent health independent?</li>
+</ol>
+</div>
+<div id="tabset-9-2">
+<ol type="1">
+<li><span class="math inline">\(P(\text{excellent} \mid \text{insured}) = 0.21 / 0.87 \approx 0.241\)</span></li>
+<li><span class="math inline">\(P(\text{excellent} \mid \text{uninsured}) = 0.02 / 0.13 \approx 0.154\)</span></li>
+<li><span class="math inline">\(P(\text{excellent}) = 0.23\)</span> but <span class="math inline">\(P(\text{excellent} \mid \text{insured}) \approx 0.241 \ne 0.23\)</span>, so the events are not independent. Insured individuals are more likely to report excellent health in this sample.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="../../..\econ2b03/">Home</a></p>
+
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="B02_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="B02_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -207,15 +1297,14 @@ Chris Muris - McMaster University - ECON 2B03
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
-'multiplex': {"secret":null,"id":"567fa3c23af584074cbbcd3ebdb4d868e9162d08e577c2cae0c731232223a37d","url":"https://multiplex.up.railway.app/"},
-'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -361,12 +1450,12 @@ Chris Muris - McMaster University - ECON 2B03
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -386,220 +1475,14 @@ Chris Muris - McMaster University - ECON 2B03
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
-          
+          RevealNotes,
           RevealSearch,
           RevealZoom
         ]
       });
-    </script>
-    <script>
-
-    /* update total correct if #webex-total_correct exists */
-    update_total_correct = function() {
-      console.log("webex: update total_correct");
-
-      var t = document.getElementsByClassName("webex-total_correct");
-      for (var i = 0; i < t.length; i++) {
-        p = t[i].parentElement;
-        var correct = p.getElementsByClassName("webex-correct").length;
-        var solvemes = p.getElementsByClassName("webex-solveme").length;
-        var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-        var selects = p.getElementsByClassName("webex-select").length;
-
-        t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-      }
-    }
-
-    /* webex-solution button toggling function */
-    b_func = function() {
-      console.log("webex: toggle hide");
-
-      var cl = this.parentElement.classList;
-      if (cl.contains('open')) {
-        cl.remove("open");
-      } else {
-        cl.add("open");
-      }
-    }
-
-    /* check answers */
-    check_func = function() {
-      console.log("webex: check answers");
-
-      var cl = this.parentElement.classList;
-      if (cl.contains('unchecked')) {
-        cl.remove("unchecked");
-        this.innerHTML = "Hide Answers";
-      } else {
-        cl.add("unchecked");
-        this.innerHTML = "Show Answers";
-      }
-    }
-
-    /* function for checking solveme answers */
-    solveme_func = function(e) {
-      console.log("webex: check solveme");
-
-      var real_answers = JSON.parse(this.dataset.answer);
-      var my_answer = this.value;
-      var cl = this.classList;
-      if (cl.contains("ignorecase")) {
-        my_answer = my_answer.toLowerCase();
-      }
-      if (cl.contains("nospaces")) {
-        my_answer = my_answer.replace(/ /g, "")
-      }
-
-      if (my_answer == "") {
-        cl.remove("webex-correct");
-        cl.remove("webex-incorrect");
-      } else if (real_answers.includes(my_answer)) {
-        cl.add("webex-correct");
-        cl.remove("webex-incorrect");
-      } else {
-        cl.add("webex-incorrect");
-        cl.remove("webex-correct");
-      }
-
-      // match numeric answers within a specified tolerance
-      if(this.dataset.tol > 0){
-        var tol = JSON.parse(this.dataset.tol);
-        var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-        if (matches.reduce((a, b) => a + b, 0) > 0) {
-          cl.add("webex-correct");
-        } else {
-          cl.remove("webex-correct");
-        }
-      }
-
-      // added regex bit
-      if (cl.contains("regex")){
-        answer_regex = RegExp(real_answers.join("|"))
-        if (answer_regex.test(my_answer)) {
-          cl.add("webex-correct");
-        }
-      }
-
-      update_total_correct();
-    }
-
-    /* function for checking select answers */
-    select_func = function(e) {
-      console.log("webex: check select");
-
-      var cl = this.classList
-
-      /* add style */
-      cl.remove("webex-incorrect");
-      cl.remove("webex-correct");
-      if (this.value == "answer") {
-        cl.add("webex-correct");
-      } else if (this.value != "blank") {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    /* function for checking radiogroups answers */
-    radiogroups_func = function(e) {
-      console.log("webex: check radiogroups");
-
-      var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-      var cl = checked_button.parentElement.classList;
-      var labels = checked_button.parentElement.parentElement.children;
-
-      /* get rid of styles */
-      for (i = 0; i < labels.length; i++) {
-        labels[i].classList.remove("webex-incorrect");
-        labels[i].classList.remove("webex-correct");
-      }
-
-      /* add style */
-      if (checked_button.value == "answer") {
-        cl.add("webex-correct");
-      } else {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    window.onload = function() {
-      console.log("webex onload");
-      /* set up solution buttons */
-      var buttons = document.getElementsByTagName("button");
-
-      for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].parentElement.classList.contains('webex-solution')) {
-          buttons[i].onclick = b_func;
-        }
-      }
-
-      var check_sections = document.getElementsByClassName("webex-check");
-      console.log("check:", check_sections.length);
-      for (var i = 0; i < check_sections.length; i++) {
-        check_sections[i].classList.add("unchecked");
-
-        let btn = document.createElement("button");
-        btn.innerHTML = "Show Answers";
-        btn.classList.add("webex-check-button");
-        btn.onclick = check_func;
-        check_sections[i].appendChild(btn);
-
-        let spn = document.createElement("span");
-        spn.classList.add("webex-total_correct");
-        check_sections[i].appendChild(spn);
-      }
-
-      /* set up webex-solveme inputs */
-      var solveme = document.getElementsByClassName("webex-solveme");
-
-      for (var i = 0; i < solveme.length; i++) {
-        /* make sure input boxes don't auto-anything */
-        solveme[i].setAttribute("autocomplete","off");
-        solveme[i].setAttribute("autocorrect", "off");
-        solveme[i].setAttribute("autocapitalize", "off");
-        solveme[i].setAttribute("spellcheck", "false");
-        solveme[i].value = "";
-
-        /* adjust answer for ignorecase or nospaces */
-        var cl = solveme[i].classList;
-        var real_answer = solveme[i].dataset.answer;
-        if (cl.contains("ignorecase")) {
-          real_answer = real_answer.toLowerCase();
-        }
-        if (cl.contains("nospaces")) {
-          real_answer = real_answer.replace(/ /g, "");
-        }
-        solveme[i].dataset.answer = real_answer;
-
-        /* attach checking function */
-        solveme[i].onkeyup = solveme_func;
-        solveme[i].onchange = solveme_func;
-
-        solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      /* set up radiogroups */
-      var radiogroups = document.getElementsByClassName("webex-radiogroup");
-      for (var i = 0; i < radiogroups.length; i++) {
-        radiogroups[i].onchange = radiogroups_func;
-      }
-
-      /* set up selects */
-      var selects = document.getElementsByClassName("webex-select");
-      for (var i = 0; i < selects.length; i++) {
-        selects[i].onchange = select_func;
-        selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      update_total_correct();
-    }
-
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

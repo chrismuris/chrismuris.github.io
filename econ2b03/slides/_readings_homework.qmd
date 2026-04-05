@@ -1,0 +1,4 @@
+## Readings and homework
+
+- **Readings**: {{< meta readings >}}
+- **Homework**: {{< meta homework >}}

@@ -1,0 +1,15 @@
+- Probability foundations:
+    - random experiments, sample spaces, and events
+    - probability rules: complements, unions, intersections, and counting
+- Conditional structure:
+    - conditional, joint, and marginal probabilities
+    - multiplication rule and independence
+- Random variables and distributions:
+    - discrete and continuous random variables
+    - distributions, mean, and variance
+- Core families:
+    - binomial distribution
+    - normal distribution, standardization, and tail areas
+- Sampling and limits:
+    - sampling distributions
+    - the Central Limit Theorem

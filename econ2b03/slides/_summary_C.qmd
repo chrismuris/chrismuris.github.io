@@ -1,0 +1,12 @@
+- Estimation:
+    - point estimates and confidence intervals
+    - means and proportions
+- Hypothesis testing:
+    - null and alternative hypotheses
+    - critical values, rejection regions, and $p$-values
+- Decisions under uncertainty:
+    - Type I and Type II errors
+    - significance levels and interpretation
+- Two-population inference:
+    - differences in means
+    - paired samples and differences in proportions

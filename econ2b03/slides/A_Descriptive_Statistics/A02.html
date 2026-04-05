@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f5e301c3a65cec6d232acd76c98a54b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<script src="A02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="A02_files/libs/quarto-html/tabby.min.js"></script>
+<script src="A02_files/libs/quarto-html/popper.min.js"></script>
+<script src="A02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="A02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="A02_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="A02_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Chris Muris - McMaster University - ECON 2B03">
-  <meta name="dcterms.date" content="2026-02-10">
-  <title>Chris Muris – A02: Visualizing Data</title>
+  <title>Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="A02_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="A02_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -50,15 +30,81 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-ab9faa747559c40c7419c582d2bdafe3.css">
-  <link rel="stylesheet" href="../../../econ2b03/custom.css">
-  <link rel="stylesheet" href="../include/webex.css">
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="A02_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="A02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="A02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="A02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="A02_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="A02_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="A02_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -70,6 +116,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -152,53 +199,2211 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">A02: Visualizing Data</h1>
-  <p class="subtitle">Part A - Descriptive Statistics</p>
+  <h1 class="title">Data</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part A | Lecture 2<br>Chris Muris, McMaster University</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Chris Muris - McMaster University - ECON 2B03 
-</div>
-</div>
 </div>
 
-  <p class="date">2026-02-10</p>
 </section>
-<section id="visualization-basics" class="slide level2">
-<h2>Visualization Basics</h2>
+<section class="slide level2">
+
+<aside class="notes">
 <ul>
-<li>Histograms</li>
-<li>Box plots</li>
-<li>Scatter plots</li>
+<li>Winter, 2023: took 40 minutes.</li>
+<li>Winter, 2026: took 45 minutes.</li>
+</ul>
+<p>2025:</p>
+<ul>
+<li><p>At start: go to A2L, course outline, and show them where to find the books. Leave the IMS page open for lab.</p></li>
+<li><p>This lecture is challenging to prepare, with lots going on.</p></li>
+<li><p>Also, there may be a lab right afterwards</p></li>
+<li><p>“Individuals” is a bit weird. But cannot use observations, since “individuals” also live in population, when they may not be observed. Perhaps justify “individuals” because most econ data sets have i = person.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="roadmap" class="slide level2 scrollable">
+<h2>Roadmap</h2>
+<ul>
+<li>Previously, we:
+<ol type="1">
+<li>Discussed course objectives and organization</li>
+</ol></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>This lecture, we:
+<ol type="1">
+<li>Review basic definitions and concepts in statistics</li>
+<li>See the <em>grand picture of statistics</em></li>
+<li>Discuss experiments and observational studies</li>
+<li>Set up a self-study on <em>sampling</em></li>
+</ol></li>
+</ul>
+</div>
+</section>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
+<ul>
+<li><strong>Readings</strong>: IMS 1, 2; SZ 1.1, 1.2</li>
+<li><strong>Homework</strong>: start on Assignment 0; SZ 1.1: 9, 11, 13, 15; IMS 1: 1.3, 1.7, 1.12; IMS 2: 2.1, 2.7, 2.8, 2.11, 2.13, 2.14, 2.15, 2.16, 2.17, 2.25.</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
+<ul>
+<li>Why this matters: understanding data types and study designs is the first step in any statistical analysis — it determines which methods are appropriate.</li>
+<li>What you will learn:
+<ol type="1">
+<li>key definitions: population, sample, parameter, statistic, and variable types</li>
+<li>the difference between experimental and observational data</li>
+<li>why confounding variables complicate causal claims</li>
+</ol></li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-concepts" class="title-slide slide level1 center">
+<h1>Part I: Concepts</h1>
+
+</section>
+<section id="basic-definitions-and-concepts-in-statistics" class="slide level2">
+<h2>Basic definitions and concepts in statistics</h2>
+<ul>
+<li>Last lecture, we saw definitions of Statistics, descriptive statistics, and inferential statistics</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Inferential statistics</strong> is the branch of statistics that draws conclusions about a population based on a sample</li>
+<li>This does not make sense if we do not know what a <em>sample</em> is</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The distinction between <em>population</em> and <em>sample</em> is most important:</li>
+<li>A <strong>population</strong> is any specific collection of objects of interest</li>
+<li>A <strong>sample</strong> is any subset or subcollection of the population</li>
+<li>A <strong>census</strong> is a sample that consists of the whole population</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The information in a sample comes via measurements and sample data</li>
+<li>A <strong>measurement</strong> is a number or attribute recorded for each member of a population or sample</li>
+<li>The measurements of sample elements are collectively called the <strong>sample data</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>What we <em>can</em> and <em>want</em> to learn from the sample data:</li>
+<li>A <strong>parameter</strong> is a number that summarizes some aspect of the population</li>
+<li>A <strong>statistic</strong> is a number computed from sample data</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+<div title="Car values">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Car values</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What is the average value of all (millions of) cars on Canadian roads today?</li>
+<li>We cannot assess every single car, so we <em>estimate</em> the average</li>
+<li>We could randomly select 200 cars, record each value, and average them</li>
+<li>To fit this into our framework:</li>
+<li>The set of all vehicles is the <em>population</em></li>
+<li>The number attached to each one is a <em>measurement</em></li>
+<li>The average value of all vehicles is the <em>parameter</em></li>
+<li>The set of 200 cars selected from the population is the <em>sample</em></li>
+<li>The 200 numbers of the cars we selected are the <em>sample data</em></li>
+<li>The average value of the 200 vehicles is the <em>statistic</em></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Additional terminology:</li>
+<li><strong>Individuals</strong> refers to the individual unit of observation</li>
+<li>Individuals can be people, animals, households, firms, provinces, and more</li>
+<li>A <strong>variable</strong> is any characteristic of an individual</li>
+<li>A variable is a quantity, quality, or property that you can measure</li>
+<li>A variable <em>varies</em> among individuals</li>
+<li>Variables are either <strong>categorical (qualitative)</strong> or <strong>numerical (quantitative)</strong></li>
+<li>The <strong>distribution</strong> of a variable tells us what values it takes and how often</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Car values (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Car values (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>In our example with the value of Canadian cars:</li>
+<li><em>Individuals</em> are the cars</li>
+<li>The <em>variable</em> is the value of the car</li>
+<li>Other variables could be color, age, make, engine size, and more</li>
+<li>Each variable has a <em>distribution</em></li>
+<li>In the population, we may have 11.2% of cars that are red, 23% black, 9% white, and so on</li>
+<li>In the population, 1.7% of cars have an engine size <span class="math inline">\(\leq 1.0\)</span>L and 3.9% have an engine size <span class="math inline">\(\leq 1.5\)</span>L</li>
+<li>Question: is the distribution in the population the same as the distribution in the sample?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The following taxonomy of variables is fundamental:</li>
 </ul>
 
+<img data-src="figures/types_of_variables.png" style="width:70.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<div title="Car colors">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Car colors</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Car color.</strong> The color of a car (“yellow”, “red”, “blue”, etc.) is a categorical variable. It is nominal.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div title="Year of study">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Year of study</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Year of study.</strong> For the population of McMaster students, the variable “year of study” can be viewed as numerical or categorical. If categorical, it is an ordinal variable. If numerical, it is discrete.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: variable types (Oreopoulos 2011)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: variable types (Oreopoulos 2011)</strong></p>
+</div>
+<div class="callout-content">
+<p>Classify each variable as categorical or numerical. If categorical, decide nominal vs.&nbsp;ordinal. If numerical, decide discrete vs.&nbsp;continuous.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (3 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>Table 1: employment status</li>
+<li>Table 1: earnings</li>
+<li>Table 1: highest degree earned</li>
+<li>Table 4: ethnicity of the name on the resume</li>
+<li>Table 4: years of work experience</li>
+<li>Table 4: whether or not a callback was received</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>Employment status: categorical, nominal</li>
+<li>Earnings: numerical, continuous</li>
+<li>Highest degree earned: categorical, ordinal</li>
+<li>Ethnicity of name: categorical, nominal</li>
+<li>Years of work experience: numerical, discrete (often measured in years)</li>
+<li>Callback received: categorical, nominal</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sampling-variability" class="slide level2">
+<h2>Sampling variability</h2>
+<ul>
+<li><p>Sample statistics vary from sample to sample.</p></li>
+<li><p>Different random samples give different statistics</p></li>
+<li><p>Larger samples tend to give more stable estimates</p></li>
+<li><p>This uncertainty is why we use probability and confidence intervals</p></li>
+</ul>
+<div class="exercise-callout" title="Exercise: sampling variability">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: sampling variability</strong></p>
+</div>
+<div class="callout-content">
+<p>We take a random sample of 200 cars and compute the average value.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>If we take another random sample of 200 cars, will we get the same average value? Why not?</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li>No.&nbsp;Different random samples produce different statistics, so the sample mean varies from sample to sample</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-grand-picture-of-statistics" class="slide level2">
+<h2>The grand picture of statistics</h2>
+<ul>
+<li>Inferential statistics uses statistics (!) to learn about parameters</li>
+</ul>
+
+<img data-src="figures/grand_picture_of_statistics.jpg" style="width:40.0%" class="r-stretch"></section>
+<section id="sampling-self-study" class="slide level2">
+<h2>Sampling: self-study</h2>
+<ul>
+<li>Where does the sample data come from?</li>
+<li>Self-study: study IMS 2.1.3-2.1.5</li>
+<li>Self-study: test yourself with IMS questions 2.13–2.17</li>
+</ul>
+</section></section>
+<section>
+<section id="part-ii-experimental-data" class="title-slide slide level1 center">
+<h1>Part II: Experimental Data</h1>
 
 </section>
+<section id="experimental-data" class="slide level2">
+<h2>Experimental data</h2>
+<ul>
+<li>The most common task for economists when analyzing data is to find <em>relationships between variables</em>.</li>
+<li>For this, they use both experimental and observational data.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p><em>Experimental data</em>. Consider the case study in IMS 1.1.</p></li>
+<li><p>Population: patients in the U.S. at risk of stroke</p></li>
+<li><p>Sample: 451 randomly selected patients</p></li>
+<li><p>Variable 1, <code>group</code>: treatment vs.&nbsp;control</p></li>
+<li><p><code>treatment</code>: received stent + medical management</p></li>
+<li><p><code>control</code>: did not receive treatment</p></li>
+<li><p>Patients are randomly assigned to treatment or control</p></li>
+<li><p>Variable 2, <code>outcome</code>: no event vs.&nbsp;stroke</p></li>
+<li><p><code>no event</code>: no stroke in 365 days after surgery</p></li>
+<li><p><code>stroke</code>: stroke within 365 days of surgery</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li>A <strong>stent</strong> is a tube inserted into a vessel or duct to keep the passageway open</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="figures/Blausen_0034_Angioplasty_Stent_01.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Let us look at the first ten rows of the data:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>stent365 <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href=""></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href=""></a>    <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="tsgkzzgyve" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tsgkzzgyve table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#tsgkzzgyve thead, #tsgkzzgyve tbody, #tsgkzzgyve tfoot, #tsgkzzgyve tr, #tsgkzzgyve td, #tsgkzzgyve th {
+  border-style: none;
+}
+
+#tsgkzzgyve p {
+  margin: 0;
+  padding: 0;
+}
+
+#tsgkzzgyve .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tsgkzzgyve .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tsgkzzgyve .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tsgkzzgyve .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tsgkzzgyve .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tsgkzzgyve .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tsgkzzgyve .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tsgkzzgyve .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tsgkzzgyve .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#tsgkzzgyve .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tsgkzzgyve .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tsgkzzgyve .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tsgkzzgyve .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tsgkzzgyve .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tsgkzzgyve .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tsgkzzgyve .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tsgkzzgyve .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tsgkzzgyve .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#tsgkzzgyve .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tsgkzzgyve .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tsgkzzgyve .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tsgkzzgyve .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tsgkzzgyve .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tsgkzzgyve .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tsgkzzgyve .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tsgkzzgyve .gt_left {
+  text-align: left;
+}
+
+#tsgkzzgyve .gt_center {
+  text-align: center;
+}
+
+#tsgkzzgyve .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tsgkzzgyve .gt_font_normal {
+  font-weight: normal;
+}
+
+#tsgkzzgyve .gt_font_bold {
+  font-weight: bold;
+}
+
+#tsgkzzgyve .gt_font_italic {
+  font-style: italic;
+}
+
+#tsgkzzgyve .gt_super {
+  font-size: 65%;
+}
+
+#tsgkzzgyve .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#tsgkzzgyve .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tsgkzzgyve .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tsgkzzgyve .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tsgkzzgyve .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tsgkzzgyve .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tsgkzzgyve .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#tsgkzzgyve .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#tsgkzzgyve div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="group" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">group</th>
+<th id="outcome" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">outcome</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">control</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">control</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">control</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">control</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_center" headers="outcome">no event</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<ul>
+<li>We can stare at the 451 rows. Or, look at a summary:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>stent365 <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href=""></a>    <span class="fu">tabyl</span>(group, outcome) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href=""></a>    <span class="fu">adorn_percentages</span>(<span class="st">"row"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href=""></a>    <span class="fu">adorn_pct_formatting</span>(<span class="at">digits =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href=""></a>    <span class="fu">adorn_ns</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href=""></a>    <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="wdoeyxqndi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wdoeyxqndi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wdoeyxqndi thead, #wdoeyxqndi tbody, #wdoeyxqndi tfoot, #wdoeyxqndi tr, #wdoeyxqndi td, #wdoeyxqndi th {
+  border-style: none;
+}
+
+#wdoeyxqndi p {
+  margin: 0;
+  padding: 0;
+}
+
+#wdoeyxqndi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wdoeyxqndi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wdoeyxqndi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wdoeyxqndi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wdoeyxqndi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wdoeyxqndi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wdoeyxqndi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wdoeyxqndi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wdoeyxqndi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wdoeyxqndi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wdoeyxqndi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wdoeyxqndi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wdoeyxqndi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wdoeyxqndi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wdoeyxqndi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdoeyxqndi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wdoeyxqndi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wdoeyxqndi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wdoeyxqndi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdoeyxqndi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wdoeyxqndi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdoeyxqndi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wdoeyxqndi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdoeyxqndi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdoeyxqndi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdoeyxqndi .gt_left {
+  text-align: left;
+}
+
+#wdoeyxqndi .gt_center {
+  text-align: center;
+}
+
+#wdoeyxqndi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wdoeyxqndi .gt_font_normal {
+  font-weight: normal;
+}
+
+#wdoeyxqndi .gt_font_bold {
+  font-weight: bold;
+}
+
+#wdoeyxqndi .gt_font_italic {
+  font-style: italic;
+}
+
+#wdoeyxqndi .gt_super {
+  font-size: 65%;
+}
+
+#wdoeyxqndi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wdoeyxqndi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wdoeyxqndi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wdoeyxqndi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wdoeyxqndi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wdoeyxqndi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wdoeyxqndi .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wdoeyxqndi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wdoeyxqndi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="group" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">group</th>
+<th id="no-event" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">no event</th>
+<th id="stroke" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">stroke</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="group">control</td>
+<td class="gt_row gt_right" headers="no event">87.7% (199)</td>
+<td class="gt_row gt_right" headers="stroke">12.3% (28)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="group">treatment</td>
+<td class="gt_row gt_right" headers="no event">79.9% (179)</td>
+<td class="gt_row gt_right" headers="stroke">20.1% (45)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="fragment">
+<ol type="1">
+<li>What is the population in the stent study? Is the 451 a sample or a census?</li>
+<li>Is there a difference between two groups?</li>
+<li>What causes this difference?</li>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>This is an experiment</li>
+<li>We randomized the value of <code>variable 1</code></li>
+<li>In large samples, we can attribute the difference in average values of <code>variable 2</code> to <code>variable 1</code></li>
+<li>Here, stent surgery + medical management causes an <em>increase</em> in the proportion of strokes during the next 365 days</li>
+<li>Read IMS 1.1 for more information</li>
+</ul>
+</section></section>
+<section>
+<section id="part-iii-observational-data" class="title-slide slide level1 center">
+<h1>Part III: Observational Data</h1>
+
+</section>
+<section id="observational-data" class="slide level2">
+<h2>Observational data</h2>
+<ul>
+<li>Data in which there is no randomly assigned intervention is called <strong>observational data</strong></li>
+<li>Correlation does not imply causation</li>
+<li>Keep this in mind when analyzing observational data</li>
+<li>Next, we look at an example of observational data (IMS 1.2.3)</li>
+</ul>
+</section>
+<section class="slide level2 scrollable">
+
+<ol type="1">
+<li>What does each row and column represent?</li>
+<li>Find one numerical and one categorical variable</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">data</span>(<span class="st">"county"</span>)</span>
+<span id="cb3-2"><a href=""></a>county <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href=""></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href=""></a>    <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="jxjuopcczp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jxjuopcczp table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jxjuopcczp thead, #jxjuopcczp tbody, #jxjuopcczp tfoot, #jxjuopcczp tr, #jxjuopcczp td, #jxjuopcczp th {
+  border-style: none;
+}
+
+#jxjuopcczp p {
+  margin: 0;
+  padding: 0;
+}
+
+#jxjuopcczp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jxjuopcczp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jxjuopcczp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jxjuopcczp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jxjuopcczp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jxjuopcczp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jxjuopcczp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jxjuopcczp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jxjuopcczp .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jxjuopcczp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jxjuopcczp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jxjuopcczp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jxjuopcczp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jxjuopcczp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jxjuopcczp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jxjuopcczp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jxjuopcczp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jxjuopcczp .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jxjuopcczp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jxjuopcczp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jxjuopcczp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jxjuopcczp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jxjuopcczp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jxjuopcczp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jxjuopcczp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jxjuopcczp .gt_left {
+  text-align: left;
+}
+
+#jxjuopcczp .gt_center {
+  text-align: center;
+}
+
+#jxjuopcczp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jxjuopcczp .gt_font_normal {
+  font-weight: normal;
+}
+
+#jxjuopcczp .gt_font_bold {
+  font-weight: bold;
+}
+
+#jxjuopcczp .gt_font_italic {
+  font-style: italic;
+}
+
+#jxjuopcczp .gt_super {
+  font-size: 65%;
+}
+
+#jxjuopcczp .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jxjuopcczp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jxjuopcczp .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jxjuopcczp .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jxjuopcczp .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jxjuopcczp .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jxjuopcczp .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jxjuopcczp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jxjuopcczp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">name</th>
+<th id="state" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">state</th>
+<th id="pop2000" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pop2000</th>
+<th id="pop2010" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pop2010</th>
+<th id="pop2017" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pop2017</th>
+<th id="pop_change" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pop_change</th>
+<th id="poverty" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">poverty</th>
+<th id="homeownership" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">homeownership</th>
+<th id="multi_unit" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">multi_unit</th>
+<th id="unemployment_rate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">unemployment_rate</th>
+<th id="metro" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">metro</th>
+<th id="median_edu" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">median_edu</th>
+<th id="per_capita_income" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">per_capita_income</th>
+<th id="median_hh_income" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">median_hh_income</th>
+<th id="smoking_ban" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">smoking_ban</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="name">Johnson County</td>
+<td class="gt_row gt_center" headers="state">Texas</td>
+<td class="gt_row gt_right" headers="pop2000">126811</td>
+<td class="gt_row gt_right" headers="pop2010">150934</td>
+<td class="gt_row gt_right" headers="pop2017">167301</td>
+<td class="gt_row gt_right" headers="pop_change">8.28</td>
+<td class="gt_row gt_right" headers="poverty">11.0</td>
+<td class="gt_row gt_right" headers="homeownership">76.6</td>
+<td class="gt_row gt_right" headers="multi_unit">8.8</td>
+<td class="gt_row gt_right" headers="unemployment_rate">3.77</td>
+<td class="gt_row gt_center" headers="metro">yes</td>
+<td class="gt_row gt_center" headers="median_edu">some_college</td>
+<td class="gt_row gt_right" headers="per_capita_income">26449.82</td>
+<td class="gt_row gt_right" headers="median_hh_income">60458</td>
+<td class="gt_row gt_center" headers="smoking_ban">none</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="name">Eureka County</td>
+<td class="gt_row gt_center" headers="state">Nevada</td>
+<td class="gt_row gt_right" headers="pop2000">1651</td>
+<td class="gt_row gt_right" headers="pop2010">1987</td>
+<td class="gt_row gt_right" headers="pop2017">1961</td>
+<td class="gt_row gt_right" headers="pop_change">-4.34</td>
+<td class="gt_row gt_right" headers="poverty">10.0</td>
+<td class="gt_row gt_right" headers="homeownership">73.1</td>
+<td class="gt_row gt_right" headers="multi_unit">6.7</td>
+<td class="gt_row gt_right" headers="unemployment_rate">3.05</td>
+<td class="gt_row gt_center" headers="metro">no</td>
+<td class="gt_row gt_center" headers="median_edu">hs_diploma</td>
+<td class="gt_row gt_right" headers="per_capita_income">34963.56</td>
+<td class="gt_row gt_right" headers="median_hh_income">67159</td>
+<td class="gt_row gt_center" headers="smoking_ban">partial</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="name">Greenlee County</td>
+<td class="gt_row gt_center" headers="state">Arizona</td>
+<td class="gt_row gt_right" headers="pop2000">8547</td>
+<td class="gt_row gt_right" headers="pop2010">8437</td>
+<td class="gt_row gt_right" headers="pop2017">9455</td>
+<td class="gt_row gt_right" headers="pop_change">6.33</td>
+<td class="gt_row gt_right" headers="poverty">11.5</td>
+<td class="gt_row gt_right" headers="homeownership">46.9</td>
+<td class="gt_row gt_right" headers="multi_unit">6.1</td>
+<td class="gt_row gt_right" headers="unemployment_rate">5.11</td>
+<td class="gt_row gt_center" headers="metro">no</td>
+<td class="gt_row gt_center" headers="median_edu">some_college</td>
+<td class="gt_row gt_right" headers="per_capita_income">25331.52</td>
+<td class="gt_row gt_right" headers="median_hh_income">56298</td>
+<td class="gt_row gt_center" headers="smoking_ban">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="name">Park County</td>
+<td class="gt_row gt_center" headers="state">Colorado</td>
+<td class="gt_row gt_right" headers="pop2000">14523</td>
+<td class="gt_row gt_right" headers="pop2010">16206</td>
+<td class="gt_row gt_right" headers="pop2017">17905</td>
+<td class="gt_row gt_right" headers="pop_change">10.74</td>
+<td class="gt_row gt_right" headers="poverty">6.6</td>
+<td class="gt_row gt_right" headers="homeownership">87.9</td>
+<td class="gt_row gt_right" headers="multi_unit">1.3</td>
+<td class="gt_row gt_right" headers="unemployment_rate">2.40</td>
+<td class="gt_row gt_center" headers="metro">yes</td>
+<td class="gt_row gt_center" headers="median_edu">some_college</td>
+<td class="gt_row gt_right" headers="per_capita_income">33579.74</td>
+<td class="gt_row gt_right" headers="median_hh_income">61644</td>
+<td class="gt_row gt_center" headers="smoking_ban">partial</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="name">Butler County</td>
+<td class="gt_row gt_center" headers="state">Nebraska</td>
+<td class="gt_row gt_right" headers="pop2000">8767</td>
+<td class="gt_row gt_right" headers="pop2010">8395</td>
+<td class="gt_row gt_right" headers="pop2017">8053</td>
+<td class="gt_row gt_right" headers="pop_change">-2.15</td>
+<td class="gt_row gt_right" headers="poverty">7.8</td>
+<td class="gt_row gt_right" headers="homeownership">75.3</td>
+<td class="gt_row gt_right" headers="multi_unit">5.1</td>
+<td class="gt_row gt_right" headers="unemployment_rate">2.77</td>
+<td class="gt_row gt_center" headers="metro">no</td>
+<td class="gt_row gt_center" headers="median_edu">some_college</td>
+<td class="gt_row gt_right" headers="per_capita_income">27622.75</td>
+<td class="gt_row gt_right" headers="median_hh_income">52448</td>
+<td class="gt_row gt_center" headers="smoking_ban">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The following scatter plot visualizes the relationship between <code>multi_unit</code> and <code>homeownership</code>:</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>county <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href=""></a>    <span class="fu">filter</span>(multi_unit <span class="sc">&lt;</span> <span class="dv">50</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href=""></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> multi_unit, <span class="at">y =</span> homeownership)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href=""></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="A02_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+<ul>
+<li>When we suspect one variable might explain another:</li>
+<li><strong>Explanatory variable</strong>: potential cause or predictor</li>
+<li><strong>Response variable</strong>: outcome of interest</li>
+<li>In the plot above, explanatory = <code>multi_unit</code>, response = <code>homeownership</code></li>
+</ul>
+<div class="exercise-callout" title="Exercise: explanatory variable">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: explanatory variable</strong></p>
+</div>
+<div class="callout-content">
+<p>Think about the <code>homeownership</code> example.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (2 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ul>
+<li>Can you think of another explanatory variable for <code>homeownership</code> in this data set?</li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<ul>
+<li>Many options exist, such as <code>per_capita_income</code>, median age, or unemployment rate</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>In our <em>experimental</em> data, we found a negative association between <code>treatment</code> and <code>outcome</code>.
+<ul>
+<li>We concluded that stent surgeries have a negative effect.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The <em>scatter plot</em> above strongly suggests a <em>negative association</em> between a county’s percentage of multi-unit structures and the percentage of households that own their home</li>
+<li>Can we conclude that a government intervention that reduces the number of multi-unit structures would boost homeownership rates?</li>
+<li>Why? Why not?</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Counties with different values of <code>multi_unit</code> may differ in other dimensions</li>
+<li>This could be driving the negative association:</li>
+</ul>
+
+<img data-src="A02_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+<ul>
+<li>In this example, <code>per_capita_income</code> differs between low-<code>multi_unit</code> and high-<code>multi_unit</code> groups and is related to <code>homeownership</code></li>
+<li>Such a variable is called a <em>confounding variable</em>, <em>lurking variable</em>, <em>confounding factor</em>, or <em>confounder</em></li>
+<li>In experimental data, randomization ensures no confounders</li>
+<li>Advanced question: shouldn’t this lead to a positive relationship between <code>multi_unit</code> and <code>homeownership</code>? What is going on?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: education and wages">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: education and wages</strong></p>
+</div>
+<div class="callout-content">
+<p>You document that wages are lower for workers with at most a high school degree than for those with a university degree.</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (3 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Can you conclude that changing education <em>causes</em> changes in average wages?</li>
+<li>What are possible confounders?</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>No.&nbsp;This is observational, so confounding is likely</li>
+<li>Possible confounders include ability, experience, occupation, and region</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li>&lt;!—</li>
+</ul>
+</section>
+<section id="experimental-and-observational-data-in-economics" class="slide level2">
+<h2>Experimental and observational data in economics</h2>
+<ul>
+<li><p><strong>FYI, not for discussion in class.</strong></p></li>
+<li><p>Randomized experiments have gained in popularity in economics, as can be seen in this graph on publications in top academic journals in economics, via Banerjee et al.&nbsp;(2016):</p></li>
+</ul>
+
+<img data-src="figures/banerjee_duflo_kremer_CLT.png" style="width:80.0%" class="r-stretch"></section>
+<section class="slide level2 scrollable">
+
+<ul>
+<li>Economists’ use of randomized experiments includes:</li>
+</ul>
+<ol type="1">
+<li>The study of human behavior in the lab (Nobel prize 2002: Kahnemann and Smith)</li>
+<li>The study of policy interventions in the context of development economics (Nobel prize 2019: Banerjee, Duflo, Kremer)</li>
+<li>A/B testing for tech companies</li>
+</ol>
+<ul>
+<li>and for policy evaluation in many other subfields of economics, such as health economics; the economics of education; labor economics; and in the Oreopoulos example that opened this course.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="small">
+<ul>
+<li>Still, the majority of empirical work in economics uses observational data, using tools from <em>regression analysis</em>. Even more Nobels for observational data:
+<ul>
+<li><p>2021, Angrist, Card, Imbens, on <em>natural experiments</em></p></li>
+<li><p>2015, Deaton, for analysis of consumption, poverty, and welfare</p></li>
+<li><p>2013, Fama, L.P. Hansen, and Shiller, for empirical analysis of asset prices</p></li>
+<li><p>2011, …</p></li>
+<li><p>2003, …</p></li>
+<li><p>2000, Heckman and McFadden, for microeconometrics and selection</p></li>
+<li><p>1989, …</p></li>
+<li><p>1984, …</p></li>
+<li><p>1980, …</p></li>
+<li><p>1969, Frisch and Tinbergen, for theoretical and applied work with dynamic models for economic processes</p></li>
+<li><p>(The remaining Nobel prizes are for work that has a large economic theory component.)</p></li>
+</ul></li>
+</ul>
+</div>
+<ul>
+<li>–&gt;</li>
+</ul>
+</section></section>
+<section id="exercises" class="title-slide slide level1 center">
+<h1>Exercises</h1>
+<div class="exercise-callout" title="Exercise: air pollution and birth outcomes (IMS 2.3)">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: air pollution and birth outcomes (IMS 2.3)</strong></p>
+</div>
+<div class="callout-content">
+<p>Researchers collected data on 143,196 births in Southern California (1989–1993) and measured air pollution exposure during gestation.</p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (4 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ul>
+<li>Identify the population of interest and the sample in this study</li>
+<li>Are these variables numerical or categorical?</li>
+<li>Can the results be generalized to the population? Can they establish causality?</li>
+</ul>
+</div>
+<div id="tabset-5-2">
+<ul>
+<li>Population: all births in Southern California during 1989–1993</li>
+<li>Sample: the 143,196 births in the data</li>
+<li>Length of gestation is numerical; air pollution exposure is numerical</li>
+<li>Generalizability depends on the sampling strategy; the study is observational, so causality is not guaranteed</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+<p>James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2013). <em>An Introduction to Statistical Learning</em> (Vol. 103). Springer New York. https://doi.org/10.1007/978-1-4614-7138-7</p>
+<p>Oreopoulos, Philip (2011), “Why Do Skilled Immigrants Struggle in the Labor Market? A Field Experiment with Thirteen Thousand Resumes.” American Economic Journal: Economic Policy 3(4).</p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="../../..\econ2b03/">Home</a></p>
+
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="A02_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="A02_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -207,15 +2412,14 @@ Chris Muris - McMaster University - ECON 2B03
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
-'multiplex': {"secret":null,"id":"a00701463cdc07ce73fcb472e59389652518169987c5072a278c306e1cd33cf8","url":"https://multiplex.up.railway.app/"},
-'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -361,12 +2565,12 @@ Chris Muris - McMaster University - ECON 2B03
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -386,221 +2590,91 @@ Chris Muris - McMaster University - ECON 2B03
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
-          
+          RevealNotes,
           RevealSearch,
           RevealZoom
         ]
       });
     </script>
+    
+
     <script>
 
-    /* update total correct if #webex-total_correct exists */
-    update_total_correct = function() {
-      console.log("webex: update total_correct");
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
 
-      var t = document.getElementsByClassName("webex-total_correct");
-      for (var i = 0; i < t.length; i++) {
-        p = t[i].parentElement;
-        var correct = p.getElementsByClassName("webex-correct").length;
-        var solvemes = p.getElementsByClassName("webex-solveme").length;
-        var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-        var selects = p.getElementsByClassName("webex-select").length;
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
 
-        t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-      }
-    }
+      // slide changes (different for each slide format).
 
-    /* webex-solution button toggling function */
-    b_func = function() {
-      console.log("webex: toggle hide");
+      (function () {
 
-      var cl = this.parentElement.classList;
-      if (cl.contains('open')) {
-        cl.remove("open");
-      } else {
-        cl.add("open");
-      }
-    }
+        // dispatch for htmlwidgets
 
-    /* check answers */
-    check_func = function() {
-      console.log("webex: check answers");
+        function fireSlideEnter() {
 
-      var cl = this.parentElement.classList;
-      if (cl.contains('unchecked')) {
-        cl.remove("unchecked");
-        this.innerHTML = "Hide Answers";
-      } else {
-        cl.add("unchecked");
-        this.innerHTML = "Show Answers";
-      }
-    }
+          const event = window.document.createEvent("Event");
 
-    /* function for checking solveme answers */
-    solveme_func = function(e) {
-      console.log("webex: check solveme");
+          event.initEvent("slideenter", true, true);
 
-      var real_answers = JSON.parse(this.dataset.answer);
-      var my_answer = this.value;
-      var cl = this.classList;
-      if (cl.contains("ignorecase")) {
-        my_answer = my_answer.toLowerCase();
-      }
-      if (cl.contains("nospaces")) {
-        my_answer = my_answer.replace(/ /g, "")
-      }
+          window.document.dispatchEvent(event);
 
-      if (my_answer == "") {
-        cl.remove("webex-correct");
-        cl.remove("webex-incorrect");
-      } else if (real_answers.includes(my_answer)) {
-        cl.add("webex-correct");
-        cl.remove("webex-incorrect");
-      } else {
-        cl.add("webex-incorrect");
-        cl.remove("webex-correct");
-      }
-
-      // match numeric answers within a specified tolerance
-      if(this.dataset.tol > 0){
-        var tol = JSON.parse(this.dataset.tol);
-        var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-        if (matches.reduce((a, b) => a + b, 0) > 0) {
-          cl.add("webex-correct");
-        } else {
-          cl.remove("webex-correct");
         }
-      }
 
-      // added regex bit
-      if (cl.contains("regex")){
-        answer_regex = RegExp(real_answers.join("|"))
-        if (answer_regex.test(my_answer)) {
-          cl.add("webex-correct");
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
         }
-      }
 
-      update_total_correct();
-    }
+    
 
-    /* function for checking select answers */
-    select_func = function(e) {
-      console.log("webex: check select");
+        // hookup for slidy
 
-      var cl = this.classList
+        if (window.w3c_slidy) {
 
-      /* add style */
-      cl.remove("webex-incorrect");
-      cl.remove("webex-correct");
-      if (this.value == "answer") {
-        cl.add("webex-correct");
-      } else if (this.value != "blank") {
-        cl.add("webex-incorrect");
-      }
+          window.w3c_slidy.add_observer(function (slide_num) {
 
-      update_total_correct();
-    }
+            // slide_num starts at position 1
 
-    /* function for checking radiogroups answers */
-    radiogroups_func = function(e) {
-      console.log("webex: check radiogroups");
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
 
-      var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-      var cl = checked_button.parentElement.classList;
-      var labels = checked_button.parentElement.parentElement.children;
+          });
 
-      /* get rid of styles */
-      for (i = 0; i < labels.length; i++) {
-        labels[i].classList.remove("webex-incorrect");
-        labels[i].classList.remove("webex-correct");
-      }
-
-      /* add style */
-      if (checked_button.value == "answer") {
-        cl.add("webex-correct");
-      } else {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    window.onload = function() {
-      console.log("webex onload");
-      /* set up solution buttons */
-      var buttons = document.getElementsByTagName("button");
-
-      for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].parentElement.classList.contains('webex-solution')) {
-          buttons[i].onclick = b_func;
         }
-      }
 
-      var check_sections = document.getElementsByClassName("webex-check");
-      console.log("check:", check_sections.length);
-      for (var i = 0; i < check_sections.length; i++) {
-        check_sections[i].classList.add("unchecked");
+    
 
-        let btn = document.createElement("button");
-        btn.innerHTML = "Show Answers";
-        btn.classList.add("webex-check-button");
-        btn.onclick = check_func;
-        check_sections[i].appendChild(btn);
-
-        let spn = document.createElement("span");
-        spn.classList.add("webex-total_correct");
-        check_sections[i].appendChild(spn);
-      }
-
-      /* set up webex-solveme inputs */
-      var solveme = document.getElementsByClassName("webex-solveme");
-
-      for (var i = 0; i < solveme.length; i++) {
-        /* make sure input boxes don't auto-anything */
-        solveme[i].setAttribute("autocomplete","off");
-        solveme[i].setAttribute("autocorrect", "off");
-        solveme[i].setAttribute("autocapitalize", "off");
-        solveme[i].setAttribute("spellcheck", "false");
-        solveme[i].value = "";
-
-        /* adjust answer for ignorecase or nospaces */
-        var cl = solveme[i].classList;
-        var real_answer = solveme[i].dataset.answer;
-        if (cl.contains("ignorecase")) {
-          real_answer = real_answer.toLowerCase();
-        }
-        if (cl.contains("nospaces")) {
-          real_answer = real_answer.replace(/ /g, "");
-        }
-        solveme[i].dataset.answer = real_answer;
-
-        /* attach checking function */
-        solveme[i].onkeyup = solveme_func;
-        solveme[i].onchange = solveme_func;
-
-        solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      /* set up radiogroups */
-      var radiogroups = document.getElementsByClassName("webex-radiogroup");
-      for (var i = 0; i < radiogroups.length; i++) {
-        radiogroups[i].onchange = radiogroups_func;
-      }
-
-      /* set up selects */
-      var selects = document.getElementsByClassName("webex-select");
-      for (var i = 0; i < selects.length; i++) {
-        selects[i].onchange = select_func;
-        selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      update_total_correct();
-    }
+      })();
 
     </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

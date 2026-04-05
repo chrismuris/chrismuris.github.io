@@ -1,0 +1,11 @@
+---
+
+These slides started from J. S. Racine's slides for ECON2B03 at McMaster University.
+
+Readings are from
+
+-   SZ: D. Shafer and Z. Zhang (2012), "Introductory Statistics"
+-   IMS: M. Çetinkaya-Rundel and J. Hardin (2023), "Introduction to Modern Statistics"
+
+**References**
+

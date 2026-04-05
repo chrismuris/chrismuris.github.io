@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f5e301c3a65cec6d232acd76c98a54b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<script src="B01_files/libs/clipboard/clipboard.min.js"></script>
+<script src="B01_files/libs/quarto-html/tabby.min.js"></script>
+<script src="B01_files/libs/quarto-html/popper.min.js"></script>
+<script src="B01_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="B01_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="B01_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="B01_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Chris Muris - McMaster University - ECON 2B03">
-  <meta name="dcterms.date" content="2026-02-10">
-  <title>Chris Muris – B01: Probability Concepts</title>
+  <title>Introduction to probability theory</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="B01_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="B01_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -51,14 +31,14 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-ab9faa747559c40c7419c582d2bdafe3.css">
-  <link rel="stylesheet" href="../../../econ2b03/custom.css">
-  <link rel="stylesheet" href="../include/webex.css">
-  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="B01_files/libs/revealjs/dist/theme/quarto-19cae97d846821febc168bcc41c84972.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="B01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="B01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="B01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="B01_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="B01_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="B01_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -70,6 +50,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -152,53 +133,1000 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">B01: Probability Concepts</h1>
-  <p class="subtitle">Part B - Probability Theory</p>
+  <h1 class="title">Introduction to probability theory</h1>
+  <p class="subtitle">ECON 2B03, Winter 2026<br>Part B | Lecture 1<br>Chris Muris, McMaster University</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Chris Muris - McMaster University - ECON 2B03 
-</div>
-</div>
 </div>
 
-  <p class="date">2026-02-10</p>
 </section>
-<section id="basic-probability" class="slide level2">
-<h2>Basic Probability</h2>
+<section class="slide level2">
+
+<aside class="notes">
+<p>TODO: - Bare <code>## Roadmap</code> heading with no content — add content or remove - Part III (Combining Events) uses only abstract examples (cards, coins) — add at least one economic application - Notation: uses little-p here but big-P later; consider standardizing or adding a note about the switch</p>
+<p>Maybe hit them with union intersection and complement in one slide? Note to self: I am using little-p for probabilities here, and only start using big-P when we get to random variables.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+
+</section>
+<section id="roadmap" class="slide level2">
+<h2>Roadmap</h2>
+</section>
+<section id="previously-part-a-summary" class="slide level2">
+<h2>Previously: Part A summary</h2>
 <ul>
-<li>Sample spaces</li>
-<li>Events</li>
-<li>Axioms of probability</li>
+<li>Foundations:
+<ul>
+<li>descriptive vs inferential statistics</li>
+<li>populations vs samples; parameters vs statistics</li>
+</ul></li>
+<li>Data and variables: measurement, types, and study design</li>
+<li>Descriptive statistics:
+<ul>
+<li>tables and graphs</li>
+<li>summary measures (mean, sd, median, quartiles, IQR, z-scores)</li>
+</ul></li>
+<li>Tools: using R/Quarto to compute, visualize, and report</li>
+</ul>
+</section>
+<section id="previously-part-b-so-far" class="slide level2">
+<h2>Previously: Part B so far</h2>
+<ul>
+<li>No Part B lectures yet; we start probability theory today</li>
+</ul>
+</section>
+<section id="this-lecture" class="slide level2">
+<h2>This lecture</h2>
+<ul>
+<li>Random experiments, sample spaces, and events</li>
+<li>Probability</li>
+<li>Combining events and computing probabilities</li>
+</ul>
+</section>
+<section id="readings-and-homework" class="slide level2">
+<h2>Readings and homework</h2>
+<ul>
+<li><strong>Readings</strong>: SZ 3.1-3.2</li>
+<li><strong>Homework</strong>: SZ 3.1: 3, 7, 12, 15, 16, 21, 24; SZ 3.2: 2, 3, 5, 15, 17, 21</li>
+</ul>
+</section>
+<section id="overview" class="slide level2 scrollable">
+<h2>Overview</h2>
+<ul>
+<li>Why this matters: inference and prediction depend on how random variation behaves.</li>
+<li>What you will learn:
+<ol type="1">
+<li>How to define outcomes and events</li>
+<li>How to attach probabilities to those events</li>
+<li>How to combine events using union, intersection, and complements</li>
+</ol></li>
+</ul>
+</section></section>
+<section>
+<section id="part-i-overview" class="title-slide slide level1 center">
+<h1>Part I: Overview</h1>
+
+</section>
+<section id="why-study-probability-theory" class="slide level2">
+<h2>Why study probability theory?</h2>
+<div title="Election polls">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Election polls</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A polling organization questions 1,200 voters.</li>
+<li>They want to estimate the proportion of <em>all</em> voters who support a candidate.</li>
+<li>We expect the <em>sample</em> proportion to be close to the <em>population</em> proportion…</li>
+<li>…but because of randomness, it might not be.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Probability theory provides the tools to quantify this randomness.
+<ul>
+<li>It describes the likelihood that the sample result is close to the truth.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Statistical inference uses these tools to draw valid conclusions.
+<ul>
+<li>It turns “likelihood measures” into confidence statements about the population.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>To study statistical inference, we must first study probability theory.</p></li>
+<li><p>Probability theory:</p>
+<ul>
+<li>Analyzes random phenomena (coin flips, market fluctuations, survey samples).</li>
+<li>“Given the world (parameters), what data should we expect?”</li>
+</ul></li>
+<li><p>Statistical inference:</p>
+<ul>
+<li>Learns about the world from data.</li>
+<li>“Given the data, what can we say about the world (parameters)?”</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Pedagogical note">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Pedagogical note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Part A used real data sets to ask interesting questions.</li>
+<li>We will return to using such examples in Part C of the course.</li>
+<li>In probability theory, simple examples (coins, dice, cards) help isolate the logic.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-this-matters-for-inference" class="slide level2">
+<h2>Why this matters for inference</h2>
+<ul>
+<li>Confidence intervals and hypothesis tests rely on probability rules.</li>
+<li>If we can compute <span class="math inline">\(P(\text{data} \mid H_0)\)</span>, we can judge whether the data are surprising.</li>
+<li>Today’s tools are the foundation for those calculations.</li>
+</ul>
+</section></section>
+<section>
+<section id="part-ii-basic-definitions" class="title-slide slide level1 center">
+<h1>Part II: Basic Definitions</h1>
+
+</section>
+<section id="definitions" class="slide level2">
+<h2>Definitions</h2>
+<ul>
+<li>To get started with probability theory, we need a few basic definitions:
+<ul>
+<li>random experiments and trials</li>
+<li>sample space</li>
+<li>event</li>
+<li>probability</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>An <strong>experiment</strong> is any <em>repeatable</em> process from which an outcome, measurement, or result is obtained.</p></li>
+<li><p>A <strong>random experiment</strong> is an experiment that produces a definite outcome that cannot be predicted with certainty.</p></li>
+<li><p>A <strong>trial</strong> is one repetition of a random experiment.</p></li>
+</ul>
+<div class="fragment">
+<div title="Coin flips, die rolls, and surveys">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Coin flips, die rolls, and surveys</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Coin flip:
+<ul>
+<li><em>Random experiment</em>: Flipping a coin and noting the outcome (heads or tails).</li>
+<li><em>Trial</em>: Say you flip a coin 100 times. The fifth flip is one <em>trial</em>.</li>
+</ul></li>
+<li>Die roll:
+<ul>
+<li><em>Random experiment</em>: Rolling a six-sided die and observing the number of dots.</li>
+<li><em>Trial</em>: Each individual roll.</li>
+</ul></li>
+<li>Survey:
+<ul>
+<li><em>Random experiment</em>: Selecting a voter at random and asking their preference.</li>
+<li><em>Trial</em>: Each person you interview.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sample-space" class="slide level2">
+<h2>Sample space</h2>
+<ul>
+<li>For a random experiment, the <strong>sample space</strong>, or <em>outcome space</em>, is the set of all possible outcomes.</li>
+</ul>
+<div class="fragment">
+<div title="Listing sample spaces">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Listing sample spaces</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>What are possible sample spaces for the following experiments?</p></li>
+<li><p>Tossing a single coin once</p></li>
+<li><p>Rolling a single die once</p></li>
+<li><p>Drawing a single card once</p></li>
+<li><p>Spinning a roulette wheel once</p></li>
+<li><p>Tossing a single coin twice</p></li>
+<li><p>Rolling two dice at once</p></li>
+<li><p>(There is no single correct answer. Coin flips: where it lands; how long it is in the air, etc.)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Employment status survey">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Employment status survey</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>You survey a randomly selected adult and ask whether they are <em>employed</em>, <em>unemployed</em>, or <em>not in the labor force</em>.</li>
+<li>Sample space: <span class="math inline">\(S = \{\text{employed}, \text{unemployed}, \text{not in labor force}\}\)</span></li>
+<li>Simple event: the person is employed (<span class="math inline">\(\{\text{employed}\}\)</span>)</li>
+<li>Composite event: the person is not working (<span class="math inline">\(\{\text{unemployed}, \text{not in labor force}\}\)</span>)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="events" class="slide level2">
+<h2>Events</h2>
+<ul>
+<li>An <strong>event</strong> is a subset of the sample space, (or: any set of outcomes)</li>
+<li>An event <span class="math inline">\(E\)</span> is said to <strong>occur</strong> on a particular trial of the experiment if the outcome observed is an element of the set <span class="math inline">\(E\)</span>.</li>
+<li>We distinguish between two types of events:
+<ul>
+<li>a <strong>simple event</strong> is any single basic outcome from a random experiment</li>
+<li>a <strong>composite event</strong> is any combination of two or more basic outcomes from a random experiment</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div title="Example: Events in a die roll">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Example: Events in a die roll</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Consider rolling a single six-sided die: <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>.</p></li>
+<li><p>Simple event: Rolling a 2 (<span class="math inline">\(E = \{2\}\)</span>).</p></li>
+<li><p>Composite event: Rolling an even number (<span class="math inline">\(E = \{2, 4, 6\}\)</span>).</p></li>
+<li><p>Composite event: Rolling a number greater than 2 (<span class="math inline">\(T = \{3, 4, 5, 6\}\)</span>).</p></li>
+<li><p>Rolling an odd number less than 5: <span class="math inline">\(E = ?\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Interest rate opinions">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Interest rate opinions</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Randomly select two people, and ask them if they think that interest rates are going up. They must answer <em>yes</em> (Y) or <em>no</em> (N).</p></li>
+<li><p>The simple events are <span class="math inline">\(a_1=(Y,Y)\)</span>, <span class="math inline">\(a_2=(Y,N)\)</span>, <span class="math inline">\(a_3=(N,Y)\)</span>, <span class="math inline">\(a_4=(N,N)\)</span>.</p></li>
+<li><p>The sample space is <span class="math inline">\(S=\{a_1,a_2,a_3,a_4\}.\)</span></p></li>
+<li><p>The event <span class="math inline">\(A_1\)</span>, “at least one person said yes”, is <span class="math inline">\(A_1=\{a_1,a_2,a_3\}\)</span>.</p></li>
+<li><p>The event <span class="math inline">\(A_2\)</span>, “everybody says yes”, is <span class="math inline">\(A_2 = \{a_1\}.\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Venn diagram of events">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Venn diagram of events</strong></p>
+</div>
+<div class="callout-content">
+<p><img data-src="figures/shafer_zhang_venn.jpg" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>An alternative visualization is a tree diagram (see SZ 3.1: Example 4)</li>
+</ul>
+</div>
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<ul>
+<li><p>The <strong>probability of an outcome</strong> <span class="math inline">\(e\)</span> in a sample space <span class="math inline">\(S\)</span> is a number <span class="math inline">\(p\)</span> between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> that measures the likelihood that <span class="math inline">\(e\)</span> will occur on a single trial of the corresponding random experiment.</p></li>
+<li><p>The value <span class="math inline">\(p=0\)</span> corresponds to the outcome <span class="math inline">\(e\)</span> being impossible.</p></li>
+<li><p>The value <span class="math inline">\(p=1\)</span> corresponds to the outcome <span class="math inline">\(e\)</span> being certain.</p></li>
+<li><p>For an outcome <span class="math inline">\(e_1\)</span> or <span class="math inline">\(a_3\)</span> we will sometimes write <span class="math inline">\(p_1\)</span> or <span class="math inline">\(p_3\)</span>, or <span class="math inline">\(P(e_1)\)</span> or <span class="math inline">\(P(a_3)\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<div title="Fair coin toss">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Fair coin toss</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Consider a single toss of a fair coin: <span class="math inline">\(S = \{Heads, Tails\}\)</span>. If the coin is fair, then <span class="math display">\[P(Heads) = P(Tails) = 0.5\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>The <strong>probability of an event</strong> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(P(A)\)</span>, is the sum of the probabilities of the individual outcomes of which it is composed.</p></li>
+<li><p>If <span class="math inline">\(E = \{e_1,e_2,\cdots,e_k\}\)</span> is an event composed of <span class="math inline">\(k\)</span> outcomes, then <span class="math display">\[P(E) = \sum_{j=1}^k P(e_j) = P(e_1) + P(e_2) + \cdots + P(e_k).\]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Probabilities on a Venn diagram">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Probabilities on a Venn diagram</strong></p>
+</div>
+<div class="callout-content">
+<p><img data-src="figures/shafer_zhang_venn_probabilities.jpg" style="width:80.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Survey response rates">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Survey response rates</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Suppose 70% of contacted households respond to a short census survey. Let <span class="math inline">\(R\)</span> be the event that a household responds.</p></li>
+<li><p><span class="math inline">\(P(R)=0.70\)</span></p></li>
+<li><p><span class="math inline">\(P(R^c)=0.30\)</span></p>
+<ul>
+<li>about 30% will not respond in a large random sample</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Tossing a coin twice">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Tossing a coin twice</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>If the sample space is <span class="math inline">\(\{a_1=(H,H)\)</span>, <span class="math inline">\(a_2=(H,T)\)</span>, <span class="math inline">\(a_3=(T,H)\)</span>, <span class="math inline">\(a_4=(T,T)\}\)</span>, and each outcome occurs with probability 1/4, i.e., <span class="math display">\[P(a_i)=\frac{1}{4},\quad i=1,2,3,4.\]</span></li>
+</ul>
+<p>Consider the event “get at least one head on two tosses of a coin”, i.e.&nbsp;<span class="math inline">\(A_1=\{a_1,a_2,a_3\}\)</span>, and its negation <span class="math inline">\(A_2=\{a_4\}\)</span>.</p>
+<p>The probability of the event <span class="math inline">\(A_1\)</span> is the sum of the probabilities of the simple events <span class="math inline">\(\{a_1,a_2,a_3\}\)</span>: <span class="math display">\[\begin{align*}
+P(A_1)&amp;=P(a_1)+P(a_2)+P(a_3)=\frac{1}{4}+\frac{1}{4}+\frac{1}{4}=\frac{3}{4},\text{ and}\\
+P(A_2)&amp;=P(a_4)=\frac{1}{4}.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-iii-counting" class="title-slide slide level1 center">
+<h1>Part III: Counting</h1>
+
+</section>
+<section id="probability-via-counting" class="slide level2">
+<h2>Probability via counting</h2>
+<ul>
+<li>Counting techniques are important for determining probabilities.</li>
+<li>Are you comfortable with:
+<ul>
+<li><strong>Factorials</strong>: Product of integers 1 to <span class="math inline">\(n\)</span>, denoted <span class="math inline">\(n!\)</span>. Note <span class="math inline">\(0!=1\)</span>.</li>
+<li><strong>Permutations</strong>: Arrangement of <span class="math inline">\(x\)</span> things from <span class="math inline">\(n\)</span> in specific order: <span class="math inline">\({_nP_x}=\frac{n!}{(n-x)!}\)</span></li>
+<li><strong>Combinations</strong>: Arrangement of <span class="math inline">\(x\)</span> things from <span class="math inline">\(n\)</span> without regard to order: <span class="math inline">\({_nC_x}=\frac{n!}{(n-x)!x!}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Board of directors (6 candidates)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Board of directors (6 candidates)</strong></p>
+</div>
+<div class="callout-content">
+<p>A company has 6 candidates for the Board of Directors.</p>
+<p>Permutations (Order matters: President vs Vice-President):</p>
+<ul>
+<li><p>Selecting a President and a Vice-President from 6 candidates. <span class="math display">\[{_6P_2}=\frac{6!}{(6-2)!} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{4 \times 3 \times 2 \times 1} = 6 \times 5 = 30 \text{ ways.}\]</span></p></li>
+<li><p>Combinations (Order does not matter: Committee Members):</p>
+<ul>
+<li>Selecting a committee of 2 members from 6 candidates. <span class="math display">\[{_6C_2}=\frac{6!}{(6-2)!2!} = \frac{30}{2} = 15 \text{ ways.}\]</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>If you are not comfortable with these concepts: let me know and we will review.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="part-iv-combining-events" class="title-slide slide level1 center">
+<h1>Part IV: Combining Events</h1>
+
+</section>
+<section id="probability-via-combining-events" class="slide level2">
+<h2>Probability via combining events</h2>
+<ul>
+<li>We can take one or more events and make new ones by:
+<ul>
+<li>taking unions</li>
+<li>taking intersections</li>
+<li>taking complements</li>
+</ul></li>
+<li>We can then compute the probability of the resulting events.</li>
+</ul>
+</section>
+<section id="intersection" class="slide level2">
+<h2>Intersection</h2>
+<ul>
+<li><p>The <strong>intersection of events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></strong>, denoted <span class="math inline">\(A \cap B\)</span>, is the collection of all outcomes that are elements of both of the sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
+<li><p>It corresponds to combining descriptions of the two events using the word <em>and.</em></p></li>
 </ul>
 
+<img data-src="figures/shafer_zhang_intersection.jpg" style="width:50.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<div title="Stagflation">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Stagflation</strong></p>
+</div>
+<div class="callout-content">
+<p>Consider the state of the economy next year. Two key variables:</p>
+<ul>
+<li>Inflation (High <span class="math inline">\(H_I\)</span> vs Low <span class="math inline">\(L_I\)</span>) and</li>
+<li>Unemployment (High <span class="math inline">\(H_U\)</span> vs Low <span class="math inline">\(L_U\)</span>).</li>
+</ul>
+<p>In our framework:</p>
+<ul>
+<li>Sample Space: All possible combinations. <span class="math display">\[S = \{ (L_I, L_U), (H_I, L_U), (L_I, H_U), (H_I, H_U) \}\]</span></li>
+<li>Event A: High Inflation (<span class="math inline">\(A = \{ (H_I, L_U), (H_I, H_U) \}\)</span>)</li>
+<li>Event B: High Unemployment (<span class="math inline">\(B = \{ (L_I, H_U), (H_I, H_U) \}\)</span>)</li>
+<li>Intersection (<span class="math inline">\(A \cap B\)</span>): “Stagflation”, the worst of both worlds. <span class="math display">\[A \cap B = \{ (H_I, H_U) \}\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>mutually exclusive</strong>, or disjoint, or incompatible, if they have no elements in common.
+<ul>
+<li>It is impossible for both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> to occur.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The <strong>probability rule for mutually exclusive events</strong> states that if events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive, their intersection has probability zero: <span class="math display">\[P(A \cap B) = 0\]</span>
+<ul>
+<li>Since they share no outcomes, they can never happen simultaneously.</li>
+</ul></li>
+<li>We sometimes write <span class="math inline">\(A \cap B = \emptyset\)</span>, i.e., the intersection is the empty set (the set with no elements).</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Face cards vs aces, and employment vs joblessness">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Face cards vs aces, and employment vs joblessness</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Deck of cards:
+<ul>
+<li><span class="math inline">\(A\)</span>: Drawing a Face card (J, Q, K)</li>
+<li><span class="math inline">\(B\)</span>: Drawing an Ace</li>
+<li>You cannot draw a card that is both a Face card and an Ace</li>
+<li>Thus, <span class="math inline">\(P(A \cap B) = 0\)</span></li>
+</ul></li>
+<li>Employment survey:
+<ul>
+<li>Outcomes (<span class="math inline">\(S\)</span>): Full-time (<span class="math inline">\(F\)</span>), Part-time (<span class="math inline">\(P\)</span>), Unemployed (<span class="math inline">\(U\)</span>), Not in Labor Force (<span class="math inline">\(N\)</span>)</li>
+<li>Event <span class="math inline">\(E\)</span> (Employed): <span class="math inline">\(\{F, P\}\)</span></li>
+<li>Event <span class="math inline">\(J\)</span> (Jobless): <span class="math inline">\(\{U, N\}\)</span></li>
+<li>Sets <span class="math inline">\(E\)</span> and <span class="math inline">\(J\)</span> are disjoint (<span class="math inline">\(E \cap J = \emptyset\)</span>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="union" class="slide level2">
+<h2>Union</h2>
+<ul>
+<li><p>The <strong>union of events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></strong>, denoted <span class="math inline">\(A \cup B\)</span>, is the collection of all outcomes that are elements of one or the other of the sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, or of both of them.</p></li>
+<li><p>It corresponds to combining descriptions of the two events using the word <em>or.</em></p></li>
+</ul>
+<div class="fragment">
+<div title="Union of two events">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Union of two events</strong></p>
+</div>
+<div class="callout-content">
+<p><img data-src="figures/shafer_zhang_union.jpg" style="width:50.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Poverty and language in the U.S.">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Poverty and language in the U.S.</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Consider the following example, calibrated using data from the American Community Survey (ACS):
+<ul>
+<li>Event <span class="math inline">\(P\)</span>: Living below the poverty line.</li>
+<li>Event <span class="math inline">\(L\)</span>: Speaking a foreign language at home.</li>
+<li><span class="math inline">\(P(P) = 0.146\)</span> (Poverty)</li>
+<li><span class="math inline">\(P(L) = 0.207\)</span> (Speaking foreign language)</li>
+<li>Intersection <span class="math inline">\(P(P \cap L) = 0.042\)</span> (Both)</li>
+<li>Union (<span class="math inline">\(P \cup L\)</span>): Americans who live below the poverty line or speak a foreign language (or both).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additive-rule" class="slide level2">
+<h2>Additive rule</h2>
+<ul>
+<li><p>The <strong>additive rule of probability</strong> says that <span class="math display">\[P(A\cup B) = P(A) + P(B) - P(A\cap B).\]</span></p>
+<ul>
+<li>The probability of event <span class="math inline">\(A\)</span> <em>or</em> <span class="math inline">\(B\)</span> happening equals…</li>
+<li>the probability of <span class="math inline">\(A\)</span> alone,</li>
+<li><em>plus</em> the probability of <span class="math inline">\(B\)</span> alone,</li>
+<li><em>minus</em> the probability of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> happening at the same time.</li>
+</ul></li>
+</ul>
+
+<img data-src="figures/shafer_zhang_union.jpg" style="width:50.0%" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Poverty and language">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Poverty and language</strong></p>
+</div>
+<div class="callout-content">
+<p>From the ACS: <span class="math inline">\(P(P) = 0.146\)</span> (poverty), <span class="math inline">\(P(L) = 0.207\)</span> (speaks a foreign language), <span class="math inline">\(P(P \cap L) = 0.042\)</span> (both).</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (1 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>Calculate the probability that a randomly selected person lives in poverty or speaks a foreign language.</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>We want <span class="math inline">\(P(P \cup L)\)</span>. Using the additive rule:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P(P \cup L) &amp;= P(P) + P(L) - P(P \cap L) \\
+            &amp;= 0.146 + 0.207 - 0.042 \\
+            &amp;= 0.311
+\end{aligned}
+\]</span></p>
+<ul>
+<li>31.1% of Americans live in poverty or speak a foreign language at home.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>The <strong>special addition law</strong> says that, for any two mutually exclusive events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math display">\[P(A\cup B) = P(A) + P(B).\]</span></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="A standard deck of 52 cards">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>A standard deck of 52 cards</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>A standard deck has:
+<ul>
+<li>4 suits (clubs, spades, hearts and diamonds)</li>
+<li>13 cards per suit (Ace-King)</li>
+<li>3 face cards per suit (Jack, Queen, King)</li>
+<li>Total: 12 face cards</li>
+</ul></li>
+</ul>
+<p><img data-src="figures/cards.png" style="width:70.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Drawing a face card">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Drawing a face card</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>You draw <em>one</em> card from a standard deck.</p></li>
+<li><p>Let the event <span class="math inline">\(A\)</span> denote <em>drawing a face card</em>.</p></li>
+<li><p>The probability of the event <span class="math inline">\(A\)</span> is the sum of the probabilities of drawing any of the 12 face cards.</p></li>
+<li><p>Hence, the probability of the event <span class="math inline">\(A\)</span> is <span class="math display">\[P(A)=\frac{1}{52}+\frac{1}{52}+\dots+\frac{1}{52}=\frac{12}{52}\]</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Face card or heart (general addition law)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Face card or heart (general addition law)</strong></p>
+</div>
+<div class="callout-content">
+<p>You draw <em>one</em> card from a standard deck.</p>
+<ul>
+<li>Let the event <span class="math inline">\(B\)</span> denote <em>drawing a heart</em>, so <span class="math inline">\(P(B)=13/52\)</span></li>
+<li>What is the probability of <span class="math inline">\(A\)</span> <em>or</em> <span class="math inline">\(B\)</span> (i.e., <span class="math inline">\(P(A\cup B)\)</span>, getting a face card or a heart)?</li>
+<li>Use the general addition law which corrects for double counting the J,Q,K of hearts (appear in both events): <span class="math display">\[P(A\cup B)=P(A)+P(B)-P(A\cap B)=\frac{12}{52}+\frac{13}{52}-\frac{3}{52}=\frac{22}{52}\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Heart or club (special addition law)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Heart or club (special addition law)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>You draw <em>one</em> card from a standard deck.</p></li>
+<li><p>Let the event <span class="math inline">\(C\)</span> denote <em>drawing a club</em>, so <span class="math inline">\(P(C)=13/52\)</span></p></li>
+<li><p>What is the probability of <span class="math inline">\(B\)</span> <em>or</em> <span class="math inline">\(C\)</span> (i.e., <span class="math inline">\(P(B\cup C)\)</span>, getting a heart or a club)?</p></li>
+<li><p>These events are mutually exclusive:</p>
+<ul>
+<li>it is not possible that one card is a club <em>and</em> a heart</li>
+<li><span class="math inline">\(P(B \cap C) = 0\)</span></li>
+<li>Use the special addition law <span class="math display">\[P(B \cup C) = P(B) + P(C) = 13/52 + 13/52 = 1/2.\]</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="complement" class="slide level2">
+<h2>Complement</h2>
+<ul>
+<li><p>The <strong>complement of an event</strong> <span class="math inline">\(A\)</span> in a sample space <span class="math inline">\(S\)</span>, denoted <span class="math inline">\(A^c\)</span>, is the collection of all outcomes in <span class="math inline">\(S\)</span> that are not elements of the set <span class="math inline">\(A\)</span>.</p></li>
+<li><p>It corresponds to negating any description in words of the event <span class="math inline">\(A\)</span>.</p></li>
+<li><p>The <strong>probability rule for complements</strong> is that <span class="math inline">\(P(A^c) = 1 - P(A)\)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="At least one heads in five coin tosses">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>At least one heads in five coin tosses</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Find the probability that at least one heads will appear in five tosses of a fair coin.</p></li>
+<li><p>Call <span class="math inline">\(A\)</span> the event in question, <em>at least one heads will appear in five tosses</em>. We can compute the probability directly (see Chapter 4).</p></li>
+<li><p>Alternatively, let <span class="math inline">\(B\)</span> denote the event <em>no heads on five tosses</em>.</p></li>
+<li><p>Note that <span class="math inline">\(B^c = A\)</span>.</p></li>
+<li><p>Also note that <span class="math inline">\(P(B)=(1/2)^5=1/32.\)</span></p></li>
+<li><p>By the probability rule for complements: <span class="math display">\[P(A) = P(B^c) = 1 - P(B) = 31/32.\]</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Rolling at least one six in four rolls">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Rolling at least one six in four rolls</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What is the probability of rolling at least one six in four rolls of a fair die?</li>
+<li>Let <span class="math inline">\(A\)</span> = “at least one six.” Computing <span class="math inline">\(P(A)\)</span> directly requires counting many cases.</li>
+<li>Instead, use the complement: <span class="math inline">\(A^c\)</span> = “no sixes in four rolls.” <span class="math display">\[P(A^c) = \left(\frac{5}{6}\right)^4 = \frac{625}{1296} \approx 0.482\]</span> <span class="math display">\[P(A) = 1 - 0.482 = 0.518\]</span></li>
+<li>There is about a 52% chance of rolling at least one six in four tries.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center scrollable">
+<h1>Exercises</h1>
+<div class="exercise-callout" title="Exercise: Sample space probabilities">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Sample space probabilities</strong></p>
+</div>
+<div class="callout-content">
+<p>From SZ 3.1:13: <span class="math inline">\(S=\{a,b,c,d,e\}\)</span>, <span class="math inline">\(U=\{a,b,d\}\)</span>, <span class="math inline">\(V=\{b,c,d\}\)</span>, with <span class="math inline">\(P(a)=P(b)=0.2\)</span> and <span class="math inline">\(P(c)=P(d)=0.1\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ol type="1">
+<li>Determine what <span class="math inline">\(P(e)\)</span> must be.</li>
+<li>Find <span class="math inline">\(P(U)\)</span>.</li>
+<li>Find <span class="math inline">\(P(V)\)</span>.</li>
+</ol>
+</div>
+<div id="tabset-2-2">
+<ol type="1">
+<li>Probabilities must add up to 1, so <span class="math inline">\(P(e)=1-0.1-0.1-0.2-0.2=0.4\)</span>.</li>
+<li><span class="math inline">\(P(U)=P(a)+P(b)+P(d)=0.5\)</span>.</li>
+<li><span class="math inline">\(P(V)=P(b)+P(c)+P(d)=0.4\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Three coin tosses">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Three coin tosses</strong></p>
+</div>
+<div class="callout-content">
+<p>From SZ 3.2:3: <span class="math inline">\(S=\{hhh,hht,hth,htt,thh,tht,tth,ttt\}\)</span> with <span class="math inline">\(H\)</span> = at least one head and <span class="math inline">\(M\)</span> = more heads than tails.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (3 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ol type="1">
+<li>List the outcomes that comprise <span class="math inline">\(H\)</span> and <span class="math inline">\(M\)</span>.</li>
+<li>List the outcomes that comprise <span class="math inline">\(H \cap M\)</span>, <span class="math inline">\(H \cup M\)</span>, and <span class="math inline">\(H^c\)</span>.</li>
+<li>Assuming all outcomes are equally likely, find <span class="math inline">\(P(H\cap M)\)</span>, <span class="math inline">\(P(H \cup M)\)</span>, and <span class="math inline">\(P(H^c)\)</span>.</li>
+<li>Determine whether or not <span class="math inline">\(H^c\)</span> and <span class="math inline">\(M\)</span> are mutually exclusive. Explain why or why not.</li>
+</ol>
+</div>
+<div id="tabset-3-2">
+<ol type="1">
+<li><span class="math inline">\(H=\{hhh,hht,hth,htt,thh,tht,tth\}\)</span> and <span class="math inline">\(M=\{hhh,hht,hth,thh\}\)</span>.</li>
+<li><span class="math inline">\(H \cap M = M\)</span>, <span class="math inline">\(H \cup M = H\)</span>, and <span class="math inline">\(H^c=\{ttt\}\)</span>.</li>
+<li><span class="math inline">\(P(H\cap M)=4/8=0.5\)</span>, <span class="math inline">\(P(H\cup M)=7/8=0.875\)</span>, and <span class="math inline">\(P(H^c)=1/8=0.125\)</span>.</li>
+<li>Yes. The intersection is empty because <span class="math inline">\(H^c=\{ttt\}\)</span> is not in <span class="math inline">\(M\)</span>, so <span class="math inline">\(P(H^c\cap M)=0\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Language overlap">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Language overlap</strong></p>
+</div>
+<div class="callout-content">
+<p>From SZ 3.2:15: 35% speak English, 15% speak German, and 3% speak both.</p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (2 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>What is the probability that a randomly encountered resident speaks English or German?</li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>Let <span class="math inline">\(E\)</span> be English and <span class="math inline">\(G\)</span> be German.</li>
+<li><span class="math inline">\(P(E \cup G)=P(E)+P(G)-P(E\cap G)=0.35+0.15-0.03=0.47\)</span>.</li>
+<li>47% can communicate in English or German.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Guessing on an exam">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Guessing on an exam</strong></p>
+</div>
+<div class="callout-content">
+<p>A multiple-choice exam has 4 questions, each with 5 options (one correct). A student guesses randomly on every question.</p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (2 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<ol type="1">
+<li>What is the probability that the student gets all 4 questions wrong?</li>
+<li>What is the probability that the student gets at least one question right?</li>
+</ol>
+</div>
+<div id="tabset-5-2">
+<ol type="1">
+<li><span class="math inline">\(P(\text{wrong on one question}) = 4/5\)</span>. Since guesses are independent: <span class="math display">\[P(\text{all wrong}) = (4/5)^4 = 256/625 \approx 0.410\]</span></li>
+<li>Use the complement rule: <span class="math display">\[P(\text{at least one right}) = 1 - P(\text{all wrong}) = 1 - 0.410 = 0.590\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
 
 </section>
+<section class="slide level2">
+
+<p>These slides started from J. S. Racine’s slides for ECON2B03 at McMaster University.</p>
+<p>Readings are from</p>
+<ul>
+<li>SZ: D. Shafer and Z. Zhang (2012), “Introductory Statistics”</li>
+<li>IMS: M. Çetinkaya-Rundel and J. Hardin (2023), “Introduction to Modern Statistics”</li>
+</ul>
+<p><strong>References</strong></p>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="../../..\econ2b03/">Home</a></p>
+
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="B01_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="B01_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -207,15 +1135,14 @@ Chris Muris - McMaster University - ECON 2B03
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': true,
+'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
-'multiplex': {"secret":null,"id":"aaedcfd103199a6147d3955f786446e56a47db1fa3f838ef1736d2b7c42192b7","url":"https://multiplex.up.railway.app/"},
-'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -361,12 +1288,12 @@ Chris Muris - McMaster University - ECON 2B03
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -386,220 +1313,14 @@ Chris Muris - McMaster University - ECON 2B03
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
-          
+          RevealNotes,
           RevealSearch,
           RevealZoom
         ]
       });
-    </script>
-    <script>
-
-    /* update total correct if #webex-total_correct exists */
-    update_total_correct = function() {
-      console.log("webex: update total_correct");
-
-      var t = document.getElementsByClassName("webex-total_correct");
-      for (var i = 0; i < t.length; i++) {
-        p = t[i].parentElement;
-        var correct = p.getElementsByClassName("webex-correct").length;
-        var solvemes = p.getElementsByClassName("webex-solveme").length;
-        var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
-        var selects = p.getElementsByClassName("webex-select").length;
-
-        t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-      }
-    }
-
-    /* webex-solution button toggling function */
-    b_func = function() {
-      console.log("webex: toggle hide");
-
-      var cl = this.parentElement.classList;
-      if (cl.contains('open')) {
-        cl.remove("open");
-      } else {
-        cl.add("open");
-      }
-    }
-
-    /* check answers */
-    check_func = function() {
-      console.log("webex: check answers");
-
-      var cl = this.parentElement.classList;
-      if (cl.contains('unchecked')) {
-        cl.remove("unchecked");
-        this.innerHTML = "Hide Answers";
-      } else {
-        cl.add("unchecked");
-        this.innerHTML = "Show Answers";
-      }
-    }
-
-    /* function for checking solveme answers */
-    solveme_func = function(e) {
-      console.log("webex: check solveme");
-
-      var real_answers = JSON.parse(this.dataset.answer);
-      var my_answer = this.value;
-      var cl = this.classList;
-      if (cl.contains("ignorecase")) {
-        my_answer = my_answer.toLowerCase();
-      }
-      if (cl.contains("nospaces")) {
-        my_answer = my_answer.replace(/ /g, "")
-      }
-
-      if (my_answer == "") {
-        cl.remove("webex-correct");
-        cl.remove("webex-incorrect");
-      } else if (real_answers.includes(my_answer)) {
-        cl.add("webex-correct");
-        cl.remove("webex-incorrect");
-      } else {
-        cl.add("webex-incorrect");
-        cl.remove("webex-correct");
-      }
-
-      // match numeric answers within a specified tolerance
-      if(this.dataset.tol > 0){
-        var tol = JSON.parse(this.dataset.tol);
-        var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-        if (matches.reduce((a, b) => a + b, 0) > 0) {
-          cl.add("webex-correct");
-        } else {
-          cl.remove("webex-correct");
-        }
-      }
-
-      // added regex bit
-      if (cl.contains("regex")){
-        answer_regex = RegExp(real_answers.join("|"))
-        if (answer_regex.test(my_answer)) {
-          cl.add("webex-correct");
-        }
-      }
-
-      update_total_correct();
-    }
-
-    /* function for checking select answers */
-    select_func = function(e) {
-      console.log("webex: check select");
-
-      var cl = this.classList
-
-      /* add style */
-      cl.remove("webex-incorrect");
-      cl.remove("webex-correct");
-      if (this.value == "answer") {
-        cl.add("webex-correct");
-      } else if (this.value != "blank") {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    /* function for checking radiogroups answers */
-    radiogroups_func = function(e) {
-      console.log("webex: check radiogroups");
-
-      var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-      var cl = checked_button.parentElement.classList;
-      var labels = checked_button.parentElement.parentElement.children;
-
-      /* get rid of styles */
-      for (i = 0; i < labels.length; i++) {
-        labels[i].classList.remove("webex-incorrect");
-        labels[i].classList.remove("webex-correct");
-      }
-
-      /* add style */
-      if (checked_button.value == "answer") {
-        cl.add("webex-correct");
-      } else {
-        cl.add("webex-incorrect");
-      }
-
-      update_total_correct();
-    }
-
-    window.onload = function() {
-      console.log("webex onload");
-      /* set up solution buttons */
-      var buttons = document.getElementsByTagName("button");
-
-      for (var i = 0; i < buttons.length; i++) {
-        if (buttons[i].parentElement.classList.contains('webex-solution')) {
-          buttons[i].onclick = b_func;
-        }
-      }
-
-      var check_sections = document.getElementsByClassName("webex-check");
-      console.log("check:", check_sections.length);
-      for (var i = 0; i < check_sections.length; i++) {
-        check_sections[i].classList.add("unchecked");
-
-        let btn = document.createElement("button");
-        btn.innerHTML = "Show Answers";
-        btn.classList.add("webex-check-button");
-        btn.onclick = check_func;
-        check_sections[i].appendChild(btn);
-
-        let spn = document.createElement("span");
-        spn.classList.add("webex-total_correct");
-        check_sections[i].appendChild(spn);
-      }
-
-      /* set up webex-solveme inputs */
-      var solveme = document.getElementsByClassName("webex-solveme");
-
-      for (var i = 0; i < solveme.length; i++) {
-        /* make sure input boxes don't auto-anything */
-        solveme[i].setAttribute("autocomplete","off");
-        solveme[i].setAttribute("autocorrect", "off");
-        solveme[i].setAttribute("autocapitalize", "off");
-        solveme[i].setAttribute("spellcheck", "false");
-        solveme[i].value = "";
-
-        /* adjust answer for ignorecase or nospaces */
-        var cl = solveme[i].classList;
-        var real_answer = solveme[i].dataset.answer;
-        if (cl.contains("ignorecase")) {
-          real_answer = real_answer.toLowerCase();
-        }
-        if (cl.contains("nospaces")) {
-          real_answer = real_answer.replace(/ /g, "");
-        }
-        solveme[i].dataset.answer = real_answer;
-
-        /* attach checking function */
-        solveme[i].onkeyup = solveme_func;
-        solveme[i].onchange = solveme_func;
-
-        solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      /* set up radiogroups */
-      var radiogroups = document.getElementsByClassName("webex-radiogroup");
-      for (var i = 0; i < radiogroups.length; i++) {
-        radiogroups[i].onchange = radiogroups_func;
-      }
-
-      /* set up selects */
-      var selects = document.getElementsByClassName("webex-select");
-      for (var i = 0; i < selects.length; i++) {
-        selects[i].onchange = select_func;
-        selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
-      }
-
-      update_total_correct();
-    }
-
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

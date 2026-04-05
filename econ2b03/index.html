@@ -2,14 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-18">
+<meta name="dcterms.date" content="2026-04-05">
 
 <title>ECON 2B03: Introduction to Data Analysis and Statistics – Chris Muris</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,19 +36,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6f5e301c3a65cec6d232acd76c98a54b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a8e34372258a13556b4d445a5e107454.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3b8594ce642661f254bb7f34347b078f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-e82755f2400556ae0560c000a3ada0d8.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-3b8594ce642661f254bb7f34347b078f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-76e974efab211091b757ed05d138c8e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cf4165a72edcde697977f6c83afad74f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-cf4165a72edcde697977f6c83afad74f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cf4165a72edcde697977f6c83afad74f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -121,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 18, 2026</p>
+      <p class="date">April 5, 2026</p>
     </div>
   </div>
   
@@ -147,68 +149,120 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>– A01: Principles of Data</td>
-<td style="text-align: center;"><a href="slides/A_Descriptive_Statistics/A01.html" target="_blank" rel="noopener">slides</a></td>
+<td>� A01: Principles of Data</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A01.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="odd">
-<td>– A02: Visualizing Data</td>
-<td style="text-align: center;"><a href="slides/A_Descriptive_Statistics/A02.html" target="_blank" rel="noopener">slides</a></td>
+<td>� A02: Data</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A02.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="even">
-<td>– A04: Numerical data (1)</td>
-<td style="text-align: center;"><a href="slides/A_Descriptive_Statistics/A04.html" target="_blank" rel="noopener">slides</a></td>
+<td>� A03: Categorical data</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A03.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="odd">
+<td>� A04: Numerical data (1)</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A04.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
+<td>� A05: Numerical data (2)</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A05.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td>� A06: Numerical data (3)</td>
+<td style="text-align: center;"><a href="slides/A_Descriptive_statistics/A06.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
 <td><strong>Part B: Probability Theory</strong></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="even">
-<td>– B01: Probability Concepts</td>
-<td style="text-align: center;"><a href="slides/B_Probability_Theory/B01.html" target="_blank" rel="noopener">slides</a></td>
-</tr>
 <tr class="odd">
-<td>– B02: Random Variables</td>
-<td style="text-align: center;"><a href="slides/B_Probability_Theory/B02.html" target="_blank" rel="noopener">slides</a></td>
+<td>� B01: Probability Concepts</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B01.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="even">
-<td>– B03: Discrete Random Variables</td>
-<td style="text-align: center;"><a href="slides/B_Probability_Theory/B03.html" target="_blank" rel="noopener">slides</a></td>
+<td>� B02: Conditional Probability</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B02.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="odd">
-<td>– B08: Sampling</td>
-<td style="text-align: center;"><a href="slides/B_Probability_Theory/B08.html" target="_blank" rel="noopener">slides</a></td>
+<td>� B03: Discrete Random Variables</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B03.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="even">
-<td>– B09: The central limit theorem</td>
-<td style="text-align: center;"><a href="slides/B_Probability_Theory/B09.html" target="_blank" rel="noopener">slides</a></td>
+<td>� B04: The binomial distribution</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B04.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 <tr class="odd">
+<td>� B05: Continuous random variables</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B05.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
+<td>� B06: Normal distribution</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B06.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td>� B07: Normal tail areas</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B07.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
+<td>� B08: Sampling</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B08.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td>� B09: The central limit theorem</td>
+<td style="text-align: center;"><a href="slides/B_Probability_theory/B09.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
 <td><strong>Part C: Inferential Statistics</strong></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="even">
-<td>– C01: Confidence intervals</td>
+<tr class="odd">
+<td>� C01: Confidence intervals</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C01.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
-<tr class="odd">
-<td>– C02: Confidence intervals: means and proportions</td>
+<tr class="even">
+<td>� C02: Confidence intervals: means and proportions</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C02.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
-<tr class="even">
-<td>– C03: Introduction to hypothesis testing</td>
+<tr class="odd">
+<td>� C03: Introduction to hypothesis testing</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C03.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
-<tr class="odd">
-<td>– C04: The critical value approach</td>
+<tr class="even">
+<td>� C04: The critical value approach</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C04.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
-<tr class="even">
-<td>– C05: The p-value approach</td>
+<tr class="odd">
+<td>� C05: The p-value approach</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C05.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
-<tr class="odd">
-<td>– C06: Inference in two-population problems</td>
+<tr class="even">
+<td>� C06: Inference in two-population problems</td>
 <td style="text-align: center;"><a href="slides/C_Inferential_Statistics/C06.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Part D: Linear Regression</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>� D01: Correlation and visual association</td>
+<td style="text-align: center;"><a href="slides/D_Linear_regression/D01.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td>� D02: Fitting the simple regression line</td>
+<td style="text-align: center;"><a href="slides/D_Linear_regression/D02.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
+<td>� D03: Inference for simple linear regression</td>
+<td style="text-align: center;"><a href="slides/D_Linear_regression/D03.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="odd">
+<td>� D04: Multiple linear regression</td>
+<td style="text-align: center;"><a href="slides/D_Linear_regression/D04.html" target="_blank" rel="noopener">slides</a></td>
+</tr>
+<tr class="even">
+<td>� D05: Prediction and the bias-variance tradeoff</td>
+<td style="text-align: center;"><a href="slides/D_Linear_regression/D05.html" target="_blank" rel="noopener">slides</a></td>
 </tr>
 </tbody>
 </table>
@@ -641,4 +695,3 @@ ul.task-list li input[type="checkbox"] {
 
 
 </body></html>
-

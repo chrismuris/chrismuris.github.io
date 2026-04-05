@@ -1,0 +1,8 @@
+- Foundations:
+    - descriptive vs inferential statistics
+    - populations vs samples; parameters vs statistics
+- Data and variables: measurement, types, and study design
+- Descriptive statistics:
+    - tables and graphs
+    - summary measures (mean, sd, median, quartiles, IQR, z-scores)
+- Tools: using R/Quarto to compute, visualize, and report
