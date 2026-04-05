@@ -303,8 +303,14 @@
 <h2>Simple linear regression model</h2>
 <ul>
 <li>Model: <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span></li>
-<li>Deterministic part: <span class="math inline">\(\beta_0 + \beta_1 x\)</span> (population line)</li>
-<li>Random part: <span class="math inline">\(\epsilon\)</span> (error term, mean 0, SD <span class="math inline">\(\sigma\)</span>)</li>
+<li>Deterministic part: <span class="math inline">\(\beta_0 + \beta_1 x\)</span> (population line)
+<ul>
+<li>gives the mean of <span class="math inline">\(Y\)</span> for any given <span class="math inline">\(x\)</span></li>
+</ul></li>
+<li>Random part: <span class="math inline">\(\epsilon\)</span> (error term)
+<ul>
+<li>mean 0, standard deviation <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
 <li>We estimate this using a sample of size <span class="math inline">\(n\)</span>:
 <ul>
 <li><span class="math inline">\(\widehat y = \widehat\beta_0 + \widehat\beta_1 x\)</span></li>
@@ -314,7 +320,10 @@
 <section id="interpretation-slope-and-intercept" class="slide level2">
 <h2>Interpretation: slope and intercept</h2>
 <ul>
-<li><strong>Slope (<span class="math inline">\(\widehat\beta_1\)</span>):</strong> the estimated difference in the predicted mean of <span class="math inline">\(y\)</span> for a one-unit increase in <span class="math inline">\(x\)</span>.</li>
+<li><strong>Slope (<span class="math inline">\(\widehat\beta_1\)</span>):</strong> the estimated difference in the <strong>predicted mean</strong> of <span class="math inline">\(y\)</span> for a one-unit increase in <span class="math inline">\(x\)</span>.
+<ul>
+<li>always include units in your interpretation!</li>
+</ul></li>
 <li><strong>Intercept (<span class="math inline">\(\widehat\beta_0\)</span>):</strong> the predicted mean of <span class="math inline">\(y\)</span> if <span class="math inline">\(x=0\)</span>.</li>
 <li><strong>Caution:</strong> only interpret the intercept if <span class="math inline">\(x=0\)</span> is plausible and within the range of the data.</li>
 </ul>
@@ -339,8 +348,12 @@
 <section id="when-x-is-categorical-01" class="slide level2">
 <h2>When <span class="math inline">\(x\)</span> is categorical (0/1)</h2>
 <ul>
+<li>We use <strong>dummy variables</strong> or <strong>indicator variables</strong> for categories.</li>
+<li>Coding:
+<ul>
 <li><span class="math inline">\(x=0\)</span>: baseline group</li>
 <li><span class="math inline">\(x=1\)</span>: comparison group</li>
+</ul></li>
 <li>Interpretation:
 <ul>
 <li><span class="math inline">\(\widehat\beta_0\)</span>: predicted mean of <span class="math inline">\(y\)</span> for the baseline group.</li>
@@ -373,15 +386,22 @@
 <section id="comparing-prediction-rules" class="slide level2">
 <h2>Comparing prediction rules</h2>
 <ul>
-<li>Baseline predictor: <span class="math inline">\(\widehat y = \bar y\)</span> (ignore <span class="math inline">\(x\)</span>)</li>
-<li>Regression predictor: <span class="math inline">\(\widehat y = \widehat\beta_0 + \widehat\beta_1 x\)</span> (use <span class="math inline">\(x\)</span>)</li>
-<li><strong>Question:</strong> how much better do we do by using <span class="math inline">\(x\)</span>?</li>
+<li>How much does knowing <span class="math inline">\(x\)</span> help us predict <span class="math inline">\(y\)</span>?</li>
+<li><strong>Baseline rule:</strong> use the sample mean <span class="math inline">\(\bar y\)</span>.
+<ul>
+<li>error for each point: <span class="math inline">\((y_i - \bar y)\)</span></li>
+</ul></li>
+<li><strong>Regression rule:</strong> use the fitted line <span class="math inline">\(\widehat y_i\)</span>.
+<ul>
+<li>error for each point: <span class="math inline">\((y_i - \widehat y_i)\)</span></li>
+</ul></li>
+<li><strong>Goal:</strong> quantify the reduction in error.</li>
 </ul>
 </section>
 <section id="visual-intuition-two-approximating-lines" class="slide level2">
 <h2>Visual intuition: two approximating lines</h2>
 <div style="text-align:center">
-<p><img data-src="figures/shafer_zhang_ybar_v_reg.jpg" style="width:80.0%"></p>
+
 </div>
 <ul>
 <li>Left panel uses <span class="math inline">\(\bar y\)</span> (total variation).</li>
@@ -394,10 +414,12 @@
 <ul>
 <li><strong>Total variation (<span class="math inline">\(SS_{yy}\)</span>):</strong> <span class="math inline">\(\sum (y_i - \bar y)^2\)</span>
 <ul>
+<li>“total sum of squares”</li>
 <li>error when using only the mean</li>
 </ul></li>
 <li><strong>Unexplained variation (<span class="math inline">\(SSE\)</span>):</strong> <span class="math inline">\(\sum (y_i - \widehat y_i)^2\)</span>
 <ul>
+<li>“sum of squared errors”</li>
 <li>error remaining after fitting the line</li>
 </ul></li>
 </ul>
@@ -470,13 +492,31 @@
 </ul></li>
 </ul>
 </section>
+<section id="confidence-interval-for-the-slope" class="slide level2">
+<h2>Confidence interval for the slope</h2>
+<ul>
+<li>We can also estimate the range of plausible values for the population slope <span class="math inline">\(\beta_1\)</span>.</li>
+<li><strong>Formula:</strong> <span class="math display">\[\widehat{\beta}_1 \pm t^* \cdot SE(\widehat{\beta}_1)\]</span></li>
+<li>where <span class="math inline">\(t^*\)</span> is the critical value for <span class="math inline">\(df = n-2\)</span>.</li>
+<li><strong>Interpretation:</strong> We are 95% confident that the population slope <span class="math inline">\(\beta_1\)</span> is between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span>.</li>
+</ul>
+</section>
 <section id="conditions-for-inference" class="slide level2">
 <h2>Conditions for inference</h2>
 <ul>
-<li><strong>Linearity:</strong> the relationship should be approximately linear.</li>
-<li><strong>Constant variance:</strong> the spread of residuals should be similar across <span class="math inline">\(x\)</span>.</li>
+<li><strong>Linearity:</strong> the relationship should be approximately linear.
+<ul>
+<li>check: residuals vs.&nbsp;fitted plot should show no pattern.</li>
+</ul></li>
+<li><strong>Constant variance:</strong> the spread of residuals should be similar across <span class="math inline">\(x\)</span>.
+<ul>
+<li>check: “funnel” shapes in residual plots suggest a problem.</li>
+</ul></li>
 <li><strong>Independence:</strong> observations should not be related to each other.</li>
-<li><strong>Normality:</strong> residuals should be approximately normal (needed for small <span class="math inline">\(n\)</span>).</li>
+<li><strong>Normality:</strong> residuals should be approximately normal.
+<ul>
+<li>check: histogram or Q-Q plot of residuals.</li>
+</ul></li>
 </ul>
 </section>
 <section id="reading-inferential-output" class="slide level2">
@@ -504,21 +544,21 @@ TV          0.05546477 0.001895551 29.26050 7.927912e-74</code></pre>
 <section id="silicofluoride-and-lead-example" class="slide level2">
 <h2>Silicofluoride and lead example</h2>
 <p><em>Shafer and Zhang, 10.8, Exercise 1</em></p>
-<p>The data give the amount <span class="math inline">\(x\)</span> of silicofluoride in water (mg/L) and lead <span class="math inline">\(y\)</span> in blood (μg/dL) for ten children.</p>
+<p>The data give the amount <span class="math inline">\(x\)</span> of silicofluoride in water (mg/L) and lead <span class="math inline">\(y\)</span> in blood (μg/dL) for <span class="math inline">\(n=10\)</span> children.</p>
 <ul>
-<li><strong>Step 1:</strong> compute <span class="math inline">\(SS_{xx}, SS_{xy}, SS_{yy}\)</span>.</li>
-<li><strong>Step 2:</strong> find <span class="math inline">\(\widehat\beta_1 = SS_{xy}/SS_{xx}\)</span> and <span class="math inline">\(\widehat\beta_0\)</span>.</li>
-<li><strong>Step 3:</strong> compute <span class="math inline">\(R^2\)</span> and <span class="math inline">\(SSE\)</span>.</li>
-<li><strong>Step 4:</strong> test <span class="math inline">\(H_0: \beta_1 = 0\)</span> vs <span class="math inline">\(H_a: \beta_1 &gt; 0\)</span> at 5%.</li>
+<li><span class="math inline">\(\sum x = 7.06, \sum y = 82.7\)</span></li>
+<li><span class="math inline">\(\sum x^2 = 5.21, \sum y^2 = 712.5, \sum xy = 60.6\)</span></li>
+<li><span class="math inline">\(SS_{xx} = 0.22, SS_{xy} = 2.21, SS_{yy} = 28.5\)</span></li>
 </ul>
 </section>
-<section id="calculations-recap" class="slide level2">
-<h2>Calculations recap</h2>
+<section id="calculations-walkthrough" class="slide level2">
+<h2>Calculations walkthrough</h2>
 <ul>
-<li><span class="math inline">\(\widehat\beta_1 \approx 3.47\)</span></li>
-<li><span class="math inline">\(R^2 \approx 0.84\)</span></li>
-<li><span class="math inline">\(T \approx 6.52\)</span> (<span class="math inline">\(df=8\)</span>)</li>
-<li><span class="math inline">\(p \text{-value} \approx 0.0001\)</span></li>
+<li><strong>Slope:</strong> <span class="math inline">\(\widehat\beta_1 = 2.21 / 0.22 \approx 10.05\)</span></li>
+<li><strong>Intercept:</strong> <span class="math inline">\(\widehat\beta_0 = \bar y - \widehat\beta_1 \bar x \approx 1.17\)</span></li>
+<li><strong>Fit:</strong> <span class="math inline">\(R^2 = (2.21)^2 / (0.22 \cdot 28.5) \approx 0.78\)</span></li>
+<li><strong>Error:</strong> <span class="math inline">\(SSE = SS_{yy}(1 - R^2) \approx 6.27\)</span></li>
+<li><strong>Test:</strong> <span class="math inline">\(T = 10.05 / 1.88 \approx 5.35\)</span></li>
 </ul>
 <div class="fragment">
 <ul>

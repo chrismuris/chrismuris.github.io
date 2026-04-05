@@ -353,8 +353,12 @@
 <h2>The model</h2>
 <ul>
 <li>The multiple linear regression model is: <span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \epsilon\]</span></li>
-<li>Each predictor has its own population coefficient <span class="math inline">\(\beta_j\)</span>.</li>
-<li><span class="math inline">\(\epsilon\)</span> is the error term (everything else that affects <span class="math inline">\(y\)</span>).</li>
+<li>Components:
+<ul>
+<li><span class="math inline">\(\beta_0\)</span>: the intercept (all <span class="math inline">\(x=0\)</span>)</li>
+<li><span class="math inline">\(\beta_j\)</span>: population coefficient for predictor <span class="math inline">\(x_j\)</span></li>
+<li><span class="math inline">\(\epsilon\)</span>: error term (random noise)</li>
+</ul></li>
 </ul>
 </section>
 <section id="interpreting-a-partial-slope" class="slide level2">
@@ -362,15 +366,15 @@
 <ul>
 <li>The coefficient <span class="math inline">\(\beta_j\)</span> is a <strong>partial slope</strong>.</li>
 <li><strong>Interpretation</strong>: a one-unit increase in <span class="math inline">\(x_j\)</span> is associated with a <span class="math inline">\(\beta_j\)</span> change in the predicted mean of <span class="math inline">\(y\)</span>, <strong>holding all other predictors fixed</strong>.</li>
-<li>This is the “ceteris paribus” effect.</li>
+<li>This is the “ceteris paribus” (all else equal) effect.</li>
 </ul>
 </section>
 <section id="example-house-prices" class="slide level2">
 <h2>Example: house prices</h2>
 <p>Suppose we regress house price on size (sq ft) and number of bedrooms.</p>
 <ul>
-<li><span class="math inline">\(\beta_{\text{size}}\)</span>: predicted price change for one more sq ft, <strong>holding the number of bedrooms constant</strong></li>
-<li><span class="math inline">\(\beta_{\text{beds}}\)</span>: predicted price change for one more bedroom, <strong>holding square footage constant</strong></li>
+<li><span class="math inline">\(\beta_{\text{size}}\)</span>: predicted price change for one more sq ft, <strong>holding the number of bedrooms constant</strong>.</li>
+<li><span class="math inline">\(\beta_{\text{beds}}\)</span>: predicted price change for one more bedroom, <strong>holding square footage constant</strong>.</li>
 </ul>
 </section>
 <section id="categorical-predictors-multiple-levels" class="slide level2">
@@ -379,8 +383,9 @@
 <li>If a predictor has <span class="math inline">\(L\)</span> levels, <code>R</code> creates <span class="math inline">\(L-1\)</span> indicator variables (IMS 8.2).</li>
 <li>Example: <code>Neighborhood</code> (North, Central, South).
 <ul>
-<li>baseline: Central</li>
-<li><span class="math inline">\(\widehat\beta_{\text{North}}\)</span>: predicted mean difference between North and Central, <strong>holding other factors fixed</strong></li>
+<li>baseline: Central (automatically chosen by <code>R</code>)</li>
+<li><span class="math inline">\(\widehat\beta_{\text{North}}\)</span>: predicted mean difference between North and Central, <strong>holding other factors fixed</strong>.</li>
+<li><span class="math inline">\(\widehat\beta_{\text{South}}\)</span>: predicted mean difference between South and Central, <strong>holding other factors fixed</strong>.</li>
 </ul></li>
 </ul>
 </section></section>
@@ -394,7 +399,7 @@
 <ul>
 <li>Sometimes variables move together just because they share a common cause.</li>
 <li>Example: high newspaper advertising is associated with high sales.</li>
-<li>But is it the newspaper, or are markets with high newspaper ads also high in TV/Radio ads?</li>
+<li><strong>The question:</strong> is it the newspaper, or are markets with high newspaper ads also high in TV/Radio ads?</li>
 </ul>
 </section>
 <section id="advertising-budgets-slr-vs-mlr" class="slide level2">
@@ -414,6 +419,7 @@
 <ul>
 <li>If we leave out a relevant variable that is correlated with our predictor, our estimate for <span class="math inline">\(\beta_1\)</span> is <strong>biased</strong>.</li>
 <li>Classic example: class size and test scores.</li>
+<li>Wealthy districts have small classes AND high scores (more resources).</li>
 </ul>
 </section>
 <section id="case-study-class-size-and-test-scores" class="slide level2">
@@ -421,8 +427,8 @@
 <p>We want to know: do smaller classes lead to better test scores?</p>
 <ul>
 <li>Simple regression: <span class="math inline">\(\text{Score} = \beta_0 + \beta_1 \text{ClassSize} + \epsilon\)</span></li>
-<li>Result: smaller classes seem significantly better</li>
-<li><strong>The confounder</strong>: wealthy districts have small classes AND high scores (more resources)</li>
+<li>Result: smaller classes seem significantly better.</li>
+<li><strong>The confounder</strong>: average income in the district.</li>
 </ul>
 </section>
 <section id="controlling-for-income" class="slide level2">
@@ -469,8 +475,26 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 <section id="multicollinearity" class="slide level2">
 <h2>Multicollinearity</h2>
 <ul>
-<li>If predictors are highly correlated with each other, it is hard for the model to “untangle” their individual effects.</li>
-<li>Result: coefficients become unstable and standard errors get larger.</li>
+<li>When predictors are highly correlated, the model can’t “untangle” their individual effects.</li>
+<li><strong>Example:</strong> regressing weight on <code>height_in_inches</code> and <code>height_in_cm</code>.</li>
+<li><strong>Result:</strong>
+<ul>
+<li>standard errors for both coefficients explode</li>
+<li>coefficients become unstable (may even have the “wrong” sign)</li>
+</ul></li>
+</ul>
+</section>
+<section id="model-selection" class="slide level2 scrollable">
+<h2>Model selection</h2>
+<ul>
+<li>How do we choose which variables to include?</li>
+<li><strong>Backward elimination:</strong>
+<ol type="1">
+<li>start with the full model (all possible predictors)</li>
+<li>identify the predictor with the largest <span class="math inline">\(p\)</span>-value</li>
+<li>if <span class="math inline">\(p &gt; \alpha\)</span>, remove it and re-fit</li>
+<li>repeat until all <span class="math inline">\(p\)</span>-values are significant</li>
+</ol></li>
 </ul>
 </section></section>
 <section>
