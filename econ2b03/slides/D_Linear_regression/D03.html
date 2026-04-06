@@ -255,12 +255,67 @@
 <li>Tools: using R/Quarto to compute, visualize, and report</li>
 </ul>
 </section>
+<section id="previously-part-b-summary" class="slide level2">
+<h2>Previously: Part B summary</h2>
+<ul>
+<li>Probability foundations:
+<ul>
+<li>random experiments, sample spaces, and events</li>
+<li>probability rules: complements, unions, intersections, and counting</li>
+</ul></li>
+<li>Conditional structure:
+<ul>
+<li>conditional, joint, and marginal probabilities</li>
+<li>multiplication rule and independence</li>
+</ul></li>
+<li>Random variables and distributions:
+<ul>
+<li>discrete and continuous random variables</li>
+<li>distributions, mean, and variance</li>
+</ul></li>
+<li>Core families:
+<ul>
+<li>binomial distribution</li>
+<li>normal distribution, standardization, and tail areas</li>
+</ul></li>
+<li>Sampling and limits:
+<ul>
+<li>sampling distributions</li>
+<li>the Central Limit Theorem</li>
+</ul></li>
+</ul>
+</section>
+<section id="previously-part-c-summary" class="slide level2">
+<h2>Previously: Part C summary</h2>
+<ul>
+<li>Estimation:
+<ul>
+<li>point estimates and confidence intervals</li>
+<li>means and proportions</li>
+</ul></li>
+<li>Hypothesis testing:
+<ul>
+<li>null and alternative hypotheses</li>
+<li>critical values, rejection regions, and <span class="math inline">\(p\)</span>-values</li>
+</ul></li>
+<li>Decisions under uncertainty:
+<ul>
+<li>Type I and Type II errors</li>
+<li>significance levels and interpretation</li>
+</ul></li>
+<li>Two-population inference:
+<ul>
+<li>differences in means</li>
+<li>paired samples and differences in proportions</li>
+</ul></li>
+</ul>
+</section>
 <section id="this-lecture" class="slide level2">
 <h2>This lecture</h2>
 <ul>
-<li>Review of SLR: interpretation and <span class="math inline">\(R^2\)</span></li>
-<li>Inference for the regression slope: hypothesis tests and <span class="math inline">\(p\)</span>-values</li>
-<li>Reading and interpreting inferential output in <code>R</code></li>
+<li>Interpretation of regression slopes (numerical and categorical predictors)</li>
+<li>Coefficient of determination (<span class="math inline">\(R^2\)</span>)</li>
+<li>Inference for the regression slope (hypothesis test, confidence interval)</li>
 </ul>
 </section>
 <section id="readings-and-homework" class="slide level2">
@@ -273,7 +328,7 @@
 <section id="overview" class="slide level2 scrollable">
 <h2>Overview</h2>
 <ul>
-<li>Why this matters: interpretation and inference allow us to quantify how much of the variation in an outcome we’ve explained and whether an association is statistically significant.</li>
+<li>Why this matters: interpretation and inference allow us to quantify how much of the variation in an outcome we’ve explained and whether an association is statistically significant</li>
 <li>What you will learn:
 <ol type="1">
 <li>how to interpret slopes for numerical and categorical predictors</li>
@@ -290,28 +345,28 @@
 <section id="motivation-why-regression" class="slide level2">
 <h2>Motivation: why regression?</h2>
 <ul>
-<li>Previously, we used <strong>descriptive statistics</strong> (mean, SD) to summarize a single variable.</li>
-<li>Regression lets us study the <strong>association</strong> between two or more variables.</li>
-<li>Goals:
+<li><p>Previously, we used descriptive statistics (mean, SD) to summarize a single variable.</p></li>
+<li><p>Regression lets us study the association between two or more variables.</p></li>
+<li><p>Goals:</p>
 <ul>
-<li><strong>Explanation</strong>: how does <span class="math inline">\(x\)</span> relate to <span class="math inline">\(y\)</span>?</li>
-<li><strong>Prediction</strong>: what is the likely value of <span class="math inline">\(y\)</span> given <span class="math inline">\(x\)</span>?</li>
+<li>explanation: how does <span class="math inline">\(x\)</span> relate to <span class="math inline">\(y\)</span>?</li>
+<li>prediction: what is the likely value of <span class="math inline">\(y\)</span> given <span class="math inline">\(x\)</span>?</li>
 </ul></li>
 </ul>
 </section>
 <section id="simple-linear-regression-model" class="slide level2">
 <h2>Simple linear regression model</h2>
 <ul>
-<li>Model: <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span></li>
-<li>Deterministic part: <span class="math inline">\(\beta_0 + \beta_1 x\)</span> (population line)
+<li><p>The <strong>simple linear regression model</strong> is <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span></p></li>
+<li><p>The <strong>deterministic part</strong> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>, which is the population line</p>
 <ul>
-<li>gives the mean of <span class="math inline">\(Y\)</span> for any given <span class="math inline">\(x\)</span></li>
+<li>gives the mean of <span class="math inline">\(y\)</span> for any given <span class="math inline">\(x\)</span></li>
 </ul></li>
-<li>Random part: <span class="math inline">\(\epsilon\)</span> (error term)
+<li><p>The <strong>random part</strong> is <span class="math inline">\(\epsilon\)</span>, the error term</p>
 <ul>
-<li>mean 0, standard deviation <span class="math inline">\(\sigma\)</span></li>
+<li>has mean 0 and standard deviation <span class="math inline">\(\sigma\)</span></li>
 </ul></li>
-<li>We estimate this using a sample of size <span class="math inline">\(n\)</span>:
+<li><p>We estimate this using a sample of size <span class="math inline">\(n\)</span>:</p>
 <ul>
 <li><span class="math inline">\(\widehat y = \widehat\beta_0 + \widehat\beta_1 x\)</span></li>
 </ul></li>
@@ -320,271 +375,36 @@
 <section id="interpretation-slope-and-intercept" class="slide level2">
 <h2>Interpretation: slope and intercept</h2>
 <ul>
-<li><strong>Slope (<span class="math inline">\(\widehat\beta_1\)</span>):</strong> the estimated difference in the <strong>predicted mean</strong> of <span class="math inline">\(y\)</span> for a one-unit increase in <span class="math inline">\(x\)</span>.
+<li>The <strong>slope</strong> (<span class="math inline">\(\widehat\beta_1\)</span>) is the estimated difference in the predicted mean of <span class="math inline">\(y\)</span> for a one-unit increase in <span class="math inline">\(x\)</span>.
 <ul>
 <li>always include units in your interpretation!</li>
 </ul></li>
-<li><strong>Intercept (<span class="math inline">\(\widehat\beta_0\)</span>):</strong> the predicted mean of <span class="math inline">\(y\)</span> if <span class="math inline">\(x=0\)</span>.</li>
-<li><strong>Caution:</strong> only interpret the intercept if <span class="math inline">\(x=0\)</span> is plausible and within the range of the data.</li>
-</ul>
-</section>
-<section id="example-gift-aid-and-family-income" class="slide level2">
-<h2>Example: gift aid and family income</h2>
+<li>The <strong>intercept</strong> (<span class="math inline">\(\widehat\beta_0\)</span>) is the predicted mean of <span class="math inline">\(y\)</span> if <span class="math inline">\(x=0\)</span>.
 <ul>
-<li>For a 1-unit increase in <code>family_income</code>, predicted <code>gift_aid</code> changes by <span class="math inline">\(\widehat\beta_1\)</span> units.</li>
-<li>Always check the units! (e.g., $1,000s of dollars).</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">coef</span>(elm_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  (Intercept) family_income 
-  24.31932901   -0.04307165 </code></pre>
-</div>
-</div>
-<ul>
-<li>Interpretation: about $43 less aid per $1,000 increase in family income.</li>
-</ul>
-</section>
-<section id="when-x-is-categorical-01" class="slide level2">
-<h2>When <span class="math inline">\(x\)</span> is categorical (0/1)</h2>
-<ul>
-<li>We use <strong>dummy variables</strong> or <strong>indicator variables</strong> for categories.</li>
-<li>Coding:
-<ul>
-<li><span class="math inline">\(x=0\)</span>: baseline group</li>
-<li><span class="math inline">\(x=1\)</span>: comparison group</li>
-</ul></li>
-<li>Interpretation:
-<ul>
-<li><span class="math inline">\(\widehat\beta_0\)</span>: predicted mean of <span class="math inline">\(y\)</span> for the baseline group.</li>
-<li><span class="math inline">\(\widehat\beta_1\)</span>: the difference in predicted means (comparison − baseline).</li>
+<li>only interpret the intercept if <span class="math inline">\(x=0\)</span> is plausible and within the range of the data</li>
 </ul></li>
 </ul>
 </section>
-<section id="example-used-vs-new-video-games" class="slide level2">
-<h2>Example: used vs new video games</h2>
-<ul>
-<li>Baseline group is <code>new</code>.</li>
-<li>Predicted mean price for a used game: <span class="math inline">\(\widehat\beta_0 + \widehat\beta_1(1)\)</span>.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">coef</span>(mk_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept)    condused 
-   53.77068   -10.89958 </code></pre>
-</div>
-</div>
-<ul>
-<li>Used games sell for about $10.90 less (on average) than new games in this sample.</li>
-</ul>
-</section></section>
-<section>
-<section id="part-ii-goodness-of-fit-r2" class="title-slide slide level1 center">
-<h1>Part II: Goodness of fit (<span class="math inline">\(R^2\)</span>)</h1>
+<section class="slide level2">
 
-</section>
-<section id="comparing-prediction-rules" class="slide level2">
-<h2>Comparing prediction rules</h2>
-<ul>
-<li>How much does knowing <span class="math inline">\(x\)</span> help us predict <span class="math inline">\(y\)</span>?</li>
-<li><strong>Baseline rule:</strong> use the sample mean <span class="math inline">\(\bar y\)</span>.
-<ul>
-<li>error for each point: <span class="math inline">\((y_i - \bar y)\)</span></li>
-</ul></li>
-<li><strong>Regression rule:</strong> use the fitted line <span class="math inline">\(\widehat y_i\)</span>.
-<ul>
-<li>error for each point: <span class="math inline">\((y_i - \widehat y_i)\)</span></li>
-</ul></li>
-<li><strong>Goal:</strong> quantify the reduction in error.</li>
-</ul>
-</section>
-<section id="visual-intuition-two-approximating-lines" class="slide level2">
-<h2>Visual intuition: two approximating lines</h2>
-<div style="text-align:center">
-
-</div>
-<ul>
-<li>Left panel uses <span class="math inline">\(\bar y\)</span> (total variation).</li>
-<li>Right panel uses the regression line (unexplained variation).</li>
-<li><span class="math inline">\(R^2\)</span> measures the reduction in error.</li>
-</ul>
-</section>
-<section id="total-vs-unexplained-variation" class="slide level2">
-<h2>Total vs unexplained variation</h2>
-<ul>
-<li><strong>Total variation (<span class="math inline">\(SS_{yy}\)</span>):</strong> <span class="math inline">\(\sum (y_i - \bar y)^2\)</span>
-<ul>
-<li>“total sum of squares”</li>
-<li>error when using only the mean</li>
-</ul></li>
-<li><strong>Unexplained variation (<span class="math inline">\(SSE\)</span>):</strong> <span class="math inline">\(\sum (y_i - \widehat y_i)^2\)</span>
-<ul>
-<li>“sum of squared errors”</li>
-<li>error remaining after fitting the line</li>
-</ul></li>
-</ul>
-</section>
-<section id="coefficient-of-determination-r2" class="slide level2">
-<h2>Coefficient of determination (<span class="math inline">\(R^2\)</span>)</h2>
-<ul>
-<li><span class="math inline">\(R^2\)</span> describes <em>how well the line fits the data</em>.</li>
-<li>Formula: <span class="math display">\[R^2 = 1 - \frac{SSE}{SS_{yy}}\]</span></li>
-<li>Interpretation: the fraction of the sample variation in <span class="math inline">\(y\)</span> “explained” by the linear relationship with <span class="math inline">\(x\)</span>.</li>
-<li>Range: <span class="math inline">\(0 \le R^2 \le 1\)</span>.</li>
-</ul>
-</section>
-<section id="multiple-formulas-for-r2" class="slide level2 scrollable">
-<h2>Multiple formulas for <span class="math inline">\(R^2\)</span></h2>
-<p>For simple linear regression, we can compute <span class="math inline">\(R^2\)</span> in three equivalent ways (SZ 10.6):</p>
-<ol type="1">
-<li><span class="math display">\[R^2 = 1 - \frac{SSE}{SS_{yy}}\]</span></li>
-<li><span class="math display">\[R^2 = \frac{SS_{xy}^2}{SS_{xx}SS_{yy}} = r^2\]</span></li>
-<li><span class="math display">\[R^2 = \widehat{\beta}_1 \frac{SS_{xy}}{SS_{yy}}\]</span></li>
-</ol>
-<ul>
-<li>Use whichever is easiest given your previous calculations!</li>
-</ul>
-</section>
-<section id="interpreting-r2-in-r" class="slide level2">
-<h2>Interpreting <span class="math inline">\(R^2\)</span> in R</h2>
-<ul>
-<li>In <code>summary(lm(...))</code>, this is labeled <strong>Multiple R-squared</strong>.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">summary</span>(adv_lm_tv)<span class="sc">$</span>r.squared</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8121757</code></pre>
-</div>
-</div>
-<ul>
-<li>Interpretation: about 81% of the variation in <code>Sales</code> is explained by <code>TV</code> advertising spending in this model.</li>
-</ul>
-</section></section>
-<section>
-<section id="part-iii-inference-for-the-slope" class="title-slide slide level1 center">
-<h1>Part III: Inference for the slope</h1>
-
-</section>
-<section id="why-inference" class="slide level2">
-<h2>Why inference?</h2>
-<ul>
-<li>The estimated slope <span class="math inline">\(\widehat\beta_1\)</span> is a statistic; it varies from sample to sample.</li>
-<li>We want to know if the <em>population</em> slope <span class="math inline">\(\beta_1\)</span> is zero (no association).</li>
-</ul>
-</section>
-<section id="the-hypothesis-test" class="slide level2">
-<h2>The hypothesis test</h2>
-<ul>
-<li><span class="math inline">\(H_0: \beta_1 = 0\)</span> (no linear association)</li>
-<li><span class="math inline">\(H_a: \beta_1 \neq 0\)</span> (two-sided association)</li>
-<li>Test Statistic: <span class="math display">\[T = \frac{\widehat \beta_1 - 0}{SE(\widehat{\beta}_1)}\]</span></li>
-<li>Distribution: <span class="math inline">\(t\)</span> with <span class="math inline">\(df = n-2\)</span>.</li>
-</ul>
-</section>
-<section id="standard-error-of-the-slope" class="slide level2">
-<h2>Standard error of the slope</h2>
-<ul>
-<li>The <strong>standard error of the slope</strong> measures the precision of our estimate: <span class="math display">\[SE(\widehat{\beta}_1) = \frac{s_\epsilon}{\sqrt{SS_{xx}}}\]</span></li>
-<li>Precision improves (smaller <span class="math inline">\(SE\)</span>) if:
-<ul>
-<li>the error SD (<span class="math inline">\(s_\epsilon\)</span>) is small (low noise)</li>
-<li>the variation in <span class="math inline">\(x\)</span> (<span class="math inline">\(SS_{xx}\)</span>) is large (wider range)</li>
-</ul></li>
-</ul>
-</section>
-<section id="confidence-interval-for-the-slope" class="slide level2">
-<h2>Confidence interval for the slope</h2>
-<ul>
-<li>We can also estimate the range of plausible values for the population slope <span class="math inline">\(\beta_1\)</span>.</li>
-<li><strong>Formula:</strong> <span class="math display">\[\widehat{\beta}_1 \pm t^* \cdot SE(\widehat{\beta}_1)\]</span></li>
-<li>where <span class="math inline">\(t^*\)</span> is the critical value for <span class="math inline">\(df = n-2\)</span>.</li>
-<li><strong>Interpretation:</strong> We are 95% confident that the population slope <span class="math inline">\(\beta_1\)</span> is between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span>.</li>
-</ul>
-</section>
-<section id="conditions-for-inference" class="slide level2">
-<h2>Conditions for inference</h2>
-<ul>
-<li><strong>Linearity:</strong> the relationship should be approximately linear.
-<ul>
-<li>check: residuals vs.&nbsp;fitted plot should show no pattern.</li>
-</ul></li>
-<li><strong>Constant variance:</strong> the spread of residuals should be similar across <span class="math inline">\(x\)</span>.
-<ul>
-<li>check: “funnel” shapes in residual plots suggest a problem.</li>
-</ul></li>
-<li><strong>Independence:</strong> observations should not be related to each other.</li>
-<li><strong>Normality:</strong> residuals should be approximately normal.
-<ul>
-<li>check: histogram or Q-Q plot of residuals.</li>
-</ul></li>
-</ul>
-</section>
-<section id="reading-inferential-output" class="slide level2">
-<h2>Reading inferential output</h2>
-<ul>
-<li>The third and fourth columns in the <code>Coefficients</code> table give the <span class="math inline">\(t\)</span>-statistic and the <span class="math inline">\(p\)</span>-value.</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">summary</span>(adv_lm_tv)<span class="sc">$</span>coefficients</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              Estimate  Std. Error  t value     Pr(&gt;|t|)
-(Intercept) 6.97482149 0.322553485 21.62377 5.027719e-54
-TV          0.05546477 0.001895551 29.26050 7.927912e-74</code></pre>
-</div>
-</div>
-<ul>
-<li>For TV, <span class="math inline">\(p &lt; 0.05\)</span>, so we reject <span class="math inline">\(H_0\)</span>. There is strong evidence of an association.</li>
-</ul>
-</section></section>
-<section>
-<section id="part-iv-worked-example" class="title-slide slide level1 center">
-<h1>Part IV: Worked example</h1>
-
-</section>
-<section id="silicofluoride-and-lead-example" class="slide level2">
-<h2>Silicofluoride and lead example</h2>
-<p><em>Shafer and Zhang, 10.8, Exercise 1</em></p>
-<p>The data give the amount <span class="math inline">\(x\)</span> of silicofluoride in water (mg/L) and lead <span class="math inline">\(y\)</span> in blood (μg/dL) for <span class="math inline">\(n=10\)</span> children.</p>
-<ul>
-<li><span class="math inline">\(\sum x = 7.06, \sum y = 82.7\)</span></li>
-<li><span class="math inline">\(\sum x^2 = 5.21, \sum y^2 = 712.5, \sum xy = 60.6\)</span></li>
-<li><span class="math inline">\(SS_{xx} = 0.22, SS_{xy} = 2.21, SS_{yy} = 28.5\)</span></li>
-</ul>
-</section>
-<section id="calculations-walkthrough" class="slide level2">
-<h2>Calculations walkthrough</h2>
-<ul>
-<li><strong>Slope:</strong> <span class="math inline">\(\widehat\beta_1 = 2.21 / 0.22 \approx 10.05\)</span></li>
-<li><strong>Intercept:</strong> <span class="math inline">\(\widehat\beta_0 = \bar y - \widehat\beta_1 \bar x \approx 1.17\)</span></li>
-<li><strong>Fit:</strong> <span class="math inline">\(R^2 = (2.21)^2 / (0.22 \cdot 28.5) \approx 0.78\)</span></li>
-<li><strong>Error:</strong> <span class="math inline">\(SSE = SS_{yy}(1 - R^2) \approx 6.27\)</span></li>
-<li><strong>Test:</strong> <span class="math inline">\(T = 10.05 / 1.88 \approx 5.35\)</span></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Conclusion:</strong> reject <span class="math inline">\(H_0\)</span>. The data provide sufficient evidence of a positive association between silicofluoride in water and lead in blood.</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="exercises" class="title-slide slide level1 center">
-<h1>Exercises</h1>
-<div class="exercise-callout" title="Exercise: interpret $R^2$">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div title="Elmhurst College gift aid">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: interpret <span class="math inline">\(R^2\)</span></strong></p>
+<p><strong>Elmhurst College gift aid</strong></p>
 </div>
 <div class="callout-content">
-<p>In a regression of wage on years of education, <span class="math inline">\(R^2 = 0.25\)</span>. Interpret this value.</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (2 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>What does 0.25 tell us about the relationship?</p>
-</div>
-<div id="tabset-1-2">
-<p>About 25% of the variation in wages in the sample is explained by the linear relationship with education.</p>
+<ul>
+<li>Data on <span class="math inline">\(n=50\)</span> students from Elmhurst College.</li>
+<li>Goal: predict <code>gift_aid</code> (scholarship/grant money) using <code>family_income</code>.</li>
+<li>Both variables are in $1,000s of dollars.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="D03_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -595,22 +415,749 @@ TV          0.05546477 0.001895551 29.26050 7.927912e-74</code></pre>
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: significance">
+<div title="Elmhurst College gift aid (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Elmhurst College gift aid (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>For a 1-unit increase in <code>family_income</code>, predicted <code>gift_aid</code> changes by <span class="math inline">\(\widehat\beta_1\)</span> units.</li>
+<li>Always check the units! (e.g., $1,000s of dollars).</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">summary</span>(elm_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = gift_aid ~ family_income, data = elmhurst)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-10.1128  -3.6234  -0.2161   3.1587  11.5707 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   24.31933    1.29145  18.831  &lt; 2e-16 ***
+family_income -0.04307    0.01081  -3.985 0.000229 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 4.783 on 48 degrees of freedom
+Multiple R-squared:  0.2486,    Adjusted R-squared:  0.2329 
+F-statistic: 15.88 on 1 and 48 DF,  p-value: 0.0002289</code></pre>
+</div>
+</div>
+<ul>
+<li>In this sample, we predict about $43 less aid per $1,000 increase in family income.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="when-x-is-categorical-01" class="slide level2">
+<h2>When <span class="math inline">\(x\)</span> is categorical (0/1)</h2>
+<ul>
+<li>We use <strong>indicator variables</strong> for categories (also called dummy variables).</li>
+<li>Coding:
+<ul>
+<li><span class="math inline">\(x=0\)</span>: baseline group</li>
+<li><span class="math inline">\(x=1\)</span>: comparison group</li>
+</ul></li>
+<li>Meaning of the coefficients:
+<ul>
+<li><span class="math inline">\(\widehat\beta_0\)</span>: predicted mean of <span class="math inline">\(y\)</span> for the baseline group</li>
+<li><span class="math inline">\(\widehat\beta_1\)</span>: the difference in predicted means (comparison <span class="math inline">\(\dots\)</span> baseline)</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Mario Kart auctions">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Mario Kart auctions</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Data from eBay auctions of the game <em>Mario Kart</em> for Nintendo Wii.</li>
+<li>Outcome (<span class="math inline">\(y\)</span>): <code>total_pr</code> (final auction price in $).</li>
+<li>Predictor (<span class="math inline">\(x\)</span>): <code>cond</code> (game condition: <code>new</code> or <code>used</code>).</li>
+<li>Goal: compare average auction prices based on condition.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="D03_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Mario Kart auctions (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Mario Kart auctions (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Baseline group is <code>new</code> (<span class="math inline">\(x=0\)</span>).</li>
+<li>Predicted mean price for a used game (<span class="math inline">\(x=1\)</span>) is <span class="math inline">\(\widehat\beta_0 + \widehat\beta_1(1)\)</span>.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">summary</span>(mk_lm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = total_pr ~ cond, data = mk_df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-13.8911  -5.8311   0.1289   4.1289  22.1489 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  53.7707     0.9596  56.034  &lt; 2e-16 ***
+condused    -10.8996     1.2583  -8.662 1.06e-14 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.371 on 139 degrees of freedom
+Multiple R-squared:  0.3506,    Adjusted R-squared:  0.3459 
+F-statistic: 75.03 on 1 and 139 DF,  p-value: 1.056e-14</code></pre>
+</div>
+</div>
+<ul>
+<li>Used games sell for about $10.90 less (on average) than new games in this sample.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Coefficient interpretation with a binary predictor">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: significance</strong></p>
+<p><strong>Exercise: Coefficient interpretation with a binary predictor</strong></p>
+</div>
+<div class="callout-content">
+<p>A study of Canadian workers in 2020 regresses hourly wage ($/hr) on an indicator <code>union</code>: <span class="math display">\[\widehat y = 22.4 + 3.1 \times \texttt{union}\]</span> where <code>union = 1</code> for union members and <code>union = 0</code> otherwise.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Question (3 min)</a></li><li><a href="#tabset-1-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>Interpret the intercept and the slope.</p>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>The intercept, 22.4, is the predicted mean hourly wage for non-union workers.</li>
+<li>The slope, 3.1, means union workers are predicted to earn $3.10/hr more on average than non-union workers in this sample.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-ii-goodness-of-fit-r2" class="title-slide slide level1 center">
+<h1>Part II: Goodness of fit (<span class="math inline">\(R^2\)</span>)</h1>
+
+</section>
+<section id="the-advertising-data" class="slide level2">
+<h2>The advertising data</h2>
+<div title="Advertising budgets">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Advertising budgets</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Data on sales of a product in 200 different markets.</li>
+<li>Outcome (<span class="math inline">\(y\)</span>): <code>Sales</code> (in thousands of units).</li>
+<li>Predictor (<span class="math inline">\(x\)</span>): <code>TV</code> (advertising budget in thousands of dollars).</li>
+<li>Goal: quantify how much of the sales variation is explained by TV ads.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="D03_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-prediction-rules" class="slide level2">
+<h2>Comparing prediction rules</h2>
+<ul>
+<li>How much does knowing <span class="math inline">\(x\)</span> help us predict <span class="math inline">\(y\)</span>?</li>
+<li><strong>Baseline rule:</strong> use the sample mean <span class="math inline">\(\bar y\)</span>.
+<ul>
+<li>error for each point is <span class="math inline">\((y_i - \bar y)\)</span></li>
+</ul></li>
+<li><strong>Regression rule:</strong> use the fitted line <span class="math inline">\(\widehat y_i\)</span>.
+<ul>
+<li>error for each point is <span class="math inline">\((y_i - \widehat y_i)\)</span></li>
+</ul></li>
+<li>Goal: quantify the reduction in error.</li>
+</ul>
+</section>
+<section id="visual-intuition-two-approximating-lines" class="slide level2">
+<h2>Visual intuition: two approximating lines</h2>
+<div style="text-align:center">
+<p><img data-src="figures/shafer_zhang_ybar_v_reg.jpg" style="width:75.0%"></p>
+</div>
+<ul>
+<li><p>Left panel uses <span class="math inline">\(\bar y\)</span> (total variation).</p></li>
+<li><p>Right panel uses the regression line (unexplained variation).</p></li>
+<li><p><span class="math inline">\(R^2\)</span> measures the reduction in error.</p></li>
+</ul>
+</section>
+<section id="total-vs-unexplained-variation" class="slide level2">
+<h2>Total vs unexplained variation</h2>
+<ul>
+<li>The <strong>total variation</strong> (<span class="math inline">\(SS_{yy}\)</span>) is <span class="math inline">\(\sum (y_i - \bar y)^2\)</span>
+<ul>
+<li>called “total sum of squares”</li>
+<li>error when using only the mean</li>
+</ul></li>
+<li>The <strong>unexplained variation</strong> (<span class="math inline">\(SSE\)</span>) is <span class="math inline">\(\sum (y_i - \widehat y_i)^2\)</span>
+<ul>
+<li>called “sum of squared errors”</li>
+<li>error remaining after fitting the line</li>
+</ul></li>
+</ul>
+</section>
+<section id="coefficient-of-determination-r2" class="slide level2 scrollable">
+<h2>Coefficient of determination (<span class="math inline">\(R^2\)</span>)</h2>
+<ul>
+<li><p>The <strong>coefficient of determination</strong> (<span class="math inline">\(R^2\)</span>) describes how well the line fits the data</p></li>
+<li><p>It is the fraction of the sample variation in <span class="math inline">\(y\)</span> explained by the linear relationship with <span class="math inline">\(x\)</span></p></li>
+<li><p>Range: <span class="math inline">\(0 \le R^2 \le 1\)</span></p></li>
+<li><p>Equivalent formulas (SZ 10.6):</p>
+<ol type="1">
+<li><span class="math inline">\(R^2 = 1 - \frac{SSE}{SS_{yy}}\)</span></li>
+<li><span class="math inline">\(R^2 = \frac{SS_{xy}^2}{SS_{xx}SS_{yy}} = r^2\)</span></li>
+<li><span class="math inline">\(R^2 = \widehat{\beta}_1 \frac{SS_{xy}}{SS_{yy}}\)</span></li>
+</ol></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Advertising budgets (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Advertising budgets (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>In <code>summary(lm(...))</code>, <span class="math inline">\(R^2\)</span> is labeled <strong>Multiple R-squared</strong>.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">summary</span>(adv_lm_tv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ TV, data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.4438 -1.4857  0.0218  1.5042  5.6932 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 6.974821   0.322553   21.62   &lt;2e-16 ***
+TV          0.055465   0.001896   29.26   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.296 on 198 degrees of freedom
+Multiple R-squared:  0.8122,    Adjusted R-squared:  0.8112 
+F-statistic: 856.2 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>About 81% of the variation in <code>Sales</code> is explained by <code>TV</code> advertising spending in this model.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Interpret R-squared">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Interpret R-squared</strong></p>
+</div>
+<div class="callout-content">
+<p>In a regression of wage on years of education, <span class="math inline">\(R^2 = 0.25\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (2 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>What does 0.25 tell us about the relationship?</p>
+</div>
+<div id="tabset-2-2">
+<p>About 25% of the variation in wages in the sample is explained by the linear relationship with education.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-iii-inference-for-the-slope" class="title-slide slide level1 center">
+<h1>Part III: Inference for the slope</h1>
+
+</section>
+<section id="the-hypothesis-test" class="slide level2">
+<h2>The hypothesis test</h2>
+<ul>
+<li><p>The estimated slope <span class="math inline">\(\widehat\beta_1\)</span> is a statistic; it varies from sample to sample</p></li>
+<li><p>We want to know if the population slope <span class="math inline">\(\beta_1\)</span> is zero (no association)</p></li>
+<li><p><span class="math inline">\(H_0: \beta_1 = 0\)</span> (no linear association)</p></li>
+<li><p><span class="math inline">\(H_a: \beta_1 \neq 0\)</span> (two-sided association)</p></li>
+<li><p>Test Statistic: <span class="math display">\[T = \frac{\widehat \beta_1 - 0}{SE(\widehat{\beta}_1)}\]</span></p></li>
+<li><p>Distribution: <span class="math inline">\(t\)</span> with <span class="math inline">\(df = n-2\)</span></p></li>
+</ul>
+</section>
+<section id="standard-error-of-the-slope" class="slide level2">
+<h2>Standard error of the slope</h2>
+<ul>
+<li><p>The <strong>standard error of the slope</strong> measures the precision of our estimate: <span class="math display">\[SE(\widehat{\beta}_1) = \frac{s_\epsilon}{\sqrt{SS_{xx}}}\]</span></p></li>
+<li><p>Precision improves (smaller <span class="math inline">\(SE\)</span>) if:</p>
+<ul>
+<li>the error standard deviation (<span class="math inline">\(s_\epsilon\)</span>) is small (low noise)</li>
+<li>the variation in <span class="math inline">\(x\)</span> (<span class="math inline">\(SS_{xx}\)</span>) is large (wider range)</li>
+</ul></li>
+</ul>
+</section>
+<section id="confidence-interval-for-the-slope" class="slide level2">
+<h2>Confidence interval for the slope</h2>
+<ul>
+<li>We can also estimate the range of plausible values for the population slope <span class="math inline">\(\beta_1\)</span></li>
+<li>Formula: <span class="math display">\[\widehat{\beta}_1 \pm t^* \cdot SE(\widehat{\beta}_1)\]</span>
+<ul>
+<li>where <span class="math inline">\(t^*\)</span> is the critical value for <span class="math inline">\(df = n-2\)</span></li>
+</ul></li>
+<li>Conditions for inference:
+<ul>
+<li>linearity: the relationship should be approximately linear</li>
+<li>constant variance: the spread of residuals should be similar across <span class="math inline">\(x\)</span></li>
+<li>independence: observations should not be related to each other</li>
+<li>normality: residuals should be approximately normal</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Advertising budgets (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Advertising budgets (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The <code>Coefficients</code> table gives the <span class="math inline">\(t\)</span>-statistic and <span class="math inline">\(p\)</span>-value for each coefficient.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">summary</span>(adv_lm_tv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ TV, data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.4438 -1.4857  0.0218  1.5042  5.6932 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 6.974821   0.322553   21.62   &lt;2e-16 ***
+TV          0.055465   0.001896   29.26   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.296 on 198 degrees of freedom
+Multiple R-squared:  0.8122,    Adjusted R-squared:  0.8112 
+F-statistic: 856.2 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>For TV, <span class="math inline">\(p &lt; 0.05\)</span>, so we reject <span class="math inline">\(H_0\)</span>. There is strong evidence of an association.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Significance from a regression table">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Significance from a regression table</strong></p>
+</div>
+<div class="callout-content">
+<p>A regression of test score on hours of study gives <span class="math inline">\(\widehat\beta_1 = 2.8\)</span> with <span class="math inline">\(SE(\widehat\beta_1) = 1.5\)</span> and <span class="math inline">\(df = 18\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (3 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ol type="1">
+<li>Compute the <span class="math inline">\(t\)</span>-statistic.</li>
+<li>The critical value for <span class="math inline">\(df = 18\)</span> at the 5% level (two-sided) is <span class="math inline">\(t^* = 2.101\)</span>. Is the association significant?</li>
+</ol>
+</div>
+<div id="tabset-3-2">
+<ol type="1">
+<li><span class="math inline">\(T = 2.8 / 1.5 \approx 1.87\)</span></li>
+<li>Since <span class="math inline">\(|T| = 1.87 &lt; 2.101\)</span>, we fail to reject <span class="math inline">\(H_0\)</span>. The association is not significant at the 5% level.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="part-iv-worked-example" class="title-slide slide level1 center">
+<h1>Part IV: Worked example</h1>
+
+</section>
+<section class="slide level2 scrollable">
+
+<div title="Silicofluoride and lead">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead</strong></p>
+</div>
+<div class="callout-content">
+<p><em>Shafer and Zhang, 10.8, Exercise 1</em></p>
+<p>The data give the amount <span class="math inline">\(x\)</span> of silicofluoride in water (mg/L) and lead <span class="math inline">\(y\)</span> in blood (μg/dL) for <span class="math inline">\(n=10\)</span> children.</p>
+<p><strong>The Task:</strong></p>
+<ol type="1">
+<li>Calculate the least squares regression line.</li>
+<li>Compute and interpret the coefficient of determination (<span class="math inline">\(R^2\)</span>).</li>
+<li>Construct a 95% confidence interval for the population slope <span class="math inline">\(\beta_1\)</span>.</li>
+<li>Test <span class="math inline">\(H_0: \beta_1 = 0\)</span> vs.&nbsp;<span class="math inline">\(H_a: \beta_1 \neq 0\)</span> at the 5% level.</li>
+</ol>
+<p><strong>Raw Data:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: left;">0.0</th>
+<th style="text-align: left;">0.0</th>
+<th style="text-align: left;">1.1</th>
+<th style="text-align: left;">1.4</th>
+<th style="text-align: left;">1.6</th>
+<th style="text-align: left;">1.7</th>
+<th style="text-align: left;">2.0</th>
+<th style="text-align: left;">2.0</th>
+<th style="text-align: left;">2.2</th>
+<th style="text-align: left;">2.2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(y\)</span></td>
+<td style="text-align: left;">0.3</td>
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">4.7</td>
+<td style="text-align: left;">3.2</td>
+<td style="text-align: left;">5.1</td>
+<td style="text-align: left;">7.0</td>
+<td style="text-align: left;">5.0</td>
+<td style="text-align: left;">6.1</td>
+<td style="text-align: left;">8.6</td>
+<td style="text-align: left;">9.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 1: Compute preliminary sums</strong></p>
+<p>Using <span class="math inline">\(n = 10\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\sum x = 0.0 + 0.0 + \dots + 2.2 = 14.2\)</span></li>
+<li><span class="math inline">\(\sum y = 0.3 + 0.1 + \dots + 9.5 = 49.6\)</span></li>
+<li><span class="math inline">\(\sum x^2 = 0.0^2 + 0.0^2 + \dots + 2.2^2 = 26.3\)</span></li>
+<li><span class="math inline">\(\sum y^2 = 0.3^2 + 0.1^2 + \dots + 9.5^2 = 333.86\)</span></li>
+<li><span class="math inline">\(\sum xy = (0.0 \times 0.3) + \dots + (2.2 \times 9.5) = 91.73\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 2: Compute sample means and sums of squares</strong></p>
+<ul>
+<li><span class="math inline">\(\bar{x} = \frac{\sum x}{n} = \frac{14.2}{10} = 1.42\)</span></li>
+<li><span class="math inline">\(\bar{y} = \frac{\sum y}{n} = \frac{49.6}{10} = 4.96\)</span></li>
+</ul>
+<p><strong>Sums of squares:</strong></p>
+<ul>
+<li><span class="math inline">\(SS_{xx} = \sum x^2 - \frac{1}{n} (\sum x)^2 = 26.3 - \frac{14.2^2}{10} = 6.136\)</span></li>
+<li><span class="math inline">\(SS_{yy} = \sum y^2 - \frac{1}{n} (\sum y)^2 = 333.86 - \frac{49.6^2}{10} = 87.844\)</span></li>
+<li><span class="math inline">\(SS_{xy} = \sum xy - \frac{1}{n} (\sum x)(\sum y) = 91.73 - \frac{14.2 \times 49.6}{10} = 21.298\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 3: Calculate the regression slope</strong></p>
+<ul>
+<li>The formula for the slope is: <span class="math display">\[\widehat\beta_1 = \frac{SS_{xy}}{SS_{xx}}\]</span></li>
+<li>Plugging in our values: <span class="math display">\[\widehat\beta_1 = \frac{21.298}{6.136} \approx 3.47\]</span></li>
+<li><strong>Interpretation:</strong> For every 1 mg/L increase in silicofluoride, the predicted mean lead in blood increases by 3.47 μg/dL.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 4: Calculate the regression intercept</strong></p>
+<ul>
+<li>The formula for the intercept is: <span class="math display">\[\widehat\beta_0 = \bar{y} - \widehat\beta_1 \bar{x}\]</span></li>
+<li>Plugging in our values: <span class="math display">\[\widehat\beta_0 = 4.96 - (3.47 \times 1.42)\]</span> <span class="math display">\[\widehat\beta_0 = 4.96 - 4.9274 \approx 0.03\]</span></li>
+<li>Our fitted regression line is: <span class="math display">\[\widehat{y} = 0.03 + 3.47x\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 5: Assess the goodness of fit (<span class="math inline">\(R^2\)</span>)</strong></p>
+<ul>
+<li>We can use the formula based on sums of squares: <span class="math display">\[R^2 = \frac{SS_{xy}^2}{SS_{xx} SS_{yy}}\]</span></li>
+<li>Plugging in our values: <span class="math display">\[R^2 = \frac{21.298^2}{6.136 \times 87.844} = \frac{453.605}{539.011} \approx 0.84\]</span></li>
+<li><strong>Interpretation:</strong> 84% of the variation in children’s blood lead levels is explained by the linear relationship with silicofluoride levels in their water.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 6: Compute the standard error of the slope</strong></p>
+<ul>
+<li>First, we need <span class="math inline">\(SSE\)</span> (using the formula <span class="math inline">\(SSE = SS_{yy} - \widehat\beta_1 SS_{xy}\)</span>): <span class="math display">\[SSE = 87.844 - 3.47 \times 21.298 = 87.844 - 73.904 \approx 13.94\]</span></li>
+<li>Then, the sample variance of the residuals (<span class="math inline">\(s_\epsilon^2\)</span>) with <span class="math inline">\(df = n - 2 = 8\)</span>: <span class="math display">\[s_\epsilon^2 = \frac{SSE}{n - 2} = \frac{13.94}{8} \approx 1.743\]</span></li>
+<li>The standard error of the slope is: <span class="math display">\[SE(\widehat{\beta}_1) = \frac{s_\epsilon}{\sqrt{SS_{xx}}} = \frac{\sqrt{1.743}}{\sqrt{6.136}} = \frac{1.320}{2.477} \approx 0.53\]</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 7: Construct a 95% confidence interval for <span class="math inline">\(\beta_1\)</span></strong></p>
+<ul>
+<li>The critical value for <span class="math inline">\(df = 8\)</span> at 95% confidence is <span class="math inline">\(t^* = 2.306\)</span>.</li>
+<li>The confidence interval is: <span class="math display">\[\widehat\beta_1 \pm t^* \cdot SE(\widehat\beta_1) = 3.47 \pm 2.306 \times 0.53 = 3.47 \pm 1.22\]</span></li>
+<li>The 95% CI is <span class="math inline">\((2.25, 4.69)\)</span>.</li>
+<li><strong>Interpretation:</strong> We are 95% confident that each additional 1 mg/L of silicofluoride in water is associated with between 2.25 and 4.69 μg/dL more lead in blood.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Silicofluoride and lead (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Silicofluoride and lead (continued)</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Step 8: Calculate test statistic and conclude</strong></p>
+<ul>
+<li><strong>Hypotheses:</strong> <span class="math inline">\(H_0: \beta_1 = 0\)</span> versus <span class="math inline">\(H_a: \beta_1 \neq 0\)</span></li>
+<li>The test statistic is: <span class="math display">\[T = \frac{\widehat\beta_1 - 0}{SE(\widehat{\beta}_1)} = \frac{3.47}{0.53} \approx 6.55\]</span></li>
+<li>With <span class="math inline">\(df = 8\)</span>, a <span class="math inline">\(T\)</span>-statistic of <span class="math inline">\(6.55\)</span> is very large (<span class="math inline">\(p &lt; 0.001\)</span>).</li>
+<li><strong>Conclusion:</strong> We reject <span class="math inline">\(H_0\)</span>. The data provide strong evidence of a positive linear association between silicofluoride in water and lead in blood.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="exercises" class="title-slide slide level1 center">
+<h1>Exercises</h1>
+
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Significance">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Significance</strong></p>
 </div>
 <div class="callout-content">
 <p>A regression reports a slope of 5.2 with a p-value of 0.08.</p>
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Question (3 min)</a></li><li><a href="#tabset-2-2">Answers</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Question (3 min)</a></li><li><a href="#tabset-4-2">Answers</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1">
+<div id="tabset-4-1">
 <p>Is the association significant at the 5% level?</p>
 </div>
-<div id="tabset-2-2">
+<div id="tabset-4-2">
 <p>No, because <span class="math inline">\(0.08 &gt; 0.05\)</span>, we fail to reject the null hypothesis of no association.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Interpret $R^2$">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Interpret <span class="math inline">\(R^2\)</span></strong></p>
+</div>
+<div class="callout-content">
+<p>In a simple regression of exam score on hours studied, the output gives <span class="math inline">\(R^2 = 0.64\)</span>.</p>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Question (2 min)</a></li><li><a href="#tabset-5-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p>Interpret this value in words.</p>
+</div>
+<div id="tabset-5-2">
+<p>About 64% of the sample variation in exam scores is explained by the linear relationship with hours studied, in this fitted model.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="exercise-callout" title="Exercise: Extrapolation">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Extrapolation</strong></p>
+</div>
+<div class="callout-content">
+<p>A regression line was fit using data on families with incomes between $20,000 and $150,000. A student uses the line to predict gift aid for a family with income $600,000.</p>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Question (2 min)</a></li><li><a href="#tabset-6-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<p>Why should you be cautious?</p>
+</div>
+<div id="tabset-6-2">
+<p>This is extrapolation far outside the observed range of the data. Even if the line fits well in-sample, there is no reason to trust the same linear relationship that far beyond the data.</p>
 </div>
 </div>
 </div>
