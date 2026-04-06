@@ -208,15 +208,13 @@
 </section>
 <section class="slide level2">
 
-<p><span class="alert">This will not be posted.</span></p>
+<p><span class="alert">These will not be posted.</span></p>
 <aside class="notes">
 <p>Teaching notes:</p>
 <ul>
-<li>This is the final regression lecture, combining concepts and inference for MLR.</li>
-<li>Key goal: understand “partial slopes” and the “ceteris paribus” (holding all else equal) interpretation.</li>
+<li>Key goals: understand “partial slopes” and the “ceteris paribus” (holding all else equal) interpretation; what’s omitted variable bias; and reading regression output like <span class="math inline">\(R^2\)</span> and p-values.</li>
 <li>The Class Size vs.&nbsp;Income example is the primary vehicle for explaining Omitted Variable Bias (OVB).</li>
 <li>Reading R output for multiple coefficients is a high-priority testable skill.</li>
-<li>Added: Adjusted R-squared and categorical predictors with multiple levels.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -235,80 +233,8 @@
 <h1>Agenda</h1>
 
 </section>
-<section id="previously-part-a-summary" class="slide level2">
-<h2>Previously: Part A summary</h2>
-<ul>
-<li>Foundations:
-<ul>
-<li>descriptive vs inferential statistics</li>
-<li>populations vs samples; parameters vs statistics</li>
-</ul></li>
-<li>Data and variables: measurement, types, and study design</li>
-<li>Descriptive statistics:
-<ul>
-<li>tables and graphs</li>
-<li>summary measures (mean, sd, median, quartiles, IQR, z-scores)</li>
-</ul></li>
-<li>Tools: using R/Quarto to compute, visualize, and report</li>
-</ul>
-</section>
-<section id="previously-part-b-summary" class="slide level2">
-<h2>Previously: Part B summary</h2>
-<ul>
-<li>Probability foundations:
-<ul>
-<li>random experiments, sample spaces, and events</li>
-<li>probability rules: complements, unions, intersections, and counting</li>
-</ul></li>
-<li>Conditional structure:
-<ul>
-<li>conditional, joint, and marginal probabilities</li>
-<li>multiplication rule and independence</li>
-</ul></li>
-<li>Random variables and distributions:
-<ul>
-<li>discrete and continuous random variables</li>
-<li>distributions, mean, and variance</li>
-</ul></li>
-<li>Core families:
-<ul>
-<li>binomial distribution</li>
-<li>normal distribution, standardization, and tail areas</li>
-</ul></li>
-<li>Sampling and limits:
-<ul>
-<li>sampling distributions</li>
-<li>the Central Limit Theorem</li>
-</ul></li>
-</ul>
-</section>
-<section id="previously-part-c-summary" class="slide level2">
-<h2>Previously: Part C summary</h2>
-<ul>
-<li>Estimation:
-<ul>
-<li>point estimates and confidence intervals</li>
-<li>means and proportions</li>
-</ul></li>
-<li>Hypothesis testing:
-<ul>
-<li>null and alternative hypotheses</li>
-<li>critical values, rejection regions, and <span class="math inline">\(p\)</span>-values</li>
-</ul></li>
-<li>Decisions under uncertainty:
-<ul>
-<li>Type I and Type II errors</li>
-<li>significance levels and interpretation</li>
-</ul></li>
-<li>Two-population inference:
-<ul>
-<li>differences in means</li>
-<li>paired samples and differences in proportions</li>
-</ul></li>
-</ul>
-</section>
-<section id="previously-part-d-so-far" class="slide level2">
-<h2>Previously: Part D so far</h2>
+<section id="previously" class="slide level2">
+<h2>Previously</h2>
 <ul>
 <li>Linear relationships: scatter plots, correlation (<span class="math inline">\(r\)</span>)</li>
 <li>Simple linear regression:
@@ -323,11 +249,9 @@
 <section id="this-lecture" class="slide level2">
 <h2>This lecture</h2>
 <ul>
-<li>Motivation: Omitted Variable Bias (OVB) and confounding</li>
-<li>The MLR model and partial slopes (“holding all else fixed”)</li>
-<li>Case study: Class size and student performance (controlling for income)</li>
-<li>Inference in MLR: Reading and interpreting R output tables</li>
-<li>Multicollinearity and model selection</li>
+<li>Omitted variable vias (OVB) and confounding</li>
+<li>MLR model and partial slopes (“holding all else fixed”)</li>
+<li>Inference in MLR: reading and interpreting R output tables</li>
 </ul>
 </section>
 <section id="readings-and-homework" class="slide level2">
@@ -340,7 +264,10 @@
 <section id="overview" class="slide level2 scrollable">
 <h2>Overview</h2>
 <ul>
-<li>Why this matters: almost all empirical research in economics uses multiple regression to isolate the effect of one variable while controlling for others</li>
+<li>Why this matters:
+<ul>
+<li>almost all empirical research in economics uses multiple regression to isolate the effect of one variable while controlling for others</li>
+</ul></li>
 <li>What you will learn:
 <ol type="1">
 <li>how to interpret regression coefficients in a multivariate context</li>
@@ -402,22 +329,6 @@
 <li><code>bedrooms</code>: number of bedrooms</li>
 </ul></li>
 <li>Goal: isolate the value of an extra bedroom for houses of the same size.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div title="House prices (continued)">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>House prices (continued)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
 <li>Regressing <code>price</code> on <code>size</code> and <code>bedrooms</code>:
 <ul>
 <li><span class="math inline">\(\beta_{\text{size}}\)</span>: predicted price change for one more sq ft, holding the number of bedrooms constant</li>
@@ -452,18 +363,15 @@
 </div>
 </div>
 </div>
-</section>
-<section id="categorical-predictors-multiple-levels" class="slide level2">
-<h2>Categorical predictors (multiple levels)</h2>
-<ul>
-<li>If a predictor has <span class="math inline">\(L\)</span> levels, <code>R</code> creates <span class="math inline">\(L-1\)</span> indicator variables (IMS 8.2).</li>
-<li>Example: <code>Neighborhood</code> (North, Central, South).
-<ul>
-<li>baseline: Central (automatically chosen by <code>R</code>)</li>
-<li><span class="math inline">\(\widehat\beta_{\text{North}}\)</span>: predicted mean difference between North and Central, holding other factors fixed</li>
-<li><span class="math inline">\(\widehat\beta_{\text{South}}\)</span>: predicted mean difference between South and Central, holding other factors fixed</li>
-</ul></li>
-</ul>
+<!--
+## Categorical predictors (multiple levels)
+
+- If a predictor has $L$ levels, `R` creates $L-1$ indicator variables (IMS 8.2).
+- Example: `Neighborhood` (North, Central, South).
+    - baseline: Central (automatically chosen by `R`)
+    - $\widehat\beta_{\text{North}}$: predicted mean difference between North and Central, holding other factors fixed
+    - $\widehat\beta_{\text{South}}$: predicted mean difference between South and Central, holding other factors fixed
+-->
 </section></section>
 <section>
 <section id="part-ii-confounding-and-bias" class="title-slide slide level1 center">
@@ -491,6 +399,32 @@
 <li>Data: spending on <code>TV</code>, <code>Radio</code>, and <code>Newspaper</code>.</li>
 <li>Question: is it the newspaper, or are markets with high newspaper ads also high in TV/Radio ads?</li>
 </ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> Newspaper, <span class="at">data =</span> adv_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ Newspaper, data = adv_df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.6930  -3.8807   0.6591   3.9083  11.4385 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 13.95955    0.63829  21.870   &lt;2e-16 ***
+Newspaper    0.03832    0.01703   2.251   0.0255 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.231 on 198 degrees of freedom
+Multiple R-squared:  0.02495,   Adjusted R-squared:  0.02003 
+F-statistic: 5.067 on 1 and 198 DF,  p-value: 0.02549</code></pre>
+</div>
+</div>
+<ul>
+<li>Simple regression (Sales on Newspaper): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.055\)</span> (<span class="math inline">\(p\)</span>-value &lt; 0.05)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -506,9 +440,35 @@
 </div>
 <div class="callout-content">
 <ul>
-<li><p>Simple regression (Sales on Newspaper): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.055\)</span> (<span class="math inline">\(p\)</span>-value &lt; 0.05)</p></li>
-<li><p>Multiple regression (Sales on TV, Radio, News): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.0003\)</span> (<span class="math inline">\(p\)</span>-value = 0.954)</p></li>
-<li><p>Interpretation: Newspaper was “picking up” the effect of Radio/TV. Once we hold Radio/TV fixed, Newspaper has no significant association with sales.</p></li>
+<li>Multiple regression (Sales on TV, Radio, News): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.0003\)</span> (<span class="math inline">\(p\)</span>-value = 0.954)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> ., <span class="at">data =</span> adv_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ ., data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.3034 -0.8244 -0.0008  0.8976  3.7473 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 4.6251241  0.3075012  15.041   &lt;2e-16 ***
+TV          0.0544458  0.0013752  39.592   &lt;2e-16 ***
+Radio       0.1070012  0.0084896  12.604   &lt;2e-16 ***
+Newspaper   0.0003357  0.0057881   0.058    0.954    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.662 on 196 degrees of freedom
+Multiple R-squared:  0.9026,    Adjusted R-squared:  0.9011 
+F-statistic: 605.4 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
+<li>Interpretation: Newspaper was “picking up” the effect of Radio/TV. Once we hold Radio/TV fixed, Newspaper has no significant association with sales.</li>
 </ul>
 </div>
 </div>
@@ -536,6 +496,33 @@
 <li>Outcome (<span class="math inline">\(y\)</span>): average test scores in the district.</li>
 <li>Predictor (<span class="math inline">\(x\)</span>): student-teacher ratio (class size).</li>
 <li>Goal: determine if smaller classes lead to better test scores.</li>
+<li>Simple regression: <span class="math inline">\(\text{Score} = \beta_0 + \beta_1 \text{ClassSize} + \epsilon\)</span>.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(testscr <span class="sc">~</span> str, <span class="at">data =</span> school_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = testscr ~ str, data = school_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-47.727 -14.251   0.483  12.822  48.540 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 698.9330     9.4675  73.825  &lt; 2e-16 ***
+str          -2.2798     0.4798  -4.751 2.78e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 18.58 on 418 degrees of freedom
+Multiple R-squared:  0.05124,   Adjusted R-squared:  0.04897 
+F-statistic: 22.58 on 1 and 418 DF,  p-value: 2.783e-06</code></pre>
+</div>
+</div>
+<ul>
+<li>Result: smaller classes seem significantly better.</li>
 </ul>
 </div>
 </div>
@@ -552,12 +539,36 @@
 </div>
 <div class="callout-content">
 <ul>
-<li>Simple regression: <span class="math inline">\(\text{Score} = \beta_0 + \beta_1 \text{ClassSize} + \epsilon\)</span>.</li>
-<li>Result: smaller classes seem significantly better.</li>
 <li>The confounder: average income in the district.
 <ul>
 <li>wealthy districts have small classes AND high scores (more resources)</li>
 </ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(testscr <span class="sc">~</span> str <span class="sc">+</span> avginc, <span class="at">data =</span> school_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = testscr ~ str + avginc, data = school_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-39.608  -9.052   0.707   9.259  31.898 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 638.72915    7.44908  85.746   &lt;2e-16 ***
+str          -0.64874    0.35440  -1.831   0.0679 .  
+avginc        1.83911    0.09279  19.821   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.35 on 417 degrees of freedom
+Multiple R-squared:  0.5115,    Adjusted R-squared:  0.5091 
+F-statistic: 218.3 on 2 and 417 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<ul>
 <li>Problem: class size is acting as a proxy for family income.</li>
 </ul>
 </div>
@@ -596,7 +607,7 @@
 <li><span class="math inline">\(H_0: \beta_j = 0\)</span> given the other variables are already in the model</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> ., <span class="at">data =</span> adv_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> ., <span class="at">data =</span> adv_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -624,53 +635,39 @@ F-statistic: 605.4 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Newspaper is NOT significant when TV and Radio are present</li>
 </ul>
 </section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(testscr <span class="sc">~</span> str <span class="sc">+</span> avginc, <span class="at">data =</span> school_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = testscr ~ str + avginc, data = school_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-39.608  -9.052   0.707   9.259  31.898 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 638.72915    7.44908  85.746   &lt;2e-16 ***
+str          -0.64874    0.35440  -1.831   0.0679 .  
+avginc        1.83911    0.09279  19.821   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.35 on 417 degrees of freedom
+Multiple R-squared:  0.5115,    Adjusted R-squared:  0.5091 
+F-statistic: 218.3 on 2 and 417 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
 <section id="adjusted-r2" class="slide level2">
 <h2>Adjusted <span class="math inline">\(R^2\)</span></h2>
 <ul>
 <li><span class="math inline">\(R^2\)</span> always increases when you add a predictor, even if it’s useless.</li>
 <li><strong>Adjusted <span class="math inline">\(R^2\)</span></strong> penalizes the model for having too many variables: <span class="math display">\[R_{adj}^2 = 1 - \frac{SSE / (n - k - 1)}{SS_{yy} / (n - 1)}\]</span></li>
 <li>Use adjusted <span class="math inline">\(R^2\)</span> to compare models with different numbers of predictors.</li>
-</ul>
-</section>
-<section id="multicollinearity" class="slide level2">
-<h2>Multicollinearity</h2>
-<ul>
-<li><strong>Multicollinearity</strong> occurs when predictors are highly correlated; the model can’t “untangle” their individual effects.</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div title="Height in inches vs cm">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Height in inches vs cm</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Example: regressing weight on <code>height_in_inches</code> and <code>height_in_cm</code>.</li>
-<li>Result:
-<ul>
-<li>standard errors for both coefficients explode</li>
-<li>coefficients become unstable (may even have the “wrong” sign)</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="model-selection" class="slide level2 scrollable">
-<h2>Model selection</h2>
-<ul>
-<li>How do we choose which variables to include?</li>
-<li>One method is <strong>backward elimination</strong>:
-<ol type="1">
-<li>start with the full model (all possible predictors)</li>
-<li>identify the predictor with the largest <span class="math inline">\(p\)</span>-value</li>
-<li>if <span class="math inline">\(p &gt; \alpha\)</span>, remove it and re-fit</li>
-<li>repeat until all <span class="math inline">\(p\)</span>-values are significant</li>
-</ol></li>
 </ul>
 </section></section>
 <section>

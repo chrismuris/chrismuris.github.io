@@ -313,9 +313,9 @@
 <section id="this-lecture" class="slide level2">
 <h2>This lecture</h2>
 <ul>
-<li>Interpretation of regression slopes (numerical and categorical predictors)</li>
+<li>Interpretation of regression slopes</li>
 <li>Coefficient of determination (<span class="math inline">\(R^2\)</span>)</li>
-<li>Inference for the regression slope (hypothesis test, confidence interval)</li>
+<li>Inference for the regression slope</li>
 </ul>
 </section>
 <section id="readings-and-homework" class="slide level2">
@@ -328,7 +328,10 @@
 <section id="overview" class="slide level2 scrollable">
 <h2>Overview</h2>
 <ul>
-<li>Why this matters: interpretation and inference allow us to quantify how much of the variation in an outcome we’ve explained and whether an association is statistically significant</li>
+<li>Why this matters:
+<ul>
+<li>interpretation and inference allow us to quantify how much of the variation in an outcome we’ve explained and whether an association is statistically significant</li>
+</ul></li>
 <li>What you will learn:
 <ol type="1">
 <li>how to interpret slopes for numerical and categorical predictors</li>
@@ -357,16 +360,16 @@
 <section id="simple-linear-regression-model" class="slide level2">
 <h2>Simple linear regression model</h2>
 <ul>
-<li><p>The <strong>simple linear regression model</strong> is <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span></p></li>
-<li><p>The <strong>deterministic part</strong> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>, which is the population line</p>
+<li>The <strong>simple linear regression model</strong> is <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span></li>
+<li>The <strong>deterministic part</strong> is <span class="math inline">\(\beta_0 + \beta_1 x\)</span>, which is the population line
 <ul>
 <li>gives the mean of <span class="math inline">\(y\)</span> for any given <span class="math inline">\(x\)</span></li>
 </ul></li>
-<li><p>The <strong>random part</strong> is <span class="math inline">\(\epsilon\)</span>, the error term</p>
+<li>The <strong>random part</strong> is <span class="math inline">\(\epsilon\)</span>, the error term
 <ul>
 <li>has mean 0 and standard deviation <span class="math inline">\(\sigma\)</span></li>
 </ul></li>
-<li><p>We estimate this using a sample of size <span class="math inline">\(n\)</span>:</p>
+<li>We estimate this using a sample of size <span class="math inline">\(n\)</span>:
 <ul>
 <li><span class="math inline">\(\widehat y = \widehat\beta_0 + \widehat\beta_1 x\)</span></li>
 </ul></li>
