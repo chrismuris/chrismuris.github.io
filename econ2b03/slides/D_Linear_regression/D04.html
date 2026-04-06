@@ -306,15 +306,27 @@
 </ul></li>
 </ul>
 </section>
+<section id="previously-part-d-so-far" class="slide level2">
+<h2>Previously: Part D so far</h2>
+<ul>
+<li>Linear relationships: scatter plots, correlation (<span class="math inline">\(r\)</span>)</li>
+<li>Simple linear regression:
+<ul>
+<li>least squares estimation (<span class="math inline">\(\widehat\beta_0\)</span>, <span class="math inline">\(\widehat\beta_1\)</span>)</li>
+<li>interpretation of slopes (numerical and categorical predictors)</li>
+<li>coefficient of determination (<span class="math inline">\(R^2\)</span>)</li>
+<li>inference: hypothesis test and confidence interval for the slope</li>
+</ul></li>
+</ul>
+</section>
 <section id="this-lecture" class="slide level2">
 <h2>This lecture</h2>
 <ul>
-<li>Motivation: why one predictor is rarely enough</li>
-<li>The multiple linear regression (MLR) model</li>
-<li>Interpreting partial slopes (“holding other variables fixed”)</li>
-<li>Categorical predictors with multiple levels</li>
-<li>Omitted variable bias (OVB) and confounding</li>
-<li>Reading and interpreting multiple regression tables in R</li>
+<li>Motivation: Omitted Variable Bias (OVB) and confounding</li>
+<li>The MLR model and partial slopes (“holding all else fixed”)</li>
+<li>Case study: Class size and student performance (controlling for income)</li>
+<li>Inference in MLR: Reading and interpreting R output tables</li>
+<li>Multicollinearity and model selection</li>
 </ul>
 </section>
 <section id="readings-and-homework" class="slide level2">
@@ -327,11 +339,11 @@
 <section id="overview" class="slide level2 scrollable">
 <h2>Overview</h2>
 <ul>
-<li>Why this matters: almost all empirical research in economics uses multiple regression to isolate the effect of one variable while controlling for others.</li>
+<li>Why this matters: almost all empirical research in economics uses multiple regression to isolate the effect of one variable while controlling for others</li>
 <li>What you will learn:
 <ol type="1">
 <li>how to interpret regression coefficients in a multivariate context</li>
-<li>why “spurious” correlations can disappear when you add controls</li>
+<li>why spurious correlations can disappear when you add controls</li>
 <li>how to read and interpret a multiple regression table in R</li>
 </ol></li>
 </ul>
@@ -344,18 +356,20 @@
 <section id="motivation-why-multiple-predictors" class="slide level2">
 <h2>Motivation: why multiple predictors?</h2>
 <ul>
-<li><strong>Prediction</strong>: we can often predict <span class="math inline">\(y\)</span> more accurately if we use more information.</li>
-<li><strong>Explanation</strong>: we want to isolate the effect of one variable (<span class="math inline">\(x_1\)</span>) by accounting for “confounders” (<span class="math inline">\(x_2, x_3, \dots\)</span>).</li>
-<li>Think: “Does <span class="math inline">\(x_1\)</span> affect <span class="math inline">\(y\)</span>, or is it just because they both move with <span class="math inline">\(x_2\)</span>?”</li>
+<li>Prediction: we can often predict <span class="math inline">\(y\)</span> more accurately if we use more information.</li>
+<li>Explanation: we want to isolate the effect of one variable (<span class="math inline">\(x_1\)</span>) by accounting for confounders (<span class="math inline">\(x_2, x_3, \dots\)</span>).
+<ul>
+<li>“Does <span class="math inline">\(x_1\)</span> affect <span class="math inline">\(y\)</span>, or is it just because they both move with <span class="math inline">\(x_2\)</span>?”</li>
+</ul></li>
 </ul>
 </section>
 <section id="the-model" class="slide level2">
 <h2>The model</h2>
 <ul>
-<li>The multiple linear regression model is: <span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \epsilon\]</span></li>
+<li>The <strong>multiple linear regression (MLR)</strong> model is: <span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \epsilon\]</span></li>
 <li>Components:
 <ul>
-<li><span class="math inline">\(\beta_0\)</span>: the intercept (all <span class="math inline">\(x=0\)</span>)</li>
+<li><span class="math inline">\(\beta_0\)</span>: the intercept (predicted mean when all <span class="math inline">\(x=0\)</span>)</li>
 <li><span class="math inline">\(\beta_j\)</span>: population coefficient for predictor <span class="math inline">\(x_j\)</span></li>
 <li><span class="math inline">\(\epsilon\)</span>: error term (random noise)</li>
 </ul></li>
@@ -365,17 +379,78 @@
 <h2>Interpreting a partial slope</h2>
 <ul>
 <li>The coefficient <span class="math inline">\(\beta_j\)</span> is a <strong>partial slope</strong>.</li>
-<li><strong>Interpretation</strong>: a one-unit increase in <span class="math inline">\(x_j\)</span> is associated with a <span class="math inline">\(\beta_j\)</span> change in the predicted mean of <span class="math inline">\(y\)</span>, <strong>holding all other predictors fixed</strong>.</li>
-<li>This is the “ceteris paribus” (all else equal) effect.</li>
+<li>Interpretation: A one-unit increase in <span class="math inline">\(x_j\)</span> is associated with a <span class="math inline">\(\beta_j\)</span> change in the predicted mean of <span class="math inline">\(y\)</span>, holding all other predictors fixed.</li>
+<li>This is the <strong>ceteris paribus</strong> (all else equal) effect.</li>
 </ul>
 </section>
-<section id="example-house-prices" class="slide level2">
-<h2>Example: house prices</h2>
-<p>Suppose we regress house price on size (sq ft) and number of bedrooms.</p>
+<section class="slide level2">
+
+<div title="House prices">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>House prices</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><span class="math inline">\(\beta_{\text{size}}\)</span>: predicted price change for one more sq ft, <strong>holding the number of bedrooms constant</strong>.</li>
-<li><span class="math inline">\(\beta_{\text{beds}}\)</span>: predicted price change for one more bedroom, <strong>holding square footage constant</strong>.</li>
+<li>Suppose we want to predict the price of a house.</li>
+<li>Data on:
+<ul>
+<li><code>price</code>: sale price</li>
+<li><code>size</code>: interior area in square feet</li>
+<li><code>bedrooms</code>: number of bedrooms</li>
+</ul></li>
+<li>Goal: isolate the value of an extra bedroom for houses of the same size.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="House prices (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>House prices (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Regressing <code>price</code> on <code>size</code> and <code>bedrooms</code>:
+<ul>
+<li><span class="math inline">\(\beta_{\text{size}}\)</span>: predicted price change for one more sq ft, holding the number of bedrooms constant</li>
+<li><span class="math inline">\(\beta_{\text{beds}}\)</span>: predicted price change for one more bedroom, holding square footage constant</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Mario Kart (revisited)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Mario Kart (revisited)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Recall the eBay auction data.</li>
+<li>Outcome (<span class="math inline">\(y\)</span>): <code>total_pr</code> (final price).</li>
+<li>Predictors:
+<ul>
+<li><code>cond</code> (used vs new)</li>
+<li><code>stock_photo</code> (yes/no)</li>
+<li><code>wheels</code> (number of Wii wheels included)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="categorical-predictors-multiple-levels" class="slide level2">
 <h2>Categorical predictors (multiple levels)</h2>
@@ -384,8 +459,8 @@
 <li>Example: <code>Neighborhood</code> (North, Central, South).
 <ul>
 <li>baseline: Central (automatically chosen by <code>R</code>)</li>
-<li><span class="math inline">\(\widehat\beta_{\text{North}}\)</span>: predicted mean difference between North and Central, <strong>holding other factors fixed</strong>.</li>
-<li><span class="math inline">\(\widehat\beta_{\text{South}}\)</span>: predicted mean difference between South and Central, <strong>holding other factors fixed</strong>.</li>
+<li><span class="math inline">\(\widehat\beta_{\text{North}}\)</span>: predicted mean difference between North and Central, holding other factors fixed</li>
+<li><span class="math inline">\(\widehat\beta_{\text{South}}\)</span>: predicted mean difference between South and Central, holding other factors fixed</li>
 </ul></li>
 </ul>
 </section></section>
@@ -398,46 +473,115 @@
 <h2>Spurious correlations</h2>
 <ul>
 <li>Sometimes variables move together just because they share a common cause.</li>
-<li>Example: high newspaper advertising is associated with high sales.</li>
-<li><strong>The question:</strong> is it the newspaper, or are markets with high newspaper ads also high in TV/Radio ads?</li>
+<li>What if the relationship we observe is just picking up the effect of something else?</li>
 </ul>
 </section>
-<section id="advertising-budgets-slr-vs-mlr" class="slide level2">
-<h2>Advertising budgets: SLR vs MLR</h2>
+<section class="slide level2">
+
+<div title="Advertising budgets">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Advertising budgets</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li>Simple regression (Sales on Newspaper): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.055\)</span> (<span class="math inline">\(p\)</span>-value &lt; 0.05)</li>
-<li>Multiple regression (Sales on TV, Radio, News): <span class="math inline">\(\widehat\beta_{\text{news}} = -0.001\)</span> (<span class="math inline">\(p\)</span>-value = 0.86)</li>
+<li>Recall the advertising budgets case study (<span class="math inline">\(n=200\)</span> markets).</li>
+<li>Data: spending on <code>TV</code>, <code>Radio</code>, and <code>Newspaper</code>.</li>
+<li>Question: is it the newspaper, or are markets with high newspaper ads also high in TV/Radio ads?</li>
 </ul>
-<div class="fragment">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Advertising budgets (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Advertising budgets (continued)</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><strong>Interpretation</strong>: Newspaper was “picking up” the effect of Radio/TV. Once we hold Radio/TV fixed, Newspaper has no significant association with sales.</li>
+<li><p>Simple regression (Sales on Newspaper): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.055\)</span> (<span class="math inline">\(p\)</span>-value &lt; 0.05)</p></li>
+<li><p>Multiple regression (Sales on TV, Radio, News): <span class="math inline">\(\widehat\beta_{\text{news}} = 0.0003\)</span> (<span class="math inline">\(p\)</span>-value = 0.954)</p></li>
+<li><p>Interpretation: Newspaper was “picking up” the effect of Radio/TV. Once we hold Radio/TV fixed, Newspaper has no significant association with sales.</p></li>
 </ul>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="omitted-variable-bias-ovb" class="slide level2">
 <h2>Omitted variable bias (OVB)</h2>
 <ul>
-<li>If we leave out a relevant variable that is correlated with our predictor, our estimate for <span class="math inline">\(\beta_1\)</span> is <strong>biased</strong>.</li>
-<li>Classic example: class size and test scores.</li>
-<li>Wealthy districts have small classes AND high scores (more resources).</li>
+<li><strong>Omitted variable bias (OVB)</strong> is the pollution of our estimate by missing factors.</li>
+<li>If we leave out a relevant variable that is correlated with our predictor, our estimate for <span class="math inline">\(\beta_1\)</span> is biased.</li>
 </ul>
 </section>
-<section id="case-study-class-size-and-test-scores" class="slide level2">
-<h2>Case study: class size and test scores</h2>
-<p>We want to know: do smaller classes lead to better test scores?</p>
+<section class="slide level2">
+
+<div title="Class size and test scores">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Class size and test scores</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li>Simple regression: <span class="math inline">\(\text{Score} = \beta_0 + \beta_1 \text{ClassSize} + \epsilon\)</span></li>
-<li>Result: smaller classes seem significantly better.</li>
-<li><strong>The confounder</strong>: average income in the district.</li>
+<li>Data on California school districts.</li>
+<li>Outcome (<span class="math inline">\(y\)</span>): average test scores in the district.</li>
+<li>Predictor (<span class="math inline">\(x\)</span>): student-teacher ratio (class size).</li>
+<li>Goal: determine if smaller classes lead to better test scores.</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="controlling-for-income" class="slide level2">
-<h2>Controlling for income</h2>
+<section class="slide level2">
+
+<div title="Class size and test scores (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Class size and test scores (continued)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Simple regression: <span class="math inline">\(\text{Score} = \beta_0 + \beta_1 \text{ClassSize} + \epsilon\)</span>.</li>
+<li>Result: smaller classes seem significantly better.</li>
+<li>The confounder: average income in the district.
+<ul>
+<li>wealthy districts have small classes AND high scores (more resources)</li>
+</ul></li>
+<li>Problem: class size is acting as a proxy for family income.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div title="Class size and test scores (continued)">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Class size and test scores (continued)</strong></p>
+</div>
+<div class="callout-content">
 <p>Once we add <code>AverageIncome</code> to the regression:</p>
 <ul>
 <li>the effect of <code>ClassSize</code> often shrinks or becomes non-significant</li>
-<li>the multiple regression isolates the association of class size with scores <strong>among districts with the same income levels</strong></li>
+<li>the multiple regression isolates the association of class size with scores among districts with the same income levels</li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="part-iii-inference-in-mlr" class="title-slide slide level1 center">
@@ -447,21 +591,36 @@
 <section id="reading-mlr-output" class="slide level2">
 <h2>Reading MLR output</h2>
 <ul>
-<li>Each row in the R output is a separate <span class="math inline">\(t\)</span>-test.</li>
-<li><span class="math inline">\(H_0: \beta_j = 0\)</span> <strong>given the other variables are already in the model</strong>.</li>
+<li>Each row in the <code>Coefficients</code> table is a separate <span class="math inline">\(t\)</span>-test</li>
+<li><span class="math inline">\(H_0: \beta_j = 0\)</span> given the other variables are already in the model</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> TV <span class="sc">+</span> Radio <span class="sc">+</span> Newspaper, <span class="at">data =</span> adv_df))<span class="sc">$</span>coefficients</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">summary</span>(<span class="fu">lm</span>(Sales <span class="sc">~</span> ., <span class="at">data =</span> adv_df))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                Estimate  Std. Error     t value     Pr(&gt;|t|)
-(Intercept) 4.6251240788 0.307501165 15.04099695 1.682677e-34
-TV          0.0544457803 0.001375188 39.59152448 1.892945e-95
-Radio       0.1070012282 0.008489563 12.60385655 4.602097e-27
-Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
+<pre><code>
+Call:
+lm(formula = Sales ~ ., data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.3034 -0.8244 -0.0008  0.8976  3.7473 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 4.6251241  0.3075012  15.041   &lt;2e-16 ***
+TV          0.0544458  0.0013752  39.592   &lt;2e-16 ***
+Radio       0.1070012  0.0084896  12.604   &lt;2e-16 ***
+Newspaper   0.0003357  0.0057881   0.058    0.954    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.662 on 196 degrees of freedom
+Multiple R-squared:  0.9026,    Adjusted R-squared:  0.9011 
+F-statistic: 605.4 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <ul>
-<li>Newspaper is NOT significant (<span class="math inline">\(p = 0.86\)</span>) when TV and Radio are present.</li>
+<li>Newspaper is NOT significant when TV and Radio are present</li>
 </ul>
 </section>
 <section id="adjusted-r2" class="slide level2">
@@ -475,20 +634,36 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 <section id="multicollinearity" class="slide level2">
 <h2>Multicollinearity</h2>
 <ul>
-<li>When predictors are highly correlated, the model can’t “untangle” their individual effects.</li>
-<li><strong>Example:</strong> regressing weight on <code>height_in_inches</code> and <code>height_in_cm</code>.</li>
-<li><strong>Result:</strong>
+<li><strong>Multicollinearity</strong> occurs when predictors are highly correlated; the model can’t “untangle” their individual effects.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div title="Height in inches vs cm">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Height in inches vs cm</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Example: regressing weight on <code>height_in_inches</code> and <code>height_in_cm</code>.</li>
+<li>Result:
 <ul>
 <li>standard errors for both coefficients explode</li>
 <li>coefficients become unstable (may even have the “wrong” sign)</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="model-selection" class="slide level2 scrollable">
 <h2>Model selection</h2>
 <ul>
 <li>How do we choose which variables to include?</li>
-<li><strong>Backward elimination:</strong>
+<li>One method is <strong>backward elimination</strong>:
 <ol type="1">
 <li>start with the full model (all possible predictors)</li>
 <li>identify the predictor with the largest <span class="math inline">\(p\)</span>-value</li>
@@ -500,6 +675,10 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 <section>
 <section id="exercises" class="title-slide slide level1 center">
 <h1>Exercises</h1>
+
+</section>
+<section class="slide level2">
+
 <div class="exercise-callout" title="Exercise: MLR interpretation">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -515,7 +694,7 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 <p>What does the “2” mean?</p>
 </div>
 <div id="tabset-1-2">
-<p>For every additional year of education, the predicted wage increases by 2 units, <strong>holding years of experience fixed</strong>.</p>
+<p>For every additional year of education, the predicted wage increases by 2 units, holding years of experience fixed.</p>
 </div>
 </div>
 </div>
@@ -526,11 +705,11 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 </section>
 <section class="slide level2">
 
-<div class="exercise-callout" title="Exercise: significance in MLR">
+<div class="exercise-callout" title="Exercise: Significance in MLR">
 <div class="callout callout-important no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercise: significance in MLR</strong></p>
+<p><strong>Exercise: Significance in MLR</strong></p>
 </div>
 <div class="callout-content">
 <p>In a multiple regression, <span class="math inline">\(x_1\)</span> has a p-value of 0.45, but in a simple regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x_1\)</span>, the p-value was 0.01.</p>
@@ -542,6 +721,62 @@ Newspaper   0.0003356579 0.005788056  0.05799148 9.538145e-01</code></pre>
 </div>
 <div id="tabset-2-2">
 <p><span class="math inline">\(x_1\)</span> was likely a confounder or correlated with other predictors that were actually driving <span class="math inline">\(y\)</span>. Once those predictors were included (controlled for), <span class="math inline">\(x_1\)</span> no longer added significant information.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div class="exercise-callout" title="Exercise: Reading MLR output">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercise: Reading MLR output</strong></p>
+</div>
+<div class="callout-content">
+<p>Consider the regression output below from a regression of Sales on TV, Radio, and Newspaper advertising expenditures.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Sales ~ ., data = adv_df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.3034 -0.8244 -0.0008  0.8976  3.7473 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 4.6251241  0.3075012  15.041   &lt;2e-16 ***
+TV          0.0544458  0.0013752  39.592   &lt;2e-16 ***
+Radio       0.1070012  0.0084896  12.604   &lt;2e-16 ***
+Newspaper   0.0003357  0.0057881   0.058    0.954    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.662 on 196 degrees of freedom
+Multiple R-squared:  0.9026,    Adjusted R-squared:  0.9011 
+F-statistic: 605.4 on 3 and 196 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Question (4 min)</a></li><li><a href="#tabset-3-2">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<ol type="1">
+<li>Using the p-value approach, test whether <code>Newspaper</code> advertising is significantly associated with <code>Sales</code> at the 1% level. Report the p-value.</li>
+<li>What percentage of the variation in <code>Sales</code> is explained by this regression model?</li>
+</ol>
+</div>
+<div id="tabset-3-2">
+<ol type="1">
+<li><span class="math inline">\(H_0: \beta_{\text{news}} = 0\)</span> vs <span class="math inline">\(H_a: \beta_{\text{news}} \neq 0\)</span>. The <span class="math inline">\(p\)</span>-value for <code>Newspaper</code> is <span class="math inline">\(0.954\)</span>. Since <span class="math inline">\(0.954 &gt; 0.01\)</span>, we do not reject <span class="math inline">\(H_0\)</span>. There is no significant association once we control for TV and Radio.</li>
+<li>The <code>Multiple R-squared</code> is <span class="math inline">\(0.9026\)</span>, so about 90.3% of the variation in Sales is explained by the model.</li>
+</ol>
 </div>
 </div>
 </div>
